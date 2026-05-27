@@ -87,8 +87,8 @@ body.template-index .banner {
   min-height:      auto !important;
   height:          auto !important;
   background:      var(--aw-bg) !important;
-  padding:         4rem 2rem 5rem !important;
-  overflow:        visible !important;
+  padding:         4rem 0 0 !important;   /* no side padding — image goes edge-to-edge */
+  overflow:        hidden !important;
   isolation:       auto !important;
 }
 
@@ -102,8 +102,8 @@ body.template-index .banner__content {
   position:      static !important;
   order:         1 !important;
   width:         100% !important;
-  max-width:     900px !important;
-  padding:       0 0 2.8rem !important;
+  max-width:     960px !important;
+  padding:       0 2rem 2.8rem !important;
   display:       block !important;
   text-align:    center !important;
   background:    transparent !important;
@@ -145,57 +145,104 @@ body.template-index .banner__heading * {
   margin-bottom:  2rem !important;
 }
 
-/* Black pill CTA button */
+/* Premium animated CTA button */
 body.template-index .banner__buttons {
-  display: flex !important;
+  display:         flex !important;
   justify-content: center !important;
-  gap: 0.75rem !important;
+  align-items:     center !important;
+  width:           100% !important;
+  gap:             0.75rem !important;
+  margin-bottom:   0.5rem !important;
 }
 
 body.template-index .banner__buttons .button,
 body.template-index .banner__buttons a {
-  font-family:    var(--aw-font) !important;
-  font-weight:    600 !important;
-  font-size:      0.78rem !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
-  background:     var(--aw-text) !important;
-  color:          var(--aw-white) !important;
-  border:         1.5px solid var(--aw-text) !important;
-  padding:        0.7rem 1.6rem !important;
-  border-radius:  40px !important;
-  transition:     background 0.2s ease, color 0.2s ease !important;
+  position:        relative !important;
+  overflow:        hidden !important;
+  font-family:     var(--aw-font) !important;
+  font-weight:     600 !important;
+  font-size:       0.72rem !important;
+  letter-spacing:  0.18em !important;
+  text-transform:  uppercase !important;
+  background:      var(--aw-text) !important;
+  color:           var(--aw-white) !important;
+  border:          none !important;
+  padding:         1rem 3.2rem !important;
+  border-radius:   60px !important;
+  cursor:          pointer !important;
   text-decoration: none !important;
+  display:         inline-flex !important;
+  align-items:     center !important;
+  gap:             0.5rem !important;
+  animation:       awBtnPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
+  transition:      transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                   box-shadow 0.35s ease,
+                   background 0.3s ease !important;
 }
 
-body.template-index .banner__buttons .button:hover {
-  background: transparent !important;
-  color:      var(--aw-text) !important;
+/* Shimmer sweep on hover */
+body.template-index .banner__buttons .button::after,
+body.template-index .banner__buttons a::after {
+  content:    '' !important;
+  position:   absolute !important;
+  top:        0 !important;
+  left:       -100% !important;
+  width:      100% !important;
+  height:     100% !important;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 80%
+  ) !important;
+  transition: left 0.55s ease !important;
 }
 
-/* ── Image: pulled into normal flow as a framed card ── */
+body.template-index .banner__buttons .button:hover::after,
+body.template-index .banner__buttons a:hover::after {
+  left: 100% !important;
+}
+
+body.template-index .banner__buttons .button:hover,
+body.template-index .banner__buttons a:hover {
+  transform:  translateY(-3px) !important;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.28) !important;
+  background: #2a2a2a !important;
+  animation:  none !important;
+}
+
+body.template-index .banner__buttons .button:active {
+  transform:  translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Idle pulse animation — draws attention to the button */
+@keyframes awBtnPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.22); }
+  50%       { box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
+}
+
+/* ── Image: full-bleed, edge-to-edge ── */
 body.template-index .banner__media {
-  position:    relative !important;     /* critical: overrides absolute */
+  position:    relative !important;
   order:       2 !important;
-  top:         auto !important;
-  left:        auto !important;
-  right:       auto !important;
-  bottom:      auto !important;
   inset:       auto !important;
   width:       100% !important;
-  max-width:   740px !important;
-  height:      auto !important;
-  aspect-ratio: 16 / 10 !important;
-  border-radius: 10px !important;
+  max-width:   100% !important;
+  height:      62vh !important;
+  min-height:  420px !important;
+  border-radius: 0 !important;
   overflow:    hidden !important;
   flex-shrink: 0 !important;
-  box-shadow:  0 12px 70px rgba(0, 0, 0, 0.16) !important;
+  box-shadow:  none !important;
   transform:   none !important;
 }
 
 body.template-index .banner__media .media {
-  height:       100% !important;
-  aspect-ratio: 16 / 10 !important;
+  position: absolute !important;
+  inset:    0 !important;
+  height:   100% !important;
+  width:    100% !important;
 }
 
 /* Reset ambient/zoom-in fixed-position img */
@@ -206,11 +253,12 @@ body.template-index .banner__media.animate--zoom-in img {
   width:       100% !important;
   height:      100% !important;
   object-fit:  cover !important;
-  transition:  transform 0.5s ease !important;
+  object-position: center !important;
+  transition:  transform 0.6s ease !important;
 }
 
 body.template-index .banner:hover .banner__media img {
-  transform: scale(1.04) !important;
+  transform: scale(1.03) !important;
 }
 
 /* ---- LOGO SCROLL ----------------------------------------- */
@@ -722,7 +770,16 @@ body.template-index .product-grid > .grid__item:nth-child(4) .card-wrapper { --a
   }
 
   body.template-index .banner {
-    padding: 2.5rem 1.5rem 4rem !important;
+    padding: 2.5rem 0 0 !important;
+  }
+
+  body.template-index .banner__content {
+    padding: 0 1.5rem 2rem !important;
+  }
+
+  body.template-index .banner__media {
+    height: 50vw !important;
+    min-height: 260px !important;
   }
 
   body.template-index .product-grid {
