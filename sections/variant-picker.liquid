@@ -1,0 +1,256 @@
+{% comment %}
+  Renders product variant picker with support for image swatches
+
+  Accepts:
+  - product: {Object} product object
+  - section: {Object} section object
+  - block: {Object} block object
+  - product_form_id: {String} id of the product form
+
+  Usage:
+  {% render 'variant-picker',
+    product: product,
+    section: section,
+    block: block,
+    product_form_id: product_form_id
+  %}
+{% endcomment %}
+
+{%- unless product.has_only_default_variant -%}
+  <variant-selects 
+    id="variant-selects-{{ section.id }}"
+    data-section="{{ section.id }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- for option in product.options_with_values -%}
+      {%- liquid
+        assign swatch_count = option.values | map: 'swatch' | compact | size
+        assign picker_type = block.settings.picker_type
+        assign has_variant_images = false
+
+        # Check if any variants have images
+        for variant in product.variants
+          if variant.image
+            assign has_variant_images = true
+            break
+          endif
+        endfor
+
+        if has_variant_images and block.settings.show_variant_images
+          assign picker_type = 'variant_image'
+        elsif swatch_count > 0 and block.settings.swatch_shape != 'none'
+          if block.settings.picker_type == 'dropdown'
+            assign picker_type = 'swatch_dropdown'
+          else
+            assign picker_type = 'swatch'
+          endif
+        endif
+      -%}
+
+      {%- if picker_type == 'variant_image' -%}
+        <fieldset class="js product-form__input product-form__input--variant-image">
+          <legend class="form__label {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}">
+            {{ option.name }}:
+            <span data-selected-value>
+              {{- option.selected_value -}}
+            </span>
+          </legend>
+          <div class="variant-image-swatches">
+            {%- for value in option.values -%}
+              {%- liquid
+                assign variant = product.variants | where: 'option1', value | first
+                if variant == blank
+                  assign variant = product.variants | where: 'option2', value | first
+                endif
+                if variant == blank
+                  assign variant = product.variants | where: 'option3', value | first
+                endif
+                assign selected = false
+                if variant.id == product.selected_or_first_available_variant.id
+                  assign selected = true
+                endif
+                assign disabled = false
+                unless variant.available
+                  assign disabled = true
+                endunless
+              -%}
+              {% render 'variant-image-swatch',
+                variant: variant,
+                size: block.settings.variant_image_size | default: 40,
+                selected: selected,
+                disabled: disabled,
+                input_id: section.id | append: '-' | append: option.position | append: '-' | append: forloop.index0,
+                input_name: option.name | escape,
+                product_form_id: product_form_id
+              %}
+            {%- endfor -%}
+          </div>
+        </fieldset>
+      {%- elsif picker_type == 'swatch' -%}
+        <fieldset class="js product-form__input product-form__input--swatch">
+          <legend class="form__label {% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}">
+            {{ option.name }}:
+            <span data-selected-value>
+              {{- option.selected_value -}}
+            </span>
+          </legend>
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type
+          %}
+        </fieldset>
+      {%- elsif picker_type == 'button' -%}
+        <fieldset class="js product-form__input product-form__input--pill">
+          <legend class="form__label{% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}">{{ option.name }}</legend>
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type
+          %}
+        </fieldset>
+      {%- else -%}
+        <div class="product-form__input product-form__input--dropdown">
+          <label class="form__label{% if block.settings.label_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.label_style == 'subtitle' %} subtitle{% endif %}" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+            {{ option.name }}
+          </label>
+          <div class="select">
+            {%- if picker_type == 'swatch_dropdown' -%}
+              <span
+                data-selected-value
+                class="dropdown-swatch"
+              >
+                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
+              </span>
+            {%- endif -%}
+            <select
+              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+              class="select__select"
+              name="options[{{ option.name | escape }}]"
+              form="{{ product_form_id }}"
+            >
+              {% render 'product-variant-options',
+                product: product,
+                option: option,
+                block: block,
+                picker_type: picker_type
+              %}
+            </select>
+            <span class="svg-wrapper">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+    <script type="application/json" data-selected-variant>
+      {{ product.selected_or_first_available_variant | json }}
+    </script>
+  </variant-selects>
+{%- endunless -%}
+
+<style>
+.variant-image-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.product-form__input--variant-image {
+  margin-bottom: 1.5rem;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Variant Picker",
+  "settings": [
+    {
+      "type": "select",
+      "id": "picker_type",
+      "label": "Variant picker type",
+      "options": [
+        {
+          "value": "dropdown",
+          "label": "Dropdown"
+        },
+        {
+          "value": "button",
+          "label": "Buttons"
+        },
+        {
+          "value": "swatch",
+          "label": "Swatches"
+        }
+      ],
+      "default": "dropdown"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_variant_images",
+      "label": "Show variant images as swatches",
+      "default": true,
+      "info": "When enabled, variants with images will be shown as image swatches"
+    },
+    {
+      "type": "range",
+      "id": "variant_image_size",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Variant image swatch size",
+      "default": 40
+    },
+    {
+      "type": "select",
+      "id": "swatch_shape",
+      "label": "Swatch shape",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "circle",
+          "label": "Circle"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "square"
+    },
+    {
+      "type": "select",
+      "id": "label_style",
+      "label": "Label style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "subtitle",
+          "label": "Subtitle"
+        }
+      ],
+      "default": "default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Variant Picker"
+    }
+  ]
+}
+{% endschema %} 

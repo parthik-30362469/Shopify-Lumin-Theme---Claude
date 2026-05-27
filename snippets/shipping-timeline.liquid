@@ -1,0 +1,35 @@
+{% assign today = 'now' | date: "%Y-%m-%d" %}
+{% assign delivery_start = today | date: "%B %-d" %}
+{% assign delivery_end = 'now' | date: "%s" | plus: 2 | date: "%B %-d" %}
+{% assign book_start = 'now' | date: "%s" | plus: 3 | date: "%B %-d" %}
+{% assign book_end = 'now' | date: "%s" | plus: 4 | date: "%B %-d" %}
+
+<div style="display: grid;grid-template-columns: 1fr 1fr 1fr;    align-items: start;justify-content: space-between; max-width: 600px; margin: 0 auto;font-size: 10px; gap: 15px;">
+  <div style="text-align: center;">
+    <div style="background: #d9c7aa; width: 40px; height: 40px; border-radius: 50%; margin: 0 auto 4px auto; display: flex; align-items: center; justify-content: center;">
+      📦
+    </div>
+    <strong>Order</strong>
+    <div>{{ delivery_start }}</div>
+  </div>
+
+  <div style="flex: 1; height: 2px; background: #e0d8c4; margin: 0 10px;"></div>
+
+  <div style="text-align: center;">
+    <div style="background: #d9c7aa; width: 40px; height: 40px; border-radius: 50%; margin: 0 auto 4px auto; display: flex; align-items: center; justify-content: center;">
+      🚚
+    </div>
+    <strong>In delivery</strong>
+    <div>{{ delivery_start }} - {{ delivery_end }}</div>
+  </div>
+
+  <div style="flex: 1; height: 2px; background: #e0d8c4; margin: 0 10px;"></div>
+
+  <div style="text-align: center;">
+    <div style="background: #d9c7aa; width: 40px; height: 40px; border-radius: 50%; margin: 0 auto 4px auto; display: flex; align-items: center; justify-content: center;">
+      📍
+    </div>
+    <strong>Book</strong>
+    <div>{{ book_start }} - {{ book_end }}</div>
+  </div>
+</div>
