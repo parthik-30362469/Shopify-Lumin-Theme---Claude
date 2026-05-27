@@ -1,7 +1,7 @@
 :root {
   --alpha-button-background: 1;
   --alpha-button-border: 1;
-  --alpha-link: 0.87;
+  --alpha-link: 0.89;
   --alpha-badge-border: var(--color-badge-border-opacity);
   --focused-base-outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   --focused-base-outline-offset: 0.3rem;
