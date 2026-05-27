@@ -1,0 +1,668 @@
+/* ============================================================
+   CINEMATIC HOMEPAGE
+   Design language: The Goonies — dark, atmospheric, minimal
+   Fonts: Barlow (100–300) + Dancing Script
+   Only active on body.template-index
+   ============================================================ */
+
+/* ---- DESIGN TOKENS ---------------------------------------- */
+body.template-index {
+  --cine-black:      #000000;
+  --cine-surface:    #0a0a0a;
+  --cine-edge:       rgba(255, 255, 255, 0.08);
+  --cine-white:      #ffffff;
+  --cine-muted:      rgba(255, 255, 255, 0.72);
+  --cine-dim:        rgba(255, 255, 255, 0.40);
+  --cine-overlay:    rgba(0, 0, 0, 0.52);
+  --cine-font:       'Barlow', sans-serif;
+  --cine-script:     'Dancing Script', cursive;
+  background-color: var(--cine-black) !important;
+  color: var(--cine-white) !important;
+}
+
+/* Force every section background to black on homepage */
+body.template-index .shopify-section,
+body.template-index .gradient,
+body.template-index [class*="color-"] {
+  --color-background:  0, 0, 0 !important;
+  --gradient-background: #000 !important;
+  background-color: var(--cine-black) !important;
+  color: var(--cine-white) !important;
+}
+
+/* ---- HEADER ----------------------------------------------- */
+body.template-index .header-wrapper {
+  background: transparent !important;
+  border-bottom: none !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 300 !important;
+  transition: background 0.45s ease, backdrop-filter 0.45s ease !important;
+}
+
+body.template-index .scrolled-past-header .header-wrapper,
+body.template-index .header-wrapper.cine-scrolled {
+  background: rgba(0, 0, 0, 0.88) !important;
+  backdrop-filter: blur(12px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+}
+
+/* White nav text */
+body.template-index .header__heading-link,
+body.template-index .header__heading-link .h2,
+body.template-index .header__menu-item,
+body.template-index .header__menu-item > span,
+body.template-index .list-menu__item,
+body.template-index .disclosure__button {
+  color: var(--cine-white) !important;
+  font-family: var(--cine-font) !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.15em !important;
+  font-size: 0.8rem !important;
+  text-transform: uppercase !important;
+  opacity: 1 !important;
+}
+
+body.template-index .header__icon path,
+body.template-index .header__icon svg {
+  stroke: var(--cine-white) !important;
+  fill: none !important;
+}
+
+/* Cart icon fill fix */
+body.template-index .header__icon--cart svg {
+  fill: none !important;
+  stroke: var(--cine-white) !important;
+}
+
+/* Push main content down so hero sits under fixed header */
+body.template-index #MainContent > .shopify-section:first-child {
+  margin-top: 0 !important;
+}
+
+/* ---- HERO BANNER ------------------------------------------ */
+
+/* Full viewport */
+body.template-index .banner {
+  height: 100vh !important;
+  min-height: 100vh !important;
+  flex-direction: row !important;
+  overflow: hidden !important;
+}
+
+/* Image fills 100% */
+body.template-index .banner__media {
+  position: absolute !important;
+  inset: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  will-change: transform;
+}
+
+body.template-index .banner__media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Deepen the dark overlay */
+body.template-index .banner::after {
+  opacity: 0.55 !important;
+}
+
+/* Content: centred in viewport */
+body.template-index .banner__content {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 6rem 2rem 2rem !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+body.template-index .banner__box {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  max-width: 90rem !important;
+  width: 100% !important;
+}
+
+/* Main heading — large, ultra-thin, tracked */
+body.template-index .banner__heading,
+body.template-index .banner__heading * {
+  font-family: var(--cine-font) !important;
+  font-weight: 100 !important;
+  font-size: clamp(2.4rem, 7.5vw, 7.5rem) !important;
+  letter-spacing: 0.22em !important;
+  line-height: 1.1 !important;
+  color: var(--cine-white) !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.6) !important;
+  margin-bottom: 1.6rem !important;
+}
+
+/* Ghost CTA button */
+body.template-index .banner__buttons .button,
+body.template-index .banner__buttons a {
+  font-family: var(--cine-font) !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.22em !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  color: var(--cine-white) !important;
+  padding: 0.95rem 2.8rem !important;
+  border-radius: 0 !important;
+  transition: background 0.3s ease, border-color 0.3s ease !important;
+  text-decoration: none !important;
+}
+
+body.template-index .banner__buttons .button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: var(--cine-white) !important;
+}
+
+/* Scroll indicator — thin animated line */
+body.template-index .banner .cine-scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+body.template-index .cine-scroll-indicator__mouse {
+  width: 22px;
+  height: 35px;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  padding-top: 7px;
+  margin-bottom: 0.5rem;
+}
+
+body.template-index .cine-scroll-indicator__dot {
+  width: 3px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  animation: cineMouseDot 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+body.template-index .cine-scroll-indicator__line {
+  width: 1px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.35);
+  transform-origin: top center;
+  animation: cineScrollLine 2.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+@keyframes cineMouseDot {
+  0%   { transform: translateY(0);    opacity: 0.8; }
+  60%  { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0);    opacity: 0; }
+}
+
+@keyframes cineScrollLine {
+  0%   { transform: scaleY(0); transform-origin: top;    opacity: 0; }
+  25%  { opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: top;    opacity: 1; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+/* ---- LOGO SCROLL SECTION ---------------------------------- */
+body.template-index .logo-wrapper {
+  background: var(--cine-surface) !important;
+  border-top: 1px solid var(--cine-edge) !important;
+  border-bottom: 1px solid var(--cine-edge) !important;
+}
+
+/* Invert logos to white */
+body.template-index .logo-wrapper img {
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.45 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+body.template-index .logo-wrapper img:hover {
+  opacity: 0.85 !important;
+}
+
+/* ---- FEATURED COLLECTION — Character Card Grid ------------ */
+body.template-index .collection {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Section title row */
+body.template-index .collection__title.title-wrapper {
+  padding: 5rem 2rem 2rem !important;
+  text-align: center !important;
+  background: var(--cine-black) !important;
+}
+
+body.template-index .collection__title .title {
+  font-family: var(--cine-font) !important;
+  font-weight: 100 !important;
+  letter-spacing: 0.3em !important;
+  text-transform: uppercase !important;
+  color: var(--cine-white) !important;
+  font-size: clamp(1.2rem, 2.5vw, 2rem) !important;
+}
+
+body.template-index .collection__description {
+  font-family: var(--cine-font) !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.12em !important;
+  color: var(--cine-dim) !important;
+  text-transform: uppercase !important;
+  font-size: 0.7rem !important;
+}
+
+/* Full-width grid, no gap */
+body.template-index .product-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+body.template-index slider-component {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+body.template-index .product-grid > .grid__item {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-right: 1px solid var(--cine-edge) !important;
+}
+
+body.template-index .product-grid > .grid__item:last-child {
+  border-right: none !important;
+}
+
+/* Card fills entire cell */
+body.template-index .card-wrapper {
+  height: 65vh !important;
+  min-height: 420px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+}
+
+body.template-index .card,
+body.template-index .card--product {
+  height: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body.template-index .card__media,
+body.template-index .card__inner {
+  height: 100% !important;
+  border-radius: 0 !important;
+}
+
+body.template-index .card__media .media,
+body.template-index .card__inner .media {
+  height: 100% !important;
+  border-radius: 0 !important;
+}
+
+body.template-index .card__media img,
+body.template-index .card__inner img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              filter 0.5s ease !important;
+  filter: brightness(0.78) saturate(0.75) !important;
+}
+
+body.template-index .card-wrapper:hover .card__media img,
+body.template-index .card-wrapper:hover .card__inner img {
+  transform: scale(1.06) !important;
+  filter: brightness(1) saturate(1) !important;
+}
+
+/* Text overlay at bottom of card */
+body.template-index .card__information {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.82)) !important;
+  padding: 4rem 1.6rem 1.6rem !important;
+  color: var(--cine-white) !important;
+  z-index: 2 !important;
+}
+
+body.template-index .card__heading {
+  font-family: var(--cine-font) !important;
+  font-weight: 200 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  font-size: 0.85rem !important;
+}
+
+body.template-index .card__heading a {
+  color: var(--cine-white) !important;
+  text-decoration: none !important;
+}
+
+body.template-index .price,
+body.template-index .price--large,
+body.template-index .price__regular,
+body.template-index .price__sale {
+  color: var(--cine-muted) !important;
+  font-family: var(--cine-font) !important;
+  font-weight: 300 !important;
+  font-size: 0.8rem !important;
+}
+
+/* Hide quick-add, secondary image, vendor on product cards */
+body.template-index .quick-add,
+body.template-index .card__badge {
+  display: none !important;
+}
+
+/* ---- IMAGE WITH TEXT (Mission) ---------------------------- */
+body.template-index .image-with-text {
+  border: none !important;
+}
+
+body.template-index .image-with-text__media {
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+
+body.template-index .image-with-text__media img {
+  filter: brightness(0.85) !important;
+  transition: filter 0.4s ease !important;
+}
+
+body.template-index .image-with-text__content {
+  background: var(--cine-black) !important;
+  padding: 4rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body.template-index .image-with-text__heading {
+  font-family: var(--cine-font) !important;
+  font-weight: 100 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: var(--cine-white) !important;
+  font-size: clamp(1.4rem, 3vw, 2.6rem) !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+body.template-index .image-with-text__text.body,
+body.template-index .image-with-text__text {
+  color: var(--cine-muted) !important;
+  font-family: var(--cine-font) !important;
+  font-weight: 300 !important;
+  line-height: 1.9 !important;
+  font-size: 0.95rem !important;
+}
+
+body.template-index .image-with-text__text p {
+  color: var(--cine-muted) !important;
+}
+
+body.template-index .image-with-text__text-item .button,
+body.template-index .image-with-text__content .button {
+  font-family: var(--cine-font) !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.22em !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  color: var(--cine-white) !important;
+  padding: 0.95rem 2.8rem !important;
+  border-radius: 0 !important;
+  transition: background 0.3s ease, border-color 0.3s ease !important;
+  margin-top: 1.5rem !important;
+}
+
+body.template-index .image-with-text__text-item .button:hover,
+body.template-index .image-with-text__content .button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: var(--cine-white) !important;
+}
+
+/* Caption (star rating row) */
+body.template-index .caption-with-letter-spacing {
+  font-family: var(--cine-font) !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.15em !important;
+  color: var(--cine-dim) !important;
+  font-size: 0.7rem !important;
+  text-transform: uppercase !important;
+}
+
+/* ---- RICH TEXT -------------------------------------------- */
+body.template-index .rich-text,
+body.template-index .rich-text__wrapper {
+  background: var(--cine-black) !important;
+}
+
+body.template-index .rich-text h1,
+body.template-index .rich-text h2,
+body.template-index .rich-text h3,
+body.template-index .rich-text__heading {
+  font-family: var(--cine-font) !important;
+  font-weight: 100 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: var(--cine-white) !important;
+  font-size: clamp(1.2rem, 2.5vw, 2rem) !important;
+}
+
+body.template-index .rich-text p,
+body.template-index .rich-text__text {
+  color: var(--cine-muted) !important;
+  font-family: var(--cine-font) !important;
+  font-weight: 300 !important;
+}
+
+/* ---- TESTIMONIAL SLIDER (lumin-slide) --------------------- */
+body.template-index .lumin-slide__section {
+  background: var(--cine-black) !important;
+  border-top: 1px solid var(--cine-edge) !important;
+}
+
+body.template-index .lumin-slide__inner-content {
+  background: var(--cine-surface) !important;
+  border: 1px solid var(--cine-edge) !important;
+  border-radius: 0 !important;
+}
+
+body.template-index .lumin-slide__small-heading,
+body.template-index .lumin-slide__heading {
+  font-family: var(--cine-font) !important;
+  font-weight: 300 !important;
+  color: var(--cine-white) !important;
+  letter-spacing: 0.05em !important;
+  font-size: 0.9rem !important;
+}
+
+body.template-index .lumin-slide__text,
+body.template-index .lumin-slide__text p {
+  color: var(--cine-muted) !important;
+  font-family: var(--cine-font) !important;
+  font-weight: 300 !important;
+  font-size: 0.85rem !important;
+  line-height: 1.8 !important;
+}
+
+body.template-index .lumin-slide__image__wrapper img {
+  border-radius: 50% !important;
+  filter: brightness(0.85) grayscale(0.3) !important;
+  opacity: 0.85 !important;
+}
+
+/* Flickity arrows */
+body.template-index .flickity-button {
+  background: transparent !important;
+  border: 1px solid var(--cine-edge) !important;
+}
+
+body.template-index .flickity-button svg {
+  fill: var(--cine-white) !important;
+}
+
+body.template-index .flickity-page-dots .dot {
+  background: var(--cine-white) !important;
+  opacity: 0.3 !important;
+}
+
+body.template-index .flickity-page-dots .dot.is-selected {
+  opacity: 1 !important;
+}
+
+/* ---- SECTION DIVIDER -------------------------------------- */
+body.template-index .section-divider {
+  overflow: hidden !important;
+  line-height: 0 !important;
+}
+
+body.template-index .section-divider svg path {
+  fill: var(--cine-black) !important;
+}
+
+/* ---- LUMIN HERO (gallery/product showcase) ---------------- */
+body.template-index .lumin-hero__section,
+body.template-index [class*="lumin-hero"] {
+  background: var(--cine-black) !important;
+}
+
+body.template-index .lumin-hero__title {
+  font-family: var(--cine-font) !important;
+  font-weight: 100 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: var(--cine-white) !important;
+}
+
+/* ---- FOOTER ----------------------------------------------- */
+body.template-index .footer {
+  background: var(--cine-surface) !important;
+  border-top: 1px solid var(--cine-edge) !important;
+}
+
+body.template-index .footer *,
+body.template-index .footer a {
+  color: var(--cine-muted) !important;
+  font-family: var(--cine-font) !important;
+  font-weight: 300 !important;
+}
+
+body.template-index .footer a:hover {
+  color: var(--cine-white) !important;
+}
+
+/* ---- SCROLL REVEAL ANIMATIONS ----------------------------- */
+
+.cine-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--cine-delay, 0s);
+}
+
+.cine-reveal.cine-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for product cards */
+body.template-index .product-grid > .grid__item:nth-child(1) .card-wrapper { --cine-delay: 0s; }
+body.template-index .product-grid > .grid__item:nth-child(2) .card-wrapper { --cine-delay: 0.1s; }
+body.template-index .product-grid > .grid__item:nth-child(3) .card-wrapper { --cine-delay: 0.2s; }
+body.template-index .product-grid > .grid__item:nth-child(4) .card-wrapper { --cine-delay: 0.3s; }
+
+/* ---- RESPONSIVE ------------------------------------------- */
+@media screen and (max-width: 989px) {
+  body.template-index .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  body.template-index .card-wrapper {
+    height: 45vh !important;
+    min-height: 280px !important;
+  }
+
+  body.template-index .image-with-text__content {
+    padding: 2.5rem !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  body.template-index .banner__heading {
+    font-size: clamp(1.8rem, 10vw, 3.5rem) !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  body.template-index .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  body.template-index .card-wrapper {
+    height: 38vh !important;
+    min-height: 220px !important;
+  }
+
+  body.template-index .banner__buttons .button {
+    padding: 0.85rem 1.8rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  body.template-index .collection__title.title-wrapper {
+    padding: 3.5rem 1.5rem 1.5rem !important;
+  }
+}
+
+/* ---- ACCESSIBILITY: respect reduced-motion ---------------- */
+@media (prefers-reduced-motion: reduce) {
+  .cine-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  body.template-index .cine-scroll-indicator__dot,
+  body.template-index .cine-scroll-indicator__line {
+    animation: none !important;
+  }
+}
