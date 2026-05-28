@@ -823,7 +823,7 @@ body.template-index .lumin-slide__inner-content::after {
   top:            1rem !important;
   right:          1.1rem !important;
   font-family:    var(--aw-font) !important;
-  font-size:      0.65rem !important;
+  font-size:      1.3rem !important;
   font-weight:    700 !important;
   color:          #9ca3af !important;
   letter-spacing: 0.05em !important;
