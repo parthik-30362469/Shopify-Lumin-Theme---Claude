@@ -31,15 +31,20 @@
 
 /* ── Video background (inset-0 w-full h-full object-cover) ─── */
 #vh-{{ section.id }} .vh-video {
-  position:   absolute;
-  top:        0;
-  right:      0;
-  bottom:     0;
-  left:       0;
-  width:      100%;
-  height:     100%;
-  object-fit: cover;
-  z-index:    0;
+  position:            absolute;
+  top:                 0;
+  right:               0;
+  bottom:              0;
+  left:                0;
+  width:               100%;
+  height:              100%;
+  object-fit:          cover;
+  z-index:             0;
+  /* GPU compositing — eliminates frame drops and tearing */
+  will-change:         transform;
+  transform:           translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* ── Foreground (relative z-10 flex flex-col min-h-screen) ─── */
@@ -402,15 +407,39 @@
 
   {%- if section.settings.video_url != blank -%}
     <video
+      id="vh-vid-{{ section.id }}"
       class="vh-video"
       autoplay
       muted
       loop
       playsinline
+      preload="auto"
       aria-hidden="true"
     >
       <source src="{{ section.settings.video_url }}" type="video/mp4">
     </video>
+
+    <script>
+      (function () {
+        var vid = document.getElementById('vh-vid-{{ section.id }}');
+        if (!vid) return;
+        var rate = {{ section.settings.video_speed | default: 1.5 }};
+
+        function applyRate() {
+          vid.playbackRate = rate;
+          vid.defaultPlaybackRate = rate;
+        }
+
+        /* Apply immediately if metadata is already loaded, otherwise wait */
+        if (vid.readyState >= 1) {
+          applyRate();
+        } else {
+          vid.addEventListener('loadedmetadata', applyRate, { once: true });
+        }
+        /* Re-apply after any source reload (loop restart on some browsers) */
+        vid.addEventListener('play', applyRate, { passive: true });
+      })();
+    </script>
   {%- endif -%}
 
   <div class="vh-fg">
@@ -445,6 +474,18 @@
       "id": "video_url",
       "label": "Video URL (.mp4)",
       "default": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_215831_c6a8989c-d716-4d8d-8745-e972a2eec711.mp4"
+    },
+    {
+      "type": "select",
+      "id": "video_speed",
+      "label": "Video playback speed",
+      "default": "1.5",
+      "options": [
+        { "value": "1",   "label": "1× — Normal" },
+        { "value": "1.25","label": "1.25× — Slightly faster" },
+        { "value": "1.5", "label": "1.5× — Fast (recommended)" },
+        { "value": "2",   "label": "2× — Very fast" }
+      ]
     },
     {
       "type": "header",
