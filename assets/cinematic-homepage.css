@@ -99,16 +99,18 @@ body.template-index .banner::after {
 
 /* ── Content block: sits ABOVE the image ── */
 body.template-index .banner__content {
-  position:      static !important;
-  order:         1 !important;
-  width:         100% !important;
-  max-width:     960px !important;
-  padding:       0 2rem 2.8rem !important;
-  display:       block !important;
-  text-align:    center !important;
-  background:    transparent !important;
-  z-index:       auto !important;
-  transform:     none !important;
+  position:        static !important;
+  order:           1 !important;
+  width:           100% !important;
+  max-width:       100% !important;
+  padding:         0 2rem 2.8rem !important;
+  display:         flex !important;
+  flex-direction:  column !important;
+  align-items:     center !important;
+  text-align:      center !important;
+  background:      transparent !important;
+  z-index:         auto !important;
+  transform:       none !important;
 }
 
 /* Label removed */
@@ -121,7 +123,12 @@ body.template-index .banner__box {
   border:      none !important;
   box-shadow:  none !important;
   padding:     0 !important;
+  width:       100% !important;
   max-width:   100% !important;
+  display:     flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align:  center !important;
 }
 
 /* Giant display heading — the centrepiece */
