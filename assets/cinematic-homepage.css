@@ -1,4 +1,4 @@
-ial/* ============================================================
+/* ============================================================
    AWWWARDS-INSPIRED HOMEPAGE
    Design: editorial, light warm-grey, heavy display typography
    Font: Inter (400 · 500 · 600 · 700 · 800 · 900)
@@ -780,9 +780,9 @@ body.template-index .lumin-slide__section {
   border-top:       none !important;
 }
 
-/* Sizer — zero padding so marquee runs edge-to-edge */
+/* Sizer — vertical padding gives box-shadows room to show */
 body.template-index .lumin-slide__sizer {
-  padding:          0 !important;
+  padding:          28px 0 !important;
   max-width:        100% !important;
   box-sizing:       border-box !important;
   background:       transparent !important;
@@ -792,6 +792,7 @@ body.template-index .lumin-slide__sizer {
 body.template-index .lumin-marquee-viewport {
   background:       transparent !important;
   background-color: transparent !important;
+  padding:          0 !important;
 }
 
 /* ── White card — fills stretched flex-item height so names align at bottom ── */
@@ -823,7 +824,7 @@ body.template-index .lumin-slide__inner-content::after {
   top:            1rem !important;
   right:          1.1rem !important;
   font-family:    var(--aw-font) !important;
-  font-size:      1.3rem !important;
+  font-size:      0.7rem !important;
   font-weight:    700 !important;
   color:          #9ca3af !important;
   letter-spacing: 0.05em !important;
@@ -880,7 +881,7 @@ body.template-index .lumin-slide__image__wrapper svg {
 body.template-index .lumin-slide__image__wrapper::after {
   content:        attr(data-author) !important;
   font-family:    var(--aw-font) !important;
-  font-size:      1.6rem !important;
+  font-size:      0.82rem !important;
   font-weight:    700 !important;
   color:          var(--aw-text) !important;
   text-transform: uppercase !important;
@@ -898,7 +899,7 @@ body.template-index .lumin-slide__image__wrapper::after {
 
 /* Text wrapper — grows to fill card, pushing name footer to bottom */
 body.template-index .lumin-slide__text-wrapper {
-  padding-top:    4.2rem !important;   /* clears INSTAZCART label with 3× breathing room */
+  padding-top:    2.2rem !important;   /* clears the INSTAZCART label */
   padding-left:   0 !important;
   padding-right:  0 !important;
   padding-bottom: 0 !important;
@@ -925,7 +926,7 @@ body.template-index .lumin-slide__small-heading {
 body.template-index .lumin-slide__text,
 body.template-index .lumin-slide__text p {
   font-family: var(--aw-font) !important;
-  font-size:   1.4rem !important;
+  font-size:   0.82rem !important;
   font-style:  italic !important;
   color:       var(--aw-grey) !important;
   font-weight: 400 !important;
@@ -947,15 +948,16 @@ body.template-index .flickity-button {
 /* ── Marquee cards — fixed width, all stretch to tallest card height ── */
 body.template-index .lumin-slide__flex-item {
   align-self:   stretch !important;
-  width:        220px !important;
-  flex:         0 0 220px !important;
+  width:        300px !important;
+  flex:         0 0 300px !important;
   margin-right: 20px !important;
 }
 
 /* ── Continuous marquee ── */
+/* overflow-x: clip (not hidden) — avoids forcing overflow-y:auto so shadows show vertically */
 body.template-index .lumin-slide__section,
 body.template-index .lumin-slide__sizer {
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
 }
 
 body.template-index .lumin-marquee-viewport {
@@ -1016,8 +1018,10 @@ body.template-index .flickity-page-dots .dot.is-selected {
 /* Mobile: no side padding on testimonial sizer — marquee must run edge-to-edge */
 @media screen and (max-width: 749px) {
   body.template-index .lumin-slide__sizer {
-    padding-left:  0 !important;
-    padding-right: 0 !important;
+    padding-top:    28px !important;
+    padding-bottom: 28px !important;
+    padding-left:   0 !important;
+    padding-right:  0 !important;
   }
 
   /* 50% faster on mobile: 20s ÷ 1.5 = 13s */

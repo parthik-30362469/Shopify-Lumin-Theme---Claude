@@ -60,48 +60,73 @@
     var track    = qs('.lumin-marquee-track');
     if (!viewport || !track) return;
 
-    var dragging       = false;
-    var startX         = 0;
-    var startY         = 0;
-    var offsetAtStart  = 0;
-    var currentPos     = 0;
+    /*
+     * WHY JS time-tracking instead of getComputedStyle:
+     * Mobile Safari runs CSS animations on the GPU compositor thread.
+     * getComputedStyle(track).transform returns the *static* value (0),
+     * not the live animated frame. So drag always started from 0 = first card.
+     * Instead we track elapsed time ourselves and compute the position from that.
+     */
+    var animStartMs = performance.now();   /* updated every time we set a new delay */
+    var dragging    = false;
+    var startX      = 0;
+    var startY      = 0;
+    var basePos     = 0;    /* animation x at moment drag started */
+    var currentPos  = 0;    /* live x during drag */
 
-    /* Parse the browser-computed translateX out of a matrix string */
-    function getComputedX(el) {
-      var t = window.getComputedStyle(el).transform;
-      if (!t || t === 'none') return 0;
-      var m = t.match(/matrix.*\((.+)\)/);
-      return m ? parseFloat(m[1].split(', ')[4]) : 0;
+    function halfTrack() {
+      /* scrollWidth is unaffected by transforms — safe to read during drag */
+      return (track.scrollWidth / 2) || 1440;
     }
 
-    /* Restart animation from a given pixel offset, preserving correct phase */
+    function getDurMs() {
+      return window.matchMedia('(max-width: 749px)').matches ? 13000 : 20000;
+    }
+
+    /* Compute where the CSS animation is RIGHT NOW using our wall-clock tracker */
+    function getJsPos() {
+      var ht  = halfTrack();
+      var dur = getDurMs();
+      var elapsed = (performance.now() - animStartMs) % dur;
+      return -(elapsed / dur) * ht;
+    }
+
+    /* Resume the CSS animation seamlessly from any pixel offset */
     function resumeFrom(pos) {
-      var halfTrack = track.scrollWidth / 2;
-      if (halfTrack <= 0) return;
-      /* Normalise pos into the range [-halfTrack, 0) */
-      pos = pos % -halfTrack;
-      if (pos > 0) pos -= halfTrack;
-      if (pos < -halfTrack) pos += halfTrack;
-      var progress = -pos / halfTrack;                         /* 0 → 1 */
-      var isMobile = window.matchMedia('(max-width: 749px)').matches;
-      var duration = isMobile ? 13 : 20;
-      var delay    = -(progress * duration);                   /* negative = start mid-cycle */
-      track.style.removeProperty('transform');
-      track.style.setProperty('animation-delay', delay + 's', 'important');
-      track.style.removeProperty('animation-play-state');
+      var ht  = halfTrack();
+      var dur = getDurMs();
+
+      /* Normalize pos to [-ht, 0) using sign-safe modulo */
+      var mag      = ((-pos) % ht + ht) % ht;
+      var progress = mag / ht;                         /* 0 → 1 */
+      var delaySec = -(progress * dur / 1000);         /* negative = start mid-cycle */
+
+      /* Keep our JS clock in sync with the new starting point */
+      animStartMs = performance.now() - progress * dur;
+
+      /* Set delay first (paused animation updates its frozen frame to match),
+         then in the next paint remove the inline overrides — zero visual snap */
+      track.style.setProperty('animation-delay', delaySec + 's', 'important');
+      requestAnimationFrame(function () {
+        track.style.removeProperty('transform');
+        track.style.removeProperty('animation-play-state');
+      });
     }
 
     function dragStart(x, y) {
-      dragging      = true;
-      startX        = x;
-      startY        = y;
-      offsetAtStart = getComputedX(track);
+      dragging   = true;
+      startX     = x;
+      startY     = y;
+      basePos    = getJsPos();      /* read position from JS clock, not getComputedStyle */
+      currentPos = basePos;
+      /* Lock the track at exactly this pixel — no snap, even on mobile Safari */
+      track.style.setProperty('transform', 'translateX(' + basePos + 'px)', 'important');
       track.style.setProperty('animation-play-state', 'paused', 'important');
     }
 
     function dragMove(x, y) {
       if (!dragging) return;
-      currentPos = offsetAtStart + (x - startX);
+      currentPos = basePos + (x - startX);
       track.style.setProperty('transform', 'translateX(' + currentPos + 'px)', 'important');
     }
 
@@ -116,10 +141,8 @@
       dragStart(e.clientX, e.clientY);
       e.preventDefault();
     });
-    window.addEventListener('mousemove', function (e) {
-      dragMove(e.clientX, e.clientY);
-    });
-    window.addEventListener('mouseup', dragEnd);
+    window.addEventListener('mousemove', function (e) { dragMove(e.clientX, e.clientY); });
+    window.addEventListener('mouseup',   dragEnd);
 
     /* ── Touch ── */
     viewport.addEventListener('touchstart', function (e) {
@@ -130,11 +153,11 @@
       if (!dragging) return;
       var dx = Math.abs(e.touches[0].clientX - startX);
       var dy = Math.abs(e.touches[0].clientY - startY);
-      if (dx > dy) e.preventDefault();          /* block page scroll only for horizontal swipes */
+      if (dx > dy) e.preventDefault();   /* only block scroll for horizontal swipes */
       dragMove(e.touches[0].clientX, e.touches[0].clientY);
     }, { passive: false });
 
-    viewport.addEventListener('touchend', dragEnd, { passive: true });
+    viewport.addEventListener('touchend',    dragEnd, { passive: true });
     viewport.addEventListener('touchcancel', dragEnd, { passive: true });
   }());
 
