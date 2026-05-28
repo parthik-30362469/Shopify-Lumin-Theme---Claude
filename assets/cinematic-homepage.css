@@ -111,16 +111,9 @@ body.template-index .banner__content {
   transform:     none !important;
 }
 
-/* Small "Site of the Day" label */
+/* Label removed */
 body.template-index .banner__content::before {
-  content: 'Featured Product';
-  display: block;
-  font-size: 0.7rem;
-  font-family: var(--aw-font);
-  font-weight: 400;
-  color: var(--aw-grey);
-  letter-spacing: 0.01em;
-  margin-bottom: 1.2rem;
+  display: none !important;
 }
 
 body.template-index .banner__box {
@@ -145,7 +138,7 @@ body.template-index .banner__heading * {
   margin-bottom:  2rem !important;
 }
 
-/* Premium animated CTA button */
+/* Banner CTA — matches Mission "Shop Products" button exactly */
 body.template-index .banner__buttons {
   display:         flex !important;
   justify-content: center !important;
@@ -157,69 +150,81 @@ body.template-index .banner__buttons {
 
 body.template-index .banner__buttons .button,
 body.template-index .banner__buttons a {
-  position:        relative !important;
-  overflow:        hidden !important;
-  font-family:     var(--aw-font) !important;
-  font-weight:     600 !important;
-  font-size:       0.72rem !important;
-  letter-spacing:  0.18em !important;
-  text-transform:  uppercase !important;
-  background:      var(--aw-text) !important;
-  color:           var(--aw-white) !important;
-  border:          none !important;
-  padding:         1rem 3.2rem !important;
-  border-radius:   60px !important;
-  cursor:          pointer !important;
-  text-decoration: none !important;
   display:         inline-flex !important;
   align-items:     center !important;
-  gap:             0.5rem !important;
-  animation:       awBtnPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
-  transition:      transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                   box-shadow 0.35s ease,
-                   background 0.3s ease !important;
+  gap:             0.55rem !important;
+  padding:         0.95rem 2rem !important;
+
+  background:      var(--aw-text) !important;
+  color:           #ffffff !important;
+  border:          none !important;
+  border-radius:   6px !important;
+  box-shadow:      0 2px 14px rgba(0,0,0,0.14) !important;
+
+  font-family:     var(--aw-font) !important;
+  font-weight:     600 !important;
+  font-size:       0.9rem !important;
+  letter-spacing:  0.02em !important;
+  text-transform:  none !important;
+  text-decoration: none !important;
+  white-space:     nowrap !important;
+
+  min-width:   unset !important;
+  min-height:  unset !important;
+  position:    relative !important;
+  overflow:    hidden !important;
+  cursor:      pointer !important;
+  animation:   none !important;
+  transition:  transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
+               box-shadow 0.3s ease,
+               background 0.25s ease !important;
 }
 
-/* Shimmer sweep on hover */
-body.template-index .banner__buttons .button::after,
-body.template-index .banner__buttons a::after {
+/* Shimmer sweep (::before) */
+body.template-index .banner__buttons .button::before,
+body.template-index .banner__buttons a::before {
   content:    '' !important;
   position:   absolute !important;
-  top:        0 !important;
-  left:       -100% !important;
-  width:      100% !important;
-  height:     100% !important;
-  background: linear-gradient(
-    105deg,
-    transparent 20%,
-    rgba(255, 255, 255, 0.18) 50%,
-    transparent 80%
-  ) !important;
-  transition: left 0.55s ease !important;
+  inset:      0 !important;
+  background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.1) 50%, transparent 80%) !important;
+  transform:  translateX(-100%) !important;
+  transition: transform 0.55s ease !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+  z-index:    1 !important;
 }
 
-body.template-index .banner__buttons .button:hover::after,
-body.template-index .banner__buttons a:hover::after {
-  left: 100% !important;
+/* Arrow → (::after) — slides right on hover */
+body.template-index .banner__buttons .button::after,
+body.template-index .banner__buttons a::after {
+  content:     '→' !important;
+  position:    static !important;
+  inset:       auto !important;
+  display:     inline-block !important;
+  box-shadow:  none !important;
+  background:  transparent !important;
+  border-radius: 0 !important;
+  font-size:   1em !important;
+  line-height: 1 !important;
+  transition:  transform 0.28s cubic-bezier(0.25,0.46,0.45,0.94) !important;
+  z-index:     2 !important;
 }
 
 body.template-index .banner__buttons .button:hover,
 body.template-index .banner__buttons a:hover {
   transform:  translateY(-3px) !important;
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.28) !important;
-  background: #2a2a2a !important;
-  animation:  none !important;
+  box-shadow: 0 10px 32px rgba(0,0,0,0.22) !important;
+  background: #1c1c1c !important;
 }
 
-body.template-index .banner__buttons .button:active {
-  transform:  translateY(-1px) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+body.template-index .banner__buttons .button:hover::before,
+body.template-index .banner__buttons a:hover::before {
+  transform: translateX(100%) !important;
 }
 
-/* Idle pulse animation — draws attention to the button */
-@keyframes awBtnPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.22); }
-  50%       { box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
+body.template-index .banner__buttons .button:hover::after,
+body.template-index .banner__buttons a:hover::after {
+  transform: translateX(5px) !important;
 }
 
 /* ── Image: full-bleed, edge-to-edge ── */
