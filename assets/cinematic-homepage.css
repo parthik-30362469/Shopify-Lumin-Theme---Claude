@@ -837,16 +837,9 @@ body.template-index .lumin-slide__inner-content::after {
   transition:     none !important;
 }
 
-/* Large opening quote — blue, Kissmetrics-style */
+/* Large opening quote — hidden */
 body.template-index .lumin-slide__inner-content::before {
-  content:       '\201C';
-  display:       block !important;
-  font-size:     1.9rem !important;
-  line-height:   0.85 !important;
-  font-family:   Georgia, serif !important;
-  color:         #3b82f6 !important;
-  margin-bottom: 0.2rem !important;
-  position:      static !important;
+  display: none !important;
 }
 
 /* Author footer row — circular avatar + name via data-author */
@@ -887,7 +880,7 @@ body.template-index .lumin-slide__image__wrapper svg {
 body.template-index .lumin-slide__image__wrapper::after {
   content:        attr(data-author) !important;
   font-family:    var(--aw-font) !important;
-  font-size:      0.8rem !important;
+  font-size:      1.6rem !important;
   font-weight:    700 !important;
   color:          var(--aw-text) !important;
   text-transform: uppercase !important;
@@ -969,16 +962,20 @@ body.template-index .lumin-marquee-viewport {
 }
 
 body.template-index .lumin-marquee-track {
-  display:   flex !important;
-  flex-wrap: nowrap !important;
-  gap:       0 !important;
-  width:     max-content !important;
-  overflow:  visible !important;
-  animation: lumin-review-scroll 35s linear infinite !important;
+  display:        flex !important;
+  flex-wrap:      nowrap !important;
+  gap:            0 !important;
+  width:          max-content !important;
+  overflow:       visible !important;
+  will-change:    transform !important;
+  animation:      lumin-review-scroll 20s linear infinite !important;
 }
 
-body.template-index .lumin-marquee-track:hover {
-  animation-play-state: paused !important;
+/* Pause on hover — desktop (true pointer) only; mobile taps must not freeze the marquee */
+@media (hover: hover) {
+  body.template-index .lumin-marquee-track:hover {
+    animation-play-state: paused !important;
+  }
 }
 
 @keyframes lumin-review-scroll {
@@ -1008,11 +1005,11 @@ body.template-index .flickity-page-dots .dot.is-selected {
   background: var(--aw-text) !important;
 }
 
-/* Mobile: tighter padding */
+/* Mobile: no side padding on testimonial sizer — marquee must run edge-to-edge */
 @media screen and (max-width: 749px) {
   body.template-index .lumin-slide__sizer {
-    padding-left:  1.5rem !important;
-    padding-right: 1.5rem !important;
+    padding-left:  0 !important;
+    padding-right: 0 !important;
   }
 }
 
