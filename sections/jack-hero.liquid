@@ -1,0 +1,268 @@
+{%- comment -%} Jack 3D Creator — Hero Section {%- endcomment -%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ── Global portfolio reset ───────────────────────────────── */
+html, body.template-index, body.template-index #root {
+  background: #0C0C0C !important;
+  font-family: 'Kanit', sans-serif !important;
+  overflow-x: clip !important;
+}
+body.template-index .header-wrapper { display: none !important; }
+body.template-index .shopify-section {
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.shopify-section:has(.jack-hero) { background: #0C0C0C !important; }
+
+/* ── Gradient text utility ─────────────────────────────────── */
+.jack-grad {
+  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Hero wrapper ──────────────────────────────────────────── */
+.jack-hero {
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: clip;
+  position: relative;
+  background: #0C0C0C;
+  font-family: 'Kanit', sans-serif;
+}
+
+/* ── Navbar ────────────────────────────────────────────────── */
+.jack-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 0;
+  position: relative;
+  z-index: 30;
+}
+@media (min-width: 768px) { .jack-nav { padding: 2rem 2.5rem 0; } }
+
+.jack-nav a {
+  color: #D7E2EA;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: clamp(0.75rem, 1.4vw, 1.4rem);
+  text-decoration: none;
+  transition: opacity 200ms;
+}
+.jack-nav a:hover { opacity: 0.7; }
+
+/* ── Hero heading ──────────────────────────────────────────── */
+.jack-h1-outer {
+  overflow: hidden;
+  padding: 0 0.2rem;
+  position: relative;
+  z-index: 20;
+  flex-shrink: 0;
+}
+.jack-h1 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  white-space: nowrap;
+  width: 100%;
+  font-size: 14vw;
+  margin-top: 1.5rem;
+}
+@media (min-width: 640px)  { .jack-h1 { font-size: 15vw;   margin-top: 1rem;    } }
+@media (min-width: 768px)  { .jack-h1 { font-size: 16vw;   margin-top: -1.25rem;} }
+@media (min-width: 1024px) { .jack-h1 { font-size: 17.5vw; } }
+
+/* ── Portrait ──────────────────────────────────────────────── */
+.jack-portrait {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  z-index: 10;
+}
+@media (min-width: 640px) {
+  .jack-portrait {
+    top: auto;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+}
+.jack-portrait img {
+  display: block;
+  width: 280px;
+  will-change: transform;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+@media (min-width: 640px)  { .jack-portrait img { width: 360px; } }
+@media (min-width: 768px)  { .jack-portrait img { width: 440px; } }
+@media (min-width: 1024px) { .jack-portrait img { width: 520px; } }
+
+/* ── Bottom bar ────────────────────────────────────────────── */
+.jack-hero-bot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  padding: 0 1.5rem 1.75rem;
+  position: relative;
+  z-index: 30;
+}
+@media (min-width: 640px) { .jack-hero-bot { padding: 0 2rem 2rem;    } }
+@media (min-width: 768px) { .jack-hero-bot { padding: 0 2.5rem 2.5rem;} }
+
+.jack-hero-desc {
+  color: #D7E2EA;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  font-size: clamp(0.75rem, 1.4vw, 1.5rem);
+  max-width: 160px;
+}
+@media (min-width: 640px) { .jack-hero-desc { max-width: 220px; } }
+@media (min-width: 768px) { .jack-hero-desc { max-width: 260px; } }
+
+/* ── ContactButton ─────────────────────────────────────────── */
+.jack-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%);
+  box-shadow: 0 4px 4px rgba(181,1,167,0.25), inset 4px 4px 12px #7721B1;
+  outline: 2px solid white;
+  outline-offset: -3px;
+  border-radius: 9999px;
+  border: none;
+  color: white;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+@media (min-width: 640px) { .jack-contact-btn { padding: 0.875rem 2.5rem; font-size: 0.875rem; } }
+@media (min-width: 768px) { .jack-contact-btn { padding: 1rem 3rem;       font-size: 1rem;     } }
+.jack-contact-btn:hover { opacity: 0.88; }
+
+/* ── FadeIn utility ────────────────────────────────────────── */
+.jfi {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(.25,.1,.25,1),
+              transform 0.7s cubic-bezier(.25,.1,.25,1);
+}
+.jfi.jfi-on { opacity: 1 !important; transform: none !important; }
+.jfi-up { transform: translateY(-20px); }
+.jfi-dn { transform: translateY(40px); }
+.jfi-sm { transform: translateY(20px); }
+.jfi-lg { transform: translateY(30px); }
+</style>
+
+<section class="jack-hero">
+
+  <nav class="jack-nav jfi jfi-up" data-jfi-delay="0">
+    <a href="#jack-about">About</a>
+    <a href="#jack-services">Price</a>
+    <a href="#jack-projects">Projects</a>
+    <a href="#jack-contact">Contact</a>
+  </nav>
+
+  <div class="jack-h1-outer">
+    <h1 class="jack-h1 jack-grad jfi jfi-dn" data-jfi-delay="0.15">Hi, i&apos;m jack</h1>
+  </div>
+
+  <div class="jack-portrait" id="jack-magnet-wrap">
+    <div id="jack-magnet-inner">
+      <img
+        src="https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png"
+        alt="Jack portrait"
+        loading="eager"
+        class="jfi jfi-lg"
+        data-jfi-delay="0.6"
+      >
+    </div>
+  </div>
+
+  <div class="jack-hero-bot">
+    <p class="jack-hero-desc jfi jfi-sm" data-jfi-delay="0.35">
+      a 3d creator driven by crafting striking and unforgettable projects
+    </p>
+    <a href="#jack-contact" class="jack-contact-btn jfi jfi-sm" data-jfi-delay="0.5">
+      Contact Me
+    </a>
+  </div>
+
+</section>
+
+<script>
+(function(){
+  /* ── FadeIn ── */
+  function runFadeIns(){
+    var els = document.querySelectorAll('.jfi');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(e){ e.classList.add('jfi-on'); }); return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        var el = entry.target;
+        var d  = parseFloat(el.getAttribute('data-jfi-delay')||'0')*1000;
+        setTimeout(function(){ el.classList.add('jfi-on'); }, d);
+        io.unobserve(el);
+      });
+    },{ rootMargin:'50px', threshold:0 });
+    els.forEach(function(e){ io.observe(e); });
+  }
+
+  /* ── Magnet ── */
+  function runMagnet(){
+    var wrap = document.getElementById('jack-magnet-wrap');
+    var inner = document.getElementById('jack-magnet-inner');
+    if(!wrap||!inner) return;
+    var padding=150, strength=3;
+    document.addEventListener('mousemove', function(e){
+      var r=wrap.getBoundingClientRect();
+      var cx=r.left+r.width/2, cy=r.top+r.height/2;
+      var dx=e.clientX-cx, dy=e.clientY-cy;
+      var dist=Math.sqrt(dx*dx+dy*dy);
+      var zone=Math.max(r.width,r.height)/2+padding;
+      if(dist<zone){
+        inner.style.transform='translate3d('+(dx/strength)+'px,'+(dy/strength)+'px,0)';
+        inner.style.transition='transform 0.3s ease-out';
+      } else {
+        inner.style.transform='translate3d(0,0,0)';
+        inner.style.transition='transform 0.6s ease-in-out';
+      }
+    });
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', function(){ runFadeIns(); runMagnet(); });
+  } else { runFadeIns(); runMagnet(); }
+})();
+</script>
+
+{% schema %}
+{ "name":"Jack Hero","tag":"div","class":"jack-hero-section","settings":[],"presets":[{"name":"Jack Hero"}] }
+{% endschema %}
