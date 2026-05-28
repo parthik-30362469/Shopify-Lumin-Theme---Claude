@@ -257,7 +257,7 @@
   transform: translateX(2px);
 }
 
-/* ── Centered headline + CTA overlay ───────────────────────── */
+/* ── Headline + CTA overlay — pinned to top ─────────────────── */
 #vh-{{ section.id }} .vh-center {
   position:        absolute;
   inset:           0;
@@ -265,17 +265,36 @@
   display:         flex;
   flex-direction:  column;
   align-items:     center;
-  justify-content: center;
-  padding:         0 1.5rem;
-  gap:             2rem;
+  justify-content: flex-start;   /* top-aligned */
+  padding:         3rem 1.5rem 0;
+  gap:             1.6rem;
   text-align:      center;
-  pointer-events:  none; /* let video clicks pass through except on interactive elements */
+  pointer-events:  none;
+}
+
+/* Soft white gradient halo — sits behind the text, fades to transparent
+   so the video shows through below while the headline always pops */
+#vh-{{ section.id }} .vh-center::before {
+  content:  '';
+  position: absolute;
+  top:      0;
+  left:     0;
+  right:    0;
+  height:   55%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.82) 0%,
+    rgba(255,255,255,0.55) 40%,
+    transparent            100%
+  );
+  pointer-events: none;
+  z-index:  -1;
 }
 
 /* ── Big bold headline ─────────────────────────────────────── */
 #vh-{{ section.id }} .vh-headline {
   font-family:    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  font-size:      clamp(2.6rem, 9vw, 11.5rem);
+  font-size:      clamp(2.4rem, 8.5vw, 11rem);
   font-weight:    900;
   line-height:    0.92;
   letter-spacing: -0.03em;
@@ -283,6 +302,19 @@
   color:          #0a0a0a !important;
   margin:         0;
   pointer-events: none;
+  /* Entrance: slide down + fade in */
+  animation:      vh-headline-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes vh-headline-in {
+  from { opacity: 0; transform: translateY(-28px); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+
+@media (max-width: 749px) {
+  #vh-{{ section.id }} .vh-center {
+    padding-top: 2rem;
+  }
 }
 
 /* ── Dark CTA button ───────────────────────────────────────── */
@@ -306,9 +338,16 @@
   overflow:        hidden;
   cursor:          pointer;
   pointer-events:  all;
-  /* Idle float animation */
-  animation:       vh-float 3s ease-in-out infinite;
+  /* Entrance then idle float */
+  animation:       vh-btn-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both,
+                   vh-float  3s ease-in-out               1.2s infinite;
   transition:      background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+/* Button entrance */
+@keyframes vh-btn-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
 
 /* Float up/down when idle — draws the eye */
