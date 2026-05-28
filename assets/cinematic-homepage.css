@@ -49,6 +49,16 @@ body.template-index .header-wrapper {
   transition: none !important;
 }
 
+/* ---- VIDEO HERO — prevent global rules from leaking in ---- */
+/* The shopify-section wrapper for the video hero must have no bg/margin */
+body.template-index .shopify-section--video-hero {
+  background:   transparent !important;
+  margin:       0 !important;
+  padding:      0 !important;
+  border:       none !important;
+  box-shadow:   none !important;
+}
+
 /* Dark text for nav items */
 body.template-index .header__heading-link,
 body.template-index .header__heading-link .h2,
