@@ -1,0 +1,234 @@
+{%- comment -%} Jack 3D Creator — Projects Section with sticky stacking cards {%- endcomment -%}
+
+<style>
+.jack-projects {
+  background: #0C0C0C;
+  border-radius: 40px 40px 0 0;
+  margin-top: -2.5rem;
+  position: relative;
+  z-index: 10;
+  padding: 5rem 1.25rem 8rem;
+  font-family: 'Kanit', sans-serif;
+}
+@media (min-width: 640px) { .jack-projects { border-radius:50px 50px 0 0; margin-top:-3rem;   padding:6rem 2rem 10rem;    } }
+@media (min-width: 768px) { .jack-projects { border-radius:60px 60px 0 0; margin-top:-3.5rem; padding:8rem 2.5rem 12rem;  } }
+
+.jack-proj-h2 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-align: center;
+  font-size: clamp(3rem, 12vw, 160px);
+  margin: 0 0 5rem;
+}
+
+/* Each project occupies 85vh so sticky effect has room */
+.jack-proj-slot {
+  height: 85vh;
+  position: relative;
+}
+
+.jack-card {
+  position: sticky;
+  top: 6rem;
+  border-radius: 40px;
+  border: 2px solid #D7E2EA;
+  background: #0C0C0C;
+  padding: 1rem;
+  will-change: transform;
+  transform-origin: center top;
+}
+@media (min-width: 640px) { .jack-card { border-radius:50px; padding:1.5rem; top:7rem; } }
+@media (min-width: 768px) { .jack-card { border-radius:60px; padding:2rem;   top:8rem; } }
+
+/* Card top row */
+.jack-card-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.jack-card-num {
+  color: #D7E2EA;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 140px);
+  line-height: 1;
+  flex-shrink: 0;
+}
+.jack-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+.jack-card-category {
+  color: rgba(215,226,234,0.6);
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.jack-card-name {
+  color: #D7E2EA;
+  font-size: clamp(1rem, 2.2vw, 2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.jack-live-btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 2px solid #D7E2EA;
+  color: #D7E2EA;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+  margin-left: auto;
+}
+@media (min-width: 640px) { .jack-live-btn { padding:0.875rem 2.5rem; font-size:1rem; } }
+.jack-live-btn:hover { background: rgba(215,226,234,0.1); }
+
+/* Card image grid */
+.jack-card-imgs {
+  display: flex;
+  gap: 0.75rem;
+}
+.jack-card-col1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 40%;
+  flex-shrink: 0;
+}
+.jack-card-col2 {
+  flex: 1;
+}
+.jack-card-col1 img,
+.jack-card-col2 img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 40px;
+}
+@media (min-width: 640px) { .jack-card-col1 img, .jack-card-col2 img { border-radius:50px; } }
+@media (min-width: 768px) { .jack-card-col1 img, .jack-card-col2 img { border-radius:60px; } }
+
+.jack-card-col1 img:first-child { height: clamp(130px, 16vw, 230px); }
+.jack-card-col1 img:last-child  { height: clamp(160px, 22vw, 340px); }
+.jack-card-col2 img             { height: 100%; min-height: clamp(290px, 38vw, 570px); }
+</style>
+
+<section class="jack-projects" id="jack-projects">
+
+  <h2 class="jack-proj-h2 jack-grad jfi jfi-dn" data-jfi-delay="0">Project</h2>
+
+  <!-- Card 1 -->
+  <div class="jack-proj-slot" data-card="0">
+    <div class="jack-card" style="top: 6rem;">
+      <div class="jack-card-top">
+        <span class="jack-card-num">01</span>
+        <div class="jack-card-meta">
+          <span class="jack-card-category">Client</span>
+          <span class="jack-card-name">Nextlevel Studio</span>
+        </div>
+        <a href="#" class="jack-live-btn">Live Project</a>
+      </div>
+      <div class="jack-card-imgs">
+        <div class="jack-card-col1">
+          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85" alt="Nextlevel Studio 1" loading="lazy">
+          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85" alt="Nextlevel Studio 2" loading="lazy">
+        </div>
+        <div class="jack-card-col2">
+          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85" alt="Nextlevel Studio 3" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="jack-proj-slot" data-card="1">
+    <div class="jack-card" style="top: calc(6rem + 28px);">
+      <div class="jack-card-top">
+        <span class="jack-card-num">02</span>
+        <div class="jack-card-meta">
+          <span class="jack-card-category">Personal</span>
+          <span class="jack-card-name">Aura Brand Identity</span>
+        </div>
+        <a href="#" class="jack-live-btn">Live Project</a>
+      </div>
+      <div class="jack-card-imgs">
+        <div class="jack-card-col1">
+          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85" alt="Aura 1" loading="lazy">
+          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85" alt="Aura 2" loading="lazy">
+        </div>
+        <div class="jack-card-col2">
+          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85" alt="Aura 3" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="jack-proj-slot" data-card="2">
+    <div class="jack-card" style="top: calc(6rem + 56px);">
+      <div class="jack-card-top">
+        <span class="jack-card-num">03</span>
+        <div class="jack-card-meta">
+          <span class="jack-card-category">Client</span>
+          <span class="jack-card-name">Solaris Digital</span>
+        </div>
+        <a href="#" class="jack-live-btn">Live Project</a>
+      </div>
+      <div class="jack-card-imgs">
+        <div class="jack-card-col1">
+          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85" alt="Solaris 1" loading="lazy">
+          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85" alt="Solaris 2" loading="lazy">
+        </div>
+        <div class="jack-card-col2">
+          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85" alt="Solaris 3" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+(function(){
+  /* ── Sticky card scale effect ── */
+  var slots = document.querySelectorAll('.jack-proj-slot');
+  var cards = document.querySelectorAll('.jack-proj-slot .jack-card');
+  var TOTAL = cards.length;
+
+  function updateCards(){
+    cards.forEach(function(card, i){
+      var slot = card.parentElement;
+      var rect = slot.getBoundingClientRect();
+      var progress = 1 - (rect.bottom / window.innerHeight);
+      var clamped = Math.max(0, Math.min(1, progress));
+      var targetScale = 1 - (TOTAL - 1 - i) * 0.03;
+      var scale = 1 - (1 - targetScale) * clamped;
+      var offsetY = i * 28;
+      card.style.transform = 'translateY(' + offsetY + 'px) scale(' + scale + ')';
+    });
+  }
+
+  window.addEventListener('scroll', updateCards, { passive:true });
+  updateCards();
+})();
+</script>
+
+{% schema %}
+{ "name":"Jack Projects","tag":"div","class":"jack-projects-section","settings":[],"presets":[{"name":"Jack Projects"}] }
+{% endschema %}

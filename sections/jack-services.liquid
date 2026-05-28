@@ -1,0 +1,134 @@
+{%- comment -%} Jack 3D Creator — Services Section {%- endcomment -%}
+
+<style>
+.jack-services {
+  background: #ffffff;
+  border-radius: 40px 40px 0 0;
+  padding: 5rem 1.25rem;
+  font-family: 'Kanit', sans-serif;
+  position: relative;
+  z-index: 5;
+}
+@media (min-width: 640px) { .jack-services { border-radius: 50px 50px 0 0; padding: 6rem 2rem;    } }
+@media (min-width: 768px) { .jack-services { border-radius: 60px 60px 0 0; padding: 8rem 2.5rem;  } }
+
+.jack-services-h2 {
+  color: #0C0C0C;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-align: center;
+  font-size: clamp(3rem, 12vw, 160px);
+  margin: 0 0 4rem;
+}
+@media (min-width: 640px) { .jack-services-h2 { margin-bottom: 5rem;  } }
+@media (min-width: 768px) { .jack-services-h2 { margin-bottom: 7rem;  } }
+
+.jack-svc-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 64rem;
+}
+
+.jack-svc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(12,12,12,0.15);
+}
+.jack-svc-item:first-child { border-top: 1px solid rgba(12,12,12,0.15); }
+@media (min-width: 640px) { .jack-svc-item { padding: 2.5rem 0; gap: 2rem;  } }
+@media (min-width: 768px) { .jack-svc-item { padding: 3rem 0;   gap: 2.5rem;} }
+
+.jack-svc-num {
+  color: #0C0C0C;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 140px);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: clamp(3rem, 10vw, 140px);
+}
+
+.jack-svc-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.jack-svc-name {
+  color: #0C0C0C;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 2.2vw, 2.1rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.jack-svc-desc {
+  color: #0C0C0C;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+  line-height: 1.625;
+  max-width: 42rem;
+  font-size: clamp(0.85rem, 1.6vw, 1.25rem);
+  opacity: 0.6;
+  margin: 0;
+}
+</style>
+
+{%- assign services = "01||3D Modeling||Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.,02||Rendering||High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.,03||Motion Design||Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.,04||Branding||Crafting cohesive visual identities — from logos to full brand systems — that communicate a clear and memorable presence.,05||Web Design||Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience." | split: "," -%}
+
+<section class="jack-services" id="jack-services">
+
+  <h2 class="jack-services-h2 jfi jfi-dn" data-jfi-delay="0">Services</h2>
+
+  <ul class="jack-svc-list">
+    <li class="jack-svc-item jfi jfi-sm" data-jfi-delay="0">
+      <span class="jack-svc-num">01</span>
+      <div class="jack-svc-content">
+        <p class="jack-svc-name">3D Modeling</p>
+        <p class="jack-svc-desc">Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.</p>
+      </div>
+    </li>
+    <li class="jack-svc-item jfi jfi-sm" data-jfi-delay="0.1">
+      <span class="jack-svc-num">02</span>
+      <div class="jack-svc-content">
+        <p class="jack-svc-name">Rendering</p>
+        <p class="jack-svc-desc">High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.</p>
+      </div>
+    </li>
+    <li class="jack-svc-item jfi jfi-sm" data-jfi-delay="0.2">
+      <span class="jack-svc-num">03</span>
+      <div class="jack-svc-content">
+        <p class="jack-svc-name">Motion Design</p>
+        <p class="jack-svc-desc">Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.</p>
+      </div>
+    </li>
+    <li class="jack-svc-item jfi jfi-sm" data-jfi-delay="0.3">
+      <span class="jack-svc-num">04</span>
+      <div class="jack-svc-content">
+        <p class="jack-svc-name">Branding</p>
+        <p class="jack-svc-desc">Crafting cohesive visual identities — from logos to full brand systems — that communicate a clear and memorable presence.</p>
+      </div>
+    </li>
+    <li class="jack-svc-item jfi jfi-sm" data-jfi-delay="0.4">
+      <span class="jack-svc-num">05</span>
+      <div class="jack-svc-content">
+        <p class="jack-svc-name">Web Design</p>
+        <p class="jack-svc-desc">Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience.</p>
+      </div>
+    </li>
+  </ul>
+
+</section>
+
+{% schema %}
+{ "name":"Jack Services","tag":"div","class":"jack-services-section","settings":[],"presets":[{"name":"Jack Services"}] }
+{% endschema %}

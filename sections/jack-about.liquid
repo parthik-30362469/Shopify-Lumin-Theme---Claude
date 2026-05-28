@@ -1,0 +1,167 @@
+{%- comment -%} Jack 3D Creator — About Section {%- endcomment -%}
+
+<style>
+.jack-about {
+  min-height: 100vh;
+  position: relative;
+  background: #0C0C0C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.25rem;
+  overflow: hidden;
+  font-family: 'Kanit', sans-serif;
+}
+@media (min-width: 640px) { .jack-about { padding: 5rem 2rem;  } }
+@media (min-width: 768px) { .jack-about { padding: 5rem 2.5rem;} }
+
+/* Corner decorative images */
+.jack-about-deco {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+.jack-deco-tl {
+  top: 4%; left: 1%;
+  width: 120px;
+}
+.jack-deco-bl {
+  bottom: 8%; left: 3%;
+  width: 100px;
+}
+.jack-deco-tr {
+  top: 4%; right: 1%;
+  width: 120px;
+}
+.jack-deco-br {
+  bottom: 8%; right: 3%;
+  width: 130px;
+}
+@media (min-width: 640px) {
+  .jack-deco-tl { width:160px; left:2%;  }
+  .jack-deco-bl { width:140px; left:6%;  }
+  .jack-deco-tr { width:160px; right:2%; }
+  .jack-deco-br { width:170px; right:6%; }
+}
+@media (min-width: 768px) {
+  .jack-deco-tl { width:210px; left:4%;  }
+  .jack-deco-bl { width:180px; left:10%; }
+  .jack-deco-tr { width:210px; right:4%; }
+  .jack-deco-br { width:220px; right:10%;}
+}
+.jack-about-deco img { width: 100%; display: block; }
+
+/* Content column */
+.jack-about-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 5;
+}
+@media (min-width: 640px) { .jack-about-inner { gap: 3.5rem;  } }
+@media (min-width: 768px) { .jack-about-inner { gap: 4rem;    } }
+
+.jack-about-h2 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-size: clamp(3rem, 12vw, 160px);
+  margin: 0;
+}
+
+.jack-about-body {
+  color: #D7E2EA;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.625;
+  max-width: 560px;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  margin: 0;
+}
+
+/* Character-level animated text */
+.jack-anim-char {
+  display: inline;
+  opacity: 0.2;
+  transition: opacity 0.06s ease;
+}
+
+/* FadeIn for corner images */
+.jfi-x-neg { transform: translateX(-80px); }
+.jfi-x-pos { transform: translateX(80px);  }
+</style>
+
+<section class="jack-about" id="jack-about">
+
+  <!-- Top-left moon -->
+  <div class="jack-about-deco jack-deco-tl jfi jfi-x-neg" data-jfi-delay="0.1">
+    <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png" alt="">
+  </div>
+  <!-- Bottom-left object -->
+  <div class="jack-about-deco jack-deco-bl jfi jfi-x-neg" data-jfi-delay="0.25">
+    <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/p59_1.4659672e.png" alt="">
+  </div>
+  <!-- Top-right lego -->
+  <div class="jack-about-deco jack-deco-tr jfi jfi-x-pos" data-jfi-delay="0.15">
+    <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/lego_icon-1.703bb594.png" alt="">
+  </div>
+  <!-- Bottom-right group -->
+  <div class="jack-about-deco jack-deco-br jfi jfi-x-pos" data-jfi-delay="0.3">
+    <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/Group_134-1.2e04f3ce.png" alt="">
+  </div>
+
+  <div class="jack-about-inner">
+    <h2 class="jack-about-h2 jack-grad jfi jfi-dn" data-jfi-delay="0">About me</h2>
+
+    <p class="jack-about-body" id="jack-anim-text">With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let&apos;s build something incredible together!</p>
+
+    <a href="#jack-contact" class="jack-contact-btn jfi jfi-sm" data-jfi-delay="0.2">
+      Contact Me
+    </a>
+  </div>
+
+</section>
+
+<script>
+(function(){
+  /* ── Animated paragraph: character opacity by scroll ── */
+  var para = document.getElementById('jack-anim-text');
+  if(para){
+    var text = para.textContent;
+    para.innerHTML = '';
+    var chars = text.split('').map(function(ch){
+      var s = document.createElement('span');
+      s.className = 'jack-anim-char';
+      s.textContent = ch === ' ' ? ' ' : ch;
+      para.appendChild(s);
+      return s;
+    });
+
+    function updateChars(){
+      var r       = para.getBoundingClientRect();
+      var vh      = window.innerHeight;
+      var start   = r.top + window.scrollY - vh * 0.8;
+      var end     = r.bottom + window.scrollY - vh * 0.2;
+      var prog    = (window.scrollY - start) / (end - start);
+      prog = Math.max(0, Math.min(1, prog));
+      var total   = chars.length;
+      chars.forEach(function(s, i){
+        var cp = Math.max(0, Math.min(1, (prog * total - i)));
+        s.style.opacity = 0.2 + 0.8 * cp;
+      });
+    }
+    window.addEventListener('scroll', updateChars, { passive:true });
+    updateChars();
+  }
+})();
+</script>
+
+{% schema %}
+{ "name":"Jack About","tag":"div","class":"jack-about-section","settings":[],"presets":[{"name":"Jack About"}] }
+{% endschema %}

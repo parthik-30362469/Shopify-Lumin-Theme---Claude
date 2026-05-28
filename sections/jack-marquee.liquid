@@ -1,0 +1,84 @@
+{%- comment -%} Jack 3D Creator — Scroll-driven GIF Marquee {%- endcomment -%}
+
+<style>
+.jack-marquee {
+  background: #0C0C0C;
+  padding-top: 6rem;
+  padding-bottom: 2.5rem;
+  overflow: hidden;
+  font-family: 'Kanit', sans-serif;
+}
+@media (min-width: 640px) { .jack-marquee { padding-top: 8rem;  } }
+@media (min-width: 768px) { .jack-marquee { padding-top: 10rem; } }
+
+.jack-mq-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  will-change: transform;
+}
+.jack-mq-tile {
+  flex-shrink: 0;
+  width: 420px;
+  height: 270px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.jack-mq-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+</style>
+
+{%- assign row1 = "https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif,https://motionsites.ai/assets/hero-codenest-preview-Cgppc2qV.gif,https://motionsites.ai/assets/hero-vex-ventures-preview-BczMFIiw.gif,https://motionsites.ai/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif,https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif,https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif,https://motionsites.ai/assets/hero-vitara-preview-Cjz2QYyU.gif,https://motionsites.ai/assets/hero-terra-preview-BFjrCr7T.gif,https://motionsites.ai/assets/hero-skyelite-preview-DHaZIgUv.gif,https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif,https://motionsites.ai/assets/hero-designpro-preview-D8c5_een.gif" | split: "," -%}
+{%- assign row2 = "https://motionsites.ai/assets/hero-stellar-ai-preview-D3HL6bw1.gif,https://motionsites.ai/assets/hero-xportfolio-preview-D4A8maiC.gif,https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif,https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif,https://motionsites.ai/assets/hero-evr-ventures-preview-DZxeVFEX.gif,https://motionsites.ai/assets/hero-planet-orbit-preview-DWAP8Z1P.gif,https://motionsites.ai/assets/hero-new-era-preview-CocuDUm9.gif,https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif,https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif,https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif" | split: "," -%}
+
+<section class="jack-marquee" id="jack-marquee">
+
+  <div class="jack-mq-row" id="jack-row1">
+    {%- for i in (1..3) -%}
+      {%- for url in row1 -%}
+        <div class="jack-mq-tile">
+          <img src="{{ url }}" alt="project preview" loading="lazy">
+        </div>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+
+  <div class="jack-mq-row" id="jack-row2">
+    {%- for i in (1..3) -%}
+      {%- for url in row2 -%}
+        <div class="jack-mq-tile">
+          <img src="{{ url }}" alt="project preview" loading="lazy">
+        </div>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+
+</section>
+
+<script>
+(function(){
+  var sec  = document.getElementById('jack-marquee');
+  var row1 = document.getElementById('jack-row1');
+  var row2 = document.getElementById('jack-row2');
+  if(!sec||!row1||!row2) return;
+
+  function update(){
+    var rect   = sec.getBoundingClientRect();
+    var offset = (-rect.top + window.innerHeight) * 0.3;
+    row1.style.transform = 'translateX(' + (offset - 200) + 'px)';
+    row2.style.transform = 'translateX(' + (-(offset - 200)) + 'px)';
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
+
+{% schema %}
+{ "name":"Jack Marquee","tag":"div","class":"jack-marquee-section","settings":[],"presets":[{"name":"Jack Marquee"}] }
+{% endschema %}
