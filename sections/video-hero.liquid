@@ -275,40 +275,6 @@
 
   <div class="vh-fg">
 
-    <!-- Bottom-left hero content -->
-    <div class="vh-bottom">
-      <div class="vh-inner">
-
-        <!-- Badge -->
-        {%- if section.settings.badge_text != blank -%}
-          <a href="{{ section.settings.badge_url | default: '#' }}" class="vh-badge">
-            <span class="vh-badge-inner">
-              {{- section.settings.badge_text -}}
-              <span class="vh-arrow" aria-hidden="true">&#8594;</span>
-            </span>
-          </a>
-        {%- endif -%}
-
-        <!-- Headline -->
-        {%- if section.settings.heading != blank -%}
-          <h1 class="vh-h1">{{ section.settings.heading }}</h1>
-        {%- endif -%}
-
-        <!-- Subtext -->
-        {%- if section.settings.subtext != blank -%}
-          <p class="vh-sub">{{ section.settings.subtext }}</p>
-        {%- endif -%}
-
-        <!-- CTA -->
-        {%- if section.settings.cta_label != blank -%}
-          <a href="{{ section.settings.cta_url | default: '#' }}" class="vh-cta">
-            {{- section.settings.cta_label -}}
-            <span class="vh-arrow" aria-hidden="true">&#8594;</span>
-          </a>
-        {%- endif -%}
-
-      </div>
-    </div>
 
   </div>
 </div>
