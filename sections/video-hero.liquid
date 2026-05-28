@@ -254,7 +254,108 @@
 
 #vh-{{ section.id }} .vh-badge:hover .vh-arrow,
 #vh-{{ section.id }} .vh-cta:hover   .vh-arrow {
-  transform: translateX(2px); /* translate-x-0.5 = 2px */
+  transform: translateX(2px);
+}
+
+/* ── Centered headline + CTA overlay ───────────────────────── */
+#vh-{{ section.id }} .vh-center {
+  position:        absolute;
+  inset:           0;
+  z-index:         20;
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  padding:         0 1.5rem;
+  gap:             2rem;
+  text-align:      center;
+  pointer-events:  none; /* let video clicks pass through except on interactive elements */
+}
+
+/* ── Big bold headline ─────────────────────────────────────── */
+#vh-{{ section.id }} .vh-headline {
+  font-family:    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size:      clamp(2.6rem, 9vw, 11.5rem);
+  font-weight:    900;
+  line-height:    0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color:          #0a0a0a !important;
+  margin:         0;
+  pointer-events: none;
+}
+
+/* ── Dark CTA button ───────────────────────────────────────── */
+#vh-{{ section.id }} .vh-cta-btn,
+#vh-{{ section.id }} .vh-cta-btn:visited {
+  position:        relative;
+  display:         inline-flex;
+  align-items:     center;
+  gap:             0.55rem;
+  padding:         0.65rem 1.6rem;
+  background:      #111111;
+  color:           #ffffff !important;
+  border:          none;
+  border-radius:   6px;
+  font-family:     -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size:       12px;
+  font-weight:     600;
+  letter-spacing:  0.12em;
+  text-transform:  uppercase;
+  text-decoration: none;
+  overflow:        hidden;
+  cursor:          pointer;
+  pointer-events:  all;
+  /* Idle float animation */
+  animation:       vh-float 3s ease-in-out infinite;
+  transition:      background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+/* Float up/down when idle — draws the eye */
+@keyframes vh-float {
+  0%, 100% { transform: translateY(0);    box-shadow: 0 4px 20px rgba(0,0,0,0.18); }
+  50%       { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(0,0,0,0.22); }
+}
+
+/* Hover — pause float, scale up, darken */
+#vh-{{ section.id }} .vh-cta-btn:hover {
+  background:       #2a2a2a !important;
+  animation-play-state: paused;
+  transform:        translateY(-2px) scale(1.03) !important;
+  box-shadow:       0 8px 32px rgba(0,0,0,0.28) !important;
+}
+
+/* Shimmer sweep on hover (::before pseudo-element) */
+#vh-{{ section.id }} .vh-cta-btn::before {
+  content:    '';
+  position:   absolute;
+  top:        0;
+  left:       -75%;
+  width:      50%;
+  height:     100%;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255,255,255,0.18) 50%,
+    transparent 80%
+  );
+  transform:  skewX(-15deg);
+  transition: left 0s;
+}
+
+#vh-{{ section.id }} .vh-cta-btn:hover::before {
+  left:       130%;
+  transition: left 0.55s ease;
+}
+
+/* Arrow nudge on hover */
+#vh-{{ section.id }} .vh-cta-btn .vh-btn-arrow {
+  display:    inline-block;
+  transition: transform 0.22s ease;
+}
+
+#vh-{{ section.id }} .vh-cta-btn:hover .vh-btn-arrow {
+  transform: translateX(3px);
 }
 </style>
 
@@ -275,6 +376,14 @@
 
   <div class="vh-fg">
 
+    <!-- Centered headline + CTA -->
+    <div class="vh-center">
+      <h1 class="vh-headline">{{ section.settings.headline | default: 'Innovations That Make Life Easier' }}</h1>
+      <a href="{{ section.settings.hero_cta_url | default: 'shopify://collections/all' }}" class="vh-cta-btn">
+        {{- section.settings.hero_cta_label | default: 'Explore Now' -}}
+        <span class="vh-btn-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+    </div>
 
   </div>
 </div>
@@ -297,6 +406,27 @@
       "id": "video_url",
       "label": "Video URL (.mp4)",
       "default": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_215831_c6a8989c-d716-4d8d-8745-e972a2eec711.mp4"
+    },
+    {
+      "type": "header",
+      "content": "Headline & CTA"
+    },
+    {
+      "type": "textarea",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Innovations That Make Life Easier"
+    },
+    {
+      "type": "text",
+      "id": "hero_cta_label",
+      "label": "CTA button label",
+      "default": "Explore Now"
+    },
+    {
+      "type": "url",
+      "id": "hero_cta_url",
+      "label": "CTA button link"
     },
     {
       "type": "header",
