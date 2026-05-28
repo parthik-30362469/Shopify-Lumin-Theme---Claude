@@ -773,17 +773,25 @@ body.template-index .rich-text__blocks::before {
   display: none;
 }
 
+/* Testimonial section — no visible container, blends into page */
 body.template-index .lumin-slide__section {
-  background: var(--aw-bg) !important;
-  border-top: none !important;
+  background:       transparent !important;
+  background-color: transparent !important;
+  border-top:       none !important;
 }
 
-/* Match horizontal padding to product section */
+/* Sizer — zero padding so marquee runs edge-to-edge */
 body.template-index .lumin-slide__sizer {
-  padding-left:  5rem !important;
-  padding-right: 5rem !important;
-  max-width:     100% !important;
-  box-sizing:    border-box !important;
+  padding:          0 !important;
+  max-width:        100% !important;
+  box-sizing:       border-box !important;
+  background:       transparent !important;
+  background-color: transparent !important;
+}
+
+body.template-index .lumin-marquee-viewport {
+  background:       transparent !important;
+  background-color: transparent !important;
 }
 
 /* ── White card — sized to content, no fixed height ── */
@@ -963,7 +971,9 @@ body.template-index .lumin-marquee-viewport {
 body.template-index .lumin-marquee-track {
   display:   flex !important;
   flex-wrap: nowrap !important;
+  gap:       0 !important;
   width:     max-content !important;
+  overflow:  visible !important;
   animation: lumin-review-scroll 35s linear infinite !important;
 }
 
