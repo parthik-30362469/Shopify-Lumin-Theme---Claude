@@ -766,70 +766,175 @@ body.template-index .rich-text p {
 }
 
 /* ---- TESTIMONIAL SLIDER ---------------------------------- */
+
+/* "Reviews" small label above section heading */
+body.template-index .rich-text__blocks::before {
+  content:       'Reviews';
+  display:       block;
+  font-size:     0.7rem;
+  font-family:   var(--aw-font);
+  font-weight:   400;
+  color:         var(--aw-grey);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0;
+}
+
 body.template-index .lumin-slide__section {
   background: var(--aw-bg) !important;
   border-top: none !important;
 }
 
+/* Match horizontal padding to product section */
+body.template-index .lumin-slide__sizer {
+  padding-left:  5rem !important;
+  padding-right: 5rem !important;
+  max-width:     100% !important;
+  box-sizing:    border-box !important;
+}
+
+/* ── White card — same style as product cards ── */
 body.template-index .lumin-slide__inner-content {
-  background:    var(--aw-white) !important;
-  border:        1px solid var(--aw-border) !important;
-  border-radius: 6px !important;
+  background:     var(--aw-white) !important;
+  border-radius:  10px !important;
+  border:         1px solid var(--aw-border) !important;
+  box-shadow:     none !important;
+  padding:        1.75rem !important;
+  display:        flex !important;
+  flex-direction: column !important;
+  position:       relative !important;
+  height:         100% !important;
+  box-sizing:     border-box !important;
+  transition:     box-shadow 0.3s ease, transform 0.3s ease !important;
 }
 
-body.template-index .lumin-slide__small-heading,
-body.template-index .lumin-slide__heading {
-  font-family: var(--aw-font) !important;
-  font-weight: 700 !important;
-  font-size:   0.92rem !important;
-  color:       var(--aw-text) !important;
+body.template-index .lumin-slide__inner-content:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1) !important;
+  transform:  translateY(-4px) !important;
+}
+
+/* Remove the old gold bar */
+body.template-index .lumin-slide__inner-content::after {
+  display: none !important;
+}
+
+/* Large opening quote — decorative, matches editorial tone */
+body.template-index .lumin-slide__inner-content::before {
+  content:       '\201C';
+  display:       block !important;
+  font-size:     3.2rem !important;
+  line-height:   0.9 !important;
+  font-family:   Georgia, serif !important;
+  color:         var(--aw-border) !important;
+  margin-bottom: 0.4rem !important;
+  position:      static !important;
+}
+
+/* Hide the gold checkmark icon — replaced by quote decoration */
+body.template-index .lumin-slide__image__wrapper {
+  display: none !important;
+}
+
+/* Text wrapper */
+body.template-index .lumin-slide__text-wrapper {
+  padding:        0 !important;
+  flex:           1 !important;
+  display:        flex !important;
+  flex-direction: column !important;
+  gap:            0.35rem !important;
+  text-align:     left !important;
+}
+
+/* Star rating row */
+body.template-index .lumin-slide__small-heading {
+  font-family:    var(--aw-font) !important;
+  font-size:      0.92rem !important;
+  font-weight:    400 !important;
+  color:          var(--aw-text) !important;
   letter-spacing: 0 !important;
+  margin:         0 0 0.4rem !important;
+  line-height:    1 !important;
 }
 
+/* Review body text */
 body.template-index .lumin-slide__text,
 body.template-index .lumin-slide__text p {
   font-family: var(--aw-font) !important;
-  font-size:   0.85rem !important;
+  font-size:   0.875rem !important;
   color:       var(--aw-grey) !important;
   font-weight: 400 !important;
-  line-height: 1.75 !important;
+  line-height: 1.72 !important;
+  margin:      0 !important;
 }
 
-body.template-index .lumin-slide__image__wrapper img {
-  border-radius: 50% !important;
-  filter:        none !important;
-  opacity:       1 !important;
+/* Reviewer name — separated by a fine rule */
+body.template-index .lumin-slide__text strong {
+  font-family:  var(--aw-font) !important;
+  font-weight:  600 !important;
+  font-size:    0.875rem !important;
+  color:        var(--aw-text) !important;
+  display:      block !important;
+  margin-top:   0.9rem !important;
+  padding-top:  0.9rem !important;
+  border-top:   1px solid var(--aw-border) !important;
 }
 
-/* Gold underline accent like Awwwards score */
-body.template-index .lumin-slide__inner-content::after {
-  content:       '';
-  display:       block;
-  height:        3px;
-  width:         36px;
-  background:    var(--aw-gold);
-  border-radius: 2px;
-  margin:        0 1rem 1rem;
-}
-
-/* Flickity controls */
+/* ── Flickity arrow buttons ── */
+body.template-index .flickity-prev-next-button,
 body.template-index .flickity-button {
-  background: var(--aw-white) !important;
-  border:     1px solid var(--aw-border) !important;
-  box-shadow: none !important;
+  width:        42px !important;
+  height:       42px !important;
+  border-radius: 50% !important;
+  background:   var(--aw-white) !important;
+  border:       1px solid var(--aw-border) !important;
+  box-shadow:   0 2px 8px rgba(0,0,0,0.06) !important;
+  transition:   background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease !important;
 }
 
-body.template-index .flickity-button svg {
-  fill: var(--aw-text) !important;
+body.template-index .flickity-prev-next-button:hover,
+body.template-index .flickity-button:hover {
+  background:   var(--aw-text) !important;
+  border-color: var(--aw-text) !important;
+  box-shadow:   0 4px 16px rgba(0,0,0,0.16) !important;
+}
+
+body.template-index .flickity-button-icon {
+  fill:       var(--aw-text) !important;
+  transition: fill 0.22s ease !important;
+}
+
+body.template-index .flickity-prev-next-button:hover .flickity-button-icon,
+body.template-index .flickity-button:hover .flickity-button-icon {
+  fill: #ffffff !important;
+}
+
+/* ── Page dots — pill-style ── */
+body.template-index .flickity-page-dots {
+  bottom: -2rem !important;
 }
 
 body.template-index .flickity-page-dots .dot {
-  background: var(--aw-text) !important;
-  opacity:    0.2 !important;
+  width:         8px !important;
+  height:        8px !important;
+  background:    var(--aw-border) !important;
+  box-shadow:    none !important;
+  opacity:       1 !important;
+  margin:        0 4px !important;
+  border-radius: 100px !important;
+  transition:    width 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
+                 background 0.3s ease !important;
 }
 
 body.template-index .flickity-page-dots .dot.is-selected {
-  opacity: 1 !important;
+  width:      24px !important;
+  background: var(--aw-text) !important;
+}
+
+/* Mobile: tighter padding */
+@media screen and (max-width: 749px) {
+  body.template-index .lumin-slide__sizer {
+    padding-left:  1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
 }
 
 /* ---- SECTION DIVIDERS (hide wave SVGs) ------------------- */
