@@ -72,19 +72,91 @@ body.template-index .shopify-section {
   flex-shrink: 0;
 }
 .jack-h1 {
-  font-family: 'Kanit', sans-serif;
-  font-weight: 900;
+  font-family:    'Kanit', sans-serif;
+  font-weight:    900;
   text-transform: uppercase;
   letter-spacing: -0.03em;
-  line-height: 1;
-  white-space: nowrap;
-  width: 100%;
-  font-size: 14vw;
-  margin-top: 1.5rem;
+  line-height:    0.93;
+  text-align:     center;
+  width:          100%;
+  font-size:      11vw;
+  margin-top:     1.5rem;
 }
-@media (min-width: 640px)  { .jack-h1 { font-size: 15vw;   margin-top: 1rem;    } }
-@media (min-width: 768px)  { .jack-h1 { font-size: 16vw;   margin-top: -1.25rem;} }
-@media (min-width: 1024px) { .jack-h1 { font-size: 17.5vw; } }
+@media (min-width: 640px)  { .jack-h1 { font-size: 12vw; margin-top: 1rem;     } }
+@media (min-width: 768px)  { .jack-h1 { font-size: 13vw; margin-top: -0.5rem; } }
+@media (min-width: 1024px) { .jack-h1 { font-size: 14vw; } }
+
+/* ── Hero CTA block ────────────────────────────────────────── */
+.jack-hero-cta-wrap {
+  display:         flex;
+  justify-content: center;
+  position:        relative;
+  z-index:         30;
+  margin-top:      2rem;
+  flex-shrink:     0;
+}
+
+.jack-explore-btn {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             0.7rem;
+  padding:         1rem 3rem;
+  background:      linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%);
+  box-shadow:      0 4px 4px rgba(181,1,167,0.25), inset 4px 4px 12px #7721B1;
+  outline:         2px solid white;
+  outline-offset:  -3px;
+  border-radius:   9999px;
+  border:          none;
+  color:           white;
+  font-family:     'Kanit', sans-serif;
+  font-weight:     600;
+  text-transform:  uppercase;
+  letter-spacing:  0.14em;
+  font-size:       clamp(0.9rem, 1.6vw, 1.25rem);
+  text-decoration: none;
+  cursor:          pointer;
+  overflow:        hidden;
+  position:        relative;
+  /* entrance then float */
+  animation:       jfi-btn-in  0.7s cubic-bezier(.22,1,.36,1) 0.5s both,
+                   jack-float  3s  ease-in-out               1.2s infinite;
+}
+@media (min-width: 640px) { .jack-explore-btn { padding: 1.1rem 3.5rem; } }
+@media (min-width: 768px) { .jack-explore-btn { padding: 1.25rem 4rem;  } }
+
+@keyframes jfi-btn-in {
+  from { opacity:0; transform:translateY(14px); }
+  to   { opacity:1; transform:translateY(0);    }
+}
+@keyframes jack-float {
+  0%,100% { transform:translateY(0);    box-shadow:0 4px 20px rgba(182,0,168,0.35), inset 4px 4px 12px #7721B1; }
+  50%     { transform:translateY(-6px); box-shadow:0 12px 32px rgba(182,0,168,0.55), inset 4px 4px 12px #7721B1; }
+}
+
+.jack-explore-btn:hover {
+  animation-play-state: paused;
+  opacity: 0.9;
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* Shimmer sweep */
+.jack-explore-btn::before {
+  content:    '';
+  position:   absolute;
+  top:0; left:-75%; width:50%; height:100%;
+  background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.22) 50%, transparent 80%);
+  transform:  skewX(-15deg);
+}
+.jack-explore-btn:hover::before {
+  left:       130%;
+  transition: left 0.55s ease;
+}
+
+.jack-explore-arrow {
+  display:    inline-block;
+  transition: transform 0.22s ease;
+}
+.jack-explore-btn:hover .jack-explore-arrow { transform: translateX(4px); }
 
 /* ── Portrait ──────────────────────────────────────────────── */
 .jack-portrait {
@@ -182,7 +254,14 @@ body.template-index .shopify-section {
 <section class="jack-hero">
 
   <div class="jack-h1-outer">
-    <h1 class="jack-h1 jack-grad jfi jfi-dn" data-jfi-delay="0.15">Hi, i&apos;m jack</h1>
+    <h1 class="jack-h1 jack-grad jfi jfi-dn" data-jfi-delay="0.15">Innovations That Make Life Easier</h1>
+  </div>
+
+  <div class="jack-hero-cta-wrap">
+    <a href="{{ section.settings.hero_cta_url | default: 'shopify://collections/all' }}" class="jack-explore-btn">
+      {{- section.settings.hero_cta_label | default: 'Explore Now' -}}
+      <span class="jack-explore-arrow" aria-hidden="true">&#8594;</span>
+    </a>
   </div>
 
   <div class="jack-portrait" id="jack-magnet-wrap">
@@ -257,5 +336,14 @@ body.template-index .shopify-section {
 </script>
 
 {% schema %}
-{ "name":"Jack Hero","tag":"div","class":"jack-hero-section","settings":[],"presets":[{"name":"Jack Hero"}] }
+{
+  "name": "Jack Hero",
+  "tag": "div",
+  "class": "jack-hero-section",
+  "settings": [
+    { "type":"text", "id":"hero_cta_label", "label":"CTA label",    "default":"Explore Now" },
+    { "type":"url",  "id":"hero_cta_url",   "label":"CTA link" }
+  ],
+  "presets": [{ "name":"Jack Hero" }]
+}
 {% endschema %}
