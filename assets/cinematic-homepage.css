@@ -944,18 +944,24 @@ body.template-index .lumin-slide__flex-item {
   height:       auto !important;
   width:        220px !important;
   flex:         0 0 220px !important;
-  margin-right: 0 !important;
+  margin-right: 20px !important;
 }
 
 /* ── Continuous marquee ── */
+body.template-index .lumin-slide__section,
+body.template-index .lumin-slide__sizer {
+  overflow-x: hidden !important;
+}
+
 body.template-index .lumin-marquee-viewport {
-  overflow: hidden !important;
+  overflow:  hidden !important;
+  width:     100% !important;
+  max-width: 100% !important;
 }
 
 body.template-index .lumin-marquee-track {
   display:   flex !important;
   flex-wrap: nowrap !important;
-  gap:       20px !important;
   width:     max-content !important;
   animation: lumin-review-scroll 35s linear infinite !important;
 }
