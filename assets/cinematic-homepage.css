@@ -799,7 +799,7 @@ body.template-index .lumin-slide__inner-content {
   border-radius:  10px !important;
   border:         1px solid var(--aw-border) !important;
   box-shadow:     0 4px 24px rgba(0,0,0,0.08) !important;
-  padding:        0.7rem 0.85rem !important;
+  padding:        1rem 1.1rem !important;
   display:        flex !important;
   flex-direction: column !important;
   position:       relative !important;
@@ -819,10 +819,10 @@ body.template-index .lumin-slide__inner-content::after {
   content:        'Instazcart' !important;
   position:       absolute !important;
   inset:          auto !important;
-  top:            0.7rem !important;
-  right:          0.85rem !important;
+  top:            1rem !important;
+  right:          1.1rem !important;
   font-family:    var(--aw-font) !important;
-  font-size:      0.58rem !important;
+  font-size:      0.65rem !important;
   font-weight:    700 !important;
   color:          #9ca3af !important;
   letter-spacing: 0.05em !important;
@@ -840,11 +840,11 @@ body.template-index .lumin-slide__inner-content::after {
 body.template-index .lumin-slide__inner-content::before {
   content:       '\201C';
   display:       block !important;
-  font-size:     1.5rem !important;
-  line-height:   0.9 !important;
+  font-size:     1.9rem !important;
+  line-height:   0.85 !important;
   font-family:   Georgia, serif !important;
   color:         #3b82f6 !important;
-  margin-bottom: 0.15rem !important;
+  margin-bottom: 0.2rem !important;
   position:      static !important;
 }
 
@@ -852,10 +852,10 @@ body.template-index .lumin-slide__inner-content::before {
 body.template-index .lumin-slide__image__wrapper {
   display:     flex !important;
   align-items: center !important;
-  gap:         0.45rem !important;
+  gap:         0.6rem !important;
   order:       3 !important;
-  margin-top:  0.4rem !important;
-  padding-top: 0.4rem !important;
+  margin-top:  0.6rem !important;
+  padding-top: 0.6rem !important;
   border-top:  1px solid var(--aw-border) !important;
   flex-shrink: 0 !important;
   width:       100% !important;
@@ -866,9 +866,9 @@ body.template-index .lumin-slide__image__wrapper {
 }
 
 body.template-index .lumin-slide__image__wrapper img {
-  width:        28px !important;
-  height:       28px !important;
-  min-width:    28px !important;
+  width:        36px !important;
+  height:       36px !important;
+  min-width:    36px !important;
   object-fit:   cover !important;
   flex-shrink:  0 !important;
   display:      block !important;
@@ -886,7 +886,7 @@ body.template-index .lumin-slide__image__wrapper svg {
 body.template-index .lumin-slide__image__wrapper::after {
   content:        attr(data-author) !important;
   font-family:    var(--aw-font) !important;
-  font-size:      0.62rem !important;
+  font-size:      0.8rem !important;
   font-weight:    700 !important;
   color:          var(--aw-text) !important;
   text-transform: uppercase !important;
@@ -909,7 +909,7 @@ body.template-index .lumin-slide__text-wrapper {
   order:          1 !important;
   display:        flex !important;
   flex-direction: column !important;
-  gap:            0.15rem !important;
+  gap:            0.25rem !important;
   text-align:     left !important;
   overflow:       hidden !important;
   min-height:     0 !important;
@@ -918,11 +918,11 @@ body.template-index .lumin-slide__text-wrapper {
 /* Star rating row */
 body.template-index .lumin-slide__small-heading {
   font-family:    var(--aw-font) !important;
-  font-size:      0.7rem !important;
+  font-size:      0.9rem !important;
   font-weight:    400 !important;
   color:          var(--aw-text) !important;
   letter-spacing: 0 !important;
-  margin:         0 0 0.1rem !important;
+  margin:         0 0 0.2rem !important;
   line-height:    1 !important;
 }
 
@@ -930,17 +930,17 @@ body.template-index .lumin-slide__small-heading {
 body.template-index .lumin-slide__text,
 body.template-index .lumin-slide__text p {
   font-family: var(--aw-font) !important;
-  font-size:   0.72rem !important;
+  font-size:   1.3rem !important;
   font-style:  italic !important;
   color:       var(--aw-grey) !important;
   font-weight: 400 !important;
-  line-height: 1.5 !important;
+  line-height: 1.6 !important;
   margin:      0 !important;
 }
 
 body.template-index .lumin-slide__text p {
   display:            -webkit-box !important;
-  -webkit-line-clamp: 3 !important;
+  -webkit-line-clamp: 6 !important;
   -webkit-box-orient: vertical !important;
   overflow:           hidden !important;
 }
@@ -956,9 +956,9 @@ body.template-index .flickity-button {
   display: none !important;
 }
 
-/* ── Content-fit rectangular cards ── */
+/* ── Vertical portrait cards ── */
 body.template-index .lumin-slide__flex-item {
-  height: auto !important;
+  height: 350px !important;
 }
 
 /* ── Page dots — pill-style ── */
