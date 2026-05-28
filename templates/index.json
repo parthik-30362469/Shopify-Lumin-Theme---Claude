@@ -13,20 +13,17 @@
       "type": "video-hero",
       "settings": {
         "video_url": "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_215831_c6a8989c-d716-4d8d-8745-e972a2eec711.mp4",
-        "badge_text": "",
+        "badge_text": "Seen on Shark Tank in India",
         "badge_url": "#",
-        "heading": "INNOVATIONS THAT MAKE LIFE EASIER",
-        "subtext": "Reclaim your innovation now",
-        "cta_label": "EXPLORE NOW",
+        "heading": "Simple, smart prosthetics made for people who keep fighting.",
+        "subtext": "Reclaim your movement now.",
+        "cta_label": "Try a free fitting",
         "cta_url": "shopify://collections/all",
         "link1_label": "Story",
-        "link1_url": "",
         "link2_label": "Products",
         "link2_url": "shopify://collections/all",
         "link3_label": "Help",
-        "link3_url": "",
-        "link4_label": "Support",
-        "link4_url": ""
+        "link4_label": "Support"
       }
     },
     "image_with_text_gyWkTU": {
