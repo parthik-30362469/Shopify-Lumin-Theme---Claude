@@ -813,36 +813,105 @@ body.template-index .lumin-slide__inner-content:hover {
   transform:  translateY(-4px) !important;
 }
 
-/* Remove the old gold bar */
+/* "Instazcart" brand label — absolutely positioned at top-right */
 body.template-index .lumin-slide__inner-content::after {
-  display: none !important;
+  content:        'Instazcart' !important;
+  position:       absolute !important;
+  inset:          auto !important;
+  top:            1.2rem !important;
+  right:          1.4rem !important;
+  font-family:    var(--aw-font) !important;
+  font-size:      0.7rem !important;
+  font-weight:    700 !important;
+  color:          #9ca3af !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  display:        block !important;
+  box-shadow:     none !important;
+  background:     none !important;
+  border:         none !important;
+  padding:        0 !important;
+  transform:      none !important;
+  transition:     none !important;
 }
 
-/* Large opening quote — decorative, matches editorial tone */
+/* Large opening quote — blue, Kissmetrics-style */
 body.template-index .lumin-slide__inner-content::before {
   content:       '\201C';
   display:       block !important;
-  font-size:     2.4rem !important;
-  line-height:   0.85 !important;
+  font-size:     2.6rem !important;
+  line-height:   0.8 !important;
   font-family:   Georgia, serif !important;
-  color:         var(--aw-border) !important;
-  margin-bottom: 0.25rem !important;
+  color:         #3b82f6 !important;
+  margin-bottom: 0.3rem !important;
   position:      static !important;
 }
 
-/* Hide the gold checkmark icon — replaced by quote decoration */
+/* Author footer row — circular avatar + name via data-author */
 body.template-index .lumin-slide__image__wrapper {
+  display:     flex !important;
+  align-items: center !important;
+  gap:         0.65rem !important;
+  order:       3 !important;
+  margin-top:  auto !important;
+  padding-top: 0.75rem !important;
+  border-top:  1px solid var(--aw-border) !important;
+  flex-shrink: 0 !important;
+  width:       100% !important;
+  max-width:   100% !important;
+  flex:        0 0 auto !important;
+  box-sizing:  border-box !important;
+  position:    static !important;
+}
+
+body.template-index .lumin-slide__image__wrapper img {
+  width:        42px !important;
+  height:       42px !important;
+  min-width:    42px !important;
+  object-fit:   cover !important;
+  flex-shrink:  0 !important;
+  display:      block !important;
+  position:     static !important;
+  top:          auto !important;
+  right:        auto !important;
+  bottom:       auto !important;
+  left:         auto !important;
+}
+
+body.template-index .lumin-slide__image__wrapper svg {
   display: none !important;
+}
+
+body.template-index .lumin-slide__image__wrapper::after {
+  content:        attr(data-author) !important;
+  font-family:    var(--aw-font) !important;
+  font-size:      0.75rem !important;
+  font-weight:    700 !important;
+  color:          var(--aw-text) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  display:        block !important;
+  position:       static !important;
+  inset:          auto !important;
+  background:     none !important;
+  box-shadow:     none !important;
+  border:         none !important;
+  padding:        0 !important;
+  transform:      none !important;
+  transition:     none !important;
 }
 
 /* Text wrapper */
 body.template-index .lumin-slide__text-wrapper {
   padding:        0 !important;
   flex:           1 !important;
+  order:          1 !important;
   display:        flex !important;
   flex-direction: column !important;
-  gap:            0.35rem !important;
+  gap:            0.3rem !important;
   text-align:     left !important;
+  overflow:       hidden !important;
+  min-height:     0 !important;
 }
 
 /* Star rating row */
@@ -856,27 +925,28 @@ body.template-index .lumin-slide__small-heading {
   line-height:    1 !important;
 }
 
-/* Review body text */
+/* Review body text — italic, clamped to hide embedded <strong> name */
 body.template-index .lumin-slide__text,
 body.template-index .lumin-slide__text p {
   font-family: var(--aw-font) !important;
-  font-size:   0.875rem !important;
+  font-size:   0.86rem !important;
+  font-style:  italic !important;
   color:       var(--aw-grey) !important;
   font-weight: 400 !important;
-  line-height: 1.72 !important;
+  line-height: 1.65 !important;
   margin:      0 !important;
 }
 
-/* Reviewer name — separated by a fine rule */
+body.template-index .lumin-slide__text p {
+  display:            -webkit-box !important;
+  -webkit-line-clamp: 4 !important;
+  -webkit-box-orient: vertical !important;
+  overflow:           hidden !important;
+}
+
+/* Reviewer name — hidden in text body, displayed via data-author in footer row */
 body.template-index .lumin-slide__text strong {
-  font-family:  var(--aw-font) !important;
-  font-weight:  600 !important;
-  font-size:    0.8rem !important;
-  color:        var(--aw-text) !important;
-  display:      block !important;
-  margin-top:   0.65rem !important;
-  padding-top:  0.65rem !important;
-  border-top:   1px solid var(--aw-border) !important;
+  display: none !important;
 }
 
 /* ── Flickity arrows — hidden ── */
@@ -885,9 +955,9 @@ body.template-index .flickity-button {
   display: none !important;
 }
 
-/* ── Compact fixed-height cards ── */
+/* ── Fixed-height cards matching Kissmetrics layout ── */
 body.template-index .lumin-slide__flex-item {
-  height: 268px !important;
+  height: 300px !important;
 }
 
 /* ── Page dots — pill-style ── */

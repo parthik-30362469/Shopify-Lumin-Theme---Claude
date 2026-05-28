@@ -373,7 +373,8 @@
             {%- comment -%} Icon {%- endcomment -%}
             {%- if block.settings.show_icon != blank -%}
               {%- if block.settings.image != blank -%}
-                <div class="lumin-slide__image__wrapper">
+                {%- assign slide_author = block.settings.text | split: '<strong>' | last | split: '</strong>' | first -%}
+                <div class="lumin-slide__image__wrapper" data-author="{{ slide_author }}">
                   {%- if block.settings.link != blank -%}
                     <a href="{{ block.settings.link }}">
                   {%- endif -%}
