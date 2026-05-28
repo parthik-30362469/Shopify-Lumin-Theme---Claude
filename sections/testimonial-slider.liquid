@@ -414,6 +414,65 @@
           {%- endif -%}
         </div>
       {%- endfor -%}
+      {%- for block in section.blocks -%}
+        {%- capture placeholder_image -%}
+         <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" fill="none"/><path d="M7 13.4545L8.97619 15.3409C9.36262 15.7098 9.97072 15.7098 10.3571 15.3409L17 9" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          {%- endcapture -%}
+        <div class="carousel-cell lumin-slide__flex-item lumin-slide__item" aria-hidden="true" style="--lumin-slide-animate: {{ forloop.index }};">
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}">
+          {%- endif -%}
+          <div class="gradient color-{{ section.settings.color_scheme }} lumin-slide__inner-content lumin-slide__icon-alignment-{{ section.settings.icon_alignment }} lumin-slide__mobile-icon-alignment-{{ section.settings.mobile_icon_alignment }}">
+            {%- if block.settings.show_icon != blank -%}
+              {%- if block.settings.image != blank -%}
+                {%- assign slide_author = block.settings.text | split: '<strong>' | last | split: '</strong>' | first -%}
+                <div class="lumin-slide__image__wrapper" data-author="{{ slide_author }}">
+                  {%- if block.settings.link != blank -%}
+                    <a href="{{ block.settings.link }}">
+                  {%- endif -%}
+                  <svg viewBox="0 0 {{ block.settings.image.width }} {{ block.settings.image.height }}"></svg>
+                      {%- capture style -%}
+                     border-radius:{{ block.settings.slide_radius }}%;
+                  {%- endcapture -%}
+                  {%- capture sizes -%}
+                    (max-width: 480px) {{ section.settings.base_width | divided_by: section.settings.mobile_per_row | divided_by: 2 | append: 'vw' | default: '33vw' }}, {{ section.settings.base_width | divided_by: section.settings.per_row | divided_by: 2 | append: 'vw' | default: '33vw' }}
+                  {%- endcapture -%}
+                  {{ block.settings.image | image_url: width: 1000 | image_tag:  widths: widths, sizes: sizes, style: style }}
+                  {%- if block.settings.link != blank -%}
+                    </a>
+                  {%- endif -%}
+                </div>
+              {%- else -%}
+                <div class="lumin-slide__image__wrapper lumin-slide__flex lumin-slide__justify-center">
+                  {%- if block.settings.link != blank -%}
+                    <a href="{{ block.settings.link }}">
+                  {%- endif -%}
+                    {{ placeholder_image }}
+                  {%- if block.settings.link != blank -%}
+                    </a>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endif -%}
+            <div class="lumin-slide__text-wrapper">
+              {%- if block.settings.title != blank -%}
+                <h3 class="lumin-slide__small-heading">
+                  {{ block.settings.title | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                </h3>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                {%- assign text_body = block.settings.text | split: '<strong>' | first -%}
+                <div class="lumin-slide__text lumin-slide__rte rte">
+                  {{ text_body | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+          {%- if block.settings.link != blank -%}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
     </div>
     </div>
   </div>

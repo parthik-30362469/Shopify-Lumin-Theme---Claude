@@ -19,6 +19,7 @@ body.template-index {
   background-color: var(--aw-bg) !important;
   color:           var(--aw-text) !important;
   font-family:     var(--aw-font) !important;
+  overflow-x:      hidden !important;
 }
 
 /* Every section on homepage becomes light grey */
