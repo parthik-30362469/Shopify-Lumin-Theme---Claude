@@ -351,16 +351,8 @@
 <section id="lumin-slide--{{ section.id }}" class="color-{{ section.settings.color_scheme_main }} gradient lumin-slide--{{ section.id }} lumin-slide__value-prop-horizontal lumin-slide__section  section-{{ section.id }}-margin" {%- if section.settings.animation != 'none' -%}data-animated-section{%- endif -%}>
   <div class="lumin-slide__sizer
               lumin-slide__sizer--value-prop-horizontal page-width section-{{ section.id }}-padding" >
-    <div id="slider-{{ section.id }}" class="lumin-slide__icons lumin-slide__flex--{{ section.settings.per_row }}-per-row main-carousel" 
-      data-flickity='{ "cellAlign": "left", "contain": false, "pageDots": true, "wrapAround": true,{% if section.settings.auto_rotate %} "autoPlay": {{ section.settings.change_slides_speed }}000,{% endif %}
-      "adaptiveHeight": false,{%- if mobile_per_row >= section.blocks.size -%}
-       "draggable": false,
-    {%- else -%}
-      "draggable": true,
-    {%- endif -%}{% if section.settings.per_row >= section.blocks.size %} "prevNextButtons": false 
-  {% else %} "prevNextButtons": {{ section.settings.show_arrows }}
-  {% endif %}
-      }'>
+    <div class="lumin-marquee-viewport">
+    <div id="slider-{{ section.id }}" class="lumin-slide__icons lumin-marquee-track">
       {%- for block in section.blocks -%}
         {%- capture placeholder_image -%}
          <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" fill="none"/><path d="M7 13.4545L8.97619 15.3409C9.36262 15.7098 9.97072 15.7098 10.3571 15.3409L17 9" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -422,6 +414,7 @@
           {%- endif -%}
         </div>
       {%- endfor -%}
+    </div>
     </div>
   </div>
 </section>

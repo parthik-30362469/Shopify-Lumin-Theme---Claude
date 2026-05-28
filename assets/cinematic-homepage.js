@@ -52,7 +52,20 @@
     el.style.display = 'none';
   });
 
-  /* ── 4. Mobile auto-looping slideshow for product cards ── */
+  /* ── 4. Testimonial marquee — clone cards for seamless loop ── */
+  (function () {
+    var track = qs('.lumin-marquee-track');
+    if (!track) return;
+    var originals = qsa('.lumin-slide__flex-item', track);
+    if (originals.length < 2) return;
+    originals.forEach(function (card) {
+      var clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+  }());
+
+  /* ── 5. Mobile auto-looping slideshow for product cards ── */
   (function () {
     var mq = window.matchMedia('(max-width: 749px)');
     if (!mq.matches) return;

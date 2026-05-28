@@ -768,16 +768,8 @@ body.template-index .rich-text p {
 
 /* ---- TESTIMONIAL SLIDER ---------------------------------- */
 
-/* "Reviews" small label above section heading */
 body.template-index .rich-text__blocks::before {
-  content:       'Reviews';
-  display:       block;
-  font-size:     0.7rem;
-  font-family:   var(--aw-font);
-  font-weight:   400;
-  color:         var(--aw-grey);
-  margin-bottom: 0.3rem;
-  letter-spacing: 0;
+  display: none;
 }
 
 body.template-index .lumin-slide__section {
@@ -947,9 +939,34 @@ body.template-index .flickity-button {
   display: none !important;
 }
 
-/* ── Content-height cards — no fixed blank space ── */
+/* ── Content-height cards — fixed width for marquee ── */
 body.template-index .lumin-slide__flex-item {
-  height: auto !important;
+  height:       auto !important;
+  width:        220px !important;
+  flex:         0 0 220px !important;
+  margin-right: 0 !important;
+}
+
+/* ── Continuous marquee ── */
+body.template-index .lumin-marquee-viewport {
+  overflow: hidden !important;
+}
+
+body.template-index .lumin-marquee-track {
+  display:   flex !important;
+  flex-wrap: nowrap !important;
+  gap:       20px !important;
+  width:     max-content !important;
+  animation: lumin-review-scroll 35s linear infinite !important;
+}
+
+body.template-index .lumin-marquee-track:hover {
+  animation-play-state: paused !important;
+}
+
+@keyframes lumin-review-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ── Page dots — pill-style ── */
