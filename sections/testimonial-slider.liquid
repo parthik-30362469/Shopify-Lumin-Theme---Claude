@@ -410,8 +410,9 @@
                 </h3>
               {%- endif -%}
               {%- if block.settings.text != blank -%}
+                {%- assign text_body = block.settings.text | split: '<strong>' | first -%}
                 <div class="lumin-slide__text lumin-slide__rte rte">
-                  {{ block.settings.text | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
+                  {{ text_body | replace: '[', '<span class="lumin-text__fancy1">' | replace: ']', '</span>' | replace: '((', '<span class="lumin-text__fancy2">' | replace: '))', '</span>' }}
                 </div>
               {%- endif -%}
             </div>

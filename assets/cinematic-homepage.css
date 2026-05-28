@@ -793,7 +793,7 @@ body.template-index .lumin-slide__sizer {
   box-sizing:    border-box !important;
 }
 
-/* ── White card ── */
+/* ── White card — sized to content, no fixed height ── */
 body.template-index .lumin-slide__inner-content {
   background:     var(--aw-white) !important;
   border-radius:  10px !important;
@@ -803,7 +803,7 @@ body.template-index .lumin-slide__inner-content {
   display:        flex !important;
   flex-direction: column !important;
   position:       relative !important;
-  height:         100% !important;
+  height:         auto !important;
   overflow:       hidden !important;
   box-sizing:     border-box !important;
   transition:     box-shadow 0.3s ease, transform 0.3s ease !important;
@@ -905,14 +905,12 @@ body.template-index .lumin-slide__image__wrapper::after {
 /* Text wrapper */
 body.template-index .lumin-slide__text-wrapper {
   padding:        0 !important;
-  flex:           1 !important;
+  flex:           0 0 auto !important;
   order:          1 !important;
   display:        flex !important;
   flex-direction: column !important;
   gap:            0.25rem !important;
   text-align:     left !important;
-  overflow:       hidden !important;
-  min-height:     0 !important;
 }
 
 /* Star rating row */
@@ -926,23 +924,16 @@ body.template-index .lumin-slide__small-heading {
   line-height:    1 !important;
 }
 
-/* Review body text — italic, clamped to hide embedded <strong> name */
+/* Review body text — italic, no clamp (author stripped in liquid) */
 body.template-index .lumin-slide__text,
 body.template-index .lumin-slide__text p {
   font-family: var(--aw-font) !important;
-  font-size:   1.3rem !important;
+  font-size:   1.4rem !important;
   font-style:  italic !important;
   color:       var(--aw-grey) !important;
   font-weight: 400 !important;
   line-height: 1.6 !important;
   margin:      0 !important;
-}
-
-body.template-index .lumin-slide__text p {
-  display:            -webkit-box !important;
-  -webkit-line-clamp: 6 !important;
-  -webkit-box-orient: vertical !important;
-  overflow:           hidden !important;
 }
 
 /* Reviewer name — hidden in text body, displayed via data-author in footer row */
@@ -956,9 +947,9 @@ body.template-index .flickity-button {
   display: none !important;
 }
 
-/* ── Vertical portrait cards ── */
+/* ── Content-height cards — no fixed blank space ── */
 body.template-index .lumin-slide__flex-item {
-  height: 350px !important;
+  height: auto !important;
 }
 
 /* ── Page dots — pill-style ── */
