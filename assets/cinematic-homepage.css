@@ -794,7 +794,7 @@ body.template-index .lumin-marquee-viewport {
   background-color: transparent !important;
 }
 
-/* ── White card — sized to content, no fixed height ── */
+/* ── White card — fills stretched flex-item height so names align at bottom ── */
 body.template-index .lumin-slide__inner-content {
   background:     var(--aw-white) !important;
   border-radius:  10px !important;
@@ -804,7 +804,7 @@ body.template-index .lumin-slide__inner-content {
   display:        flex !important;
   flex-direction: column !important;
   position:       relative !important;
-  height:         auto !important;
+  height:         100% !important;
   overflow:       hidden !important;
   box-sizing:     border-box !important;
   transition:     box-shadow 0.3s ease, transform 0.3s ease !important;
@@ -842,14 +842,14 @@ body.template-index .lumin-slide__inner-content::before {
   display: none !important;
 }
 
-/* Author footer row — circular avatar + name via data-author */
+/* Author footer row — pinned to bottom via margin-top: auto */
 body.template-index .lumin-slide__image__wrapper {
   display:     flex !important;
   align-items: center !important;
   gap:         0.6rem !important;
   order:       3 !important;
-  margin-top:  0.6rem !important;
-  padding-top: 0.6rem !important;
+  margin-top:  auto !important;   /* pushes footer to card bottom regardless of text length */
+  padding-top: 0.75rem !important;
   border-top:  1px solid var(--aw-border) !important;
   flex-shrink: 0 !important;
   width:       100% !important;
@@ -896,10 +896,13 @@ body.template-index .lumin-slide__image__wrapper::after {
   transition:     none !important;
 }
 
-/* Text wrapper */
+/* Text wrapper — grows to fill card, pushing name footer to bottom */
 body.template-index .lumin-slide__text-wrapper {
-  padding:        0 !important;
-  flex:           0 0 auto !important;
+  padding-top:    2.4rem !important;   /* clears the INSTAZCART label above */
+  padding-left:   0 !important;
+  padding-right:  0 !important;
+  padding-bottom: 0 !important;
+  flex:           1 1 auto !important;
   order:          1 !important;
   display:        flex !important;
   flex-direction: column !important;
@@ -941,9 +944,9 @@ body.template-index .flickity-button {
   display: none !important;
 }
 
-/* ── Content-height cards — fixed width for marquee ── */
+/* ── Marquee cards — fixed width, all stretch to tallest card height ── */
 body.template-index .lumin-slide__flex-item {
-  height:       auto !important;
+  align-self:   stretch !important;
   width:        220px !important;
   flex:         0 0 220px !important;
   margin-right: 20px !important;
