@@ -54,111 +54,116 @@
 
   /* ── 4. Testimonial marquee — cards duplicated in Liquid for seamless loop ── */
 
-  /* ── 6. Marquee drag-to-scroll (mouse + touch) ── */
+  /* ── 6. Marquee — rAF-driven animation + drag override ── */
   (function () {
     var viewport = qs('.lumin-marquee-viewport');
     var track    = qs('.lumin-marquee-track');
     if (!viewport || !track) return;
 
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     /*
-     * WHY JS time-tracking instead of getComputedStyle:
-     * Mobile Safari runs CSS animations on the GPU compositor thread.
-     * getComputedStyle(track).transform returns the *static* value (0),
-     * not the live animated frame. So drag always started from 0 = first card.
-     * Instead we track elapsed time ourselves and compute the position from that.
+     * We drive the marquee with requestAnimationFrame instead of CSS @keyframes.
+     * CSS animations on mobile Safari run on the GPU compositor thread, so
+     * getComputedStyle always returns the *static* (non-animated) transform value.
+     * Any drag that reads position via getComputedStyle gets 0 → resets to card 1.
+     *
+     * With rAF, `pos` is an in-memory JS number — always accurate, no compositor
+     * issue, no animation-delay hacks, drag resumes from exactly where it left off.
      */
-    var animStartMs = performance.now();   /* updated every time we set a new delay */
-    var dragging    = false;
-    var startX      = 0;
-    var startY      = 0;
-    var basePos     = 0;    /* animation x at moment drag started */
-    var currentPos  = 0;    /* live x during drag */
+    track.style.setProperty('animation', 'none', 'important');
 
-    function halfTrack() {
-      /* scrollWidth is unaffected by transforms — safe to read during drag */
-      return (track.scrollWidth / 2) || 1440;
+    var pos      = 0;       /* current translateX in px, always in [-ht, 0) */
+    var ht       = 0;       /* half-track width px — lazily read once layout is stable */
+    var lastTs   = null;    /* rAF timestamp of last painted frame */
+    var hovered  = false;   /* desktop hover-pause */
+    var dragging = false;
+    var startX   = 0;
+    var startY   = 0;
+    var basePos  = 0;
+
+    function getHt() {
+      if (!ht) ht = track.scrollWidth / 2;
+      return ht || 1920;            /* fallback: 6 cards × (300 + 20)px */
     }
 
-    function getDurMs() {
-      return window.matchMedia('(max-width: 749px)').matches ? 13000 : 20000;
+    function speedPxPerMs() {
+      var dur = window.matchMedia('(max-width: 749px)').matches ? 13000 : 20000;
+      return getHt() / dur;
     }
 
-    /* Compute where the CSS animation is RIGHT NOW using our wall-clock tracker */
-    function getJsPos() {
-      var ht  = halfTrack();
-      var dur = getDurMs();
-      var elapsed = (performance.now() - animStartMs) % dur;
-      return -(elapsed / dur) * ht;
+    /* Wrap x into [-ht, 0) so the loop is seamless */
+    function wrap(x) {
+      var h = getHt();
+      var r = x % -h;               /* JS % keeps sign of dividend */
+      return r > 0 ? r - h : r;    /* if x was positive, shift into negative range */
     }
 
-    /* Resume the CSS animation seamlessly from any pixel offset */
-    function resumeFrom(pos) {
-      var ht  = halfTrack();
-      var dur = getDurMs();
-
-      /* Normalize pos to [-ht, 0) using sign-safe modulo */
-      var mag      = ((-pos) % ht + ht) % ht;
-      var progress = mag / ht;                         /* 0 → 1 */
-      var delaySec = -(progress * dur / 1000);         /* negative = start mid-cycle */
-
-      /* Keep our JS clock in sync with the new starting point */
-      animStartMs = performance.now() - progress * dur;
-
-      /* Set delay first (paused animation updates its frozen frame to match),
-         then in the next paint remove the inline overrides — zero visual snap */
-      track.style.setProperty('animation-delay', delaySec + 's', 'important');
-      requestAnimationFrame(function () {
-        track.style.removeProperty('transform');
-        track.style.removeProperty('animation-play-state');
-      });
+    function applyPos(x) {
+      pos = wrap(x);
+      track.style.setProperty('transform', 'translateX(' + pos + 'px)', 'important');
     }
 
-    function dragStart(x, y) {
-      dragging   = true;
-      startX     = x;
-      startY     = y;
-      basePos    = getJsPos();      /* read position from JS clock, not getComputedStyle */
-      currentPos = basePos;
-      /* Lock the track at exactly this pixel — no snap, even on mobile Safari */
-      track.style.setProperty('transform', 'translateX(' + basePos + 'px)', 'important');
-      track.style.setProperty('animation-play-state', 'paused', 'important');
+    /* ── Animation loop ── */
+    function loop(ts) {
+      if (!hovered && !dragging) {
+        if (lastTs !== null) applyPos(pos - (ts - lastTs) * speedPxPerMs());
+        lastTs = ts;
+      } else {
+        lastTs = null;              /* zero lastTs so resume never jumps */
+      }
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+
+    /* Hover-pause on pointer (non-touch) devices only */
+    if (window.matchMedia('(hover: hover)').matches) {
+      viewport.addEventListener('mouseenter', function () { hovered = true; });
+      viewport.addEventListener('mouseleave', function () { hovered = false; });
     }
 
-    function dragMove(x, y) {
+    /* ── Drag handlers ── */
+    function onStart(x, y) {
+      dragging = true;
+      startX   = x;
+      startY   = y;
+      basePos  = pos;   /* pos is always current — rAF updates it every frame */
+    }
+
+    function onMove(x, y) {
       if (!dragging) return;
-      currentPos = basePos + (x - startX);
-      track.style.setProperty('transform', 'translateX(' + currentPos + 'px)', 'important');
+      applyPos(basePos + (x - startX));
     }
 
-    function dragEnd() {
+    function onEnd() {
       if (!dragging) return;
       dragging = false;
-      resumeFrom(currentPos);
+      /* rAF loop restarts automatically; lastTs = null prevents a velocity spike */
     }
 
-    /* ── Mouse ── */
+    /* Mouse */
     viewport.addEventListener('mousedown', function (e) {
-      dragStart(e.clientX, e.clientY);
+      onStart(e.clientX, e.clientY);
       e.preventDefault();
     });
-    window.addEventListener('mousemove', function (e) { dragMove(e.clientX, e.clientY); });
-    window.addEventListener('mouseup',   dragEnd);
+    window.addEventListener('mousemove', function (e) { onMove(e.clientX, e.clientY); });
+    window.addEventListener('mouseup',   onEnd);
 
-    /* ── Touch ── */
+    /* Touch */
     viewport.addEventListener('touchstart', function (e) {
-      dragStart(e.touches[0].clientX, e.touches[0].clientY);
+      onStart(e.touches[0].clientX, e.touches[0].clientY);
     }, { passive: true });
 
     viewport.addEventListener('touchmove', function (e) {
       if (!dragging) return;
       var dx = Math.abs(e.touches[0].clientX - startX);
       var dy = Math.abs(e.touches[0].clientY - startY);
-      if (dx > dy) e.preventDefault();   /* only block scroll for horizontal swipes */
-      dragMove(e.touches[0].clientX, e.touches[0].clientY);
+      if (dx > dy) e.preventDefault();    /* let vertical page-scroll through */
+      onMove(e.touches[0].clientX, e.touches[0].clientY);
     }, { passive: false });
 
-    viewport.addEventListener('touchend',    dragEnd, { passive: true });
-    viewport.addEventListener('touchcancel', dragEnd, { passive: true });
+    viewport.addEventListener('touchend',    onEnd, { passive: true });
+    viewport.addEventListener('touchcancel', onEnd, { passive: true });
   }());
 
   /* ── 5. Mobile auto-looping slideshow for product cards ── */
