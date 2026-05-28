@@ -878,33 +878,27 @@ body.template-index .lumin-slide__text strong {
   border-top:   1px solid var(--aw-border) !important;
 }
 
-/* ── Flickity arrow buttons ── */
+/* ── Flickity arrows — hidden ── */
 body.template-index .flickity-prev-next-button,
 body.template-index .flickity-button {
-  width:        42px !important;
-  height:       42px !important;
-  border-radius: 50% !important;
-  background:   var(--aw-white) !important;
-  border:       1px solid var(--aw-border) !important;
-  box-shadow:   0 2px 8px rgba(0,0,0,0.06) !important;
-  transition:   background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease !important;
+  display: none !important;
 }
 
-body.template-index .flickity-prev-next-button:hover,
-body.template-index .flickity-button:hover {
-  background:   var(--aw-text) !important;
-  border-color: var(--aw-text) !important;
-  box-shadow:   0 4px 16px rgba(0,0,0,0.16) !important;
+/* ── Equal-size square cards ── */
+body.template-index .lumin-slide__flex-item {
+  aspect-ratio: 1 / 1 !important;
 }
 
-body.template-index .flickity-button-icon {
-  fill:       var(--aw-text) !important;
-  transition: fill 0.22s ease !important;
+body.template-index .lumin-slide__inner-content {
+  height: 100% !important;
 }
 
-body.template-index .flickity-prev-next-button:hover .flickity-button-icon,
-body.template-index .flickity-button:hover .flickity-button-icon {
-  fill: #ffffff !important;
+/* Clamp review text so it never breaks the square shape */
+body.template-index .lumin-slide__text p {
+  display:            -webkit-box !important;
+  -webkit-line-clamp: 5 !important;
+  -webkit-box-orient: vertical !important;
+  overflow:           hidden !important;
 }
 
 /* ── Page dots — pill-style ── */
