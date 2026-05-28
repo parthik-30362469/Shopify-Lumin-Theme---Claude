@@ -750,10 +750,10 @@ body.template-index .rich-text h1,
 body.template-index .rich-text h2,
 body.template-index .rich-text__heading {
   font-family:    var(--aw-font) !important;
-  font-weight:    800 !important;
-  font-size:      clamp(1.5rem, 3.5vw, 2.5rem) !important;
-  letter-spacing: -0.03em !important;
-  line-height:    1.15 !important;
+  font-weight:    900 !important;
+  font-size:      clamp(2rem, 4vw, 3.2rem) !important;
+  letter-spacing: -0.04em !important;
+  line-height:    1.1 !important;
   color:          var(--aw-text) !important;
   text-transform: none !important;
 }
@@ -797,18 +797,19 @@ body.template-index .lumin-slide__inner-content {
   background:     var(--aw-white) !important;
   border-radius:  10px !important;
   border:         1px solid var(--aw-border) !important;
-  box-shadow:     none !important;
-  padding:        1.75rem !important;
+  box-shadow:     0 4px 24px rgba(0,0,0,0.08) !important;
+  padding:        1.2rem 1.4rem !important;
   display:        flex !important;
   flex-direction: column !important;
   position:       relative !important;
   height:         100% !important;
+  overflow:       hidden !important;
   box-sizing:     border-box !important;
   transition:     box-shadow 0.3s ease, transform 0.3s ease !important;
 }
 
 body.template-index .lumin-slide__inner-content:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.16) !important;
   transform:  translateY(-4px) !important;
 }
 
@@ -821,11 +822,11 @@ body.template-index .lumin-slide__inner-content::after {
 body.template-index .lumin-slide__inner-content::before {
   content:       '\201C';
   display:       block !important;
-  font-size:     3.2rem !important;
-  line-height:   0.9 !important;
+  font-size:     2.4rem !important;
+  line-height:   0.85 !important;
   font-family:   Georgia, serif !important;
   color:         var(--aw-border) !important;
-  margin-bottom: 0.4rem !important;
+  margin-bottom: 0.25rem !important;
   position:      static !important;
 }
 
@@ -847,11 +848,11 @@ body.template-index .lumin-slide__text-wrapper {
 /* Star rating row */
 body.template-index .lumin-slide__small-heading {
   font-family:    var(--aw-font) !important;
-  font-size:      0.92rem !important;
+  font-size:      0.88rem !important;
   font-weight:    400 !important;
   color:          var(--aw-text) !important;
   letter-spacing: 0 !important;
-  margin:         0 0 0.4rem !important;
+  margin:         0 0 0.25rem !important;
   line-height:    1 !important;
 }
 
@@ -870,11 +871,11 @@ body.template-index .lumin-slide__text p {
 body.template-index .lumin-slide__text strong {
   font-family:  var(--aw-font) !important;
   font-weight:  600 !important;
-  font-size:    0.875rem !important;
+  font-size:    0.8rem !important;
   color:        var(--aw-text) !important;
   display:      block !important;
-  margin-top:   0.9rem !important;
-  padding-top:  0.9rem !important;
+  margin-top:   0.65rem !important;
+  padding-top:  0.65rem !important;
   border-top:   1px solid var(--aw-border) !important;
 }
 
@@ -884,21 +885,9 @@ body.template-index .flickity-button {
   display: none !important;
 }
 
-/* ── Equal-size square cards ── */
+/* ── Compact fixed-height cards ── */
 body.template-index .lumin-slide__flex-item {
-  aspect-ratio: 1 / 1 !important;
-}
-
-body.template-index .lumin-slide__inner-content {
-  height: 100% !important;
-}
-
-/* Clamp review text so it never breaks the square shape */
-body.template-index .lumin-slide__text p {
-  display:            -webkit-box !important;
-  -webkit-line-clamp: 5 !important;
-  -webkit-box-orient: vertical !important;
-  overflow:           hidden !important;
+  height: 268px !important;
 }
 
 /* ── Page dots — pill-style ── */

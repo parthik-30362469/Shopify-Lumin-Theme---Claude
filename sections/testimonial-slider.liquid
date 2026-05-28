@@ -352,7 +352,7 @@
   <div class="lumin-slide__sizer
               lumin-slide__sizer--value-prop-horizontal page-width section-{{ section.id }}-padding" >
     <div id="slider-{{ section.id }}" class="lumin-slide__icons lumin-slide__flex--{{ section.settings.per_row }}-per-row main-carousel" 
-      data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": true, "wrapAround": true,{% if section.settings.auto_rotate %} "autoPlay": {{ section.settings.change_slides_speed }}000,{% endif %}
+      data-flickity='{ "cellAlign": "left", "contain": false, "pageDots": true, "wrapAround": true,{% if section.settings.auto_rotate %} "autoPlay": {{ section.settings.change_slides_speed }}000,{% endif %}
       "adaptiveHeight": false,{%- if mobile_per_row >= section.blocks.size -%}
        "draggable": false,
     {%- else -%}
