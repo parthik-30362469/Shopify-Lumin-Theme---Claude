@@ -1,0 +1,434 @@
+{%- comment -%}
+  sections/portfolite-hero.liquid
+
+  Dark hero section translated from the Portfolite Framer template (augiA20Il).
+  Design tokens ported directly from the Framer project:
+    - bg: #000  |  card bg: #0d0d0d  |  border: rgba(255,255,255,0.1)
+    - font-heading: Satoshi 900  |  font-body: Inter 400
+    - animated bg: "Checks/Mist" gradient — replicated in pure CSS
+
+  ALL styles are scoped to #ph-{{ section.id }}.
+  Zero bleed to global theme, other pages, or other sections.
+{%- endcomment -%}
+
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
+
+<style>
+/* ── Portfolite Hero — scoped to #ph-{{ section.id }} ───────── */
+
+#ph-{{ section.id }} {
+  position:   relative;
+  width:      100%;
+  background: #000000;
+  overflow:   hidden;
+  display:    flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:        24px;
+  padding:    160px 40px 60px;
+  box-sizing: border-box;
+  border-radius: {{ section.settings.border_radius }}px;
+}
+
+/* Decorative border overlay — matches Framer's <Border> node */
+#ph-{{ section.id }}::after {
+  content:       '';
+  position:      absolute;
+  inset:         0;
+  border-radius: {{ section.settings.border_radius }}px;
+  border:        1px solid rgba(255,255,255,0.1);
+  pointer-events: none;
+  z-index:       4;
+}
+
+/* ── Animated background (Checks + Mist from Framer) ───────── */
+#ph-{{ section.id }} .ph-bg {
+  position: absolute;
+  inset:    0;
+  z-index:  0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Fine checkered grid drifting at -50° — mirrors Framer's Checks shape */
+#ph-{{ section.id }} .ph-bg__checks {
+  position: absolute;
+  inset:    -30%;
+  width:    160%;
+  height:   160%;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 68px 68px;
+  transform: rotate(-50deg);
+  animation: ph-checks-drift {{ section.settings.anim_speed }}s linear infinite;
+}
+
+@keyframes ph-checks-drift {
+  from { background-position: 0 0; }
+  to   { background-position: 0 68px; }
+}
+
+/* Soft radial glow — mirrors Framer's Mist/distortion effect */
+#ph-{{ section.id }} .ph-bg__glow {
+  position:   absolute;
+  top:        50%;
+  left:       50%;
+  width:      75%;
+  aspect-ratio: 1;
+  background: radial-gradient(ellipse at center,
+    rgba(255,255,255,0.11) 0%,
+    rgba(255,255,255,0.04) 35%,
+    transparent 70%
+  );
+  transform:  translate(-50%, -50%);
+  animation:  ph-glow-pulse {{ section.settings.anim_speed | times: 0.4 | round }}s ease-in-out infinite;
+}
+
+@keyframes ph-glow-pulse {
+  0%,100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1);    }
+  50%     { opacity: 1;   transform: translate(-50%, -53%) scale(1.08); }
+}
+
+/* Bottom fade — mirrors the AnimatedGradientBackground overlay in Framer */
+#ph-{{ section.id }} .ph-bg__fade {
+  position: absolute;
+  bottom:   0;
+  left:     0;
+  right:    0;
+  height:   35%;
+  background: linear-gradient(to bottom, transparent, #000000);
+  z-index:  1;
+}
+
+/* ── Inner content — max-width 840px, vertical, centered ────── */
+#ph-{{ section.id }} .ph-inner {
+  position:       relative;
+  z-index:        2;
+  width:          100%;
+  max-width:      840px;
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            24px;
+  padding:        40px 0;
+}
+
+/* ── Badge/tag (matches MainSectionTag component) ─────────── */
+#ph-{{ section.id }} .ph-badge {
+  display:     inline-flex;
+  align-items: center;
+  gap:         8px;
+  padding:     7px 16px;
+  border:      1px solid rgba(255,255,255,0.18);
+  border-radius: 100px;
+  background:  rgba(255,255,255,0.04);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size:   13px;
+  font-weight: 500;
+  line-height: 1;
+  color:       rgba(255,255,255,0.65);
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(4px);
+}
+
+#ph-{{ section.id }} .ph-badge::before {
+  content:      '';
+  width:        5px;
+  height:       5px;
+  border-radius: 50%;
+  background:   rgba(255,255,255,0.5);
+  flex-shrink:  0;
+}
+
+/* ── Heading (Framer: /Heading 1 — Satoshi 900, 92px, center) */
+#ph-{{ section.id }} .ph-h1 {
+  font-family:    'Satoshi', 'Inter', -apple-system, sans-serif;
+  font-size:      clamp(40px, 8vw, 92px);
+  font-weight:    900;
+  line-height:    1em;
+  letter-spacing: -0.02em;
+  color:          #ffffff;
+  text-align:     center;
+  margin:         0;
+}
+
+/* ── Subtitle (Framer: /Body 15 — Inter 15px, center, 65% white) */
+#ph-{{ section.id }} .ph-sub {
+  font-family:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size:      15px;
+  font-weight:    400;
+  line-height:    1.5em;
+  letter-spacing: -0.02em;
+  color:          rgba(255,255,255,0.65);
+  text-align:     center;
+  max-width:      540px;
+  margin:         0;
+}
+
+/* ── Buttons row (Framer: Buttons, gap 16px, horizontal, center, wrap) */
+#ph-{{ section.id }} .ph-btns {
+  display:         flex;
+  flex-wrap:       wrap;
+  gap:             16px;
+  justify-content: center;
+  align-items:     center;
+}
+
+#ph-{{ section.id }} .ph-btn {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  padding:         13px 28px;
+  border-radius:   100px;
+  font-family:     'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size:       15px;
+  font-weight:     600;
+  letter-spacing:  -0.01em;
+  text-decoration: none;
+  cursor:          pointer;
+  white-space:     nowrap;
+  transition:      opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  border:          none;
+  line-height:     1;
+}
+
+#ph-{{ section.id }} .ph-btn:hover {
+  opacity:   0.88;
+  transform: translateY(-2px);
+}
+
+/* Primary — white bg, black text */
+#ph-{{ section.id }} .ph-btn--primary {
+  background: #ffffff;
+  color:      #000000;
+}
+
+/* Secondary — ghost / outline */
+#ph-{{ section.id }} .ph-btn--secondary {
+  background:   transparent;
+  color:        rgba(255,255,255,0.78);
+  border:       1px solid rgba(255,255,255,0.22);
+}
+
+#ph-{{ section.id }} .ph-btn--secondary:hover {
+  background:   rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.4);
+  opacity:      1;
+}
+
+/* ── Scroll indicator (Framer: BottomContainer, h 38px, lines + mouse icon) */
+#ph-{{ section.id }} .ph-scroll {
+  display:     flex;
+  align-items: center;
+  gap:         16px;
+  width:       100%;
+  max-width:   640px;
+  height:      38px;
+  margin-top:  36px;
+}
+
+#ph-{{ section.id }} .ph-scroll__label {
+  font-family:    'Inter', -apple-system, sans-serif;
+  font-size:      13px;
+  font-weight:    400;
+  color:          rgba(255,255,255,0.45);
+  white-space:    nowrap;
+  letter-spacing: -0.01em;
+}
+
+#ph-{{ section.id }} .ph-scroll__line {
+  flex:       1;
+  height:     1px;
+  background: rgba(255,255,255,0.1);
+}
+
+#ph-{{ section.id }} .ph-scroll__icon {
+  width:      25px;
+  height:     25px;
+  flex-shrink: 0;
+  opacity:    0.7;
+}
+
+/* ── Mobile ─────────────────────────────────────────────────── */
+@media screen and (max-width: 749px) {
+  #ph-{{ section.id }} {
+    padding:       80px 24px 48px;
+    border-radius: {{ section.settings.border_radius | times: 0.55 | round }}px;
+  }
+
+  #ph-{{ section.id }}::after {
+    border-radius: {{ section.settings.border_radius | times: 0.55 | round }}px;
+  }
+
+  #ph-{{ section.id }} .ph-inner {
+    padding: 20px 0;
+  }
+
+  #ph-{{ section.id }} .ph-scroll {
+    display: none;
+  }
+
+  #ph-{{ section.id }} .ph-btn {
+    padding:   12px 22px;
+    font-size: 14px;
+  }
+}
+</style>
+
+<section id="ph-{{ section.id }}">
+
+  <!-- Animated background layers -->
+  <div class="ph-bg" aria-hidden="true">
+    <div class="ph-bg__checks"></div>
+    <div class="ph-bg__glow"></div>
+    <div class="ph-bg__fade"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="ph-inner">
+
+    {%- if section.settings.badge_text != blank -%}
+      <span class="ph-badge">{{ section.settings.badge_text }}</span>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h1 class="ph-h1">{{ section.settings.heading }}</h1>
+    {%- endif -%}
+
+    {%- if section.settings.subtext != blank -%}
+      <p class="ph-sub">{{ section.settings.subtext }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.btn1_label != blank or section.settings.btn2_label != blank -%}
+      <div class="ph-btns">
+        {%- if section.settings.btn1_label != blank -%}
+          <a href="{{ section.settings.btn1_url }}" class="ph-btn ph-btn--primary">
+            {{- section.settings.btn1_label -}}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.btn2_label != blank -%}
+          <a href="{{ section.settings.btn2_url }}" class="ph-btn ph-btn--secondary">
+            {{- section.settings.btn2_label -}}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_scroll_indicator -%}
+      <div class="ph-scroll" aria-hidden="true">
+        <span class="ph-scroll__label">Scroll down</span>
+        <span class="ph-scroll__line"></span>
+        <svg class="ph-scroll__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+          <rect x="88" y="24" width="80" height="136" rx="40" stroke="white" stroke-width="13"/>
+          <line x1="128" y1="68" x2="128" y2="104" stroke="white" stroke-width="13" stroke-linecap="round"/>
+        </svg>
+        <span class="ph-scroll__line"></span>
+        <span class="ph-scroll__label">to see more</span>
+      </div>
+    {%- endif -%}
+
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Portfolite Hero",
+  "tag": "div",
+  "class": "shopify-section--portfolite-hero",
+  "enabled_on": {
+    "templates": ["product", "page", "index"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge label",
+      "default": "The Ultimate Fabric Shaver"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Restore Your Clothes.\nIn Seconds."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtitle",
+      "default": "Remove lint, fuzz, and fabric pills effortlessly. USB rechargeable, fabric-safe, and built for daily use."
+    },
+    {
+      "type": "header",
+      "content": "Primary button"
+    },
+    {
+      "type": "text",
+      "id": "btn1_label",
+      "label": "Button label",
+      "default": "Order Now"
+    },
+    {
+      "type": "url",
+      "id": "btn1_url",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button"
+    },
+    {
+      "type": "text",
+      "id": "btn2_label",
+      "label": "Button label",
+      "default": "See How It Works"
+    },
+    {
+      "type": "url",
+      "id": "btn2_url",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_scroll_indicator",
+      "label": "Show scroll indicator",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Section border radius",
+      "min": 0,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "anim_speed",
+      "label": "Background animation speed (s)",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Portfolite Hero"
+    }
+  ]
+}
+{% endschema %}
