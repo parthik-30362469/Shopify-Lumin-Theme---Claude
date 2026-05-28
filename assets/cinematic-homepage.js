@@ -54,6 +54,90 @@
 
   /* ── 4. Testimonial marquee — cards duplicated in Liquid for seamless loop ── */
 
+  /* ── 6. Marquee drag-to-scroll (mouse + touch) ── */
+  (function () {
+    var viewport = qs('.lumin-marquee-viewport');
+    var track    = qs('.lumin-marquee-track');
+    if (!viewport || !track) return;
+
+    var dragging       = false;
+    var startX         = 0;
+    var startY         = 0;
+    var offsetAtStart  = 0;
+    var currentPos     = 0;
+
+    /* Parse the browser-computed translateX out of a matrix string */
+    function getComputedX(el) {
+      var t = window.getComputedStyle(el).transform;
+      if (!t || t === 'none') return 0;
+      var m = t.match(/matrix.*\((.+)\)/);
+      return m ? parseFloat(m[1].split(', ')[4]) : 0;
+    }
+
+    /* Restart animation from a given pixel offset, preserving correct phase */
+    function resumeFrom(pos) {
+      var halfTrack = track.scrollWidth / 2;
+      if (halfTrack <= 0) return;
+      /* Normalise pos into the range [-halfTrack, 0) */
+      pos = pos % -halfTrack;
+      if (pos > 0) pos -= halfTrack;
+      if (pos < -halfTrack) pos += halfTrack;
+      var progress = -pos / halfTrack;                         /* 0 → 1 */
+      var isMobile = window.matchMedia('(max-width: 749px)').matches;
+      var duration = isMobile ? 13 : 20;
+      var delay    = -(progress * duration);                   /* negative = start mid-cycle */
+      track.style.removeProperty('transform');
+      track.style.setProperty('animation-delay', delay + 's', 'important');
+      track.style.removeProperty('animation-play-state');
+    }
+
+    function dragStart(x, y) {
+      dragging      = true;
+      startX        = x;
+      startY        = y;
+      offsetAtStart = getComputedX(track);
+      track.style.setProperty('animation-play-state', 'paused', 'important');
+    }
+
+    function dragMove(x, y) {
+      if (!dragging) return;
+      currentPos = offsetAtStart + (x - startX);
+      track.style.setProperty('transform', 'translateX(' + currentPos + 'px)', 'important');
+    }
+
+    function dragEnd() {
+      if (!dragging) return;
+      dragging = false;
+      resumeFrom(currentPos);
+    }
+
+    /* ── Mouse ── */
+    viewport.addEventListener('mousedown', function (e) {
+      dragStart(e.clientX, e.clientY);
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', function (e) {
+      dragMove(e.clientX, e.clientY);
+    });
+    window.addEventListener('mouseup', dragEnd);
+
+    /* ── Touch ── */
+    viewport.addEventListener('touchstart', function (e) {
+      dragStart(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
+
+    viewport.addEventListener('touchmove', function (e) {
+      if (!dragging) return;
+      var dx = Math.abs(e.touches[0].clientX - startX);
+      var dy = Math.abs(e.touches[0].clientY - startY);
+      if (dx > dy) e.preventDefault();          /* block page scroll only for horizontal swipes */
+      dragMove(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: false });
+
+    viewport.addEventListener('touchend', dragEnd, { passive: true });
+    viewport.addEventListener('touchcancel', dragEnd, { passive: true });
+  }());
+
   /* ── 5. Mobile auto-looping slideshow for product cards ── */
   (function () {
     var mq = window.matchMedia('(max-width: 749px)');

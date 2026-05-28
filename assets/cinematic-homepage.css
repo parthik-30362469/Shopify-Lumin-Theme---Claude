@@ -1,4 +1,4 @@
-/* ============================================================
+ial/* ============================================================
    AWWWARDS-INSPIRED HOMEPAGE
    Design: editorial, light warm-grey, heavy display typography
    Font: Inter (400 · 500 · 600 · 700 · 800 · 900)
@@ -898,7 +898,7 @@ body.template-index .lumin-slide__image__wrapper::after {
 
 /* Text wrapper — grows to fill card, pushing name footer to bottom */
 body.template-index .lumin-slide__text-wrapper {
-  padding-top:    2.4rem !important;   /* clears the INSTAZCART label above */
+  padding-top:    4.2rem !important;   /* clears INSTAZCART label with 3× breathing room */
   padding-left:   0 !important;
   padding-right:  0 !important;
   padding-bottom: 0 !important;
@@ -962,6 +962,11 @@ body.template-index .lumin-marquee-viewport {
   overflow:  hidden !important;
   width:     100% !important;
   max-width: 100% !important;
+  cursor:    grab !important;
+}
+
+body.template-index .lumin-marquee-viewport:active {
+  cursor: grabbing !important;
 }
 
 body.template-index .lumin-marquee-track {
@@ -1013,6 +1018,11 @@ body.template-index .flickity-page-dots .dot.is-selected {
   body.template-index .lumin-slide__sizer {
     padding-left:  0 !important;
     padding-right: 0 !important;
+  }
+
+  /* 50% faster on mobile: 20s ÷ 1.5 = 13s */
+  body.template-index .lumin-marquee-track {
+    animation-duration: 13s !important;
   }
 }
 
