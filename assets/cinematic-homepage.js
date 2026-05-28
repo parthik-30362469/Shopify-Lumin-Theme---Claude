@@ -52,4 +52,56 @@
     el.style.display = 'none';
   });
 
+  /* ── 4. Mobile auto-looping slideshow for product cards ── */
+  (function () {
+    var mq = window.matchMedia('(max-width: 749px)');
+    if (!mq.matches) return;
+
+    var slider = qs('.product-grid.slider--tablet');
+    if (!slider) return;
+
+    var items   = qsa('.grid__item', slider);
+    if (items.length < 2) return;
+
+    var current = 0;
+    var INTERVAL = 2600; // ms between advances
+
+    function advance() {
+      var next = (current + 1) % items.length;
+
+      if (next === 0) {
+        // Wrap: jump to start instantly, then let the interval continue
+        slider.style.scrollBehavior = 'auto';
+        slider.scrollLeft = 0;
+        requestAnimationFrame(function () {
+          slider.style.scrollBehavior = '';
+        });
+      } else {
+        // Scroll to next item's left edge
+        var itemLeft = items[next].offsetLeft - slider.offsetLeft;
+        slider.scrollTo({ left: itemLeft, behavior: 'smooth' });
+      }
+
+      current = next;
+    }
+
+    var timer = setInterval(advance, INTERVAL);
+
+    // Pause auto-scroll while user is swiping
+    slider.addEventListener('touchstart', function () {
+      clearInterval(timer);
+    }, { passive: true });
+
+    slider.addEventListener('touchend', function () {
+      // Resume after user finishes swiping — figure out which slide is now visible
+      setTimeout(function () {
+        var itemWidth = items[0] ? items[0].offsetWidth : 0;
+        if (itemWidth > 0) {
+          current = Math.round(slider.scrollLeft / (itemWidth + 16)) % items.length;
+        }
+        timer = setInterval(advance, INTERVAL);
+      }, 600);
+    }, { passive: true });
+  }());
+
 })();

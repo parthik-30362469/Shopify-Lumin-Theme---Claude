@@ -524,22 +524,59 @@ body.template-index .collection__view-all .button:hover {
   color: var(--aw-text) !important;
 }
 
-/* Mobile: 2-col grid */
+/* Mobile: horizontal looping slideshow */
 @media screen and (max-width: 749px) {
+  /* Slider container — no padding clip, let cards scroll */
   body.template-index slider-component,
   body.template-index slider-component.page-width-desktop {
     padding-left:  1.5rem !important;
     padding-right: 1.5rem !important;
-    overflow-x:    hidden !important;
+    overflow:      visible !important;
   }
+
+  /* Revert to flex so native scroll-snap works */
   body.template-index .product-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap:                   12px !important;
+    display:                  flex !important;
+    grid-template-columns:    unset !important;
+    flex-wrap:                nowrap !important;
+    overflow-x:               scroll !important;
+    scroll-snap-type:         x mandatory !important;
+    scroll-behavior:          smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width:          none !important;
+    gap:                      16px !important;
   }
+
+  body.template-index .product-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Each card fills ~82% of the slider width — peek of next card visible */
+  body.template-index .product-grid > .grid__item {
+    flex:             0 0 82% !important;
+    width:            82% !important;
+    max-width:        82% !important;
+    scroll-snap-align: start !important;
+    box-sizing:       border-box !important;
+  }
+
+  /* Hide the prev/next arrows and 1/4 counter */
+  body.template-index .slider-buttons {
+    display: none !important;
+  }
+
+  /* Title / view-all left alignment */
   body.template-index .collection__title.title-wrapper,
   body.template-index .center.collection__view-all {
     padding-left:  1.5rem !important;
     padding-right: 1.5rem !important;
+  }
+}
+
+/* Tablet (750-989px): also hide arrows, 2-col grid */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  body.template-index .slider-buttons {
+    display: none !important;
   }
 }
 
