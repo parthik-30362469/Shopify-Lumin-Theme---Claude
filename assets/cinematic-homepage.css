@@ -644,34 +644,84 @@ body.template-index .caption-with-letter-spacing {
   font-family:    var(--aw-font) !important;
 }
 
-/* Arrow link button */
-body.template-index .image-with-text .button,
-body.template-index .image-with-text__content .button {
-  background:  transparent !important;
-  border:      none !important;
-  box-shadow:  none !important;
-  color:       var(--aw-text) !important;
-  font-family: var(--aw-font) !important;
-  font-weight: 500 !important;
-  font-size:   0.82rem !important;
-  padding:     0 !important;
-  border-radius: 0 !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
-  display:     inline-flex !important;
-  align-items: center !important;
-  gap:         0.25rem !important;
-  margin-top:  1.5rem !important;
+/* Mission section CTA — solid black pill, animated arrow */
+body.template-index .image-with-text__content .button,
+body.template-index .image-with-text .button {
+  display:         inline-flex !important;
+  align-items:     center !important;
+  gap:             0.55rem !important;
+  padding:         0.95rem 2rem !important;
+  margin-top:      2rem !important;
+
+  background:      var(--aw-text) !important;
+  color:           #ffffff !important;
+  border:          none !important;
+  border-radius:   6px !important;
+  box-shadow:      0 2px 14px rgba(0,0,0,0.14) !important;
+
+  font-family:     var(--aw-font) !important;
+  font-weight:     600 !important;
+  font-size:       0.9rem !important;
+  letter-spacing:  0.02em !important;
+  text-transform:  none !important;
   text-decoration: none !important;
-  transition:  opacity 0.2s ease !important;
+  white-space:     nowrap !important;
+
+  min-width:   unset !important;
+  min-height:  unset !important;
+  position:    relative !important;
+  overflow:    hidden !important;
+  cursor:      pointer !important;
+  transition:  transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
+               box-shadow 0.3s ease,
+               background 0.25s ease !important;
 }
 
+/* Remove the theme's built-in inset border ::after and shadow ::before */
+body.template-index .image-with-text__content .button::before,
+body.template-index .image-with-text .button::before {
+  content:    '' !important;
+  position:   absolute !important;
+  inset:      0 !important;
+  background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.1) 50%, transparent 80%) !important;
+  transform:  translateX(-100%) !important;
+  transition: transform 0.55s ease !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+  z-index:    1 !important;
+}
+
+/* Arrow — static, slides right on hover */
+body.template-index .image-with-text__content .button::after,
 body.template-index .image-with-text .button::after {
-  content: '→';
+  content:     '→' !important;
+  position:    static !important;
+  inset:       auto !important;
+  display:     inline-block !important;
+  box-shadow:  none !important;
+  background:  transparent !important;
+  border-radius: 0 !important;
+  font-size:   1em !important;
+  line-height: 1 !important;
+  transition:  transform 0.28s cubic-bezier(0.25,0.46,0.45,0.94) !important;
+  z-index:     2 !important;
 }
 
+body.template-index .image-with-text__content .button:hover,
 body.template-index .image-with-text .button:hover {
-  opacity: 0.65 !important;
+  transform:  translateY(-3px) !important;
+  box-shadow: 0 10px 32px rgba(0,0,0,0.22) !important;
+  background: #1c1c1c !important;
+}
+
+body.template-index .image-with-text__content .button:hover::before,
+body.template-index .image-with-text .button:hover::before {
+  transform: translateX(100%) !important;
+}
+
+body.template-index .image-with-text__content .button:hover::after,
+body.template-index .image-with-text .button:hover::after {
+  transform: translateX(5px) !important;
 }
 
 /* ---- RICH TEXT (section heading row) --------------------- */
