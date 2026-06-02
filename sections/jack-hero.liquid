@@ -220,34 +220,15 @@ body.template-index .shopify-section-group-header-group {
   50%       { transform: translate3d(0, -20px, 0); }
 }
 
-/* Glow orb: only opacity pulses. filter:blur is static so it is
-   rasterised once and never causes a per-frame repaint.           */
-@keyframes jack-glow-pulse {
-  0%, 100% { opacity: 0.62; }
-  50%       { opacity: 1;    }
-}
-
-/* ── Glow orb pseudo-element ─────────────────────────────── */
-.jack-portrait::before {
-  content: '';
+/* ── Orbital rings canvas ─────────────────────────────────── */
+#jack-rings-canvas {
   position: absolute;
-  width: 150%;
-  height: 52%;
-  left: 50%;
-  top: 62%;
-  transform: translate3d(-50%, -50%, 0);
-  border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 50%,
-    rgba(215, 78,  0, 0.70)  0%,
-    rgba(180, 50,  0, 0.34) 40%,
-    rgba(140, 35,  0, 0.11) 65%,
-    transparent             83%
-  );
-  filter: blur(32px);      /* static — rasterised once, never re-painted */
-  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;          /* above background, below portrait (z-index:10) */
   pointer-events: none;
-  will-change: opacity;    /* compositor-only property */
-  animation: jack-glow-pulse 5s cubic-bezier(0.37, 0, 0.63, 1) 1.7s infinite;
+  will-change: transform; /* hoist to own compositor layer */
 }
 
 /* ── Portrait image ──────────────────────────────────────── */
@@ -372,6 +353,9 @@ body.template-index .shopify-section-group-header-group {
 
 <section class="jack-hero">
 
+  <!-- 3D orbital text rings canvas -->
+  <canvas id="jack-rings-canvas" aria-hidden="true"></canvas>
+
   <div class="jack-h1-outer">
     <h1 class="jack-h1 jfi jfi-dn" data-jfi-delay="0.15" style="-webkit-text-fill-color:#ffffff;color:#ffffff;">Innovations That Make Life Easier</h1>
   </div>
@@ -444,6 +428,144 @@ body.template-index .shopify-section-group-header-group {
   if(document.readyState==='loading'){
     document.addEventListener('DOMContentLoaded', function(){ runFadeIns(); runMagnet(); });
   } else { runFadeIns(); runMagnet(); }
+})();
+</script>
+
+<script>
+/* ── 3D Orbital Text Rings ─────────────────────────────────────────────
+   Three rings of neon-orange glowing text orbit the hero image in 3D.
+   Uses perspective projection: x3→x2 so rings look elliptical and
+   characters scale + fade with depth (bright in front, dim behind).
+   Only clearRect + fillText per frame — no layout, no repaint.
+──────────────────────────────────────────────────────────────────────── */
+(function () {
+  var canvas = document.getElementById('jack-rings-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+
+  /* Resize canvas to match its CSS size */
+  function resize() {
+    canvas.width  = canvas.offsetWidth  || window.innerWidth;
+    canvas.height = canvas.offsetHeight || window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var isMobile = window.innerWidth < 640;
+
+  /* ── Ring definitions ──────────────────────────────────────────────
+     tiltDeg : how steeply the ring plane is tilted toward the viewer
+     speed   : radians/sec (negative = reverse)
+     rFactor : radius as fraction of Math.min(vw, vh)
+     size    : base font size in px (scaled with depth)
+     phase   : starting angle offset
+  ─────────────────────────────────────────────────────────────────── */
+  var RINGS = [
+    {
+      text    : 'INSTAZ CART  ✶  ',
+      tiltDeg : 70,
+      speed   : 0.50,
+      rFactor : isMobile ? 0.38 : 0.30,
+      size    : isMobile ? 11 : 14,
+      phase   : 0
+    },
+    {
+      text    : 'SMART SOLUTIONS  ✶  ',
+      tiltDeg : 65,
+      speed   : -0.32,
+      rFactor : isMobile ? 0.52 : 0.42,
+      size    : isMobile ? 10 : 12,
+      phase   : Math.PI
+    },
+    {
+      text    : 'INNOVATIONS  ✶  ',
+      tiltDeg : 75,
+      speed   : 0.22,
+      rFactor : isMobile ? 0.66 : 0.54,
+      size    : isMobile ? 9 : 11,
+      phase   : Math.PI * 0.6
+    }
+  ];
+
+  /* Neon orange palette */
+  var COL_BRIGHT = 'rgb(255, 148, 48)';
+  var COL_MID    = 'rgb(255, 110, 20)';
+
+  function drawRing(ring, t) {
+    var vMin   = Math.min(canvas.width, canvas.height);
+    var radius = vMin * ring.rFactor;
+    var cx     = canvas.width  * 0.5;
+    var cy     = canvas.height * 0.50;
+    var tilt   = ring.tiltDeg * Math.PI / 180;
+    var fov    = Math.max(canvas.width, canvas.height) * 1.1;
+
+    /* Build the text string to fill the ring circumference exactly */
+    var circ      = 2 * Math.PI * radius;
+    var approxCW  = ring.size * 0.58;
+    var need      = Math.max(8, Math.ceil(circ / approxCW));
+    var src       = ring.text;
+    var full      = '';
+    while (full.length < need) full += src;
+    var chars = full.slice(0, need).split('');
+    var step  = (2 * Math.PI) / chars.length;
+
+    chars.forEach(function (ch, i) {
+      var theta = ring.phase + i * step + t * ring.speed;
+
+      /* 3D position on a tilted circle */
+      var x3 =  radius * Math.cos(theta);
+      var y3 =  radius * Math.sin(theta) * Math.sin(tilt);
+      var z3 =  radius * Math.sin(theta) * Math.cos(tilt);
+
+      /* Perspective divide */
+      var p  = fov / (fov + z3);
+      var x2 = cx + x3 * p;
+      var y2 = cy + y3 * p;
+
+      /* Depth-based alpha: near-invisible at back, full glow at front */
+      var depth = (z3 + radius) / (2 * radius); /* 0 (back) → 1 (front) */
+      var alpha = 0.04 + depth * 0.96;
+
+      /* Font size shrinks with distance */
+      var fs = Math.max(5, ring.size * p);
+
+      /* Tangent direction so each char follows the ring curve */
+      var tx    = -Math.sin(theta);
+      var ty    =  Math.cos(theta) * Math.sin(tilt);
+      var angle =  Math.atan2(ty, tx);
+
+      ctx.save();
+      ctx.translate(x2, y2);
+      ctx.rotate(angle);
+      ctx.globalAlpha = alpha;
+      ctx.font = '600 ' + fs + 'px Kanit,sans-serif';
+      ctx.textAlign    = 'center';
+      ctx.textBaseline = 'middle';
+
+      /* Glow halo — one pass with shadowBlur */
+      ctx.shadowColor = 'rgba(255,100,10,' + (alpha * 0.9) + ')';
+      ctx.shadowBlur  = isMobile ? 6 : Math.max(5, 14 * p);
+      ctx.fillStyle   = depth > 0.5 ? COL_BRIGHT : COL_MID;
+      ctx.fillText(ch, 0, 0);
+
+      ctx.restore();
+    });
+  }
+
+  var raf;
+  function frame(ts) {
+    var t = ts * 0.001;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var r = 0; r < RINGS.length; r++) drawRing(RINGS[r], t);
+    raf = requestAnimationFrame(frame);
+  }
+  raf = requestAnimationFrame(frame);
+
+  /* Pause when tab is hidden to save battery */
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) cancelAnimationFrame(raf);
+    else raf = requestAnimationFrame(frame);
+  });
 })();
 </script>
 
