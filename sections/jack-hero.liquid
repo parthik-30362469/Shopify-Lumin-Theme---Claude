@@ -220,15 +220,34 @@ body.template-index .shopify-section-group-header-group {
   50%       { transform: translate3d(0, -20px, 0); }
 }
 
-/* ── Orbital rings canvas ─────────────────────────────────── */
-#jack-rings-canvas {
+/* Glow orb: only opacity pulses. filter:blur is static so it is
+   rasterised once and never causes a per-frame repaint.           */
+@keyframes jack-glow-pulse {
+  0%, 100% { opacity: 0.62; }
+  50%       { opacity: 1;    }
+}
+
+/* ── Glow orb pseudo-element ─────────────────────────────── */
+.jack-portrait::before {
+  content: '';
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 8;          /* above background, below portrait (z-index:10) */
+  width: 150%;
+  height: 52%;
+  left: 50%;
+  top: 62%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 50%,
+    rgba(215, 78,  0, 0.70)  0%,
+    rgba(180, 50,  0, 0.34) 40%,
+    rgba(140, 35,  0, 0.11) 65%,
+    transparent             83%
+  );
+  filter: blur(32px);      /* static — rasterised once, never re-painted */
+  z-index: -1;
   pointer-events: none;
-  will-change: transform; /* hoist to own compositor layer */
+  will-change: opacity;    /* compositor-only property */
+  animation: jack-glow-pulse 5s cubic-bezier(0.37, 0, 0.63, 1) 1.7s infinite;
 }
 
 /* ── Portrait image ──────────────────────────────────────── */
@@ -353,9 +372,6 @@ body.template-index .shopify-section-group-header-group {
 
 <section class="jack-hero">
 
-  <!-- 3D orbital text rings canvas -->
-  <canvas id="jack-rings-canvas" aria-hidden="true"></canvas>
-
   <div class="jack-h1-outer">
     <h1 class="jack-h1 jfi jfi-dn" data-jfi-delay="0.15" style="-webkit-text-fill-color:#ffffff;color:#ffffff;">Innovations That Make Life Easier</h1>
   </div>
@@ -428,121 +444,6 @@ body.template-index .shopify-section-group-header-group {
   if(document.readyState==='loading'){
     document.addEventListener('DOMContentLoaded', function(){ runFadeIns(); runMagnet(); });
   } else { runFadeIns(); runMagnet(); }
-})();
-</script>
-
-<script>
-/*
- * ARMILLARY SPHERE — neon-orange text rings at multiple 3D orientations.
- * Each ring is defined by two Euler angles (rx, ry) giving it a unique
- * orientation: equatorial, meridian, and two diagonals cross each other
- * like a gyroscope, matching the reference animation style.
- *
- * Per-character maths:
- *   flat ring point  [r·cosθ, r·sinθ, 0]
- *   → rotX matrix → rotY matrix → perspective divide fov/(fov+z)
- *   depth alpha  (z+r)/(2r) → 0.04 (back) … 1.0 (front)
- *   tangent angle atan2 of projected tangent vector → char rotation
- */
-(function () {
-  var canvas = document.getElementById('jack-rings-canvas');
-  if (!canvas) return;
-  var ctx = canvas.getContext('2d');
-
-  function resize() {
-    canvas.width  = canvas.offsetWidth  || window.innerWidth;
-    canvas.height = canvas.offsetHeight || window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  var mob = window.innerWidth < 640;
-
-  function rotate(px, py, pz, rx, ry) {
-    var y1 =  py * Math.cos(rx) - pz * Math.sin(rx);
-    var z1 =  py * Math.sin(rx) + pz * Math.cos(rx);
-    var x2 =  px * Math.cos(ry) + z1 * Math.sin(ry);
-    var z2 = -px * Math.sin(ry) + z1 * Math.cos(ry);
-    return [x2, y1, z2];
-  }
-
-  var R = Math.min(canvas.width, canvas.height) * (mob ? 0.44 : 0.30);
-
-  var RINGS = [
-    { text: 'INSTAZ CART  ✦  ',      rx: 1.20, ry: 0.00,  speed:  0.48, size: mob ? 13 : 16, phase: 0           },
-    { text: 'INNOVATIONS  ✦  ',      rx: 0.28, ry: 1.57,  speed: -0.34, size: mob ? 12 : 15, phase: Math.PI*0.4 },
-    { text: 'SMART SOLUTIONS  ✦  ',  rx: 0.85, ry: 0.65,  speed:  0.26, size: mob ? 11 : 14, phase: Math.PI*0.9 },
-    { text: 'INSTAZ CART  ✦  ',      rx: 0.85, ry:-0.65,  speed: -0.20, size: mob ? 11 : 13, phase: Math.PI*1.5 }
-  ];
-
-  function drawRing(ring, t, cx, cy, fov) {
-    var r     = R;
-    var circ  = 2 * Math.PI * r;
-    var cw    = ring.size * 0.62;
-    var n     = Math.max(12, Math.floor(circ / cw));
-    var src   = ring.text;
-    var full  = '';
-    while (full.length < n) full += src;
-    var chars = full.slice(0, n).split('');
-    var step  = (2 * Math.PI) / chars.length;
-
-    chars.forEach(function (ch, i) {
-      var theta = ring.phase + i * step + t * ring.speed;
-
-      var flat = rotate(r * Math.cos(theta), r * Math.sin(theta), 0, ring.rx, ring.ry);
-      var x3 = flat[0], y3 = flat[1], z3 = flat[2];
-
-      var sc = fov / (fov + z3);
-      var x2 = cx + x3 * sc;
-      var y2 = cy + y3 * sc;
-
-      var depth = (z3 + r) / (2 * r);
-      var alpha = 0.04 + depth * 0.96;
-
-      var tan = rotate(-r * Math.sin(theta), r * Math.cos(theta), 0, ring.rx, ring.ry);
-      var charAngle = Math.atan2(tan[1] * sc, tan[0]);
-
-      var fs = Math.max(6, ring.size * sc);
-
-      ctx.save();
-      ctx.translate(x2, y2);
-      ctx.rotate(charAngle);
-      ctx.globalAlpha = alpha;
-      ctx.font = '700 ' + fs + 'px Kanit,sans-serif';
-      ctx.textAlign    = 'center';
-      ctx.textBaseline = 'middle';
-
-      ctx.shadowColor = 'rgba(255,90,10,' + (alpha * 0.85) + ')';
-      ctx.shadowBlur  = Math.max(8, (mob ? 10 : 18) * sc);
-      var g = Math.round(100 + depth * 70);
-      ctx.fillStyle = 'rgb(255,' + g + ',20)';
-      ctx.fillText(ch, 0, 0);
-
-      ctx.shadowBlur = 0;
-      ctx.globalAlpha = alpha * 0.55;
-      ctx.fillStyle = 'rgb(255,215,130)';
-      ctx.fillText(ch, 0, 0);
-
-      ctx.restore();
-    });
-  }
-
-  var raf;
-  function frame(ts) {
-    var t   = ts * 0.001;
-    var cx  = canvas.width  * 0.5;
-    var cy  = canvas.height * (mob ? 0.46 : 0.52);
-    var fov = Math.max(canvas.width, canvas.height) * 0.95;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (var i = 0; i < RINGS.length; i++) drawRing(RINGS[i], t, cx, cy, fov);
-    raf = requestAnimationFrame(frame);
-  }
-  raf = requestAnimationFrame(frame);
-
-  document.addEventListener('visibilitychange', function () {
-    if (document.hidden) cancelAnimationFrame(raf);
-    else raf = requestAnimationFrame(frame);
-  });
 })();
 </script>
 
