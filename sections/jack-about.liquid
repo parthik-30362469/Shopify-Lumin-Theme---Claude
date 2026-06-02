@@ -1,7 +1,6 @@
 {%- comment -%} Jack — Our Mission Section {%- endcomment -%}
 
 <style>
-/* ── Section wrapper ──────────────────────────────────────── */
 .jack-about {
   background: #ffffff;
   padding: 6rem 1.25rem;
@@ -10,11 +9,10 @@
   font-family: 'Kanit', sans-serif;
   overflow: hidden;
 }
-@media (min-width: 640px) { .jack-about { padding: 7rem 2rem;   } }
-@media (min-width: 768px) { .jack-about { padding: 8rem 3rem;   } }
-@media (min-width: 1024px){ .jack-about { padding: 8rem 5rem;   } }
+@media (min-width: 640px) { .jack-about { padding: 7rem 2rem; } }
+@media (min-width: 768px) { .jack-about { padding: 8rem 3rem; } }
+@media (min-width: 1024px){ .jack-about { padding: 8rem 5rem; } }
 
-/* ── Two-column grid ──────────────────────────────────────── */
 .jack-about-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -24,13 +22,9 @@
   align-items: center;
 }
 @media (min-width: 768px) {
-  .jack-about-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-  }
+  .jack-about-grid { grid-template-columns: 1fr 1fr; gap: 5rem; }
 }
 
-/* ── Image ────────────────────────────────────────────────── */
 .jack-about-img-wrap {
   width: 100%;
   overflow: hidden;
@@ -44,28 +38,14 @@
   aspect-ratio: 1 / 1;
   transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.jack-about-img-wrap:hover img {
-  transform: scale(1.03);
-}
+.jack-about-img-wrap:hover img { transform: scale(1.03); }
 
-/* ── Text content ─────────────────────────────────────────── */
 .jack-about-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
 }
-
-.jack-about-label {
-  font-family: 'Kanit', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #888888;
-  margin: 0 0 1.2rem;
-}
-
 .jack-about-h2 {
   font-family: 'Kanit', sans-serif;
   font-weight: 900;
@@ -76,7 +56,6 @@
   color: #111111;
   margin: 0 0 2.5rem;
 }
-
 .jack-about-body {
   font-family: 'Kanit', sans-serif;
   font-weight: 400;
@@ -86,11 +65,6 @@
   margin: 0 0 1.4rem;
   max-width: 520px;
 }
-.jack-about-body:last-of-type {
-  margin-bottom: 0;
-}
-
-/* ── CTA button ───────────────────────────────────────────── */
 .jack-about-btn {
   display: inline-flex;
   align-items: center;
@@ -104,11 +78,8 @@
   text-transform: uppercase;
   letter-spacing: 0.14em;
   text-decoration: none;
-  border: none;
   cursor: pointer;
   margin-top: 2.2rem;
-  position: relative;
-  overflow: hidden;
   transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 .jack-about-btn:hover {
@@ -116,67 +87,39 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
-.jack-about-btn-arrow {
-  display: inline-block;
-  transition: transform 0.22s ease;
-}
-.jack-about-btn:hover .jack-about-btn-arrow {
-  transform: translateX(4px);
-}
-
-/* ── jfi helpers (slide from side) ───────────────────────── */
+.jack-about-btn-arrow { display: inline-block; transition: transform 0.22s ease; }
+.jack-about-btn:hover .jack-about-btn-arrow { transform: translateX(4px); }
 .jfi-x-neg { transform: translateX(-60px); }
-.jfi-x-pos { transform: translateX(60px);  }
 </style>
 
 <section class="jack-about" id="jack-about">
   <div class="jack-about-grid">
-
-    <!-- Image column -->
     <div class="jack-about-img-wrap jfi jfi-x-neg" data-jfi-delay="0.1">
       {%- if section.settings.image != blank -%}
-        <img
-          src="{{ section.settings.image | image_url: width: 900 }}"
-          alt="{{ section.settings.image_alt | default: 'Our Mission' | escape }}"
-          loading="lazy"
-        >
+        <img src="{{ section.settings.image | image_url: width: 900 }}"
+             alt="{{ section.settings.image_alt | default: 'Our Mission' | escape }}"
+             loading="lazy">
       {%- else -%}
-        <img
-          src="https://cdn.shopify.com/s/files/1/0706/1343/4437/files/Picsart-BackgroundRemover.png?v=1779993149"
-          alt="Our Mission"
-          loading="lazy"
-        >
+        <img src="PASTE_YOUR_IMAGE_URL_HERE"
+             alt="Our Mission" loading="lazy">
       {%- endif -%}
     </div>
-
-    <!-- Text column -->
     <div class="jack-about-content">
-      {%- if section.settings.label != blank -%}
-        <p class="jack-about-label jfi jfi-sm" data-jfi-delay="0.12">{{ section.settings.label }}</p>
-      {%- endif -%}
-
       <h2 class="jack-about-h2 jfi jfi-dn" data-jfi-delay="0.18">
         {{ section.settings.heading | default: 'Our Mission' }}
       </h2>
-
       <p class="jack-about-body jfi jfi-sm" data-jfi-delay="0.28">
         {{ section.settings.body_1 | default: 'Our passion for the newest innovations means that we provide our customers with nothing but the highest quality of products, which are guaranteed to meet their needs and keep them satisfied.' }}
       </p>
-
       <p class="jack-about-body jfi jfi-sm" data-jfi-delay="0.36">
         {{ section.settings.body_2 | default: "With a motivated team, we strive to be the creative minds that bring a smile to your face. That's why we're always looking for innovative new ways to get the best to you." }}
       </p>
-
-      <a
-        href="{{ section.settings.cta_url | default: '/collections/all' }}"
-        class="jack-about-btn jfi jfi-sm"
-        data-jfi-delay="0.44"
-      >
+      <a href="{{ section.settings.cta_url | default: '/collections/all' }}"
+         class="jack-about-btn jfi jfi-sm" data-jfi-delay="0.44">
         {{ section.settings.cta_label | default: 'Shop Products' }}
         <span class="jack-about-btn-arrow" aria-hidden="true">&#8594;</span>
       </a>
     </div>
-
   </div>
 </section>
 
@@ -186,52 +129,15 @@
   "tag": "div",
   "class": "jack-about-section",
   "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Mission image"
-    },
-    {
-      "type": "text",
-      "id": "image_alt",
-      "label": "Image alt text",
-      "default": "Our Mission"
-    },
-    {
-      "type": "text",
-      "id": "label",
-      "label": "Eyebrow label",
-      "default": ""
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Our Mission"
-    },
-    {
-      "type": "textarea",
-      "id": "body_1",
-      "label": "First paragraph",
-      "default": "Our passion for the newest innovations means that we provide our customers with nothing but the highest quality of products, which are guaranteed to meet their needs and keep them satisfied."
-    },
-    {
-      "type": "textarea",
-      "id": "body_2",
-      "label": "Second paragraph",
-      "default": "With a motivated team, we strive to be the creative minds that bring a smile to your face. That's why we're always looking for innovative new ways to get the best to you."
-    },
-    {
-      "type": "text",
-      "id": "cta_label",
-      "label": "Button label",
-      "default": "Shop Products"
-    },
-    {
-      "type": "url",
-      "id": "cta_url",
-      "label": "Button link"
-    }
+    { "type": "image_picker", "id": "image",     "label": "Mission image" },
+    { "type": "text",         "id": "image_alt", "label": "Image alt text", "default": "Our Mission" },
+    { "type": "text",         "id": "heading",   "label": "Heading",        "default": "Our Mission" },
+    { "type": "textarea",     "id": "body_1",    "label": "First paragraph",
+      "default": "Our passion for the newest innovations means that we provide our customers with nothing but the highest quality of products, which are guaranteed to meet their needs and keep them satisfied." },
+    { "type": "textarea",     "id": "body_2",    "label": "Second paragraph",
+      "default": "With a motivated team, we strive to be the creative minds that bring a smile to your face. That's why we're always looking for innovative new ways to get the best to you." },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Shop Products" },
+    { "type": "url",  "id": "cta_url",   "label": "Button link" }
   ],
   "presets": [{ "name": "Jack Mission" }]
 }
