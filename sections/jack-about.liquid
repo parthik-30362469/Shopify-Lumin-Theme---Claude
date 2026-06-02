@@ -1,168 +1,238 @@
-{%- comment -%} Jack 3D Creator — About Section {%- endcomment -%}
+{%- comment -%} Jack — Our Mission Section {%- endcomment -%}
 
 <style>
+/* ── Section wrapper ──────────────────────────────────────── */
 .jack-about {
-  min-height: 100vh;
+  background: #ffffff;
+  padding: 6rem 1.25rem;
   position: relative;
   z-index: 0;
-  background: #0C0C0C;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5rem 1.25rem;
-  overflow: hidden;
   font-family: 'Kanit', sans-serif;
+  overflow: hidden;
 }
-@media (min-width: 640px) { .jack-about { padding: 5rem 2rem;  } }
-@media (min-width: 768px) { .jack-about { padding: 5rem 2.5rem;} }
+@media (min-width: 640px) { .jack-about { padding: 7rem 2rem;   } }
+@media (min-width: 768px) { .jack-about { padding: 8rem 3rem;   } }
+@media (min-width: 1024px){ .jack-about { padding: 8rem 5rem;   } }
 
-/* Corner decorative images */
-.jack-about-deco {
-  position: absolute;
-  pointer-events: none;
-  user-select: none;
-}
-.jack-deco-tl {
-  top: 4%; left: 1%;
-  width: 120px;
-}
-.jack-deco-bl {
-  bottom: 8%; left: 3%;
-  width: 100px;
-}
-.jack-deco-tr {
-  top: 4%; right: 1%;
-  width: 120px;
-}
-.jack-deco-br {
-  bottom: 8%; right: 3%;
-  width: 130px;
-}
-@media (min-width: 640px) {
-  .jack-deco-tl { width:160px; left:2%;  }
-  .jack-deco-bl { width:140px; left:6%;  }
-  .jack-deco-tr { width:160px; right:2%; }
-  .jack-deco-br { width:170px; right:6%; }
+/* ── Two-column grid ──────────────────────────────────────── */
+.jack-about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
 }
 @media (min-width: 768px) {
-  .jack-deco-tl { width:210px; left:4%;  }
-  .jack-deco-bl { width:180px; left:10%; }
-  .jack-deco-tr { width:210px; right:4%; }
-  .jack-deco-br { width:220px; right:10%;}
+  .jack-about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
 }
-.jack-about-deco img { width: 100%; display: block; }
 
-/* Content column */
-.jack-about-inner {
+/* ── Image ────────────────────────────────────────────────── */
+.jack-about-img-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.jack-about-img-wrap img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.jack-about-img-wrap:hover img {
+  transform: scale(1.03);
+}
+
+/* ── Text content ─────────────────────────────────────────── */
+.jack-about-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 2.5rem;
-  position: relative;
-  z-index: 5;
+  align-items: flex-start;
+  text-align: left;
 }
-@media (min-width: 640px) { .jack-about-inner { gap: 3.5rem;  } }
-@media (min-width: 768px) { .jack-about-inner { gap: 4rem;    } }
+
+.jack-about-label {
+  font-family: 'Kanit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888888;
+  margin: 0 0 1.2rem;
+}
 
 .jack-about-h2 {
   font-family: 'Kanit', sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.03em;
-  line-height: 1;
-  font-size: clamp(3rem, 12vw, 160px);
-  margin: 0;
+  line-height: 0.95;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  color: #111111;
+  margin: 0 0 2.5rem;
 }
 
 .jack-about-body {
-  color: #D7E2EA;
   font-family: 'Kanit', sans-serif;
-  font-weight: 500;
-  text-align: center;
-  line-height: 1.625;
-  max-width: 560px;
-  font-size: clamp(1rem, 2vw, 1.35rem);
-  margin: 0;
+  font-weight: 400;
+  color: #444444;
+  line-height: 1.75;
+  font-size: clamp(0.92rem, 1.4vw, 1.05rem);
+  margin: 0 0 1.4rem;
+  max-width: 520px;
+}
+.jack-about-body:last-of-type {
+  margin-bottom: 0;
 }
 
-/* Character-level animated text */
-.jack-anim-char {
-  display: inline;
-  opacity: 0.2;
-  transition: opacity 0.06s ease;
+/* ── CTA button ───────────────────────────────────────────── */
+.jack-about-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.8rem;
+  background: #111111;
+  color: #ffffff;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 2.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.jack-about-btn:hover {
+  background: #1c1c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+.jack-about-btn-arrow {
+  display: inline-block;
+  transition: transform 0.22s ease;
+}
+.jack-about-btn:hover .jack-about-btn-arrow {
+  transform: translateX(4px);
 }
 
-/* FadeIn for corner images */
-.jfi-x-neg { transform: translateX(-80px); }
-.jfi-x-pos { transform: translateX(80px);  }
+/* ── jfi helpers (slide from side) ───────────────────────── */
+.jfi-x-neg { transform: translateX(-60px); }
+.jfi-x-pos { transform: translateX(60px);  }
 </style>
 
 <section class="jack-about" id="jack-about">
+  <div class="jack-about-grid">
 
-  <!-- Top-left moon -->
-  <div class="jack-about-deco jack-deco-tl jfi jfi-x-neg" data-jfi-delay="0.1">
-    <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png" alt="">
-  </div>
-  <!-- Bottom-left object -->
-  <div class="jack-about-deco jack-deco-bl jfi jfi-x-neg" data-jfi-delay="0.25">
-    <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/p59_1.4659672e.png" alt="">
-  </div>
-  <!-- Top-right lego -->
-  <div class="jack-about-deco jack-deco-tr jfi jfi-x-pos" data-jfi-delay="0.15">
-    <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/lego_icon-1.703bb594.png" alt="">
-  </div>
-  <!-- Bottom-right group -->
-  <div class="jack-about-deco jack-deco-br jfi jfi-x-pos" data-jfi-delay="0.3">
-    <img src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/Group_134-1.2e04f3ce.png" alt="">
-  </div>
+    <!-- Image column -->
+    <div class="jack-about-img-wrap jfi jfi-x-neg" data-jfi-delay="0.1">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 900 }}"
+          alt="{{ section.settings.image_alt | default: 'Our Mission' | escape }}"
+          loading="lazy"
+        >
+      {%- else -%}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0706/1343/4437/files/Picsart-BackgroundRemover.png?v=1779993149"
+          alt="Our Mission"
+          loading="lazy"
+        >
+      {%- endif -%}
+    </div>
 
-  <div class="jack-about-inner">
-    <h2 class="jack-about-h2 jack-grad jfi jfi-dn" data-jfi-delay="0">About me</h2>
+    <!-- Text column -->
+    <div class="jack-about-content">
+      {%- if section.settings.label != blank -%}
+        <p class="jack-about-label jfi jfi-sm" data-jfi-delay="0.12">{{ section.settings.label }}</p>
+      {%- endif -%}
 
-    <p class="jack-about-body" id="jack-anim-text">With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let&apos;s build something incredible together!</p>
+      <h2 class="jack-about-h2 jfi jfi-dn" data-jfi-delay="0.18">
+        {{ section.settings.heading | default: 'Our Mission' }}
+      </h2>
 
-    <a href="#jack-contact" class="jack-contact-btn jfi jfi-sm" data-jfi-delay="0.2">
-      Contact Me
-    </a>
+      <p class="jack-about-body jfi jfi-sm" data-jfi-delay="0.28">
+        {{ section.settings.body_1 | default: 'Our passion for the newest innovations means that we provide our customers with nothing but the highest quality of products, which are guaranteed to meet their needs and keep them satisfied.' }}
+      </p>
+
+      <p class="jack-about-body jfi jfi-sm" data-jfi-delay="0.36">
+        {{ section.settings.body_2 | default: "With a motivated team, we strive to be the creative minds that bring a smile to your face. That's why we're always looking for innovative new ways to get the best to you." }}
+      </p>
+
+      <a
+        href="{{ section.settings.cta_url | default: '/collections/all' }}"
+        class="jack-about-btn jfi jfi-sm"
+        data-jfi-delay="0.44"
+      >
+        {{ section.settings.cta_label | default: 'Shop Products' }}
+        <span class="jack-about-btn-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+    </div>
+
   </div>
-
 </section>
 
-<script>
-(function(){
-  /* ── Animated paragraph: character opacity by scroll ── */
-  var para = document.getElementById('jack-anim-text');
-  if(para){
-    var text = para.textContent;
-    para.innerHTML = '';
-    var chars = text.split('').map(function(ch){
-      var s = document.createElement('span');
-      s.className = 'jack-anim-char';
-      s.textContent = ch === ' ' ? ' ' : ch;
-      para.appendChild(s);
-      return s;
-    });
-
-    function updateChars(){
-      var r       = para.getBoundingClientRect();
-      var vh      = window.innerHeight;
-      var start   = r.top + window.scrollY - vh * 0.8;
-      var end     = r.bottom + window.scrollY - vh * 0.2;
-      var prog    = (window.scrollY - start) / (end - start);
-      prog = Math.max(0, Math.min(1, prog));
-      var total   = chars.length;
-      chars.forEach(function(s, i){
-        var cp = Math.max(0, Math.min(1, (prog * total - i)));
-        s.style.opacity = 0.2 + 0.8 * cp;
-      });
-    }
-    window.addEventListener('scroll', updateChars, { passive:true });
-    updateChars();
-  }
-})();
-</script>
-
 {% schema %}
-{ "name":"Jack About","tag":"div","class":"jack-about-section","settings":[],"presets":[{"name":"Jack About"}] }
+{
+  "name": "Jack Mission",
+  "tag": "div",
+  "class": "jack-about-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Mission image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Our Mission"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Eyebrow label",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Mission"
+    },
+    {
+      "type": "textarea",
+      "id": "body_1",
+      "label": "First paragraph",
+      "default": "Our passion for the newest innovations means that we provide our customers with nothing but the highest quality of products, which are guaranteed to meet their needs and keep them satisfied."
+    },
+    {
+      "type": "textarea",
+      "id": "body_2",
+      "label": "Second paragraph",
+      "default": "With a motivated team, we strive to be the creative minds that bring a smile to your face. That's why we're always looking for innovative new ways to get the best to you."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label",
+      "default": "Shop Products"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button link"
+    }
+  ],
+  "presets": [{ "name": "Jack Mission" }]
+}
 {% endschema %}
