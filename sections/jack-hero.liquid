@@ -199,85 +199,68 @@ body.template-index .shopify-section-group-header-group {
 @media (min-width: 768px)  { .jack-portrait img { height: 74vh; max-width: 640px; } }
 @media (min-width: 1024px) { .jack-portrait img { height: 80vh; max-width: 780px; } }
 
-/* ── Entrance + ambient animations ──────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   ANIMATIONS — only transform + opacity ever change at runtime.
+   Both properties stay on the GPU compositor thread → zero repaints
+   → butter-smooth at 60/120 fps on both desktop and mobile.
+   ══════════════════════════════════════════════════════════ */
 
-/* Stage 1 — power-on: rises from dark + blur, flashes bright, settles */
+/* Entrance: opacity + scale/translate only (no filter = no repaint) */
 @keyframes jack-portrait-entrance {
-  0%   {
-    opacity: 0;
-    transform: scale(0.78) translateY(50px);
-    filter: blur(14px) brightness(0) saturate(0);
-  }
-  38%  {
-    opacity: 1;
-    transform: scale(1.07) translateY(-10px);
-    filter: blur(0px) brightness(1.55) saturate(1.3);
-  }
-  60%  {
-    transform: scale(0.97) translateY(4px);
-    filter: brightness(0.95) saturate(1);
-  }
-  80%  { transform: scale(1.01) translateY(-2px); }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    filter: brightness(1) saturate(1);
-  }
+  0%   { opacity: 0;   transform: scale(0.88) translate3d(0, 36px, 0); }
+  55%  { opacity: 1;   transform: scale(1.04) translate3d(0, -6px, 0); }
+  75%  {               transform: scale(0.99) translate3d(0,  2px, 0); }
+  100% { opacity: 1;   transform: scale(1)    translate3d(0,  0,   0); }
 }
 
-/* Stage 2 — pure transform float, NO filter (keeps GPU compositor path clean) */
-@keyframes jack-portrait-ambient {
-  0%, 100% { transform: translateY(0)     rotate(-0.4deg); }
-  50%       { transform: translateY(-20px) rotate( 0.4deg); }
+/* Float: pure translate3d — GPU compositor only, zero paint cost.
+   cubic-bezier(0.37,0,0.63,1) ≈ a sine wave → most natural rhythm */
+@keyframes jack-portrait-float {
+  0%, 100% { transform: translate3d(0,     0, 0); }
+  50%       { transform: translate3d(0, -20px, 0); }
 }
 
-/* ── Radial glow orb (replaces drop-shadow — round shape, not boxy) ── */
-/* Sits behind the image as a ::before pseudo-element on the portrait   */
+/* Glow orb: only opacity pulses. filter:blur is static so it is
+   rasterised once and never causes a per-frame repaint.           */
+@keyframes jack-glow-pulse {
+  0%, 100% { opacity: 0.62; }
+  50%       { opacity: 1;    }
+}
+
+/* ── Glow orb pseudo-element ─────────────────────────────── */
 .jack-portrait::before {
   content: '';
   position: absolute;
-  /* Centred behind the image, slightly wider than it */
-  width:  160%;
-  height: 55%;
-  left:   50%;
-  top:    55%;
-  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 52%;
+  left: 50%;
+  top: 62%;
+  transform: translate3d(-50%, -50%, 0);
   border-radius: 50%;
-  /* Soft radial gradient — circular amber core fading to nothing */
   background: radial-gradient(ellipse at 50% 50%,
-    rgba(215, 78, 0, 0.72) 0%,
-    rgba(180, 50, 0, 0.38) 38%,
-    rgba(140, 35, 0, 0.14) 65%,
-    transparent            85%
+    rgba(215, 78,  0, 0.70)  0%,
+    rgba(180, 50,  0, 0.34) 40%,
+    rgba(140, 35,  0, 0.11) 65%,
+    transparent             83%
   );
-  filter: blur(28px);
+  filter: blur(32px);      /* static — rasterised once, never re-painted */
   z-index: -1;
   pointer-events: none;
-  will-change: transform, opacity;
-  /* Orb pulses in sync with the float */
-  animation: jack-glow-orb 4.8s ease-in-out 1.8s infinite;
+  will-change: opacity;    /* compositor-only property */
+  animation: jack-glow-pulse 5s cubic-bezier(0.37, 0, 0.63, 1) 1.7s infinite;
 }
 
-@keyframes jack-glow-orb {
-  0%, 100% {
-    opacity: 0.75;
-    transform: translate(-50%, -50%) scale(1)    translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.22) translateY(-20px);
-  }
-}
-
+/* ── Portrait image ──────────────────────────────────────── */
 .jack-portrait img {
-  will-change: transform;          /* transform only — no filter jank */
+  will-change: transform;          /* hoist to own GPU layer */
+  backface-visibility: hidden;     /* prevent sub-pixel flicker */
   animation:
-    jack-portrait-entrance  1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards,
-    jack-portrait-ambient   4.8s ease-in-out                    1.8s infinite;
+    jack-portrait-entrance  1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s  both,
+    jack-portrait-float     5s   cubic-bezier(0.37, 0, 0.63, 1) 1.7s  infinite;
 }
 
-/* Pause float + orb on hover so magnet feels crisp */
-.jack-portrait:hover img   { animation-play-state: running, paused; }
+/* Pause float + orb on hover so magnet feels instant */
+.jack-portrait:hover img     { animation-play-state: running, paused; }
 .jack-portrait:hover::before { animation-play-state: paused; }
 
 /* ── Bottom bar ────────────────────────────────────────────── */
