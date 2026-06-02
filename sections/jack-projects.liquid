@@ -80,24 +80,57 @@
   letter-spacing: 0.02em;
 }
 .jack-live-btn {
-  display: inline-flex;
-  align-items: center;
-  border-radius: 9999px;
-  border: 2px solid #D7E2EA;
-  color: #D7E2EA;
-  font-family: 'Kanit', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.875rem;
-  padding: 0.75rem 2rem;
+  display:         inline-flex;
+  align-items:     center;
+  gap:             0.7rem;
+  padding:         1rem 3rem;
+  background:      linear-gradient(135deg, #000000 0%, #1e1e1e 35%, #5a5a5a 65%, #c8c8c8 100%);
+  box-shadow:      0 4px 16px rgba(255,255,255,0.12), inset 2px 2px 8px rgba(255,255,255,0.08);
+  outline:         2px solid rgba(255,255,255,0.7);
+  outline-offset:  -3px;
+  border-radius:   9999px;
+  border:          none;
+  color:           #ffffff;
+  font-family:     'Kanit', sans-serif;
+  font-weight:     600;
+  text-transform:  uppercase;
+  letter-spacing:  0.14em;
+  font-size:       clamp(0.9rem, 1.6vw, 1.25rem);
   text-decoration: none;
-  transition: background 0.2s;
-  white-space: nowrap;
-  margin-left: auto;
+  cursor:          pointer;
+  overflow:        hidden;
+  position:        relative;
+  white-space:     nowrap;
+  margin-left:     auto;
+  animation:       jack-float 3s ease-in-out 1s infinite;
 }
-@media (min-width: 640px) { .jack-live-btn { padding:0.875rem 2.5rem; font-size:1rem; } }
-.jack-live-btn:hover { background: rgba(215,226,234,0.1); }
+@media (min-width: 640px) { .jack-live-btn { padding: 1.1rem 3.5rem; } }
+@media (min-width: 768px) { .jack-live-btn { padding: 1.25rem 4rem;  } }
+
+.jack-live-btn:hover {
+  animation-play-state: paused;
+  opacity: 0.9;
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* Shimmer sweep */
+.jack-live-btn::before {
+  content:    '';
+  position:   absolute;
+  top:0; left:-75%; width:50%; height:100%;
+  background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.22) 50%, transparent 80%);
+  transform:  skewX(-15deg);
+}
+.jack-live-btn:hover::before {
+  left:       130%;
+  transition: left 0.55s ease;
+}
+
+/* Reuse the jack-float keyframes (defined in jack-hero) */
+@keyframes jack-float {
+  0%,100% { transform:translateY(0);    box-shadow:0 4px 20px rgba(255,255,255,0.12), inset 2px 2px 8px rgba(255,255,255,0.08); }
+  50%     { transform:translateY(-6px); box-shadow:0 12px 36px rgba(255,255,255,0.22), inset 2px 2px 8px rgba(255,255,255,0.12); }
+}
 
 /* Card image grid */
 .jack-card-imgs {
@@ -142,7 +175,7 @@
           <span class="jack-card-category">Client</span>
           <span class="jack-card-name">Nextlevel Studio</span>
         </div>
-        <a href="/collections/all" class="jack-live-btn">Explore Now</a>
+        <a href="/collections/all" class="jack-live-btn">Explore Now <span style="display:inline-block;transition:transform 0.22s ease" class="jack-live-arrow">&#8594;</span></a>
       </div>
       <div class="jack-card-imgs">
         <div class="jack-card-col1">
@@ -165,7 +198,7 @@
           <span class="jack-card-category">Personal</span>
           <span class="jack-card-name">Aura Brand Identity</span>
         </div>
-        <a href="/collections/all" class="jack-live-btn">Explore Now</a>
+        <a href="/collections/all" class="jack-live-btn">Explore Now <span style="display:inline-block;transition:transform 0.22s ease" class="jack-live-arrow">&#8594;</span></a>
       </div>
       <div class="jack-card-imgs">
         <div class="jack-card-col1">
@@ -188,7 +221,7 @@
           <span class="jack-card-category">Client</span>
           <span class="jack-card-name">Solaris Digital</span>
         </div>
-        <a href="/collections/all" class="jack-live-btn">Explore Now</a>
+        <a href="/collections/all" class="jack-live-btn">Explore Now <span style="display:inline-block;transition:transform 0.22s ease" class="jack-live-arrow">&#8594;</span></a>
       </div>
       <div class="jack-card-imgs">
         <div class="jack-card-col1">

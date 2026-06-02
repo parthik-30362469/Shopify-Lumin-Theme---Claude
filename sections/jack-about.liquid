@@ -66,27 +66,51 @@
   max-width: 520px;
 }
 .jack-about-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 1rem 2.8rem;
-  background: #ffffff;
-  color: #0C0C0C;
-  font-family: 'Kanit', sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  display:         inline-flex;
+  align-items:     center;
+  gap:             0.7rem;
+  padding:         1rem 3rem;
+  background:      linear-gradient(135deg, #000000 0%, #1e1e1e 35%, #5a5a5a 65%, #c8c8c8 100%);
+  box-shadow:      0 4px 16px rgba(255,255,255,0.12), inset 2px 2px 8px rgba(255,255,255,0.08);
+  outline:         2px solid rgba(255,255,255,0.7);
+  outline-offset:  -3px;
+  border-radius:   9999px;
+  border:          none;
+  color:           #ffffff;
+  font-family:     'Kanit', sans-serif;
+  font-weight:     600;
+  text-transform:  uppercase;
+  letter-spacing:  0.14em;
+  font-size:       clamp(0.9rem, 1.6vw, 1.25rem);
   text-decoration: none;
-  cursor: pointer;
-  margin-top: 2.2rem;
-  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  cursor:          pointer;
+  overflow:        hidden;
+  position:        relative;
+  margin-top:      2.2rem;
+  animation:       jack-float 3s ease-in-out 0.8s infinite;
 }
+@media (min-width: 640px) { .jack-about-btn { padding: 1.1rem 3.5rem; } }
+@media (min-width: 768px) { .jack-about-btn { padding: 1.25rem 4rem;  } }
+
 .jack-about-btn:hover {
-  background: #D7E2EA;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(255,255,255,0.12);
+  animation-play-state: paused;
+  opacity: 0.9;
+  transform: translateY(-3px) scale(1.03);
 }
+
+/* Shimmer sweep */
+.jack-about-btn::before {
+  content:    '';
+  position:   absolute;
+  top:0; left:-75%; width:50%; height:100%;
+  background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.22) 50%, transparent 80%);
+  transform:  skewX(-15deg);
+}
+.jack-about-btn:hover::before {
+  left:       130%;
+  transition: left 0.55s ease;
+}
+
 .jack-about-btn-arrow { display: inline-block; transition: transform 0.22s ease; }
 .jack-about-btn:hover .jack-about-btn-arrow { transform: translateX(4px); }
 .jfi-x-neg { transform: translateX(-60px); }
