@@ -1,1 +1,51 @@
-{"sections":{"jack_hero":{"type":"jack-hero","settings":{}},"jack_marquee":{"type":"jack-marquee","settings":{}},"jack_about":{"type":"jack-about","settings":{}},"jack_services":{"type":"jack-services","settings":{}},"jack_projects":{"type":"jack-projects","settings":{}}},"order":["jack_hero","jack_marquee","jack_about","jack_services","jack_projects"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "jack_hero": {
+      "type": "jack-hero",
+      "settings": {
+        "hero_cta_label": "Explore Now",
+        "hero_cta_url": ""
+      }
+    },
+    "jack_marquee": {
+      "type": "jack-marquee",
+      "settings": {}
+    },
+    "jack_about": {
+      "type": "jack-about",
+      "settings": {
+        "image": "shopify://shop_images/Copy_of_CANVA_TEMPLATES_ENG_3_3c1ee6fc-1d30-4bc5-9e79-71a9ff031884.png",
+        "image_alt": "Our Mission",
+        "heading": "Our Mission",
+        "body_1": "Our passion for the newest innovations means that we provide our customers with nothing but the highest quality of products, which are guaranteed to meet their needs and keep them satisfied.",
+        "body_2": "With a motivated team, we strive to be the creative minds that bring a smile to your face. That's why we're always looking for innovative new ways to get the best to you.",
+        "cta_label": "Shop Products",
+        "cta_url": ""
+      }
+    },
+    "jack_services": {
+      "type": "jack-services",
+      "settings": {}
+    },
+    "jack_projects": {
+      "type": "jack-projects",
+      "settings": {}
+    }
+  },
+  "order": [
+    "jack_hero",
+    "jack_marquee",
+    "jack_about",
+    "jack_services",
+    "jack_projects"
+  ]
+}
