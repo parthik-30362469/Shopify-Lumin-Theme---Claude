@@ -1,18 +1,20 @@
-{%- comment -%} Jack 3D Creator — Services Section {%- endcomment -%}
+{%- comment -%} Jack — Products Section with sticky-stack scroll animation {%- endcomment -%}
 
 <style>
-.jack-services {
+/* ── Section wrapper ──────────────────────────────────────── */
+.jack-products {
   background: #ffffff;
   border-radius: 40px 40px 0 0;
-  padding: 5rem 1.25rem;
+  padding: 5rem 1.25rem 6rem;
   font-family: 'Kanit', sans-serif;
   position: relative;
   z-index: 5;
 }
-@media (min-width: 640px) { .jack-services { border-radius: 50px 50px 0 0; padding: 6rem 2rem;    } }
-@media (min-width: 768px) { .jack-services { border-radius: 60px 60px 0 0; padding: 8rem 2.5rem;  } }
+@media (min-width: 640px)  { .jack-products { border-radius: 50px 50px 0 0; padding: 6rem 2rem 7rem;     } }
+@media (min-width: 768px)  { .jack-products { border-radius: 60px 60px 0 0; padding: 8rem 2.5rem 8rem;   } }
 
-.jack-services-h2 {
+/* ── Section title ────────────────────────────────────────── */
+.jack-products-h2 {
   color: #0C0C0C;
   font-family: 'Kanit', sans-serif;
   font-weight: 900;
@@ -23,112 +25,213 @@
   font-size: clamp(3rem, 12vw, 160px);
   margin: 0 0 4rem;
 }
-@media (min-width: 640px) { .jack-services-h2 { margin-bottom: 5rem;  } }
-@media (min-width: 768px) { .jack-services-h2 { margin-bottom: 7rem;  } }
+@media (min-width: 640px) { .jack-products-h2 { margin-bottom: 5rem; } }
+@media (min-width: 768px) { .jack-products-h2 { margin-bottom: 7rem; } }
 
-.jack-svc-list {
-  list-style: none;
+/* ── Sticky stack container ───────────────────────────────── */
+.jack-prod-stack {
+  max-width: 72rem;
   margin: 0 auto;
-  padding: 0;
-  max-width: 64rem;
 }
 
-.jack-svc-item {
+/* ── Each sticky row (pair of 2 cards) ────────────────────── */
+.jack-prod-row {
+  position: sticky;
+  top: 68px;           /* sits just below the sticky header */
+  z-index: var(--ri);  /* rows 1→5 get z-index 1→5 so later rows cover earlier */
+  background: #ffffff;
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(12,12,12,0.1);
+  /* White shadow masks the row underneath while stacking */
+  box-shadow: 0 -8px 0 8px #ffffff;
+}
+@media (min-width: 640px) { .jack-prod-row { padding: 3rem 0;   } }
+@media (min-width: 768px) { .jack-prod-row { padding: 3.5rem 0; } }
+
+/* ── 2-column grid inside each row ───────────────────────── */
+.jack-prod-row-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 4rem;
+}
+@media (max-width: 767px) {
+  .jack-prod-row-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.jack-prod-card {
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
-  padding: 2rem 0;
-  border-bottom: 1px solid rgba(12,12,12,0.15);
+  gap: 1.25rem;
 }
-.jack-svc-item:first-child { border-top: 1px solid rgba(12,12,12,0.15); }
-@media (min-width: 640px) { .jack-svc-item { padding: 2.5rem 0; gap: 2rem;  } }
-@media (min-width: 768px) { .jack-svc-item { padding: 3rem 0;   gap: 2.5rem;} }
+@media (min-width: 640px) { .jack-prod-card { gap: 1.5rem; } }
+@media (min-width: 768px) { .jack-prod-card { gap: 2rem;   } }
 
-.jack-svc-num {
+.jack-prod-num {
   color: #0C0C0C;
   font-family: 'Kanit', sans-serif;
   font-weight: 900;
-  font-size: clamp(3rem, 10vw, 140px);
+  font-size: clamp(2.5rem, 7vw, 100px);
   line-height: 1;
   flex-shrink: 0;
-  min-width: clamp(3rem, 10vw, 140px);
+  min-width: clamp(2.5rem, 7vw, 100px);
 }
 
-.jack-svc-content {
+.jack-prod-content {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding-top: 0.5rem;
+  gap: 0.45rem;
+  padding-top: 0.25rem;
 }
 
-.jack-svc-name {
+.jack-prod-name {
   color: #0C0C0C;
   font-family: 'Kanit', sans-serif;
   font-weight: 500;
   text-transform: uppercase;
-  font-size: clamp(1rem, 2.2vw, 2.1rem);
+  font-size: clamp(1rem, 2vw, 1.9rem);
   line-height: 1.2;
   margin: 0;
 }
 
-.jack-svc-desc {
-  color: #0C0C0C;
+.jack-prod-desc {
+  color: rgba(12,12,12,0.58);
   font-family: 'Kanit', sans-serif;
   font-weight: 300;
   line-height: 1.625;
-  max-width: 42rem;
-  font-size: clamp(0.85rem, 1.6vw, 1.25rem);
-  opacity: 0.6;
+  font-size: clamp(0.8rem, 1.5vw, 1.15rem);
   margin: 0;
 }
 </style>
 
-{%- assign services = "01||3D Modeling||Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.,02||Rendering||High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.,03||Motion Design||Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.,04||Branding||Crafting cohesive visual identities — from logos to full brand systems — that communicate a clear and memorable presence.,05||Web Design||Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience." | split: "," -%}
+<section class="jack-products" id="jack-services">
 
-<section class="jack-services" id="jack-services">
+  <h2 class="jack-products-h2 jfi jfi-dn" data-jfi-delay="0">Products</h2>
 
-  <h2 class="jack-services-h2 jfi jfi-dn" data-jfi-delay="0">Services</h2>
+  <div class="jack-prod-stack">
 
-  <ul class="jack-svc-list">
-    <li class="jack-svc-item jfi jfi-sm" data-jfi-delay="0">
-      <span class="jack-svc-num">01</span>
-      <div class="jack-svc-content">
-        <p class="jack-svc-name">3D Modeling</p>
-        <p class="jack-svc-desc">Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.</p>
+    <!-- ── Row 1 → z-index 1 ─────────────────────────────── -->
+    <div class="jack-prod-row" style="--ri:1">
+      <div class="jack-prod-row-inner">
+
+        <div class="jack-prod-card">
+          <span class="jack-prod-num">01</span>
+          <div class="jack-prod-content">
+            <p class="jack-prod-name">Smart Home</p>
+            <p class="jack-prod-desc">Innovative devices designed to simplify daily routines, save time, and make your home more comfortable. From automatic cleaning solutions to intelligent household gadgets, technology that works while you relax.</p>
+          </div>
+        </div>
+
+        <div class="jack-prod-card">
+          <span class="jack-prod-num">02</span>
+          <div class="jack-prod-content">
+            <p class="jack-prod-name">Health &amp; Wellness</p>
+            <p class="jack-prod-desc">Smart wellness products that help support recovery, comfort, and self-care. From heated therapy devices to posture aids and wellness technology designed to help you feel your best every day.</p>
+          </div>
+        </div>
+
       </div>
-    </li>
-    <li class="jack-svc-item jfi jfi-sm" data-jfi-delay="0.1">
-      <span class="jack-svc-num">02</span>
-      <div class="jack-svc-content">
-        <p class="jack-svc-name">Rendering</p>
-        <p class="jack-svc-desc">High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.</p>
+    </div>
+
+    <!-- ── Row 2 → z-index 2 (slides over row 1) ─────────── -->
+    <div class="jack-prod-row" style="--ri:2">
+      <div class="jack-prod-row-inner">
+
+        <div class="jack-prod-card">
+          <span class="jack-prod-num">03</span>
+          <div class="jack-prod-content">
+            <p class="jack-prod-name">Beauty &amp; Self-Care</p>
+            <p class="jack-prod-desc">Modern beauty tools and skincare technology designed to enhance your daily routine. Innovative solutions that help improve convenience, efficiency, and confidence without expensive salon visits.</p>
+          </div>
+        </div>
+
+        <div class="jack-prod-card">
+          <span class="jack-prod-num">04</span>
+          <div class="jack-prod-content">
+            <p class="jack-prod-name">Pet Essentials</p>
+            <p class="jack-prod-desc">Technology-driven pet products that make caring for your furry companions easier and more enjoyable. From automatic feeders to grooming solutions and smart accessories designed for modern pet owners.</p>
+          </div>
+        </div>
+
       </div>
-    </li>
-    <li class="jack-svc-item jfi jfi-sm" data-jfi-delay="0.2">
-      <span class="jack-svc-num">03</span>
-      <div class="jack-svc-content">
-        <p class="jack-svc-name">Motion Design</p>
-        <p class="jack-svc-desc">Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.</p>
+    </div>
+
+    <!-- ── Row 3 → z-index 3 ─────────────────────────────── -->
+    <div class="jack-prod-row" style="--ri:3">
+      <div class="jack-prod-row-inner">
+
+        <div class="jack-prod-card">
+          <span class="jack-prod-num">05</span>
+          <div class="jack-prod-content">
+            <p class="jack-prod-name">Baby &amp; Parenting</p>
+            <p class="jack-prod-desc">Thoughtfully designed products that help simplify life for parents and provide extra comfort for little ones. Including smart warming solutions, feeding accessories, and everyday parenting essentials.</p>
+          </div>
+        </div>
+
+        <div class="jack-prod-card">
+          <span class="jack-prod-num">06</span>
+          <div class="jack-prod-content">
+            <p class="jack-prod-name">Work &amp; Productivity</p>
+            <p class="jack-prod-desc">Practical tech accessories that help create a more comfortable and efficient workspace. From ergonomic solutions to desk gadgets designed to support focus, organisation, and productivity.</p>
+          </div>
+        </div>
+
       </div>
-    </li>
-    <li class="jack-svc-item jfi jfi-sm" data-jfi-delay="0.3">
-      <span class="jack-svc-num">04</span>
-      <div class="jack-svc-content">
-        <p class="jack-svc-name">Branding</p>
-        <p class="jack-svc-desc">Crafting cohesive visual identities — from logos to full brand systems — that communicate a clear and memorable presence.</p>
+    </div>
+
+    <!-- ── Row 4 → z-index 4 ─────────────────────────────── -->
+    <div class="jack-prod-row" style="--ri:4">
+      <div class="jack-prod-row-inner">
+
+        <div class="jack-prod-card">
+          <span class="jack-prod-num">07</span>
+          <div class="jack-prod-content">
+            <p class="jack-prod-name">Fitness &amp; Recovery</p>
+            <p class="jack-prod-desc">Smart fitness and recovery products that help support active lifestyles. From muscle recovery tools to training accessories designed to help you move, recover, and perform better.</p>
+          </div>
+        </div>
+
+        <div class="jack-prod-card">
+          <span class="jack-prod-num">08</span>
+          <div class="jack-prod-content">
+            <p class="jack-prod-name">Travel &amp; On-the-Go</p>
+            <p class="jack-prod-desc">Portable technology and travel essentials designed for convenience wherever life takes you. Lightweight, practical solutions that help make every journey easier and more comfortable.</p>
+          </div>
+        </div>
+
       </div>
-    </li>
-    <li class="jack-svc-item jfi jfi-sm" data-jfi-delay="0.4">
-      <span class="jack-svc-num">05</span>
-      <div class="jack-svc-content">
-        <p class="jack-svc-name">Web Design</p>
-        <p class="jack-svc-desc">Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience.</p>
+    </div>
+
+    <!-- ── Row 5 → z-index 5 ─────────────────────────────── -->
+    <div class="jack-prod-row" style="--ri:5">
+      <div class="jack-prod-row-inner">
+
+        <div class="jack-prod-card">
+          <span class="jack-prod-num">09</span>
+          <div class="jack-prod-content">
+            <p class="jack-prod-name">Kitchen &amp; Lifestyle</p>
+            <p class="jack-prod-desc">Smart gadgets that bring convenience and efficiency into everyday cooking and household tasks. Innovative tools designed to save time and simplify daily living.</p>
+          </div>
+        </div>
+
+        <div class="jack-prod-card">
+          <span class="jack-prod-num">10</span>
+          <div class="jack-prod-content">
+            <p class="jack-prod-name">Seasonal Comfort</p>
+            <p class="jack-prod-desc">Products designed to help you stay comfortable all year round. From heated winter essentials to cooling summer solutions, technology built for every season.</p>
+          </div>
+        </div>
+
       </div>
-    </li>
-  </ul>
+    </div>
+
+  </div>
 
 </section>
 
 {% schema %}
-{ "name":"Jack Services","tag":"div","class":"jack-services-section","settings":[],"presets":[{"name":"Jack Services"}] }
+{ "name":"Jack Products","tag":"div","class":"jack-services-section","settings":[],"presets":[{"name":"Jack Products"}] }
 {% endschema %}
