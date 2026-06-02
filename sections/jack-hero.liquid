@@ -36,9 +36,15 @@ body.template-index .shopify-section {
   flex-direction: column;
   overflow-x: clip;
   position: relative;
+  z-index: 0;
   background: #0C0C0C;
   font-family: 'Kanit', sans-serif;
   padding-top: 2.5rem;
+}
+
+/* Ensure header group (nav + menu drawer) always sits above the hero */
+body.template-index .shopify-section-group-header-group {
+  z-index: 200 !important;
 }
 @media (min-width: 640px)  { .jack-hero { padding-top: 3rem;   } }
 @media (min-width: 768px)  { .jack-hero { padding-top: 3.5rem; } }
