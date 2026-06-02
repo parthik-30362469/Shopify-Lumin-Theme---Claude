@@ -422,12 +422,6 @@
     
      {% render 'lumin-styles-scripts' %}
 
-    {%- if request.page_type == 'index' -%}
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-      {{ 'cinematic-homepage.css' | asset_url | stylesheet_tag }}
-    {%- endif -%}
   </head>
 
   <body class="gradient template-{{ request.page_type }}{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -510,8 +504,5 @@
     {% render 'lumin-wishlist-drawer' %}
     {% render 'lumin-recently-viewed-drawer' %}
 
-    {%- if request.page_type == 'index' -%}
-      <script src="{{ 'cinematic-homepage.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}
   </body>
 </html>
