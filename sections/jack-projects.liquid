@@ -1,4 +1,4 @@
-{%- comment -%} Jack — Projects: scroll-driven sticky stacking cards {%- endcomment -%}
+{%- comment -%} Jack — Projects: scroll-driven stacking cards (pure JS, no CSS sticky) {%- endcomment -%}
 
 <style>
 /* ── Section ──────────────────────────────────────────────── */
@@ -8,11 +8,12 @@
   margin-top: -2.5rem;
   position: relative;
   z-index: 10;
-  padding: 5rem 1.25rem 0;
+  padding-top: 5rem;
   font-family: 'Kanit', sans-serif;
+  overflow: visible !important;
 }
-@media (min-width: 640px) { .jack-projects { border-radius:50px 50px 0 0; margin-top:-3rem;   padding:6rem 2rem 0;   } }
-@media (min-width: 768px) { .jack-projects { border-radius:60px 60px 0 0; margin-top:-3.5rem; padding:8rem 2.5rem 0;} }
+@media (min-width: 640px) { .jack-projects { border-radius:50px 50px 0 0; margin-top:-3rem;   padding-top:6rem;  } }
+@media (min-width: 768px) { .jack-projects { border-radius:60px 60px 0 0; margin-top:-3.5rem; padding-top:8rem;  } }
 
 /* ── Heading ──────────────────────────────────────────────── */
 .jack-proj-h2 {
@@ -26,46 +27,33 @@
   margin: 0 0 4rem;
 }
 
-/* ── Scroll slot ──────────────────────────────────────────────
-   Each slot is 100 vh tall — this gives the scroll distance
-   for the NEXT card to travel from the bottom of the viewport
-   all the way up to the sticky position, creating the
-   "slide over and stack" effect.
-   The last slot uses auto height so the section ends cleanly.
-────────────────────────────────────────────────────────────── */
-.jack-proj-slot {
-  height: 100vh;
+/* ── Stage: JS sets its height to create the scroll runway ── */
+.jack-cards-stage {
   position: relative;
-}
-.jack-proj-slot:last-child {
-  height: auto;
-  padding-bottom: 10rem;
+  /* height is set by JS = N cards × 100vh + last card height */
 }
 
-/* ── Card — ALL share the same top so they stack at the
-   exact same screen position. z-index increases per card
-   so later cards paint on top of earlier ones.
-──────────────────────────────────────────────────────────── */
+/* ── Each card: absolutely positioned, JS drives translateY ── */
 .jack-card {
-  position: sticky;
-  top: 5rem;                  /* same for every card */
+  position: absolute;
+  left:  0;
+  right: 0;
+  top:   0;
   border-radius: 32px;
   border: 1px solid rgba(215,226,234,0.12);
-  background: #111111;        /* solid — covers card below */
+  background: #111111;
   padding: 1.25rem;
   will-change: transform;
   transform-origin: top center;
-  transition: transform 0.05s linear;
+  /* Cards start below viewport — JS handles initial translateY */
 }
-@media (min-width: 640px) { .jack-card { border-radius:40px; padding:1.5rem; top:5.5rem; } }
-@media (min-width: 768px) { .jack-card { border-radius:50px; padding:2rem;   top:6rem;   } }
+@media (min-width: 640px) { .jack-card { border-radius:40px; padding:1.5rem; } }
+@media (min-width: 768px) { .jack-card { border-radius:50px; padding:2rem;   } }
 
-/* Subtle tonal shift so stacked depth is visible */
-.jack-proj-slot:nth-child(2) .jack-card { background: #141414; }
-.jack-proj-slot:nth-child(3) .jack-card { background: #181818; }
-.jack-proj-slot:nth-child(4) .jack-card { background: #1c1c1c; }
+.jack-card:nth-child(2) { background: #141414; }
+.jack-card:nth-child(3) { background: #181818; }
 
-/* ── Card header row ──────────────────────────────────────── */
+/* ── Card header ──────────────────────────────────────────── */
 .jack-card-top {
   display: flex;
   align-items: center;
@@ -108,18 +96,18 @@
   align-items:     center;
   gap:             0.7rem;
   padding:         1rem 3rem;
-  background:      linear-gradient(135deg, #000000 0%, #1e1e1e 35%, #5a5a5a 65%, #c8c8c8 100%);
-  box-shadow:      0 4px 16px rgba(255,255,255,0.12), inset 2px 2px 8px rgba(255,255,255,0.08);
+  background:      linear-gradient(135deg,#000 0%,#1e1e1e 35%,#5a5a5a 65%,#c8c8c8 100%);
+  box-shadow:      0 4px 16px rgba(255,255,255,0.12),inset 2px 2px 8px rgba(255,255,255,0.08);
   outline:         2px solid rgba(255,255,255,0.7);
   outline-offset:  -3px;
   border-radius:   9999px;
   border:          none;
-  color:           #ffffff;
+  color:           #fff;
   font-family:     'Kanit', sans-serif;
   font-weight:     600;
   text-transform:  uppercase;
   letter-spacing:  0.14em;
-  font-size:       clamp(0.9rem, 1.6vw, 1.25rem);
+  font-size:       clamp(0.9rem,1.6vw,1.25rem);
   text-decoration: none;
   cursor:          pointer;
   overflow:        hidden;
@@ -128,63 +116,50 @@
   margin-left:     auto;
   animation:       jack-float 3s ease-in-out 1s infinite;
 }
-@media (min-width: 640px) { .jack-live-btn { padding: 1.1rem 3.5rem; } }
-@media (min-width: 768px) { .jack-live-btn { padding: 1.25rem 4rem;  } }
-.jack-live-btn:hover {
-  animation-play-state: paused;
-  opacity: 0.9;
-  transform: translateY(-3px) scale(1.03);
-}
+@media (min-width: 640px) { .jack-live-btn { padding:1.1rem 3.5rem; } }
+@media (min-width: 768px) { .jack-live-btn { padding:1.25rem 4rem;  } }
+.jack-live-btn:hover { animation-play-state:paused; opacity:0.9; transform:translateY(-3px) scale(1.03); }
 .jack-live-btn::before {
-  content:    '';
-  position:   absolute;
+  content:''; position:absolute;
   top:0; left:-75%; width:50%; height:100%;
-  background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.22) 50%, transparent 80%);
-  transform:  skewX(-15deg);
+  background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,0.22) 50%,transparent 80%);
+  transform:skewX(-15deg);
 }
-.jack-live-btn:hover::before {
-  left:       130%;
-  transition: left 0.55s ease;
-}
+.jack-live-btn:hover::before { left:130%; transition:left 0.55s ease; }
 @keyframes jack-float {
   0%,100% { transform:translateY(0);    box-shadow:0 4px 20px rgba(255,255,255,0.12),inset 2px 2px 8px rgba(255,255,255,0.08); }
   50%     { transform:translateY(-6px); box-shadow:0 12px 36px rgba(255,255,255,0.22),inset 2px 2px 8px rgba(255,255,255,0.12); }
 }
 
 /* ── Image grid ───────────────────────────────────────────── */
-.jack-card-imgs { display: flex; gap: 0.75rem; }
+.jack-card-imgs { display:flex; gap:0.75rem; }
 .jack-card-col1 { display:flex; flex-direction:column; gap:0.75rem; width:40%; flex-shrink:0; }
-.jack-card-col2 { flex: 1; }
-.jack-card-col1 img,
-.jack-card-col2 img {
-  width: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 24px;
+.jack-card-col2 { flex:1; }
+.jack-card-col1 img, .jack-card-col2 img {
+  width:100%; object-fit:cover; display:block; border-radius:24px;
 }
-@media (min-width: 640px) { .jack-card-col1 img,.jack-card-col2 img { border-radius:32px; } }
-@media (min-width: 768px) { .jack-card-col1 img,.jack-card-col2 img { border-radius:40px; } }
-.jack-card-col1 img:first-child { height: clamp(120px,15vw,210px); }
-.jack-card-col1 img:last-child  { height: clamp(150px,21vw,320px); }
-.jack-card-col2 img             { height: 100%; min-height: clamp(270px,36vw,530px); }
+@media (min-width:640px){ .jack-card-col1 img,.jack-card-col2 img { border-radius:32px; } }
+@media (min-width:768px){ .jack-card-col1 img,.jack-card-col2 img { border-radius:40px; } }
+.jack-card-col1 img:first-child { height:clamp(120px,15vw,210px); }
+.jack-card-col1 img:last-child  { height:clamp(150px,21vw,320px); }
+.jack-card-col2 img             { height:100%; min-height:clamp(270px,36vw,530px); }
 </style>
 
 <section class="jack-projects" id="jack-projects">
 
   <h2 class="jack-proj-h2 jack-grad jfi jfi-dn" data-jfi-delay="0">Project</h2>
 
-  <!-- ── Card 1 (z-index 1 — bottommost) ── -->
-  <div class="jack-proj-slot">
-    <div class="jack-card" style="z-index:1;">
+  <div class="jack-cards-stage" id="jack-cards-stage">
+
+    <!-- Card 1 -->
+    <div class="jack-card">
       <div class="jack-card-top">
         <span class="jack-card-num">01</span>
         <div class="jack-card-meta">
           <span class="jack-card-category">Client</span>
           <span class="jack-card-name">Nextlevel Studio</span>
         </div>
-        <a href="/collections/all" class="jack-live-btn">
-          Explore Now <span class="jack-live-arrow" aria-hidden="true">&#8594;</span>
-        </a>
+        <a href="/collections/all" class="jack-live-btn">Explore Now &#8594;</a>
       </div>
       <div class="jack-card-imgs">
         <div class="jack-card-col1">
@@ -196,20 +171,16 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- ── Card 2 (z-index 2 — slides over card 1) ── -->
-  <div class="jack-proj-slot">
-    <div class="jack-card" style="z-index:2;">
+    <!-- Card 2 -->
+    <div class="jack-card">
       <div class="jack-card-top">
         <span class="jack-card-num">02</span>
         <div class="jack-card-meta">
           <span class="jack-card-category">Personal</span>
           <span class="jack-card-name">Aura Brand Identity</span>
         </div>
-        <a href="/collections/all" class="jack-live-btn">
-          Explore Now <span class="jack-live-arrow" aria-hidden="true">&#8594;</span>
-        </a>
+        <a href="/collections/all" class="jack-live-btn">Explore Now &#8594;</a>
       </div>
       <div class="jack-card-imgs">
         <div class="jack-card-col1">
@@ -221,20 +192,16 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- ── Card 3 (z-index 3 — topmost) ── -->
-  <div class="jack-proj-slot">
-    <div class="jack-card" style="z-index:3;">
+    <!-- Card 3 -->
+    <div class="jack-card">
       <div class="jack-card-top">
         <span class="jack-card-num">03</span>
         <div class="jack-card-meta">
           <span class="jack-card-category">Client</span>
           <span class="jack-card-name">Solaris Digital</span>
         </div>
-        <a href="/collections/all" class="jack-live-btn">
-          Explore Now <span class="jack-live-arrow" aria-hidden="true">&#8594;</span>
-        </a>
+        <a href="/collections/all" class="jack-live-btn">Explore Now &#8594;</a>
       </div>
       <div class="jack-card-imgs">
         <div class="jack-card-col1">
@@ -246,64 +213,101 @@
         </div>
       </div>
     </div>
-  </div>
+
+  </div><!-- .jack-cards-stage -->
+
+  <!-- Spacer so the section has height after the last card stacks -->
+  <div style="height:8rem;"></div>
 
 </section>
 
 <script>
-/*
- * Scroll-driven sticky stacking cards
- *
- * As card N+1 slides up from below and approaches card N's sticky
- * position, card N scales down slightly (1 → 0.94) giving a depth
- * "push back" feel. This is the only JS needed — the actual stacking
- * is handled entirely by CSS position:sticky + z-index.
- *
- * Unwrapping (scroll up) reverses automatically because sticky CSS
- * restores each card to its natural document position.
- */
 (function () {
-  var cards = Array.from(document.querySelectorAll('.jack-projects .jack-card'));
-  if (!cards.length) return;
+  var stage   = document.getElementById('jack-cards-stage');
+  if (!stage) return;
+  var cards   = Array.from(stage.querySelectorAll('.jack-card'));
+  var N       = cards.length;
+  if (!N) return;
 
-  var SCALE_MIN   = 0.94;   /* how small a covered card gets */
-  var STICKY_TOP  = 0;      /* recalculated on first run */
+  /* How far from viewport top the cards rest when "stuck" (≈ header height) */
+  var STUCK_TOP_REM = 5.5;
+  var SCALE_COVERED = 0.93; /* scale of a card that has been stacked over */
 
-  function getStickyTop() {
-    /* Read the actual computed top from the first card */
-    return parseFloat(getComputedStyle(cards[0]).top) || 80;
+  function remToPx(r) {
+    return r * parseFloat(getComputedStyle(document.documentElement).fontSize);
+  }
+
+  function setup() {
+    /* Give the stage enough height so each card has a full viewport of
+       scroll runway before the next one slides in.
+       Total = N * vh + last-card height                               */
+    var vh      = window.innerHeight;
+    var cardH   = cards[0].offsetHeight;
+    stage.style.height = (N * vh + cardH) + 'px';
+    update();
   }
 
   function update() {
-    if (!STICKY_TOP) STICKY_TOP = getStickyTop();
-    var vh = window.innerHeight;
+    var vh       = window.innerHeight;
+    var stuckPx  = remToPx(STUCK_TOP_REM);
+    var stageTop = stage.getBoundingClientRect().top; /* stage top rel. to viewport */
+
+    /* scrolledIntoStage: how many px the user has scrolled past the stage top */
+    var scrolled = -stageTop; /* positive once stage starts scrolling up */
 
     cards.forEach(function (card, i) {
-      var nextCard = cards[i + 1];
+      card.style.zIndex = i + 1; /* higher index = on top */
 
-      if (!nextCard) {
-        /* Last card: always full size */
-        card.style.transform = 'scale(1)';
-        return;
+      /* Each card's scroll window: card i activates after i * vh of scrolling */
+      var activateAt = i * vh;          /* px scrolled when card starts rising */
+      var arrivedAt  = activateAt + vh; /* px scrolled when card is fully stuck */
+
+      var raw = (scrolled - activateAt) / vh; /* 0 = start rising, 1 = fully stuck */
+      var t   = Math.max(0, Math.min(1, raw));
+
+      /* translateY: start at vh (off-screen below), end at stuckPx (stuck) */
+      var startY = vh;
+      var endY   = Math.max(0, stuckPx - stageTop - (i === 0 ? 0 : 0));
+      /* endY is relative to the stage top, which moves as we scroll.
+         We want the card to stay at stuckPx from viewport top.
+         Card is absolute inside stage, so card's top = stuckPx - stageTop */
+      endY = stuckPx - stageTop;
+
+      if (raw < 0) {
+        /* Not yet on screen */
+        card.style.transform = 'translateY(' + vh + 'px) scale(1)';
+      } else if (raw < 1) {
+        /* Sliding in with smooth easing */
+        var eased = 1 - Math.pow(1 - t, 3); /* ease-out cubic */
+        var y     = startY + (endY - startY) * eased;
+        card.style.transform = 'translateY(' + y + 'px) scale(1)';
+      } else {
+        /* Fully stuck — keep pinned at correct viewport position */
+        /* endY recalculated live so it tracks as page scrolls */
+        var pinnedY = stuckPx - stageTop;
+        card.style.transform = 'translateY(' + pinnedY + 'px) scale(1)';
       }
 
-      /* How far has the next card travelled toward this card's sticky pos?
-         nextRect.top == vh      → next card just reached bottom of screen (progress 0)
-         nextRect.top == STICKY_TOP → next card fully covering this one  (progress 1) */
-      var nextTop      = nextCard.getBoundingClientRect().top;
-      var travelTotal  = vh - STICKY_TOP;
-      var progress     = Math.max(0, Math.min(1, (vh - nextTop) / travelTotal));
-
-      /* Scale this card down as the next one approaches */
-      var scale = 1 - (1 - SCALE_MIN) * progress;
-      card.style.transform = 'scale(' + scale + ')';
+      /* Scale down this card once the next one has arrived on top of it */
+      if (i < N - 1) {
+        var nextRaw    = (scrolled - (i + 1) * vh) / vh;
+        var nextCover  = Math.max(0, Math.min(1, nextRaw));
+        var scale      = 1 - (1 - SCALE_COVERED) * nextCover;
+        var currentY   = parseFloat(card.style.transform.match(/translateY\(([^)]+)\)/)[1]);
+        card.style.transform = 'translateY(' + currentY + 'px) scale(' + scale + ')';
+      }
     });
   }
 
-  /* Recalculate sticky top on resize (breakpoint changes top value) */
-  window.addEventListener('resize', function () { STICKY_TOP = 0; }, { passive: true });
+  /* Initialise after images have loaded so card height is accurate */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setup);
+  } else {
+    setup();
+  }
+  window.addEventListener('load',   setup); /* re-run once images load */
+  window.addEventListener('resize', setup, { passive: true });
   window.addEventListener('scroll', update, { passive: true });
-  update();
 })();
 </script>
 
