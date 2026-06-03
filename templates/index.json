@@ -38,16 +38,56 @@
     },
     "jack_projects": {
       "type": "jack-projects",
-      "settings": {
-        "heading": "Best Solutions"
-      },
       "blocks": {
-        "slide_1": { "type": "slide", "settings": { "heading": "Smart Home" } },
-        "slide_2": { "type": "slide", "settings": { "heading": "Health & Wellness" } },
-        "slide_3": { "type": "slide", "settings": { "heading": "Beauty & Self-Care" } },
-        "slide_4": { "type": "slide", "settings": { "heading": "Pet Essentials" } },
-        "slide_5": { "type": "slide", "settings": { "heading": "Baby & Parenting" } },
-        "slide_6": { "type": "slide", "settings": { "heading": "Work & Productivity" } }
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "heading": "Smart Home",
+            "image_3": "shopify://shop_images/Revolutionize_Your_Home__Smart_Gadgets_to_Try.jpg",
+            "button_label": "Explore Now",
+            "button_link": ""
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "heading": "Health & Wellness",
+            "button_label": "Explore Now",
+            "button_link": ""
+          }
+        },
+        "slide_3": {
+          "type": "slide",
+          "settings": {
+            "heading": "Beauty & Self-Care",
+            "button_label": "Explore Now",
+            "button_link": ""
+          }
+        },
+        "slide_4": {
+          "type": "slide",
+          "settings": {
+            "heading": "Pet Essentials",
+            "button_label": "Explore Now",
+            "button_link": ""
+          }
+        },
+        "slide_5": {
+          "type": "slide",
+          "settings": {
+            "heading": "Baby & Parenting",
+            "button_label": "Explore Now",
+            "button_link": ""
+          }
+        },
+        "slide_6": {
+          "type": "slide",
+          "settings": {
+            "heading": "Work & Productivity",
+            "button_label": "Explore Now",
+            "button_link": ""
+          }
+        }
       },
       "block_order": [
         "slide_1",
@@ -56,7 +96,10 @@
         "slide_4",
         "slide_5",
         "slide_6"
-      ]
+      ],
+      "settings": {
+        "heading": "Best Solutions"
+      }
     }
   },
   "order": [
