@@ -1,4 +1,10 @@
-{%- comment -%} Jack — Projects: sticky-stacking cards (CSS position:sticky) {%- endcomment -%}
+{%- comment -%}
+  Jack — Best Solutions: sticky-stacking cards.
+  Fully editable from the theme customizer:
+    • Section heading
+    • Each card = a "Slide" block with title, 3 images, button label + link
+    • Add / remove / reorder slides freely
+{%- endcomment -%}
 
 <style>
 /* ── Section ──────────────────────────────────────────────── */
@@ -27,38 +33,24 @@
   margin: 0 0 4rem;
 }
 
-/* ── Card: each card is a direct sibling and sticks at the same
-   region near the top. Because they share a sticky context (the
-   section), a later card scrolls up and pins ON TOP of the earlier
-   one, which stays put — producing the pile-up / stacking effect.
-
-   `top` is staggered by index*28px (inline) so the top edge of each
-   card beneath stays peeking out. z-index increases so newer cards
-   paint over older ones. margin-bottom gives scroll distance so each
-   card "holds" before the next slides over it.
-──────────────────────────────────────────────────────────── */
+/* ── Card: direct siblings sharing one sticky context so each new
+   card pins on top of the previous (pile-up effect). top, z-index
+   and background are set inline per block (so any number of blocks
+   works automatically). ──────────────────────────────────────── */
 .jack-card {
   position: sticky;
   top: 6rem;
   border-radius: 32px;
   border: 1px solid rgba(215,226,234,0.14);
-  background: #111111;          /* solid — fully covers card below */
+  background: #111111;
   padding: 1.25rem;
-  margin-bottom: 14vh;          /* scroll runway between sticks */
+  margin-bottom: 14vh;
   transform-origin: center top;
   will-change: transform;
 }
 .jack-card:last-child { margin-bottom: 0; }
 @media (min-width: 640px) { .jack-card { border-radius:40px; padding:1.5rem; top:7rem; } }
 @media (min-width: 768px) { .jack-card { border-radius:50px; padding:2rem;   top:8rem; } }
-
-/* Stacking order + tonal depth so layers read as separate cards */
-.jack-card:nth-of-type(1) { z-index: 1; background:#111111; }
-.jack-card:nth-of-type(2) { z-index: 2; background:#141414; }
-.jack-card:nth-of-type(3) { z-index: 3; background:#171717; }
-.jack-card:nth-of-type(4) { z-index: 4; background:#1a1a1a; }
-.jack-card:nth-of-type(5) { z-index: 5; background:#1d1d1d; }
-.jack-card:nth-of-type(6) { z-index: 6; background:#202020; }
 
 /* ── Card header ──────────────────────────────────────────── */
 .jack-card-top {
@@ -128,142 +120,73 @@
 .jack-card-col2 img             { height:100%; min-height:clamp(250px,30vw,460px); }
 </style>
 
+{%- comment -%} Default placeholder images (used until a slide's images are set in the editor) {%- endcomment -%}
+{%- liquid
+  assign d_img1 = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85' | split: ','
+  assign d_img2 = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85' | split: ','
+  assign d_img3 = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85' | split: ','
+  assign d_bg = '#111111,#141414,#171717,#1a1a1a,#1d1d1d,#202020' | split: ','
+-%}
+
 <section class="jack-projects" id="jack-projects">
 
-  <h2 class="jack-proj-h2 jack-grad jfi jfi-dn" data-jfi-delay="0">Best Solutions</h2>
+  <h2 class="jack-proj-h2 jack-grad jfi jfi-dn" data-jfi-delay="0">
+    {{ section.settings.heading | default: 'Best Solutions' }}
+  </h2>
 
-  <!-- Card 1 — Smart Home -->
-  <div class="jack-card" style="top:6rem;">
+  {%- for block in section.blocks -%}
+    {%- liquid
+      assign i  = forloop.index0
+      assign mi = i | modulo: 6
+      assign top_offset = i | times: 28
+
+      assign num = forloop.index | prepend: '0' | slice: -2, 2
+
+      assign bg = d_bg[mi] | default: '#202020'
+
+      if block.settings.image_1 != blank
+        assign src1 = block.settings.image_1 | image_url: width: 1280
+      else
+        assign src1 = d_img1[mi]
+      endif
+      if block.settings.image_2 != blank
+        assign src2 = block.settings.image_2 | image_url: width: 1280
+      else
+        assign src2 = d_img2[mi]
+      endif
+      if block.settings.image_3 != blank
+        assign src3 = block.settings.image_3 | image_url: width: 1280
+      else
+        assign src3 = d_img3[mi]
+      endif
+    -%}
+    <div class="jack-card"
+         style="top:calc(6rem + {{ top_offset }}px); z-index:{{ forloop.index }}; background:{{ bg }};"
+         {{ block.shopify_attributes }}>
       <div class="jack-card-top">
-        <span class="jack-card-num">01</span>
+        <span class="jack-card-num">{{ num }}</span>
         <div class="jack-card-meta">
-          <span class="jack-card-name">Smart Home</span>
+          <span class="jack-card-name">{{ block.settings.heading }}</span>
         </div>
-        <a href="/collections/all" class="jack-live-btn">Explore Now &#8594;</a>
+        <a href="{{ block.settings.button_link | default: '/collections/all' }}" class="jack-live-btn">
+          {{ block.settings.button_label | default: 'Explore Now' }} &#8594;
+        </a>
       </div>
       <div class="jack-card-imgs">
         <div class="jack-card-col1">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85" alt="Smart Home 1" loading="lazy">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85" alt="Smart Home 2" loading="lazy">
+          <img src="{{ src1 }}" alt="{{ block.settings.heading | escape }} 1" loading="lazy">
+          <img src="{{ src2 }}" alt="{{ block.settings.heading | escape }} 2" loading="lazy">
         </div>
         <div class="jack-card-col2">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85" alt="Smart Home 3" loading="lazy">
+          <img src="{{ src3 }}" alt="{{ block.settings.heading | escape }} 3" loading="lazy">
         </div>
       </div>
     </div>
-
-  <!-- Card 2 — Health & Wellness -->
-  <div class="jack-card" style="top:calc(6rem + 28px);">
-      <div class="jack-card-top">
-        <span class="jack-card-num">02</span>
-        <div class="jack-card-meta">
-          <span class="jack-card-name">Health &amp; Wellness</span>
-        </div>
-        <a href="/collections/all" class="jack-live-btn">Explore Now &#8594;</a>
-      </div>
-      <div class="jack-card-imgs">
-        <div class="jack-card-col1">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85" alt="Health and Wellness 1" loading="lazy">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85" alt="Health and Wellness 2" loading="lazy">
-        </div>
-        <div class="jack-card-col2">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85" alt="Health and Wellness 3" loading="lazy">
-        </div>
-      </div>
-    </div>
-
-  <!-- Card 3 — Beauty & Self-Care -->
-  <div class="jack-card" style="top:calc(6rem + 56px);">
-      <div class="jack-card-top">
-        <span class="jack-card-num">03</span>
-        <div class="jack-card-meta">
-          <span class="jack-card-name">Beauty &amp; Self-Care</span>
-        </div>
-        <a href="/collections/all" class="jack-live-btn">Explore Now &#8594;</a>
-      </div>
-      <div class="jack-card-imgs">
-        <div class="jack-card-col1">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85" alt="Beauty and Self-Care 1" loading="lazy">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85" alt="Beauty and Self-Care 2" loading="lazy">
-        </div>
-        <div class="jack-card-col2">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85" alt="Beauty and Self-Care 3" loading="lazy">
-        </div>
-      </div>
-    </div>
-
-  <!-- Card 4 — Smart Home (mirror) -->
-  <div class="jack-card" style="top:calc(6rem + 84px);">
-      <div class="jack-card-top">
-        <span class="jack-card-num">04</span>
-        <div class="jack-card-meta">
-          <span class="jack-card-name">Smart Home</span>
-        </div>
-        <a href="/collections/all" class="jack-live-btn">Explore Now &#8594;</a>
-      </div>
-      <div class="jack-card-imgs">
-        <div class="jack-card-col1">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85" alt="Smart Home 1" loading="lazy">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85" alt="Smart Home 2" loading="lazy">
-        </div>
-        <div class="jack-card-col2">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85" alt="Smart Home 3" loading="lazy">
-        </div>
-      </div>
-    </div>
-
-  <!-- Card 5 — Health & Wellness (mirror) -->
-  <div class="jack-card" style="top:calc(6rem + 112px);">
-      <div class="jack-card-top">
-        <span class="jack-card-num">05</span>
-        <div class="jack-card-meta">
-          <span class="jack-card-name">Health &amp; Wellness</span>
-        </div>
-        <a href="/collections/all" class="jack-live-btn">Explore Now &#8594;</a>
-      </div>
-      <div class="jack-card-imgs">
-        <div class="jack-card-col1">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85" alt="Health and Wellness 1" loading="lazy">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85" alt="Health and Wellness 2" loading="lazy">
-        </div>
-        <div class="jack-card-col2">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85" alt="Health and Wellness 3" loading="lazy">
-        </div>
-      </div>
-    </div>
-
-  <!-- Card 6 — Beauty & Self-Care (mirror) -->
-  <div class="jack-card" style="top:calc(6rem + 140px);">
-      <div class="jack-card-top">
-        <span class="jack-card-num">06</span>
-        <div class="jack-card-meta">
-          <span class="jack-card-name">Beauty &amp; Self-Care</span>
-        </div>
-        <a href="/collections/all" class="jack-live-btn">Explore Now &#8594;</a>
-      </div>
-      <div class="jack-card-imgs">
-        <div class="jack-card-col1">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85" alt="Beauty and Self-Care 1" loading="lazy">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85" alt="Beauty and Self-Care 2" loading="lazy">
-        </div>
-        <div class="jack-card-col2">
-          <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85" alt="Beauty and Self-Care 3" loading="lazy">
-        </div>
-      </div>
-    </div>
+  {%- endfor -%}
 
 </section>
 
 <script>
-/*
- * Scale-down depth effect on the sticky stacking cards.
- * The STACKING itself is pure CSS (position:sticky + z-index) — this JS
- * only adds the subtle "push back" scale as the next card slides over.
- * If JS fails for any reason, cards still stack correctly via CSS.
- *
- *   targetScale = 1 - (totalCards - 1 - index) * 0.03   (per the brief)
- * eased by each slot's scroll progress through the viewport.
- */
 (function () {
   var cards = Array.prototype.slice.call(
     document.querySelectorAll('.jack-projects .jack-card')
@@ -272,23 +195,18 @@
   var TOTAL = cards.length;
 
   function update() {
-    /* For each card, scale it down as the NEXT card slides up to cover it.
-       progress = how far the next card has travelled toward this card's
-       sticky position (0 = far below, 1 = fully covering).               */
     cards.forEach(function (card, i) {
       var next = cards[i + 1];
       if (!next) { card.style.transform = 'scale(1)'; return; }
 
-      var thisTop = card.getBoundingClientRect().top;   /* this card pinned here */
-      var nextTop = next.getBoundingClientRect().top;   /* next card sliding up   */
-      var gap     = nextTop - thisTop;                  /* shrinks 0 as next covers */
+      var thisTop = card.getBoundingClientRect().top;
+      var nextTop = next.getBoundingClientRect().top;
+      var gap     = nextTop - thisTop;
 
-      /* Normalise: when next card is one viewport below → 0; when it
-         reaches this card's top → 1 */
       var span     = window.innerHeight * 0.85;
       var progress = Math.max(0, Math.min(1, 1 - gap / span));
 
-      var targetScale = 1 - (TOTAL - 1 - i) * 0.04; /* deeper cards shrink more */
+      var targetScale = 1 - (TOTAL - 1 - i) * 0.04;
       var scale       = 1 - (1 - targetScale) * progress;
 
       card.style.transform = 'scale(' + scale + ')';
@@ -302,5 +220,45 @@
 </script>
 
 {% schema %}
-{ "name":"Jack Projects","tag":"div","class":"jack-projects-section","settings":[],"presets":[{"name":"Jack Projects"}] }
+{
+  "name": "Best Solutions",
+  "tag": "div",
+  "class": "jack-projects-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Best Solutions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "text",         "id": "heading",      "label": "Title",            "default": "Smart Home" },
+        { "type": "image_picker",  "id": "image_1",      "label": "Small image (top left)" },
+        { "type": "image_picker",  "id": "image_2",      "label": "Small image (bottom left)" },
+        { "type": "image_picker",  "id": "image_3",      "label": "Large image (right)" },
+        { "type": "text",          "id": "button_label", "label": "Button label",     "default": "Explore Now" },
+        { "type": "url",           "id": "button_link",  "label": "Button link" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Best Solutions",
+      "blocks": [
+        { "type": "slide", "settings": { "heading": "Smart Home" } },
+        { "type": "slide", "settings": { "heading": "Health & Wellness" } },
+        { "type": "slide", "settings": { "heading": "Beauty & Self-Care" } },
+        { "type": "slide", "settings": { "heading": "Pet Essentials" } },
+        { "type": "slide", "settings": { "heading": "Baby & Parenting" } },
+        { "type": "slide", "settings": { "heading": "Work & Productivity" } }
+      ]
+    }
+  ]
+}
 {% endschema %}
