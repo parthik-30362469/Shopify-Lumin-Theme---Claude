@@ -37,27 +37,29 @@
    card pins on top of the previous (pile-up effect). top, z-index
    and background are set inline per block (so any number of blocks
    works automatically). ──────────────────────────────────────── */
-/* Sticky wrapper — EVERY card shares the same `top`, so they all
-   release from sticky at the same scroll point (uniform animation).
-   The staggered peek comes from padding-top (index × 28px), NOT from
-   different top values — that was what made the release uneven. */
+/* Sticky wrapper — IDENTICAL for every card: same `top` AND same
+   height (no padding-top). Because the sticky boxes are identical,
+   all cards un-stick at the exact same scroll point, so the whole
+   stack scrolls away together once stacked (uniform animation). */
 .jack-card {
   position: sticky;
   top: 6rem;
-  padding-top: calc(var(--i, 0) * 28px);
   margin-bottom: 4.2vh;          /* gap between stacked cards (was 14vh, −70%) */
-  will-change: transform;
 }
 @media (min-width: 640px) { .jack-card { top:7rem; } }
 @media (min-width: 768px) { .jack-card { top:8rem; } }
 
-/* Visible card surface */
+/* Visible card surface. The staggered peek is created here with
+   transform: translateY(index × 28px) — a purely VISUAL shift that
+   does NOT change the wrapper's sticky box, so release stays uniform.
+   (JS adds a scale on top, preserving this translate.) */
 .jack-card-inner {
   border-radius: 32px;
   border: 1px solid rgba(215,226,234,0.14);
   background: #111111;
   padding: 1.25rem;
   transform-origin: center top;
+  transform: translateY(calc(var(--i, 0) * 28px));
   will-change: transform;
 }
 @media (min-width: 640px) { .jack-card-inner { border-radius:40px; padding:1.5rem; } }
@@ -216,12 +218,15 @@
   var inners = wraps.map(function (w) { return w.querySelector('.jack-card-inner'); });
   var TOTAL  = wraps.length;
 
+  var PEEK = 28; /* px each card is shifted down — keep in sync with CSS */
+
   function update() {
     wraps.forEach(function (wrap, i) {
       var inner = inners[i];
       if (!inner) return;
+      var ty   = 'translateY(' + (i * PEEK) + 'px)';
       var next = wraps[i + 1];
-      if (!next) { inner.style.transform = 'scale(1)'; return; }
+      if (!next) { inner.style.transform = ty + ' scale(1)'; return; }
 
       var thisTop = wrap.getBoundingClientRect().top;
       var nextTop = next.getBoundingClientRect().top;
@@ -233,7 +238,7 @@
       var targetScale = 1 - (TOTAL - 1 - i) * 0.04;
       var scale       = 1 - (1 - targetScale) * progress;
 
-      inner.style.transform = 'scale(' + scale + ')';
+      inner.style.transform = ty + ' scale(' + scale + ')';
     });
   }
 
