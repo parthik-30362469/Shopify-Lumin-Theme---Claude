@@ -27,35 +27,35 @@
   margin: 0 0 4rem;
 }
 
-/* ── Slot: gives each card a viewport of scroll runway ────── */
-.jack-proj-slot {
-  height: 85vh;
-  position: relative;
-}
+/* ── Card: each card is a direct sibling and sticks at the same
+   region near the top. Because they share a sticky context (the
+   section), a later card scrolls up and pins ON TOP of the earlier
+   one, which stays put — producing the pile-up / stacking effect.
 
-/* ── Card: sticks near the top; later cards have higher
-   z-index so they stack ON TOP of earlier ones. Each card's
-   `top` is offset by index*28px (set inline) so the stacked
-   edge of the card beneath stays visible.
+   `top` is staggered by index*28px (inline) so the top edge of each
+   card beneath stays peeking out. z-index increases so newer cards
+   paint over older ones. margin-bottom gives scroll distance so each
+   card "holds" before the next slides over it.
 ──────────────────────────────────────────────────────────── */
 .jack-card {
   position: sticky;
   top: 6rem;
-  z-index: 1;
   border-radius: 32px;
   border: 1px solid rgba(215,226,234,0.14);
   background: #111111;          /* solid — fully covers card below */
   padding: 1.25rem;
+  margin-bottom: 14vh;          /* scroll runway between sticks */
   transform-origin: center top;
   will-change: transform;
 }
+.jack-card:last-child { margin-bottom: 0; }
 @media (min-width: 640px) { .jack-card { border-radius:40px; padding:1.5rem; top:7rem; } }
 @media (min-width: 768px) { .jack-card { border-radius:50px; padding:2rem;   top:8rem; } }
 
-/* Tonal depth so stacked cards read as separate layers */
-.jack-proj-slot:nth-child(2) .jack-card { z-index: 1; background:#111111; }
-.jack-proj-slot:nth-child(3) .jack-card { z-index: 2; background:#151515; }
-.jack-proj-slot:nth-child(4) .jack-card { z-index: 3; background:#191919; }
+/* Stacking order + tonal depth so layers read as separate cards */
+.jack-card:nth-of-type(1) { z-index: 1; background:#111111; }
+.jack-card:nth-of-type(2) { z-index: 2; background:#151515; }
+.jack-card:nth-of-type(3) { z-index: 3; background:#191919; }
 
 /* ── Card header ──────────────────────────────────────────── */
 .jack-card-top {
@@ -127,9 +127,9 @@
 }
 @media (min-width:640px){ .jack-card-col1 img,.jack-card-col2 img { border-radius:32px; } }
 @media (min-width:768px){ .jack-card-col1 img,.jack-card-col2 img { border-radius:40px; } }
-.jack-card-col1 img:first-child { height:clamp(120px,15vw,210px); }
-.jack-card-col1 img:last-child  { height:clamp(150px,21vw,320px); }
-.jack-card-col2 img             { height:100%; min-height:clamp(270px,36vw,530px); }
+.jack-card-col1 img:first-child { height:clamp(110px,13vw,180px); }
+.jack-card-col1 img:last-child  { height:clamp(140px,18vw,270px); }
+.jack-card-col2 img             { height:100%; min-height:clamp(250px,30vw,460px); }
 </style>
 
 <section class="jack-projects" id="jack-projects">
@@ -137,8 +137,7 @@
   <h2 class="jack-proj-h2 jack-grad jfi jfi-dn" data-jfi-delay="0">Project</h2>
 
   <!-- Card 1 -->
-  <div class="jack-proj-slot">
-    <div class="jack-card" style="top:6rem;">
+  <div class="jack-card" style="top:6rem;">
       <div class="jack-card-top">
         <span class="jack-card-num">01</span>
         <div class="jack-card-meta">
@@ -157,11 +156,9 @@
         </div>
       </div>
     </div>
-  </div>
 
   <!-- Card 2 -->
-  <div class="jack-proj-slot">
-    <div class="jack-card" style="top:calc(6rem + 28px);">
+  <div class="jack-card" style="top:calc(6rem + 28px);">
       <div class="jack-card-top">
         <span class="jack-card-num">02</span>
         <div class="jack-card-meta">
@@ -180,11 +177,9 @@
         </div>
       </div>
     </div>
-  </div>
 
   <!-- Card 3 -->
-  <div class="jack-proj-slot">
-    <div class="jack-card" style="top:calc(6rem + 56px);">
+  <div class="jack-card" style="top:calc(6rem + 56px);">
       <div class="jack-card-top">
         <span class="jack-card-num">03</span>
         <div class="jack-card-meta">
@@ -203,7 +198,6 @@
         </div>
       </div>
     </div>
-  </div>
 
 </section>
 
@@ -218,25 +212,31 @@
  * eased by each slot's scroll progress through the viewport.
  */
 (function () {
-  var slots = Array.prototype.slice.call(
-    document.querySelectorAll('.jack-projects .jack-proj-slot')
+  var cards = Array.prototype.slice.call(
+    document.querySelectorAll('.jack-projects .jack-card')
   );
-  if (!slots.length) return;
-  var TOTAL = slots.length;
+  if (!cards.length) return;
+  var TOTAL = cards.length;
 
   function update() {
-    var vh = window.innerHeight;
-    slots.forEach(function (slot, i) {
-      var card = slot.querySelector('.jack-card');
-      if (!card) return;
+    /* For each card, scale it down as the NEXT card slides up to cover it.
+       progress = how far the next card has travelled toward this card's
+       sticky position (0 = far below, 1 = fully covering).               */
+    cards.forEach(function (card, i) {
+      var next = cards[i + 1];
+      if (!next) { card.style.transform = 'scale(1)'; return; }
 
-      var rect     = slot.getBoundingClientRect();
-      /* progress 0 → 1 as the slot scrolls up out of view */
-      var progress = 1 - (rect.bottom / vh);
-      var clamped  = Math.max(0, Math.min(1, progress));
+      var thisTop = card.getBoundingClientRect().top;   /* this card pinned here */
+      var nextTop = next.getBoundingClientRect().top;   /* next card sliding up   */
+      var gap     = nextTop - thisTop;                  /* shrinks 0 as next covers */
 
-      var targetScale = 1 - (TOTAL - 1 - i) * 0.03;
-      var scale       = 1 - (1 - targetScale) * clamped;
+      /* Normalise: when next card is one viewport below → 0; when it
+         reaches this card's top → 1 */
+      var span     = window.innerHeight * 0.85;
+      var progress = Math.max(0, Math.min(1, 1 - gap / span));
+
+      var targetScale = 1 - (TOTAL - 1 - i) * 0.04; /* deeper cards shrink more */
+      var scale       = 1 - (1 - targetScale) * progress;
 
       card.style.transform = 'scale(' + scale + ')';
     });
