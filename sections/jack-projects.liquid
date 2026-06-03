@@ -14,12 +14,15 @@
   margin-top: -2.5rem;
   position: relative;
   z-index: 10;
-  padding: 5rem 1.25rem 6rem;
+  /* bottom padding clears the last card's translateY peek overflow
+     (--peek, set inline from the slide count) plus a clear gap before
+     the footer. */
+  padding: 5rem 1.25rem calc(8rem + var(--peek, 0px));
   font-family: 'Kanit', sans-serif;
   /* IMPORTANT: must stay overflow:visible so sticky cards can pin */
 }
-@media (min-width: 640px) { .jack-projects { border-radius:50px 50px 0 0; margin-top:-3rem;   padding:6rem 2rem 8rem;    } }
-@media (min-width: 768px) { .jack-projects { border-radius:60px 60px 0 0; margin-top:-3.5rem; padding:8rem 2.5rem 10rem;  } }
+@media (min-width: 640px) { .jack-projects { border-radius:50px 50px 0 0; margin-top:-3rem;   padding:6rem 2rem calc(8rem + var(--peek, 0px));    } }
+@media (min-width: 768px) { .jack-projects { border-radius:60px 60px 0 0; margin-top:-3.5rem; padding:8rem 2.5rem calc(10rem + var(--peek, 0px));  } }
 
 /* ── Heading ──────────────────────────────────────────────── */
 .jack-proj-h2 {
@@ -169,9 +172,15 @@
   assign d_img2 = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85' | split: ','
   assign d_img3 = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85' | split: ','
   assign d_bg = '#111111,#141414,#171717,#1a1a1a,#1d1d1d,#202020' | split: ','
+  comment
+    Total downward peek of the last card = (slides - 1) × 28px.
+    The section's bottom padding adds this so the last card never
+    overlaps the footer.
+  endcomment
+  assign peek_total = section.blocks.size | minus: 1 | times: 28
 -%}
 
-<section class="jack-projects" id="jack-projects">
+<section class="jack-projects" id="jack-projects" style="--peek:{{ peek_total }}px;">
 
   <h2 class="jack-proj-h2 jack-grad jfi jfi-dn" data-jfi-delay="0">
     {{ section.settings.heading | default: 'Best Solutions' }}
