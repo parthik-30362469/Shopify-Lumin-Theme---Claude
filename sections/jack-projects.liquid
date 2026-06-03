@@ -44,10 +44,10 @@
 .jack-card {
   position: sticky;
   top: 6rem;
-  margin-bottom: 4.2vh;          /* gap between stacked cards (was 14vh, −70%) */
+  margin-bottom: 1.3vh;          /* MOBILE gap between cards (−70% from 4.2vh) */
 }
 @media (min-width: 640px) { .jack-card { top:7rem; } }
-@media (min-width: 768px) { .jack-card { top:8rem; } }
+@media (min-width: 768px) { .jack-card { top:8rem; margin-bottom: 40vh; } } /* DESKTOP: bigger gap so each card is fully visible before the next overlaps */
 
 /* Visible card surface. The staggered peek is created here with
    transform: translateY(index × 28px) — a purely VISUAL shift that
@@ -127,8 +127,15 @@
    Images fill their fixed block via object-fit:cover (block size never
    depends on the image). A dark bg keeps un-loaded blocks from looking
    empty / collapsing.                                                  */
-.jack-card-imgs { display:flex; gap:0.75rem; align-items:stretch; }
-.jack-card-col1 { display:flex; flex-direction:column; gap:0.75rem; width:40%; flex-shrink:0; }
+/* Left-image heights live in CSS vars so the right image can reference
+   them and stay matched automatically at every breakpoint. */
+.jack-card-imgs {
+  display:flex; gap:0.75rem; align-items:stretch;
+  --img-top: clamp(120px,14vw,200px);
+  --img-bot: clamp(150px,17vw,240px);
+  --img-gap: 0.75rem;
+}
+.jack-card-col1 { display:flex; flex-direction:column; gap:var(--img-gap); width:40%; flex-shrink:0; }
 .jack-card-col2 { flex:1; display:flex; }
 .jack-card-col1 img, .jack-card-col2 img {
   width:100%; object-fit:cover; display:block; border-radius:24px;
@@ -137,14 +144,22 @@
 @media (min-width:640px){ .jack-card-col1 img,.jack-card-col2 img { border-radius:32px; } }
 @media (min-width:768px){ .jack-card-col1 img,.jack-card-col2 img { border-radius:40px; } }
 
-.jack-card-col1 img:first-child { height:clamp(120px,14vw,200px); }       /* top — fixed */
-.jack-card-col1 img:last-child  { height:clamp(150px,17vw,240px); }       /* bottom — fixed */
+.jack-card-col1 img:first-child { height: var(--img-top); }   /* top — fixed */
+.jack-card-col1 img:last-child  { height: var(--img-bot); }   /* bottom — fixed */
 /* Right image = exact sum of the two left blocks + the gap between them,
-   so it lines up with the left column instead of growing to the image's
-   own natural height. */
+   so it lines up with the left column at top and bottom. */
 .jack-card-col2 img {
-  height: calc(clamp(120px,14vw,200px) + clamp(150px,17vw,240px) + 0.75rem);
+  height: calc(var(--img-top) + var(--img-bot) + var(--img-gap));
   min-height: 0;
+}
+
+/* DESKTOP: enlarge both left images by 50% (right image auto-matches
+   because it's computed from the same vars). */
+@media (min-width: 768px) {
+  .jack-card-imgs {
+    --img-top: clamp(180px,21vw,300px);
+    --img-bot: clamp(225px,25.5vw,360px);
+  }
 }
 </style>
 
