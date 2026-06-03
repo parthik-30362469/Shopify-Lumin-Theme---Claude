@@ -43,7 +43,8 @@
           "type": "slide",
           "settings": {
             "heading": "Smart Home",
-            "image_3": "shopify://shop_images/Revolutionize_Your_Home__Smart_Gadgets_to_Try.jpg",
+            "image_1": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_07_43_08_PM.png",
+            "image_3": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_07_46_03_PM.png",
             "button_label": "Explore Now",
             "button_link": ""
           }
@@ -52,6 +53,7 @@
           "type": "slide",
           "settings": {
             "heading": "Health & Wellness",
+            "image_1": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_07_43_08_PM.png",
             "image_3": "shopify://shop_images/How_I_Actually_Test_Fitness_Gadgets_Before_Recommending_Them.jpg",
             "button_label": "Explore Now",
             "button_link": ""
