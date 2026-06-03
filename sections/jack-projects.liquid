@@ -118,25 +118,6 @@
 .jack-card-col1 img:first-child { height:clamp(110px,13vw,180px); }
 .jack-card-col1 img:last-child  { height:clamp(140px,18vw,270px); }
 .jack-card-col2 img             { height:100%; min-height:clamp(250px,30vw,460px); }
-
-/* Desktop: show the full uploaded right-hand image (no cropping).
-   object-fit:contain fits the whole image inside the frame; a subtle
-   tint fills any letterbox space so it blends with the dark card.   */
-@media (min-width: 768px) {
-  .jack-card-col2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .jack-card-col2 img {
-    height: auto;
-    max-height: clamp(280px, 34vw, 440px);
-    min-height: 0;
-    object-fit: contain;
-    object-position: center;
-    background: rgba(255,255,255,0.02);
-  }
-}
 </style>
 
 {%- comment -%} Default placeholder images (used until a slide's images are set in the editor) {%- endcomment -%}
