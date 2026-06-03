@@ -139,8 +139,13 @@
 
 .jack-card-col1 img:first-child { height:clamp(120px,14vw,200px); }       /* top — fixed */
 .jack-card-col1 img:last-child  { height:clamp(150px,17vw,240px); }       /* bottom — fixed */
-/* Right image stretches to the left column's combined fixed height. */
-.jack-card-col2 img { height:100%; min-height:0; }
+/* Right image = exact sum of the two left blocks + the gap between them,
+   so it lines up with the left column instead of growing to the image's
+   own natural height. */
+.jack-card-col2 img {
+  height: calc(clamp(120px,14vw,200px) + clamp(150px,17vw,240px) + 0.75rem);
+  min-height: 0;
+}
 </style>
 
 {%- comment -%} Default placeholder images (used until a slide's images are set in the editor) {%- endcomment -%}
