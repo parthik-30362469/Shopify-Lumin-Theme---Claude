@@ -37,20 +37,31 @@
    card pins on top of the previous (pile-up effect). top, z-index
    and background are set inline per block (so any number of blocks
    works automatically). ──────────────────────────────────────── */
+/* Sticky wrapper — EVERY card shares the same `top`, so they all
+   release from sticky at the same scroll point (uniform animation).
+   The staggered peek comes from padding-top (index × 28px), NOT from
+   different top values — that was what made the release uneven. */
 .jack-card {
   position: sticky;
   top: 6rem;
+  padding-top: calc(var(--i, 0) * 28px);
+  margin-bottom: 4.2vh;          /* gap between stacked cards (was 14vh, −70%) */
+  will-change: transform;
+}
+@media (min-width: 640px) { .jack-card { top:7rem; } }
+@media (min-width: 768px) { .jack-card { top:8rem; } }
+
+/* Visible card surface */
+.jack-card-inner {
   border-radius: 32px;
   border: 1px solid rgba(215,226,234,0.14);
   background: #111111;
   padding: 1.25rem;
-  margin-bottom: 4.2vh;          /* gap between stacked cards (was 14vh, −70%) */
   transform-origin: center top;
   will-change: transform;
 }
-.jack-card:last-child { margin-bottom: 0; }
-@media (min-width: 640px) { .jack-card { border-radius:40px; padding:1.5rem; top:7rem; } }
-@media (min-width: 768px) { .jack-card { border-radius:50px; padding:2rem;   top:8rem; } }
+@media (min-width: 640px) { .jack-card-inner { border-radius:40px; padding:1.5rem; } }
+@media (min-width: 768px) { .jack-card-inner { border-radius:50px; padding:2rem;   } }
 
 /* ── Card header ──────────────────────────────────────────── */
 .jack-card-top {
@@ -147,7 +158,6 @@
     {%- liquid
       assign i  = forloop.index0
       assign mi = i | modulo: 6
-      assign top_offset = i | times: 28
 
       assign num = forloop.index | prepend: '0' | slice: -2, 2
 
@@ -170,24 +180,26 @@
       endif
     -%}
     <div class="jack-card"
-         style="top:calc(6rem + {{ top_offset }}px); z-index:{{ forloop.index }}; background:{{ bg }};"
+         style="--i:{{ i }}; z-index:{{ forloop.index }};"
          {{ block.shopify_attributes }}>
-      <div class="jack-card-top">
-        <span class="jack-card-num">{{ num }}</span>
-        <div class="jack-card-meta">
-          <span class="jack-card-name">{{ block.settings.heading }}</span>
+      <div class="jack-card-inner" style="background:{{ bg }};">
+        <div class="jack-card-top">
+          <span class="jack-card-num">{{ num }}</span>
+          <div class="jack-card-meta">
+            <span class="jack-card-name">{{ block.settings.heading }}</span>
+          </div>
+          <a href="{{ block.settings.button_link | default: '/collections/all' }}" class="jack-live-btn">
+            {{ block.settings.button_label | default: 'Explore Now' }} &#8594;
+          </a>
         </div>
-        <a href="{{ block.settings.button_link | default: '/collections/all' }}" class="jack-live-btn">
-          {{ block.settings.button_label | default: 'Explore Now' }} &#8594;
-        </a>
-      </div>
-      <div class="jack-card-imgs">
-        <div class="jack-card-col1">
-          <img src="{{ src1 }}" alt="{{ block.settings.heading | escape }} 1" loading="lazy">
-          <img src="{{ src2 }}" alt="{{ block.settings.heading | escape }} 2" loading="lazy">
-        </div>
-        <div class="jack-card-col2">
-          <img src="{{ src3 }}" alt="{{ block.settings.heading | escape }} 3" loading="lazy">
+        <div class="jack-card-imgs">
+          <div class="jack-card-col1">
+            <img src="{{ src1 }}" alt="{{ block.settings.heading | escape }} 1" loading="lazy">
+            <img src="{{ src2 }}" alt="{{ block.settings.heading | escape }} 2" loading="lazy">
+          </div>
+          <div class="jack-card-col2">
+            <img src="{{ src3 }}" alt="{{ block.settings.heading | escape }} 3" loading="lazy">
+          </div>
         </div>
       </div>
     </div>
@@ -197,18 +209,21 @@
 
 <script>
 (function () {
-  var cards = Array.prototype.slice.call(
+  var wraps  = Array.prototype.slice.call(
     document.querySelectorAll('.jack-projects .jack-card')
   );
-  if (!cards.length) return;
-  var TOTAL = cards.length;
+  if (!wraps.length) return;
+  var inners = wraps.map(function (w) { return w.querySelector('.jack-card-inner'); });
+  var TOTAL  = wraps.length;
 
   function update() {
-    cards.forEach(function (card, i) {
-      var next = cards[i + 1];
-      if (!next) { card.style.transform = 'scale(1)'; return; }
+    wraps.forEach(function (wrap, i) {
+      var inner = inners[i];
+      if (!inner) return;
+      var next = wraps[i + 1];
+      if (!next) { inner.style.transform = 'scale(1)'; return; }
 
-      var thisTop = card.getBoundingClientRect().top;
+      var thisTop = wrap.getBoundingClientRect().top;
       var nextTop = next.getBoundingClientRect().top;
       var gap     = nextTop - thisTop;
 
@@ -218,7 +233,7 @@
       var targetScale = 1 - (TOTAL - 1 - i) * 0.04;
       var scale       = 1 - (1 - targetScale) * progress;
 
-      card.style.transform = 'scale(' + scale + ')';
+      inner.style.transform = 'scale(' + scale + ')';
     });
   }
 
