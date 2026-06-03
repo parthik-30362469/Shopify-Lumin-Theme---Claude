@@ -8,7 +8,9 @@
 html, body.template-index, body.template-index #root {
   background: #0C0C0C !important;
   font-family: 'Kanit', sans-serif !important;
-  overflow-x: clip !important;
+  /* NOTE: do NOT put overflow-x:clip here — it breaks position:sticky
+     for the whole page (e.g. the Projects stacking cards). Each section
+     that needs it clips its own overflow instead. */
 }
 /* header-wrapper visible — using original theme header */
 body.template-index .shopify-section {
