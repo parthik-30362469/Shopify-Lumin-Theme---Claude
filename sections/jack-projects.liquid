@@ -122,6 +122,12 @@
    (flex align-items:stretch). No min-height so it never overshoots. */
 .jack-card-col2     { display:flex; }
 .jack-card-col2 img { height:100%; min-height:0; }
+
+/* Desktop only: enlarge the top-left image by 1.5x (right image
+   auto-matches via stretch). */
+@media (min-width: 768px) {
+  .jack-card-col1 img:first-child { height:clamp(210px,22.5vw,315px); }
+}
 </style>
 
 {%- comment -%} Default placeholder images (used until a slide's images are set in the editor) {%- endcomment -%}
