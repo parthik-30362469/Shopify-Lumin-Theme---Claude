@@ -119,27 +119,28 @@
   50%     { transform:translateY(-6px); box-shadow:0 12px 36px rgba(255,255,255,0.22),inset 2px 2px 8px rgba(255,255,255,0.12); }
 }
 
-/* ── Image grid ───────────────────────────────────────────── */
-.jack-card-imgs { display:flex; gap:0.75rem; }
+/* ── Image grid ───────────────────────────────────────────────
+   Image blocks use EXPLICIT fixed heights (not aspect-ratio), so every
+   card is guaranteed the exact same total height regardless of whether
+   an image has loaded. Identical card heights => all cards un-stick at
+   the same scroll point => the whole stack scrolls away together.
+   Images fill their fixed block via object-fit:cover (block size never
+   depends on the image). A dark bg keeps un-loaded blocks from looking
+   empty / collapsing.                                                  */
+.jack-card-imgs { display:flex; gap:0.75rem; align-items:stretch; }
 .jack-card-col1 { display:flex; flex-direction:column; gap:0.75rem; width:40%; flex-shrink:0; }
-.jack-card-col2 { flex:1; }
+.jack-card-col2 { flex:1; display:flex; }
 .jack-card-col1 img, .jack-card-col2 img {
   width:100%; object-fit:cover; display:block; border-radius:24px;
+  background:#0c0c0c;
 }
 @media (min-width:640px){ .jack-card-col1 img,.jack-card-col2 img { border-radius:32px; } }
 @media (min-width:768px){ .jack-card-col1 img,.jack-card-col2 img { border-radius:40px; } }
-/* ── Fixed-shape image holders ─────────────────────────────────
-   Each block's height is derived from its WIDTH via aspect-ratio —
-   never from the uploaded image. The image fills the block with
-   object-fit:cover, so blocks stay a uniform shape on every screen
-   size (desktop matches mobile) and any image adapts to the block. */
-.jack-card-col1 img:first-child { aspect-ratio: 4 / 3; height:auto; } /* top — landscape */
-.jack-card-col1 img:last-child  { aspect-ratio: 1 / 1; height:auto; } /* bottom — square (slightly taller) */
 
-/* Right image stretches to the left column's combined height and
-   fills its block via cover. */
-.jack-card-col2     { display:flex; }
-.jack-card-col2 img { width:100%; height:100%; min-height:0; }
+.jack-card-col1 img:first-child { height:clamp(120px,14vw,200px); }       /* top — fixed */
+.jack-card-col1 img:last-child  { height:clamp(150px,17vw,240px); }       /* bottom — fixed */
+/* Right image stretches to the left column's combined fixed height. */
+.jack-card-col2 img { height:100%; min-height:0; }
 </style>
 
 {%- comment -%} Default placeholder images (used until a slide's images are set in the editor) {%- endcomment -%}
