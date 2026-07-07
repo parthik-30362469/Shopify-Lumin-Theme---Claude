@@ -1,1 +1,226 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"section_divider_9UkX3B":{"type":"section-divider","name":"Section divider","settings":{"visibility":"always-display","shape":"waves_3","flip_horizontal":false,"flip_vertical":false,"shape_color":"","use_custom_shape_color":true,"custom_shape_color":"#000000","background_color":"","use_custom_background_color":false,"custom_background_color":"#FFFFFF","padding_top":0,"padding_bottom":0}},"trust_badges_FHUXaB":{"type":"trust-badges","blocks":{"image_fjBiUW":{"type":"image","settings":{"feature_title":"<strong>Free Shipping<\/strong>","feature_text":"","feature_url":"","hide_image":false}},"image_Kig7Lp":{"type":"image","settings":{"feature_title":"<strong>Secure Payment<\/strong>","feature_text":"","feature_url":"","hide_image":false}},"image_NcbnLf":{"type":"image","settings":{"feature_title":"<strong>14-Day Return Policy<\/strong>","feature_text":"","feature_url":"","hide_image":false}}},"block_order":["image_fjBiUW","image_Kig7Lp","image_NcbnLf"],"custom_css":[".footer {background-color: #c39050 !important;}"],"name":"Feature Blocks","settings":{"feature_row":3,"feature_row_mobile":1,"feature_gap":20,"feature_gap_mobile":20,"feature_padding_horizontal":0,"feature_padding_vertical":0,"feature_radius":16,"feature_border_thickness":0,"feature_shadow":false,"feature_heading_size":14,"feature_heading_size_mobile":12,"feature_heading_height":130,"feature_heading_mt":0,"feature_text_size":12,"feature_text_size_mobile":12,"feature_text_height":130,"feature_text_mt":0,"feature_icon_size":64,"feature_icon_size_mobile":42,"feature_bg":"#ffffff","feature_border_color":"#000000","feature_shadow_color":"#000000","feature_heading_color":"#000000","feature_text_color":"#000000","feature_icon_color":"#000000","background_color":"#ffffff","background_gradient":"","border_color":"#000000","margin_top":0,"margin_bottom":0,"padding_top":56,"padding_bottom":56,"padding_horizontal":5,"padding_horizontal_mobile":1.5,"full_width":false,"content_width":120,"border_thickness":0,"lazy":true}},"section_divider_nJfgCn":{"type":"section-divider","disabled":true,"name":"Section divider","settings":{"visibility":"always-display","shape":"waves_3","flip_horizontal":false,"flip_vertical":false,"shape_color":"","use_custom_shape_color":true,"custom_shape_color":"#1a1a22","background_color":"","use_custom_background_color":false,"custom_background_color":"#ffffff","padding_top":0,"padding_bottom":0}},"footer":{"type":"footer","blocks":{"link_list_JWiGYM":{"type":"link_list","settings":{"heading":"Legal","menu":"footer"}},"link_list_JinYBi":{"type":"link_list","settings":{"heading":"Shop","menu":"main-menu"}},"brand_information_Br4bBK":{"type":"brand_information","disabled":true,"settings":{"show_social":true}},"text_UxTGHt":{"type":"text","settings":{"heading":"Contact","subtext":"<p>office@instazcart.com<\/p>"}}},"block_order":["link_list_JWiGYM","link_list_JinYBi","brand_information_Br4bBK","text_UxTGHt"],"custom_css":[],"settings":{"color_scheme":"scheme-0c3a42a9-b282-4f08-b2d3-4ed9f88b2ac7","newsletter_enable":true,"show_collapse":false,"collapse_mode":"menu_only","newsletter_heading":"Subscribe to our emails","enable_follow_on_shop":false,"show_social":true,"enable_country_selector":true,"enable_language_selector":true,"payment_enable":true,"original":"original","payment_icon":"visa,master,paypal,apple_pay,shopify-pay,google-pay","custom_icon_1_width":34,"custom_icon_2_width":34,"custom_icon_3_width":34,"show_policy":false,"hide_shopify":true,"copyright":"","show_bottom_text":false,"bottom_text_align":"center","bottom_text":"Some text","bottom_text_font_size":10,"color_bottom_text":"#868686","margin_top":0,"padding_top":32,"padding_bottom":36}}},"order":["trust_badges_FHUXaB","section_divider_9UkX3B","section_divider_nJfgCn","footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "section_divider_Yjyweb": {
+      "type": "section-divider",
+      "name": "Section divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": true,
+        "shape_color": "",
+        "use_custom_shape_color": true,
+        "custom_shape_color": "#000000",
+        "background_color": "",
+        "use_custom_background_color": false,
+        "custom_background_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "trust_badges_FHUXaB": {
+      "type": "trust-badges",
+      "blocks": {
+        "image_fjBiUW": {
+          "type": "image",
+          "settings": {
+            "feature_title": "<strong>Free Shipping</strong>",
+            "feature_text": "",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_Kig7Lp": {
+          "type": "image",
+          "settings": {
+            "feature_title": "<strong>Secure Payment</strong>",
+            "feature_text": "",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_NcbnLf": {
+          "type": "image",
+          "settings": {
+            "feature_title": "<strong>14-Day Return Policy</strong>",
+            "feature_text": "",
+            "feature_url": "",
+            "hide_image": false
+          }
+        }
+      },
+      "block_order": [
+        "image_fjBiUW",
+        "image_Kig7Lp",
+        "image_NcbnLf"
+      ],
+      "custom_css": [
+        ".footer {background-color: #c39050 !important;}"
+      ],
+      "name": "Feature Blocks",
+      "settings": {
+        "feature_row": 3,
+        "feature_row_mobile": 1,
+        "feature_gap": 20,
+        "feature_gap_mobile": 20,
+        "feature_padding_horizontal": 0,
+        "feature_padding_vertical": 0,
+        "feature_radius": 16,
+        "feature_border_thickness": 0,
+        "feature_shadow": false,
+        "feature_heading_size": 14,
+        "feature_heading_size_mobile": 12,
+        "feature_heading_height": 130,
+        "feature_heading_mt": 0,
+        "feature_text_size": 12,
+        "feature_text_size_mobile": 12,
+        "feature_text_height": 130,
+        "feature_text_mt": 0,
+        "feature_icon_size": 64,
+        "feature_icon_size_mobile": 42,
+        "feature_bg": "#ffffff",
+        "feature_border_color": "#000000",
+        "feature_shadow_color": "#000000",
+        "feature_heading_color": "#000000",
+        "feature_text_color": "#000000",
+        "feature_icon_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "section_divider_9UkX3B": {
+      "type": "section-divider",
+      "name": "Section divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": false,
+        "shape_color": "",
+        "use_custom_shape_color": true,
+        "custom_shape_color": "#000000",
+        "background_color": "",
+        "use_custom_background_color": false,
+        "custom_background_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_divider_nJfgCn": {
+      "type": "section-divider",
+      "disabled": true,
+      "name": "Section divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": false,
+        "shape_color": "",
+        "use_custom_shape_color": true,
+        "custom_shape_color": "#1a1a22",
+        "background_color": "",
+        "use_custom_background_color": false,
+        "custom_background_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_JWiGYM": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Legal",
+            "menu": "footer"
+          }
+        },
+        "link_list_JinYBi": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "main-menu"
+          }
+        },
+        "brand_information_Br4bBK": {
+          "type": "brand_information",
+          "disabled": true,
+          "settings": {
+            "show_social": true
+          }
+        },
+        "text_UxTGHt": {
+          "type": "text",
+          "settings": {
+            "heading": "Contact",
+            "subtext": "<p>office@instazcart.com</p>"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_JWiGYM",
+        "link_list_JinYBi",
+        "brand_information_Br4bBK",
+        "text_UxTGHt"
+      ],
+      "custom_css": [],
+      "settings": {
+        "color_scheme": "scheme-0c3a42a9-b282-4f08-b2d3-4ed9f88b2ac7",
+        "newsletter_enable": true,
+        "show_collapse": false,
+        "collapse_mode": "menu_only",
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "original": "original",
+        "payment_icon": "visa,master,paypal,apple_pay,shopify-pay,google-pay",
+        "custom_icon_1_width": 34,
+        "custom_icon_2_width": 34,
+        "custom_icon_3_width": 34,
+        "show_policy": false,
+        "hide_shopify": true,
+        "copyright": "",
+        "show_bottom_text": false,
+        "bottom_text_align": "center",
+        "bottom_text": "Some text",
+        "bottom_text_font_size": 10,
+        "color_bottom_text": "#868686",
+        "margin_top": 0,
+        "padding_top": 32,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "section_divider_Yjyweb",
+    "trust_badges_FHUXaB",
+    "section_divider_9UkX3B",
+    "section_divider_nJfgCn",
+    "footer"
+  ]
+}
