@@ -25,24 +25,6 @@
       "type": "jack-services",
       "settings": {}
     },
-    "section_divider_UaBY9Y": {
-      "type": "section-divider",
-      "name": "Section divider",
-      "settings": {
-        "visibility": "always-display",
-        "shape": "waves_3",
-        "flip_horizontal": false,
-        "flip_vertical": false,
-        "shape_color": "",
-        "use_custom_shape_color": true,
-        "custom_shape_color": "#000000",
-        "background_color": "",
-        "use_custom_background_color": false,
-        "custom_background_color": "#FFFFFF",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "jack_about": {
       "type": "jack-about",
       "settings": {
@@ -62,13 +44,13 @@
         "visibility": "always-display",
         "shape": "waves_3",
         "flip_horizontal": false,
-        "flip_vertical": true,
+        "flip_vertical": false,
         "shape_color": "",
         "use_custom_shape_color": true,
         "custom_shape_color": "#000000",
         "background_color": "",
         "use_custom_background_color": false,
-        "custom_background_color": "#FFFFFF",
+        "custom_background_color": "#ffffff",
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -160,7 +142,6 @@
     "jack_hero",
     "jack_marquee",
     "jack_services",
-    "section_divider_UaBY9Y",
     "jack_about",
     "section_divider_xqLYLC",
     "jack_projects"
