@@ -14,8 +14,11 @@
   }
 
   /* Hide the arrow icon on each card (scoped to this section only) */
-  #shopify-section-{{ section.id }} .card__heading .icon-wrap {
-    display: none;
+  #shopify-section-{{ section.id }} .card .icon-wrap,
+  #shopify-section-{{ section.id }} .card__heading .icon-wrap,
+  #shopify-section-{{ section.id }} .card__heading .icon-arrow,
+  #shopify-section-{{ section.id }} .card__caption .icon-wrap {
+    display: none !important;
   }
 {%- endstyle -%}
 
