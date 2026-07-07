@@ -12,10 +12,10 @@
     "main": {
       "type": "main-list-collections",
       "settings": {
-        "title": "Collections",
+        "title": "Shop By Category",
         "sort": "alphabetical",
-        "image_ratio": "square",
-        "columns_desktop": 3,
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
         "columns_mobile": "2"
       }
     }
