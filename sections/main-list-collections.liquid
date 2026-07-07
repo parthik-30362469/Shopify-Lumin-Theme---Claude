@@ -12,6 +12,11 @@
       font-size: calc(var(--product-card-font-size-mb) * 0.75);
     }
   }
+
+  /* Hide the arrow icon on each card (scoped to this section only) */
+  #shopify-section-{{ section.id }} .card__heading .icon-wrap {
+    display: none;
+  }
 {%- endstyle -%}
 
 <div class="page-width">
