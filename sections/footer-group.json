@@ -11,24 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "section_divider_Yjyweb": {
-      "type": "section-divider",
-      "name": "Section divider",
-      "settings": {
-        "visibility": "always-display",
-        "shape": "waves_3",
-        "flip_horizontal": false,
-        "flip_vertical": true,
-        "shape_color": "",
-        "use_custom_shape_color": true,
-        "custom_shape_color": "#000000",
-        "background_color": "",
-        "use_custom_background_color": false,
-        "custom_background_color": "#ffffff",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "trust_badges_FHUXaB": {
       "type": "trust-badges",
       "blocks": {
@@ -217,7 +199,6 @@
     }
   },
   "order": [
-    "section_divider_Yjyweb",
     "trust_badges_FHUXaB",
     "section_divider_9UkX3B",
     "section_divider_nJfgCn",

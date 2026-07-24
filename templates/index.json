@@ -13,7 +13,7 @@
       "type": "jack-hero",
       "settings": {
         "hero_cta_label": "Explore Now",
-        "hero_cta_url": ""
+        "hero_cta_url": "shopify://collections"
       }
     },
     "jack_marquee": {
@@ -25,7 +25,19 @@
       "type": "jack-services",
       "settings": {}
     },
-    "section_divider_UaBY9Y": {
+    "jack_about": {
+      "type": "jack-about",
+      "settings": {
+        "image": "shopify://shop_images/Copy_of_CANVA_TEMPLATES_ENG_3_3c1ee6fc-1d30-4bc5-9e79-71a9ff031884.png",
+        "image_alt": "Our Mission",
+        "heading": "Our Mission",
+        "body_1": "Our passion for the newest innovations means that we provide our customers with nothing but the highest quality of products, which are guaranteed to meet their needs and keep them satisfied.",
+        "body_2": "With a motivated team, we strive to be the creative minds that bring a smile to your face. That's why we're always looking for innovative new ways to get the best to you.",
+        "cta_label": "Shop Products",
+        "cta_url": "shopify://collections"
+      }
+    },
+    "section_divider_xqLYLC": {
       "type": "section-divider",
       "name": "Section divider",
       "settings": {
@@ -38,37 +50,7 @@
         "custom_shape_color": "#000000",
         "background_color": "",
         "use_custom_background_color": false,
-        "custom_background_color": "#FFFFFF",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "jack_about": {
-      "type": "jack-about",
-      "settings": {
-        "image": "shopify://shop_images/Copy_of_CANVA_TEMPLATES_ENG_3_3c1ee6fc-1d30-4bc5-9e79-71a9ff031884.png",
-        "image_alt": "Our Mission",
-        "heading": "Our Mission",
-        "body_1": "Our passion for the newest innovations means that we provide our customers with nothing but the highest quality of products, which are guaranteed to meet their needs and keep them satisfied.",
-        "body_2": "With a motivated team, we strive to be the creative minds that bring a smile to your face. That's why we're always looking for innovative new ways to get the best to you.",
-        "cta_label": "Shop Products",
-        "cta_url": ""
-      }
-    },
-    "section_divider_xqLYLC": {
-      "type": "section-divider",
-      "name": "Section divider",
-      "settings": {
-        "visibility": "always-display",
-        "shape": "waves_3",
-        "flip_horizontal": false,
-        "flip_vertical": true,
-        "shape_color": "",
-        "use_custom_shape_color": true,
-        "custom_shape_color": "#000000",
-        "background_color": "",
-        "use_custom_background_color": false,
-        "custom_background_color": "#FFFFFF",
+        "custom_background_color": "#ffffff",
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -81,7 +63,7 @@
           "settings": {
             "heading": "Smart Home",
             "button_label": "Explore Now",
-            "button_link": ""
+            "button_link": "shopify://collections"
           }
         },
         "slide_1": {
@@ -160,7 +142,6 @@
     "jack_hero",
     "jack_marquee",
     "jack_services",
-    "section_divider_UaBY9Y",
     "jack_about",
     "section_divider_xqLYLC",
     "jack_projects"
