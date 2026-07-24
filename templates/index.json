@@ -13,7 +13,7 @@
       "type": "jack-hero",
       "settings": {
         "hero_cta_label": "Explore Now",
-        "hero_cta_url": "shopify://collections"
+        "hero_cta_url": "https://instazcart.com/collections"
       }
     },
     "jack_marquee": {
@@ -63,7 +63,7 @@
           "settings": {
             "heading": "Smart Home",
             "button_label": "Explore Now",
-            "button_link": ""
+            "button_link": "shopify://collections/all"
           }
         },
         "slide_1": {
