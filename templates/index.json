@@ -63,7 +63,7 @@
           "settings": {
             "heading": "Smart Home",
             "button_label": "Explore Now",
-            "button_link": "shopify://collections/all"
+            "button_link": "shopify://collections"
           }
         },
         "slide_1": {
