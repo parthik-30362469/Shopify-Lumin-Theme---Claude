@@ -218,16 +218,19 @@ a.jack-media:hover img { transform: scale(1.05); }   /* subtle zoom on product t
         assign coll = collections[coll_handle]
       endif
       assign prods = coll.products
+      assign p1 = prods[0]
+      assign p2 = prods[1]
+      assign p3 = prods[2]
 
       comment
         Slot 1 → product 1 (image links to the product page).
       endcomment
       assign url1 = ''
       assign alt1 = block.settings.heading
-      if prods[0] != blank and prods[0].featured_image != blank
-        assign src1 = prods[0].featured_image | image_url: width: 1280
-        assign url1 = prods[0].url
-        assign alt1 = prods[0].title
+      if p1 != blank and p1.featured_image != blank
+        assign src1 = p1.featured_image | image_url: width: 1280
+        assign url1 = p1.url
+        assign alt1 = p1.title
       elsif block.settings.image_1 != blank
         assign src1 = block.settings.image_1 | image_url: width: 1280
       else
@@ -239,10 +242,10 @@ a.jack-media:hover img { transform: scale(1.05); }   /* subtle zoom on product t
       endcomment
       assign url2 = ''
       assign alt2 = block.settings.heading
-      if prods[1] != blank and prods[1].featured_image != blank
-        assign src2 = prods[1].featured_image | image_url: width: 1280
-        assign url2 = prods[1].url
-        assign alt2 = prods[1].title
+      if p2 != blank and p2.featured_image != blank
+        assign src2 = p2.featured_image | image_url: width: 1280
+        assign url2 = p2.url
+        assign alt2 = p2.title
       elsif block.settings.image_2 != blank
         assign src2 = block.settings.image_2 | image_url: width: 1280
       else
@@ -254,10 +257,10 @@ a.jack-media:hover img { transform: scale(1.05); }   /* subtle zoom on product t
       endcomment
       assign url3 = ''
       assign alt3 = block.settings.heading
-      if prods[2] != blank and prods[2].featured_image != blank
-        assign src3 = prods[2].featured_image | image_url: width: 1280
-        assign url3 = prods[2].url
-        assign alt3 = prods[2].title
+      if p3 != blank and p3.featured_image != blank
+        assign src3 = p3.featured_image | image_url: width: 1280
+        assign url3 = p3.url
+        assign alt3 = p3.title
       elsif block.settings.image_3 != blank
         assign src3 = block.settings.image_3 | image_url: width: 1280
       else
