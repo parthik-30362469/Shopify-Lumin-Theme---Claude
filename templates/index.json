@@ -61,61 +61,62 @@
         "slide_cnAXkz": {
           "type": "slide",
           "settings": {
-            "heading": "Smart Home",
+            "heading": "BABY & PARENTING",
             "button_label": "Explore Now",
-            "button_link": "shopify://collections"
+            "button_link": "shopify://collections/beauty"
           }
         },
         "slide_1": {
           "type": "slide",
           "settings": {
-            "heading": "Smart Home",
+            "heading": "BEAUTY & SELF-CARE",
             "image_1": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_07_43_08_PM.png",
             "image_2": "shopify://shop_images/Gemini_Generated_Image_mjf4w7mjf4w7mjf4.png",
             "image_3": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_07_46_03_PM.png",
             "button_label": "Explore Now",
-            "button_link": ""
+            "button_link": "shopify://collections/frontpage"
           }
         },
         "slide_2": {
           "type": "slide",
           "settings": {
-            "heading": "Health & Wellness",
+            "heading": "HEALTH & WELLNESS",
             "image_1": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_07_43_08_PM.png",
             "image_3": "shopify://shop_images/How_I_Actually_Test_Fitness_Gadgets_Before_Recommending_Them.jpg",
             "button_label": "Explore Now",
-            "button_link": ""
+            "button_link": "shopify://collections/outdoor"
           }
         },
         "slide_3": {
           "type": "slide",
           "settings": {
-            "heading": "Beauty & Self-Care",
+            "heading": "PET ESSENTIALS",
             "image_3": "shopify://shop_images/My_Evening_Skincare_Ritual_with_Red_Light_Therapy.jpg",
             "button_label": "Explore Now",
-            "button_link": ""
+            "button_link": "shopify://collections/house-garden"
           }
         },
         "slide_4": {
           "type": "slide",
           "settings": {
-            "heading": "Pet Essentials",
+            "heading": "SMART HOME",
             "image_3": "shopify://shop_images/dce189eac47ae14c7e35d2aa3b29f58c.jpg",
             "button_label": "Explore Now",
-            "button_link": ""
+            "button_link": "shopify://collections/trends"
           }
         },
         "slide_5": {
           "type": "slide",
           "settings": {
-            "heading": "Baby & Parenting",
+            "heading": "WORK & PRODUCTIVITY",
             "image_3": "shopify://shop_images/Ultimate_Peace_of_Mind__Xiaomi_Baby_Monitor_C302_2_5K.jpg",
             "button_label": "Explore Now",
-            "button_link": ""
+            "button_link": "shopify://collections/work-productivity"
           }
         },
         "slide_6": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "heading": "Work & Productivity",
             "image_3": "shopify://shop_images/This_Tiny_Gadget_Replaced_My_Entire_Office.jpg",
