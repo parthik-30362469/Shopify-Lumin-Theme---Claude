@@ -13,7 +13,7 @@
       "type": "jack-hero",
       "settings": {
         "hero_cta_label": "Explore Now",
-        "hero_cta_url": "https://instazcart.com/collections"
+        "hero_cta_url": "shopify://collections"
       }
     },
     "jack_marquee": {
