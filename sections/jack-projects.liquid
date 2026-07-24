@@ -219,7 +219,9 @@ a.jack-media:hover img { transform: scale(1.05); }   /* subtle zoom on product t
       endif
       assign prods = coll.products
 
-      comment Slot 1 → product 1 (image links to the product page). endcomment
+      comment
+        Slot 1 → product 1 (image links to the product page).
+      endcomment
       assign url1 = ''
       assign alt1 = block.settings.heading
       if prods[0] != blank and prods[0].featured_image != blank
@@ -232,7 +234,9 @@ a.jack-media:hover img { transform: scale(1.05); }   /* subtle zoom on product t
         assign src1 = d_img1[mi]
       endif
 
-      comment Slot 2 → product 2. endcomment
+      comment
+        Slot 2 → product 2.
+      endcomment
       assign url2 = ''
       assign alt2 = block.settings.heading
       if prods[1] != blank and prods[1].featured_image != blank
@@ -245,7 +249,9 @@ a.jack-media:hover img { transform: scale(1.05); }   /* subtle zoom on product t
         assign src2 = d_img2[mi]
       endif
 
-      comment Slot 3 → product 3 (large right tile). endcomment
+      comment
+        Slot 3 → product 3 (large right tile).
+      endcomment
       assign url3 = ''
       assign alt3 = block.settings.heading
       if prods[2] != blank and prods[2].featured_image != blank
