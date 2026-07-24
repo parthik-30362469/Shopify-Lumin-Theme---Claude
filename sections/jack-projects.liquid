@@ -140,18 +140,29 @@
 }
 .jack-card-col1 { display:flex; flex-direction:column; gap:var(--img-gap); width:40%; flex-shrink:0; }
 .jack-card-col2 { flex:1; display:flex; }
-.jack-card-col1 img, .jack-card-col2 img {
-  width:100%; object-fit:cover; display:block; border-radius:24px;
-  background:#0c0c0c;
-}
-@media (min-width:640px){ .jack-card-col1 img,.jack-card-col2 img { border-radius:32px; } }
-@media (min-width:768px){ .jack-card-col1 img,.jack-card-col2 img { border-radius:40px; } }
 
-.jack-card-col1 img:first-child { height: var(--img-top); }   /* top — fixed */
-.jack-card-col1 img:last-child  { height: var(--img-bot); }   /* bottom — fixed */
-/* Right image = exact sum of the two left blocks + the gap between them,
+/* Media tile: wraps each image so it can double as a product link
+   WITHOUT changing the fixed-height layout (the tile carries the fixed
+   height, the image just fills it). Heights are set via explicit slot
+   classes so the tiles can be <a> or <div> and still line up. */
+.jack-media {
+  display:block; width:100%; overflow:hidden; border-radius:24px;
+  background:#0c0c0c; position:relative; text-decoration:none;
+}
+.jack-media img {
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+a.jack-media:hover img { transform: scale(1.05); }   /* subtle zoom on product tiles */
+@media (min-width:640px){ .jack-media { border-radius:32px; } }
+@media (min-width:768px){ .jack-media { border-radius:40px; } }
+
+.jack-card-col1 .jack-media--top { height: var(--img-top); }   /* top — fixed */
+.jack-card-col1 .jack-media--bot { height: var(--img-bot); }   /* bottom — fixed */
+/* Right tile = exact sum of the two left tiles + the gap between them,
    so it lines up with the left column at top and bottom. */
-.jack-card-col2 img {
+.jack-card-col2 .jack-media--right {
+  width:100%;
   height: calc(var(--img-top) + var(--img-bot) + var(--img-gap));
   min-height: 0;
 }
@@ -195,17 +206,53 @@
 
       assign bg = d_bg[mi] | default: '#202020'
 
-      if block.settings.image_1 != blank
+      comment
+        Resolve this slide's collection: prefer the explicit picker; if it
+        isn't set, derive the handle from the slide's button link
+        (e.g. /collections/baby-parenting). An unknown handle yields an
+        empty collection, which safely falls back to the images below.
+      endcomment
+      assign coll = block.settings.collection
+      if coll == blank and block.settings.button_link != blank
+        assign coll_handle = block.settings.button_link | split: '?' | first | split: '/' | last
+        assign coll = collections[coll_handle]
+      endif
+      assign prods = coll.products
+
+      comment Slot 1 → product 1 (image links to the product page). endcomment
+      assign url1 = ''
+      assign alt1 = block.settings.heading
+      if prods[0] != blank and prods[0].featured_image != blank
+        assign src1 = prods[0].featured_image | image_url: width: 1280
+        assign url1 = prods[0].url
+        assign alt1 = prods[0].title
+      elsif block.settings.image_1 != blank
         assign src1 = block.settings.image_1 | image_url: width: 1280
       else
         assign src1 = d_img1[mi]
       endif
-      if block.settings.image_2 != blank
+
+      comment Slot 2 → product 2. endcomment
+      assign url2 = ''
+      assign alt2 = block.settings.heading
+      if prods[1] != blank and prods[1].featured_image != blank
+        assign src2 = prods[1].featured_image | image_url: width: 1280
+        assign url2 = prods[1].url
+        assign alt2 = prods[1].title
+      elsif block.settings.image_2 != blank
         assign src2 = block.settings.image_2 | image_url: width: 1280
       else
         assign src2 = d_img2[mi]
       endif
-      if block.settings.image_3 != blank
+
+      comment Slot 3 → product 3 (large right tile). endcomment
+      assign url3 = ''
+      assign alt3 = block.settings.heading
+      if prods[2] != blank and prods[2].featured_image != blank
+        assign src3 = prods[2].featured_image | image_url: width: 1280
+        assign url3 = prods[2].url
+        assign alt3 = prods[2].title
+      elsif block.settings.image_3 != blank
         assign src3 = block.settings.image_3 | image_url: width: 1280
       else
         assign src3 = d_img3[mi]
@@ -226,11 +273,17 @@
         </div>
         <div class="jack-card-imgs">
           <div class="jack-card-col1">
-            <img src="{{ src1 }}" alt="{{ block.settings.heading | escape }} 1" loading="lazy">
-            <img src="{{ src2 }}" alt="{{ block.settings.heading | escape }} 2" loading="lazy">
+            <a class="jack-media jack-media--top"{% if url1 != blank %} href="{{ url1 }}"{% endif %}>
+              <img src="{{ src1 }}" alt="{{ alt1 | escape }}" loading="lazy">
+            </a>
+            <a class="jack-media jack-media--bot"{% if url2 != blank %} href="{{ url2 }}"{% endif %}>
+              <img src="{{ src2 }}" alt="{{ alt2 | escape }}" loading="lazy">
+            </a>
           </div>
           <div class="jack-card-col2">
-            <img src="{{ src3 }}" alt="{{ block.settings.heading | escape }} 3" loading="lazy">
+            <a class="jack-media jack-media--right"{% if url3 != blank %} href="{{ url3 }}"{% endif %}>
+              <img src="{{ src3 }}" alt="{{ alt3 | escape }}" loading="lazy">
+            </a>
           </div>
         </div>
       </div>
@@ -297,6 +350,8 @@
       "name": "Slide",
       "settings": [
         { "type": "text",         "id": "heading",      "label": "Title",            "default": "Smart Home" },
+        { "type": "collection",   "id": "collection",   "label": "Product collection", "info": "Shows the first 3 products from this collection. Leave the button link pointing at the same collection to auto-detect it." },
+        { "type": "header",       "content": "Fallback images (used only if the collection is empty or has fewer than 3 products)" },
         { "type": "image_picker",  "id": "image_1",      "label": "Small image (top left)" },
         { "type": "image_picker",  "id": "image_2",      "label": "Small image (bottom left)" },
         { "type": "image_picker",  "id": "image_3",      "label": "Large image (right)" },
