@@ -62,6 +62,7 @@
           "type": "slide",
           "settings": {
             "heading": "BABY & PARENTING",
+            "collection": "beauty",
             "button_label": "Explore Now",
             "button_link": "shopify://collections/beauty"
           }
@@ -70,6 +71,7 @@
           "type": "slide",
           "settings": {
             "heading": "BEAUTY & SELF-CARE",
+            "collection": "frontpage",
             "image_1": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_07_43_08_PM.png",
             "image_2": "shopify://shop_images/Gemini_Generated_Image_mjf4w7mjf4w7mjf4.png",
             "image_3": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_07_46_03_PM.png",
@@ -81,6 +83,7 @@
           "type": "slide",
           "settings": {
             "heading": "HEALTH & WELLNESS",
+            "collection": "outdoor",
             "image_1": "shopify://shop_images/ChatGPT_Image_Jun_3_2026_07_43_08_PM.png",
             "image_3": "shopify://shop_images/How_I_Actually_Test_Fitness_Gadgets_Before_Recommending_Them.jpg",
             "button_label": "Explore Now",
@@ -91,6 +94,7 @@
           "type": "slide",
           "settings": {
             "heading": "PET ESSENTIALS",
+            "collection": "house-garden",
             "image_3": "shopify://shop_images/My_Evening_Skincare_Ritual_with_Red_Light_Therapy.jpg",
             "button_label": "Explore Now",
             "button_link": "shopify://collections/house-garden"
@@ -100,6 +104,7 @@
           "type": "slide",
           "settings": {
             "heading": "SMART HOME",
+            "collection": "trends",
             "image_3": "shopify://shop_images/dce189eac47ae14c7e35d2aa3b29f58c.jpg",
             "button_label": "Explore Now",
             "button_link": "shopify://collections/trends"
@@ -109,6 +114,7 @@
           "type": "slide",
           "settings": {
             "heading": "WORK & PRODUCTIVITY",
+            "collection": "work-productivity",
             "image_3": "shopify://shop_images/Ultimate_Peace_of_Mind__Xiaomi_Baby_Monitor_C302_2_5K.jpg",
             "button_label": "Explore Now",
             "button_link": "shopify://collections/work-productivity"
