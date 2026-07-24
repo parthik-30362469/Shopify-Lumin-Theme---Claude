@@ -1,6 +1,16 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 
+{%- style -%}
+  /* Hide the arrow icon on each category card (scoped to this section only) */
+  #shopify-section-{{ section.id }} .card .icon-wrap,
+  #shopify-section-{{ section.id }} .card__heading .icon-wrap,
+  #shopify-section-{{ section.id }} .card__heading .icon-arrow,
+  #shopify-section-{{ section.id }} .card__caption .icon-wrap {
+    display: none !important;
+  }
+{%- endstyle -%}
+
 <div class="page-width">
   <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     {{ section.settings.title }}

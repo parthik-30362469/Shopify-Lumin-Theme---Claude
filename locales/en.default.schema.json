@@ -2993,7 +2993,7 @@
       "settings": {
         "title": {
           "label": "Heading",
-          "default": "Collections"
+          "default": "Shop By Category"
         },
         "sort": {
           "label": "Sort collections by:",
