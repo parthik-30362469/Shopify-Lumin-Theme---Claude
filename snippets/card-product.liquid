@@ -435,7 +435,8 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
-            {%- if card_product.has_only_default_variant == false and settings.show_swatches -%}
+            {%- comment -%} Variant swatches hidden on product cards (product-page variant picker is unaffected). Remove the `false and` below to restore. {%- endcomment -%}
+            {%- if false and card_product.has_only_default_variant == false and settings.show_swatches -%}
               {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
               {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
               {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
