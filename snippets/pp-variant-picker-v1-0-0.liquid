@@ -35,6 +35,17 @@
               data-product-url="{{ value.product_url }}"
               data-option-value-id="{{ value.id }}"
             {%- endcapture -%}
+						{%- liquid
+							assign opt_index = option.position | minus: 1
+							assign swatch_image = blank
+							for pv in product.variants
+								assign pv_val = pv.options[opt_index]
+								if pv_val == value.name and pv.image != blank
+									assign swatch_image = pv.image
+									break
+								endif
+							endfor
+						-%}
 						<div class='pp-flex pp-relative'>
 							<input
 								type='radio'
@@ -52,14 +63,21 @@
 								{{ input_dataset }}>
 								<label
 									for='{{ input_id }}'
-									class='pp-border pp-border-[#e1e1e1] pp-px-3 pp-py-2 pp-text-sm !pp-mb-0 peer-checked:pp-border-black peer-checked:pp-text-black 
+									class='pp-border pp-border-[#e1e1e1] pp-px-3 pp-py-2 pp-text-sm !pp-mb-0 peer-checked:pp-border-black peer-checked:pp-text-black
 									{% if option_disabled %}
 										pp-line-through pp-text-gray-400 pp-cursor-not-allowed
 									{% else %}
 										hover:pp-cursor-pointer hover:pp-border-brand-700
 									{% endif %}'
-									style='border-radius: calc(var(--pp-border-radius) * 0.75);'>
-									{{ value | escape | capitalize }}
+									style='border-radius: calc(var(--pp-border-radius) * 0.75); display: inline-flex; align-items: center; gap: 8px;'>
+									{%- if swatch_image != blank -%}
+										<img
+											src='{{ swatch_image | image_url: width: 80 }}'
+											alt='{{ value | escape }}'
+											loading='lazy'
+											style='width: 26px; height: 26px; border-radius: 9999px; object-fit: cover; border: 1px solid #e1e1e1; flex-shrink: 0;'>
+									{%- endif -%}
+									<span>{{ value | escape | capitalize }}</span>
 								</label>
 						</div>
 					{%- endfor -%}
