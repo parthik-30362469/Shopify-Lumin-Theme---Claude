@@ -149,8 +149,8 @@
           }
         },
         "areviews_reviews_importer_areviews_title_rating_7E52B6": {
-          "disabled": true,
           "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsTitleRating/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "disabled": true,
           "settings": {}
         },
         "product_subtitle_lwsi7s": {
@@ -1042,70 +1042,71 @@
         "review_9s2v85": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/460d61a8-447e-4aca-9524-8198a31ddacb.webp",
-            "name": "David M.",
+            "image": "shopify://shop_images/ali-review-1.webp",
+            "name": "T***e",
             "verified_text": "Verified Buyer",
             "rating": 5,
-            "review_text": "Saved an old wool coat that looked ruined; now it looks almost new, no fuzz and no damage to the fabric"
+            "review_text": "Memory foam. Very good on a chair or on the couch."
           }
         },
         "review_vmhr7m": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/18973bfd-1a7a-4f3f-9b1d-36f46ce008b7.webp",
-            "name": "Sam L.",
+            "image": "shopify://shop_images/ali-review-2.webp",
+            "name": "a***z",
             "verified_text": "Verified Buyer",
-            "rating": 4,
-            "review_text": "Battery lasts longer than I expected, cordless use is super convenient for quick touch ups around the house"
+            "rating": 5,
+            "review_text": "Thanks to the seller for a quality product at a low price, and with record-fast shipping, excellent store."
           }
         },
         "review_q6yiqo": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/b16ffa93-2c91-4c29-a416-589a01f87a04.webp",
-            "name": "Kevin W.",
+            "image": "shopify://shop_images/ali-review-3.webp",
+            "name": "AliExpress Shopper",
             "verified_text": "Verified Buyer",
-            "rating": 4,
-            "review_text": "Took a while to get used to holding it steady but once I did, my old couch cushions looked refreshed. Saved me from buying a new sofa."
+            "rating": 5,
+            "review_text": "The delivery was fast and it's really great~^^"
           }
         },
         "review_81he9k": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/e9436277-c3ef-4eb4-b652-83895e6a04e9.webp",
-            "name": "Ben C.",
+            "image": "shopify://shop_images/ali-review-4.webp",
+            "name": "E***l",
             "verified_text": "Verified Buyer",
-            "rating": 4,
-            "review_text": "Surprisingly effective on delicate fabrics when set to low speed. My sweaters feel soft again and I don’t worry about constant replacement."
+            "rating": 5,
+            "review_text": "I am using it while sitting on a chair and it's comfortable. Thank you."
           }
         },
         "review_51dpq7": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/900eb568-8d0c-45b2-93f6-19d9fc277fb1.webp",
-            "name": "Tyler F.",
+            "image": "shopify://shop_images/ali-review-5.webp",
+            "name": "AliExpress Shopper",
             "verified_text": "Verified Buyer",
-            "rating": 4,
-            "review_text": "Great for quick fixes before heading out. Charges fast and the dual head cuts through heavy fuzz; not perfect on extremely worn areas but overall reliable"
+            "rating": 5,
+            "review_text": "I thought it would be a bit longer vertically to use on a chair, but the one that's only horizontal keeps getting buried in the cushions, so I bought one that has some vertical length."
           }
         },
         "review_wpfv18": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/d70e273a-bb81-451a-ba72-0a2dc5c64daf.webp",
-            "name": "Tom B.",
+            "image": "shopify://shop_images/ali-review-6.webp",
+            "name": "AliExpress Shopper",
             "verified_text": "Verified Buyer",
-            "rating": 4,
-            "review_text": "Compact and powerful"
+            "rating": 5,
+            "review_text": "I rode without a waist cushion, but after buying one and trying it out, it seems to be quite okay."
           }
         },
         "review_kjsg5b": {
           "type": "review",
           "settings": {
-            "name": "Noah E.",
+            "image": "shopify://shop_images/ali-review-7.webp",
+            "name": "AliExpress Shopper",
             "verified_text": "Verified Buyer",
-            "rating": 4,
-            "review_text": "Fast, quiet, and actually gentle. I refreshed a dozen sweaters and my sofa without pulling threads. One charge lasted through all the jobs, which was a pleasant surprise 😊"
+            "rating": 5,
+            "review_text": "I am absolutely thrilled with this product! The quality is outstanding, and it looks exactly like the pictures. It is incredibly easy to use and has exceeded my expectations. Shipping was fast, and the packaging was very secure. I highly recommend this to anyone looking for a great value."
           }
         },
         "review_mlz9hl": {
