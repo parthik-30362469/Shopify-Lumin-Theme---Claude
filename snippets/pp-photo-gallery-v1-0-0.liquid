@@ -3,7 +3,17 @@
 	Accepts:
 	- image: string (URL of the main image)
 	- all_images: array of strings (URLs of all images)
+	- selected_variant: the selected or first available variant
+	- url_selected_variant: only set when a variant is explicitly requested via ?variant= in the URL.
+	  Used so a fresh page load shows the product's first media (backend order) instead of the
+	  first available variant's image.
 {% endcomment %}
+
+{%- if url_selected_variant.featured_media.src -%}
+	{%- assign initial_media = url_selected_variant.featured_media -%}
+{%- else -%}
+	{%- assign initial_media = all_images[0] -%}
+{%- endif -%}
 
 <style>
 	@media screen and (max-width: 767px) {
@@ -22,7 +32,7 @@
 	<div class='pp-w-full pp-max-h-[550px] pp-aspect-square pp-hidden md:pp-flex md:pp-justify-center md:pp-items-center pp-overflow-hidden pp-relative'>
 		<img
 			id='pp-main-product-image'
-			src='{% if selected_variant.featured_media.src %}{{ selected_variant.featured_media.src | image_url: width: 1000 }}{% else %}{{ all_images[0].src | image_url: width: 1000 }}{% endif %}'
+			src='{{ initial_media.src | image_url: width: 1000 }}'
 			alt='Product image'
 			class='pp-w-auto pp-h-auto pp-object-contain pp-object-center pp-max-w-full pp-max-h-full pp-absolute pp-top-1/2 pp-left-1/2 -pp-translate-x-1/2 -pp-translate-y-1/2'
 			style='opacity: 0; border-radius: calc(var(--pp-border-radius) * 1.5);'
@@ -35,34 +45,12 @@
 			id='pp-image-scroll-container'
 			class='pp-w-full pp-flex pp-flex-row md:pp-grid md:pp-grid-cols-6 pp-items-center pp-gap-2 md:pp-gap-4 md:pp-py-6 pp-overflow-x-scroll pp-no-scrollbar'
 			style='scrollbar-width: none; -ms-overflow-style: none;'>
-			{% if selected_variant.featured_media.src %}
-				<div
-					onclick="ppSetCurrentImage('{{ selected_variant.image | image_url: width: 1000 }}', this)"
-					data-id='{{ selected_variant.featured_media.id }}'
-					class='pp-w-10/12 md:pp-w-full pp-shrink-0 md:pp-shrink pp-snap-start pp-overflow-hidden pp-thumbnail pp-aspect-square border-radius-left-0'
-					style='border-radius: calc(var(--pp-border-radius) * 0.75);'>
-					<img
-						src='{{ selected_variant.featured_media.src | image_url: width: 1000 }}'
-						alt='Product image'
-						class='pp-h-full pp-w-full hover:pp-cursor-pointer md:pp-object-cover pp-object-contain pp-object-center'
-						width='100%'
-						height='100%'>
-				</div>
-			{% endif %}
-
-			{% if selected_variant.featured_media.src %}
-				{% assign imagesNumber = all_images.size | minus: 1 %}
-			{% else %}
-				{% assign imagesNumber = all_images.size %}
-			{% endif %}
+			{% assign imagesNumber = all_images.size %}
 			{% for img in all_images %}
-				{% if selected_variant.image != blank and img.src == selected_variant.image.src %}
-					{% continue %}
-				{% endif %}
 				<div
 					onclick="ppSetCurrentImage('{{ img | image_url: width: 1000 }}', this)"
 					data-id='{{ img.id }}'
-					class='pp-w-10/12 md:pp-w-full pp-shrink-0 md:pp-shrink pp-snap-start pp-overflow-hidden pp-thumbnail pp-aspect-square {% if selected_variant.featured_media.src == blank and forloop.index == 1 %}border-radius-left-0{% endif %} {% if forloop.index == imagesNumber %}border-radius-right-0{% endif %}'
+					class='pp-w-10/12 md:pp-w-full pp-shrink-0 md:pp-shrink pp-snap-start pp-overflow-hidden pp-thumbnail pp-aspect-square {% if forloop.index == 1 %}border-radius-left-0{% endif %} {% if forloop.index == imagesNumber %}border-radius-right-0{% endif %}'
 					style='border-radius: calc(var(--pp-border-radius) * 0.75);'>
 					<img
 						src='{{ img.src | image_url: width: 1000 }}'
@@ -77,6 +65,70 @@
 </div>
 
 <script>
+	// Keep the media the merchant ordered first on screen until the customer acts.
+	// pagepilot-product.min.js writes a ?variant= param into the URL on load and then
+	// swaps the gallery to that variant's image, so the swap is blocked (main image src
+	// on desktop, thumbnail auto-scroll on mobile) until a real interaction happens.
+	// Runs inline, before the deferred bundle executes.
+	(function () {
+		{%- if url_selected_variant -%}
+			return; // variant explicitly requested in the URL — honour it
+		{%- endif -%}
+
+		var mainImage = document.getElementById('pp-main-product-image');
+		var scrollContainer = document.getElementById('pp-image-scroll-container');
+		var released = false;
+
+		var srcDescriptor = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'src');
+		if (mainImage && srcDescriptor) {
+			Object.defineProperty(mainImage, 'src', {
+				configurable: true,
+				get: function () {
+					return srcDescriptor.get.call(this);
+				},
+				set: function (value) {
+					if (released) srcDescriptor.set.call(this, value);
+				},
+			});
+		}
+
+		var nativeScrollTo = scrollContainer && scrollContainer.scrollTo;
+		if (scrollContainer && nativeScrollTo) {
+			scrollContainer.scrollTo = function () {
+				if (released) nativeScrollTo.apply(this, arguments);
+			};
+		}
+
+		function release() {
+			if (released) return;
+			released = true;
+			if (mainImage && srcDescriptor) delete mainImage.src;
+			if (scrollContainer && nativeScrollTo) delete scrollContainer.scrollTo;
+		}
+
+		// The bundle also stamps ?variant= into the URL on load; drop it again so a plain
+		// refresh isn't mistaken for an explicit variant choice. Once the customer picks a
+		// variant the bundle re-adds it, which is what we want.
+		window.addEventListener('load', function () {
+			if (released) return;
+			var url = new URL(window.location.href);
+			if (url.searchParams.has('variant')) {
+				url.searchParams.delete('variant');
+				window.history.replaceState({}, '', url);
+			}
+		});
+
+		['change', 'click', 'pointerdown', 'touchstart', 'wheel', 'keydown'].forEach(function (eventName) {
+			document.addEventListener(eventName, function (event) {
+				var target = event.target;
+				if (!target || !target.closest) return;
+				if (target.closest('.pp-variant-picker') || target.closest('.pp-thumbnail') || target.closest('#pp-image-scroll-container')) {
+					release();
+				}
+			}, true);
+		});
+	})();
+
 	function ppHandleArrowScrollBar(scrollOffset) {
 		const container = document.getElementById('pp-image-scroll-container');
 		if (container) {

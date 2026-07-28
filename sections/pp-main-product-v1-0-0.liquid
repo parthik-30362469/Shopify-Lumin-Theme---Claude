@@ -74,7 +74,8 @@
 				<div class='pp-w-full pp-relative lg:pp-sticky lg:pp-top-4 pp-self-start md:pp-px-6'>
 					{% render 'pp-photo-gallery-v1-0-0',
 						all_images: product.media,
-						selected_variant: product.selected_or_first_available_variant
+						selected_variant: product.selected_or_first_available_variant,
+						url_selected_variant: product.selected_variant
 					%}
 				</div>
 				<div class='pagepilot-wrapper'>
