@@ -15,7 +15,7 @@
         "announcement_BYE7Az": {
           "type": "announcement",
           "settings": {
-            "text": "👕 <strong>Bring Your Clothes Back to Life in Seconds</strong>",
+            "text": "🪑 Sit All Day Without the Aching Lower Back",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -87,7 +87,7 @@
         "announcement_Nn3UFm": {
           "type": "announcement",
           "settings": {
-            "text": "✨ <strong>Remove lint, fuzz & pilling instantly — and make your clothes look brand new again (without replacing them)</strong>",
+            "text": "✨ Ergonomic memory foam that supports your spine — in the car, at your desk, or gaming",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -156,7 +156,7 @@
         "product_subtitle_lwsi7s": {
           "type": "text",
           "settings": {
-            "text": "“Stop Throwing Away Clothes That Still Have Life Left” Quick Swift Lint Pro instantly removes lint, fuzz, and pilling - restoring your clothes to a smooth, like-new finish in seconds. No damage. No hassle. No expensive dry cleaning.",
+            "text": "\"Your Chair Wasn't Built For Your Spine — This Cushion Fixes That\" Hours of sitting collapse your lower back into a slump. This contoured memory foam cushion fills the gap, holds your spine in its natural S-curve and turns any car seat, office or gaming chair into real ergonomic support. Less ache. Better posture. Comfortable all day.",
             "text_style": "subtitle"
           }
         },
@@ -174,28 +174,28 @@
         "benefit_8uyv4s": {
           "type": "text",
           "settings": {
-            "text": "🛡️ Safe on all fabrics — no cuts, no damage, no pulling",
+            "text": "🦴 Relieves the lower-back ache caused by long hours of sitting",
             "text_style": "body"
           }
         },
         "benefit_n50f25": {
           "type": "text",
           "settings": {
-            "text": "✨ Erases lint, fuzz & pilling in seconds",
+            "text": "🧬 Slow-rebound memory foam moulds to your exact shape — never flattens",
             "text_style": "body"
           }
         },
         "benefit_wtizyn": {
           "type": "text",
           "settings": {
-            "text": "🔋 Rechargeable — no more wasting money on batteries",
+            "text": "🌬️ Breathable cover keeps you cool — no sweaty, sticky back",
             "text_style": "body"
           }
         },
         "benefit_eurc3n": {
           "type": "text",
           "settings": {
-            "text": "👕 Makes clothes look brand new instantly",
+            "text": "🚗 One cushion for the car, office chair, gaming setup, sofa & postpartum recovery",
             "text_style": "body"
           }
         },
@@ -244,8 +244,8 @@
             "rating": 5,
             "stars_color": "#facc15",
             "image": "shopify://shop_images/Screenshot_2026-04-21_at_9.13.26_pm.png",
-            "review": "I thought I’d have to throw my sweater out… this made it look brand new in minutes, and my sofa in one quick session. Honestly feels like I saved hundreds on clothes. Easy to hold, fast motor, and no damage to fabric—felt like getting clothes back from the dry cleaner without the cost or hassle.",
-            "name": "Tiara J."
+            "review": "I sit at a desk 9 hours a day and my lower back was killing me by lunchtime. Two weeks with this cushion and that constant ache is gone. It hugs the exact curve of my spine, doesn't squash flat, and I moved it straight into my car for the commute. Honestly the cheapest fix I've ever found for back pain.",
+            "name": "Marcus T."
           }
         },
         "divider_t4qxj5": {
@@ -345,32 +345,32 @@
           "type": "benefit",
           "settings": {
             "icon": "⚡",
-            "title": "Fast Results",
-            "description": "Refresh sweaters, coats, and fabrics in minutes before leaving home."
+            "title": "Relief From Minute One",
+            "description": "Sit back and the foam fills the hollow in your lower spine straight away. No break-in period, no fiddling."
           }
         },
         "benefit_m8d8tg": {
           "type": "benefit",
           "settings": {
-            "icon": "🔋",
-            "title": "Rechargeable Convenience",
-            "description": "No more buying batteries charge once and use again and again."
+            "icon": "💪",
+            "title": "It Never Goes Flat",
+            "description": "High-density slow-rebound foam springs back every single time instead of pancaking like cheap stuffing."
           }
         },
         "benefit_blfxve": {
           "type": "benefit",
           "settings": {
-            "icon": "🧵",
-            "title": "Safe & Gentle",
-            "description": "Designed to protect delicate fabrics while removing lint effectively."
+            "icon": "🌬️",
+            "title": "Cool, Not Clammy",
+            "description": "The breathable cover lets air move through, so your shirt stays dry on long drives and warm afternoons."
           }
         },
         "benefit_cjj4by": {
           "type": "benefit",
           "settings": {
-            "icon": "🏠",
-            "title": "Works Everywhere",
-            "description": "Perfect for clothes, sofas, bedding, and more."
+            "icon": "🪑",
+            "title": "Follows You Everywhere",
+            "description": "Car seat, office chair, gaming chair, recliner, wheelchair or sofa — the adjustable strap holds it in place."
           }
         }
       },
@@ -381,8 +381,8 @@
         "benefit_cjj4by"
       ],
       "settings": {
-        "heading": "Look Clean, Polished & Put-Together Every Time You Step Out",
-        "subtitle": "No more looking “worn out” or messy.\nNo more wasting money replacing clothes.\n\nIn just a few passes, your garments look fresh, smooth, and ready to wear — whether it’s for work, a night out, or everyday life.",
+        "heading": "Get Through The Whole Day Without Rubbing Your Lower Back",
+        "subtitle": "No more shifting in your seat every ten minutes. No more standing up stiff after a long drive or a long shift.\n\nSlide this cushion behind you and your spine finally has something to lean on — from your first meeting to your last mile home.",
         "image": "shopify://shop_images/Premiumhairremoverandstoragedevice.png",
         "image_rounded_type": "default",
         "desktop_content_alignment": "center",
