@@ -640,8 +640,8 @@
           "type": "text",
           "settings": {
             "subheading": "",
-            "heading": "From Fuzzy To Flawless in Seconds",
-            "content": "<p>Drag the slider to see the magic</p>",
+            "heading": "From Slumped And Sore To Upright And Easy",
+            "content": "<p>Drag the slider to see what real lumbar support does to your posture</p>",
             "text_position": "center",
             "color": "#000000"
           }
@@ -656,8 +656,8 @@
             "border_radius": 12,
             "drag_initial_position": 50,
             "cover": true,
-            "before_text": "Before",
-            "after_text": "After",
+            "before_text": "Without Support",
+            "after_text": "With The Cushion",
             "before_after_text_position": "bottom",
             "before_text_color": "#ffffff",
             "after_text_color": "#ffffff",
