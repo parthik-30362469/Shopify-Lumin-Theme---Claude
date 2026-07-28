@@ -48,6 +48,7 @@
         },
         "areviews_reviews_importer_areviews_title_rating_7E52B6": {
           "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsTitleRating/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "disabled": true,
           "settings": {}
         },
         "product_subtitle_lwsi7s": {
