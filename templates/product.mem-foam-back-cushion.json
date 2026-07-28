@@ -15,7 +15,7 @@
         "announcement_BYE7Az": {
           "type": "announcement",
           "settings": {
-            "text": "👕 <strong>Bring Your Clothes Back to Life in Seconds</strong>",
+            "text": "🪑 Sit All Day Without the Aching Lower Back",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -87,7 +87,7 @@
         "announcement_Nn3UFm": {
           "type": "announcement",
           "settings": {
-            "text": "✨ <strong>Remove lint, fuzz & pilling instantly — and make your clothes look brand new again (without replacing them)</strong>",
+            "text": "✨ Ergonomic memory foam that supports your spine — in the car, at your desk, or gaming",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -117,7 +117,7 @@
       ],
       "name": "t:sections.announcement-bar.presets.name-scrolling",
       "settings": {
-        "background_color": "#63498b",
+        "background_color": "#000000",
         "background_gradient": "",
         "show_line_separator": true,
         "scroll_speed": 80,
@@ -149,14 +149,14 @@
           }
         },
         "areviews_reviews_importer_areviews_title_rating_7E52B6": {
-          "disabled": true,
           "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsTitleRating/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "disabled": true,
           "settings": {}
         },
         "product_subtitle_lwsi7s": {
           "type": "text",
           "settings": {
-            "text": "“Stop Throwing Away Clothes That Still Have Life Left” Quick Swift Lint Pro instantly removes lint, fuzz, and pilling - restoring your clothes to a smooth, like-new finish in seconds. No damage. No hassle. No expensive dry cleaning.",
+            "text": "\"Your Chair Wasn't Built For Your Spine — This Cushion Fixes That\" Hours of sitting collapse your lower back into a slump. This contoured memory foam cushion fills the gap, holds your spine in its natural S-curve and turns any car seat, office or gaming chair into real ergonomic support. Less ache. Better posture. Comfortable all day.",
             "text_style": "subtitle"
           }
         },
@@ -174,28 +174,28 @@
         "benefit_8uyv4s": {
           "type": "text",
           "settings": {
-            "text": "🛡️ Safe on all fabrics — no cuts, no damage, no pulling",
+            "text": "🦴 Relieves the lower-back ache caused by long hours of sitting",
             "text_style": "body"
           }
         },
         "benefit_n50f25": {
           "type": "text",
           "settings": {
-            "text": "✨ Erases lint, fuzz & pilling in seconds",
+            "text": "🧬 Slow-rebound memory foam moulds to your exact shape — never flattens",
             "text_style": "body"
           }
         },
         "benefit_wtizyn": {
           "type": "text",
           "settings": {
-            "text": "🔋 Rechargeable — no more wasting money on batteries",
+            "text": "🌬️ Breathable cover keeps you cool — no sweaty, sticky back",
             "text_style": "body"
           }
         },
         "benefit_eurc3n": {
           "type": "text",
           "settings": {
-            "text": "👕 Makes clothes look brand new instantly",
+            "text": "🚗 One cushion for the car, office chair, gaming setup, sofa & postpartum recovery",
             "text_style": "body"
           }
         },
@@ -244,8 +244,8 @@
             "rating": 5,
             "stars_color": "#facc15",
             "image": "shopify://shop_images/Screenshot_2026-04-21_at_9.13.26_pm.png",
-            "review": "I thought I’d have to throw my sweater out… this made it look brand new in minutes, and my sofa in one quick session. Honestly feels like I saved hundreds on clothes. Easy to hold, fast motor, and no damage to fabric—felt like getting clothes back from the dry cleaner without the cost or hassle.",
-            "name": "Tiara J."
+            "review": "I sit at a desk 9 hours a day and my lower back was killing me by lunchtime. Two weeks with this cushion and that constant ache is gone. It hugs the exact curve of my spine, doesn't squash flat, and I moved it straight into my car for the commute. Honestly the cheapest fix I've ever found for back pain.",
+            "name": "Marcus T."
           }
         },
         "divider_t4qxj5": {
@@ -311,7 +311,7 @@
         "pp_heading_color": "#000000",
         "pp_body_color": "#000000",
         "pp_brand_color": "#606c75",
-        "pp_button_background_color": "#63498b",
+        "pp_button_background_color": "#000000",
         "pp_button_text_color": "#ffffff",
         "pp_border_radius": 16,
         "padding_top": 28,
@@ -330,7 +330,7 @@
         "flip_vertical": false,
         "shape_color": "scheme-d88a2d-text",
         "use_custom_shape_color": true,
-        "custom_shape_color": "#beafd5",
+        "custom_shape_color": "#E2E5E8",
         "background_color": "scheme-bf5d1406-fbfb-4433-8d38-32a160689d83",
         "use_custom_background_color": false,
         "custom_background_color": "#ffffff",
@@ -345,32 +345,32 @@
           "type": "benefit",
           "settings": {
             "icon": "⚡",
-            "title": "Fast Results",
-            "description": "Refresh sweaters, coats, and fabrics in minutes before leaving home."
+            "title": "Relief From Minute One",
+            "description": "Sit back and the foam fills the hollow in your lower spine straight away. No break-in period, no fiddling."
           }
         },
         "benefit_m8d8tg": {
           "type": "benefit",
           "settings": {
-            "icon": "🔋",
-            "title": "Rechargeable Convenience",
-            "description": "No more buying batteries charge once and use again and again."
+            "icon": "💪",
+            "title": "It Never Goes Flat",
+            "description": "High-density slow-rebound foam springs back every single time instead of pancaking like cheap stuffing."
           }
         },
         "benefit_blfxve": {
           "type": "benefit",
           "settings": {
-            "icon": "🧵",
-            "title": "Safe & Gentle",
-            "description": "Designed to protect delicate fabrics while removing lint effectively."
+            "icon": "🌬️",
+            "title": "Cool, Not Clammy",
+            "description": "The breathable cover lets air move through, so your shirt stays dry on long drives and warm afternoons."
           }
         },
         "benefit_cjj4by": {
           "type": "benefit",
           "settings": {
-            "icon": "🏠",
-            "title": "Works Everywhere",
-            "description": "Perfect for clothes, sofas, bedding, and more."
+            "icon": "🪑",
+            "title": "Follows You Everywhere",
+            "description": "Car seat, office chair, gaming chair, recliner, wheelchair or sofa — the adjustable strap holds it in place."
           }
         }
       },
@@ -381,13 +381,13 @@
         "benefit_cjj4by"
       ],
       "settings": {
-        "heading": "Look Clean, Polished & Put-Together Every Time You Step Out",
-        "subtitle": "No more looking “worn out” or messy.\nNo more wasting money replacing clothes.\n\nIn just a few passes, your garments look fresh, smooth, and ready to wear — whether it’s for work, a night out, or everyday life.",
+        "heading": "Get Through The Whole Day Without Rubbing Your Lower Back",
+        "subtitle": "No more shifting in your seat every ten minutes. No more standing up stiff after a long drive or a long shift.\n\nSlide this cushion behind you and your spine finally has something to lean on — from your first meeting to your last mile home.",
         "image": "shopify://shop_images/Premiumhairremoverandstoragedevice.png",
         "image_rounded_type": "default",
         "desktop_content_alignment": "center",
         "mobile_content_alignment": "center",
-        "section_background": "linear-gradient(136deg, rgba(190, 175, 213, 1), rgba(190, 175, 213, 1) 100%)",
+        "section_background": "linear-gradient(136deg, rgba(226, 229, 232, 1), rgba(226, 229, 232, 1) 100%)",
         "padding_top": 30,
         "padding_bottom": 30,
         "padding_top_mobile": 30,
@@ -404,13 +404,13 @@
         "heading_1l1hox": {
           "type": "heading",
           "settings": {
-            "heading": "Your Clothes Aren’t Old! They’re Just Covered in Lint"
+            "heading": "Your Back Isn't Weak. Your Chair Is Just Wrong."
           }
         },
         "text_apac97": {
           "type": "text",
           "settings": {
-            "text": "That sweater you love?\nThat jacket you stopped wearing?\n\nThey don’t need replacing.\n\nThey just need restoring.\n\nQuick Swift Lint Pro removes years of fuzz, lint, and pilling in seconds — giving your clothes a clean, smooth, like-new finish again."
+            "text": "That dull ache after a long shift?\nThat stiffness after a two-hour drive?\n\nIt isn't age catching up with you. It's a flat seat back leaving an empty gap exactly where your lumbar curve needs support — so your muscles hold the load for hours instead.\n\nFill the gap and the strain stops. That's all this cushion does, and it does it every minute you're sitting."
           }
         }
       },
@@ -420,12 +420,12 @@
       ],
       "settings": {
         "image": "shopify://shop_images/Highpowersuctioncleanerinaction.png",
-        "image_alt": "QuickFabric Lint Pro",
+        "image_alt": "Memory Foam Lumbar Back Cushion ergonomic support",
         "layout": "image_first",
         "desktop_content_position": "center",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
-        "section_background": "linear-gradient(270deg, rgba(190, 175, 213, 1), rgba(190, 175, 213, 1) 100%)",
+        "section_background": "linear-gradient(270deg, rgba(226, 229, 232, 1), rgba(226, 229, 232, 1) 100%)",
         "padding_top": 30,
         "padding_bottom": 30,
         "padding_top_mobile": 30,
@@ -442,7 +442,7 @@
         "announcement_kppRbT": {
           "type": "announcement",
           "settings": {
-            "text": "<strong>Fast & Easy</strong>",
+            "text": "<strong>Instant Support</strong>",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -462,7 +462,7 @@
         "announcement_R4dqRc": {
           "type": "announcement",
           "settings": {
-            "text": "<strong>No More Pilling</strong>",
+            "text": "<strong>No More Slouching</strong>",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -482,7 +482,7 @@
         "announcement_aCUAJG": {
           "type": "announcement",
           "settings": {
-            "text": "<strong>Remove Lint Effortlessly</strong>",
+            "text": "<strong>Real Lower Back Relief</strong>",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -513,7 +513,7 @@
         "announcement_AUXCjd": {
           "type": "announcement",
           "settings": {
-            "text": "<strong>Safe On Fabrics</strong>",
+            "text": "<strong>Fits Almost Any Seat</strong>",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -540,8 +540,8 @@
       ],
       "name": "t:sections.announcement-bar.presets.name-scrolling",
       "settings": {
-        "background_color": "#d8b4fe",
-        "background_gradient": "linear-gradient(85deg, rgba(99, 73, 139, 1), rgba(99, 73, 139, 1) 100%)",
+        "background_color": "#000000",
+        "background_gradient": "linear-gradient(85deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
         "show_line_separator": true,
         "scroll_speed": 80,
         "scroll_direction": "1",
@@ -640,8 +640,8 @@
           "type": "text",
           "settings": {
             "subheading": "",
-            "heading": "From Fuzzy To Flawless in Seconds",
-            "content": "<p>Drag the slider to see the magic</p>",
+            "heading": "From Slumped And Sore To Upright And Easy",
+            "content": "<p>Drag the slider to see what real lumbar support does to your posture</p>",
             "text_position": "center",
             "color": "#000000"
           }
@@ -656,8 +656,8 @@
             "border_radius": 12,
             "drag_initial_position": 50,
             "cover": true,
-            "before_text": "Before",
-            "after_text": "After",
+            "before_text": "Without Support",
+            "after_text": "With The Cushion",
             "before_after_text_position": "bottom",
             "before_text_color": "#ffffff",
             "after_text_color": "#ffffff",
@@ -684,7 +684,7 @@
         "row_iArm3U": {
           "type": "row",
           "settings": {
-            "benefit": "Power",
+            "benefit": "True lumbar curve support",
             "us": true,
             "others": false
           }
@@ -692,7 +692,7 @@
         "row_QBeNVT": {
           "type": "row",
           "settings": {
-            "benefit": "Speed",
+            "benefit": "Keeps its shape for years",
             "us": true,
             "others": false
           }
@@ -700,7 +700,7 @@
         "row_9k4i6W": {
           "type": "row",
           "settings": {
-            "benefit": "Battery",
+            "benefit": "Breathable, no sweaty back",
             "us": true,
             "others": false
           }
@@ -708,7 +708,7 @@
         "row_wQ76Bj": {
           "type": "row",
           "settings": {
-            "benefit": "Safety",
+            "benefit": "Car, office, gaming & sofa",
             "us": true,
             "others": false
           }
@@ -716,7 +716,7 @@
         "row_pQcpmY": {
           "type": "row",
           "settings": {
-            "benefit": "Cost-effective",
+            "benefit": "Costs less than one massage",
             "us": true,
             "others": false
           }
@@ -731,9 +731,9 @@
       ],
       "name": "Comparison table",
       "settings": {
-        "title": "Why Thousands Are Switching to Quick Swift Lint Pro",
+        "title": "Why Thousands Are Switching To This Lumbar Cushion",
         "heading_size": "h1",
-        "text": "<p>Powerful enough for thick fabrics<br/>Gentle enough for delicate materials</p><p>Unlike cheap alternatives, it delivers consistent, safe results without damaging your clothes.</p>",
+        "text": "<p>Firm enough to actually hold your spine up.</p><p>Soft enough to sit against for eight hours straight.</p><p></p><p>Most back cushions are either a brick or a marshmallow. This one is neither — which is exactly why people stop buying replacements.</p>",
         "button_label": "",
         "link": "",
         "button_style_secondary": false,
@@ -741,15 +741,15 @@
         "color_scheme": "background-2",
         "logo_width": 90,
         "mobile_logo_width": 60,
-        "us_label": "Quick Swift Lint Pro",
-        "others_label": "Others",
+        "us_label": "This Cushion",
+        "others_label": "Ordinary Cushions",
         "benefit_color_scheme": "accent-1",
         "icon_cells_color_scheme": "background-2",
         "checkmark_color": "#53af01",
         "x_color": "#ff5454",
         "checkmark_active_color": "#53af01",
         "x_active_color": "#000000",
-        "active_color": "#63498b",
+        "active_color": "#000000",
         "active_text_color": "#ffffff",
         "active_border_color": "#212121",
         "table_corner_radius": 12,
@@ -769,7 +769,7 @@
         "heading_5k4fek": {
           "type": "heading",
           "settings": {
-            "heading": "Real results you can count on"
+            "heading": "What customers actually feel after 2 weeks"
           }
         },
         "percentage_items_64liaw": {
@@ -777,11 +777,11 @@
           "settings": {
             "color_end": "#d1d5db",
             "percentage_1": 98,
-            "text_1": "customers are restoring their clothes instead of replacing them",
+            "text_1": "said their lower back felt noticeably less sore at the end of the day",
             "percentage_2": 97,
-            "text_2": "noticed smoother fabrics with fewer visible pills",
+            "text_2": "found it easier to sit upright without constantly correcting their posture",
             "percentage_3": 96,
-            "text_3": "Saved money on new clothes or fixes"
+            "text_3": "would buy a second one for their car or home office"
           }
         }
       },
@@ -794,7 +794,7 @@
         "layout": "image_first",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
-        "section_background": "linear-gradient(135deg, rgba(190, 175, 213, 1), rgba(190, 175, 213, 1) 97%)",
+        "section_background": "linear-gradient(135deg, rgba(226, 229, 232, 1), rgba(226, 229, 232, 1) 97%)",
         "padding_top": 30,
         "padding_bottom": 30,
         "padding_top_mobile": 30,
@@ -811,13 +811,13 @@
         "heading_n0esuh": {
           "type": "heading",
           "settings": {
-            "heading": "Stop Wasting Money on Batteries Forever"
+            "heading": "Stop Paying For Painkillers And Massages"
           }
         },
         "text_d6t965": {
           "type": "text",
           "settings": {
-            "text": "USB rechargeable battery delivers long use and powerful dual motors. That means consistent high-speed shaving for big jobs like blankets or quick touch-ups before meetings."
+            "text": "A single massage costs more than this cushion. A month of anti-inflammatories costs more too — and neither fixes the reason your back hurts.\n\nProper lumbar support works while you sit, every day, for years. Buy it once and the ache simply stops being part of your routine."
           }
         }
       },
@@ -827,7 +827,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/RechargeablelintremoverwithLEDdisplay.png",
-        "image_alt": "QuickFabric Lint Pro",
+        "image_alt": "Memory foam lumbar cushion on an office chair",
         "layout": "text_first",
         "desktop_content_position": "center",
         "desktop_content_alignment": "left",
@@ -853,7 +853,7 @@
         "flip_vertical": false,
         "shape_color": "scheme-d88a2d-text",
         "use_custom_shape_color": true,
-        "custom_shape_color": "#beafd5",
+        "custom_shape_color": "#E2E5E8",
         "background_color": "scheme-bf5d1406-fbfb-4433-8d38-32a160689d83",
         "use_custom_background_color": false,
         "custom_background_color": "#ffffff",
@@ -865,14 +865,14 @@
       "type": "video",
       "name": "t:sections.video.presets.name",
       "settings": {
-        "heading": "Meet Quick Swift Lint Pro",
+        "heading": "See It On A Real Chair, In 30 Seconds",
         "heading_size": "h1",
         "enable_video_looping": false,
         "video": "shopify://files/videos/0417 (1)(2).mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
+        "description": "Demonstration of the memory foam lumbar cushion supporting the lower back on a chair",
         "full_width": false,
-        "color_scheme": "scheme-bf5d1406-fbfb-4433-8d38-32a160689d83",
+        "color_scheme": "scheme-0c3a42a9-b282-4f08-b2d3-4ed9f88b2ac7",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -887,7 +887,7 @@
         "flip_vertical": true,
         "shape_color": "scheme-d88a2d-text",
         "use_custom_shape_color": true,
-        "custom_shape_color": "#beafd5",
+        "custom_shape_color": "#E2E5E8",
         "background_color": "scheme-bf5d1406-fbfb-4433-8d38-32a160689d83",
         "use_custom_background_color": false,
         "custom_background_color": "#ffffff",
@@ -901,36 +901,36 @@
         "faq_fs34a2": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it safe on wool and cashmere?",
-            "answer": "Yes. Use the lowest speed and a light touch for delicate fibres. The protective blades reduce snagging while removing pills effectively."
+            "question": "Will it actually fit my chair or car seat?",
+            "answer": "Almost certainly. The contoured shape is designed for car seats, office chairs, gaming chairs, recliners, dining chairs and sofas. The adjustable elastic strap loops around the backrest so it stays exactly where you put it instead of sliding down every time you stand up."
           }
         },
         "faq_pfugaw": {
           "type": "faq_item",
           "settings": {
-            "question": "How long does the battery last per charge?",
-            "answer": "A full USB charge gives multiple sessions—enough to refresh several sweaters or a sofa. Recharge quickly with any USB port between uses."
+            "question": "Is it too firm or too soft?",
+            "answer": "Neither. High-density slow-rebound memory foam gives under your weight and moulds to your curve, but it never bottoms out. You get real support without the feeling of leaning against a plank."
           }
         },
         "faq_ait9mr": {
           "type": "faq_item",
           "settings": {
-            "question": "Can it handle large jobs like blankets?",
-            "answer": "Yes. Switch to higher speed for thick blankets and upholstery for faster removal without overheating or repeated passes."
+            "question": "Will it help pain I already have?",
+            "answer": "Most people notice far less strain within the first few days, because the cushion stops your lower spine collapsing forward while you sit. It is a comfort and posture aid rather than a medical device — if you have a diagnosed back condition, check with your physio or doctor first."
           }
         },
         "faq_r2pass": {
           "type": "faq_item",
           "settings": {
-            "question": "Is maintenance difficult?",
-            "answer": "Not at all. Empty the lint chamber and rinse the blade cover. Periodic blade checks keep peak performance, no special tools required."
+            "question": "Does it get hot and sweaty?",
+            "answer": "No. The cover is breathable so air keeps moving behind your back. That is why customers happily leave it in the car through summer without their shirt sticking to them."
           }
         },
         "faq_0wqokg": {
           "type": "faq_item",
           "settings": {
-            "question": "Will it damage clothes over time?",
-            "answer": "When used as directed, it prolongs garment life by removing damaging pills and preventing further wear, saving money on replacements."
+            "question": "How do I keep it clean?",
+            "answer": "Unzip the cover, machine wash it cold and let it air dry. The foam core stays clean inside — no soaking, no shrinking, no special care."
           }
         }
       },
@@ -943,13 +943,13 @@
       ],
       "settings": {
         "heading": "Still Not Sure? We’ve Got You Covered",
-        "description": "Clear answers to help you use the fabric shaver with confidence and get the best results",
+        "description": "Straight answers about fit, firmness and whether it will actually help your back",
         "desktop_content_alignment": "center",
         "mobile_content_alignment": "center",
         "button_behaviour": "scroll_to_top",
         "button_label": "",
         "button_link": "",
-        "faqitem_background": "linear-gradient(180deg, rgba(190, 175, 213, 1), rgba(190, 175, 213, 1) 38%, rgba(190, 175, 213, 1) 44%, rgba(190, 175, 213, 1) 57.915%, rgba(190, 175, 213, 1) 100%)",
+        "faqitem_background": "linear-gradient(180deg, rgba(226, 229, 232, 1), rgba(226, 229, 232, 1) 38%, rgba(226, 229, 232, 1) 44%, rgba(226, 229, 232, 1) 57.915%, rgba(226, 229, 232, 1) 100%)",
         "section_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
         "padding_top": 30,
         "padding_bottom": 30,
@@ -971,7 +971,7 @@
         "flip_vertical": false,
         "shape_color": "scheme-d88a2d-text",
         "use_custom_shape_color": true,
-        "custom_shape_color": "#beafd5",
+        "custom_shape_color": "#E2E5E8",
         "background_color": "scheme-bf5d1406-fbfb-4433-8d38-32a160689d83",
         "use_custom_background_color": false,
         "custom_background_color": "#ffffff",
@@ -985,13 +985,13 @@
         "heading_fC9DpE": {
           "type": "heading",
           "settings": {
-            "heading": "Join 5,000+ People Who Refuse to Throw Clothes Away Anymore"
+            "heading": "Join 5,000+ People Who Stopped Accepting Back Pain As Normal"
           }
         },
         "text_g4tQnw": {
           "type": "text",
           "settings": {
-            "text": "Join thousands who’ve brought their clothes back to life with Quick Swift Lint Pro. From worn-out sweaters to fuzzy couches, customers love how quickly and easily it restores a smooth, like-new finish-without damaging fabrics or wasting money on replacements."
+            "text": "Office workers, drivers, gamers, students and new mums all tell us the same thing: they stopped noticing their lower back. Not because the pain was masked, but because their spine finally had something holding it in the right shape all day."
           }
         }
       },
@@ -1007,7 +1007,7 @@
         "desktop_content_position": "center",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
-        "section_background": "linear-gradient(0deg, rgba(190, 175, 213, 1), rgba(190, 175, 213, 1) 97%)",
+        "section_background": "linear-gradient(0deg, rgba(226, 229, 232, 1), rgba(226, 229, 232, 1) 97%)",
         "padding_top": 30,
         "padding_bottom": 30,
         "padding_top_mobile": 30,
@@ -1028,7 +1028,7 @@
         "flip_vertical": true,
         "shape_color": "scheme-d88a2d-text",
         "use_custom_shape_color": true,
-        "custom_shape_color": "#beafd5",
+        "custom_shape_color": "#E2E5E8",
         "background_color": "scheme-bf5d1406-fbfb-4433-8d38-32a160689d83",
         "use_custom_background_color": false,
         "custom_background_color": "#ffffff",
@@ -1042,70 +1042,71 @@
         "review_9s2v85": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/460d61a8-447e-4aca-9524-8198a31ddacb.webp",
-            "name": "David M.",
+            "image": "shopify://shop_images/ali-review-1.webp",
+            "name": "T***e",
             "verified_text": "Verified Buyer",
             "rating": 5,
-            "review_text": "Saved an old wool coat that looked ruined; now it looks almost new, no fuzz and no damage to the fabric"
+            "review_text": "Memory foam. Very good on a chair or on the couch."
           }
         },
         "review_vmhr7m": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/18973bfd-1a7a-4f3f-9b1d-36f46ce008b7.webp",
-            "name": "Sam L.",
+            "image": "shopify://shop_images/ali-review-2.webp",
+            "name": "a***z",
             "verified_text": "Verified Buyer",
-            "rating": 4,
-            "review_text": "Battery lasts longer than I expected, cordless use is super convenient for quick touch ups around the house"
+            "rating": 5,
+            "review_text": "Thanks to the seller for a quality product at a low price, and with record-fast shipping, excellent store."
           }
         },
         "review_q6yiqo": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/b16ffa93-2c91-4c29-a416-589a01f87a04.webp",
-            "name": "Kevin W.",
+            "image": "shopify://shop_images/ali-review-3.webp",
+            "name": "AliExpress Shopper",
             "verified_text": "Verified Buyer",
-            "rating": 4,
-            "review_text": "Took a while to get used to holding it steady but once I did, my old couch cushions looked refreshed. Saved me from buying a new sofa."
+            "rating": 5,
+            "review_text": "The delivery was fast and it's really great~^^"
           }
         },
         "review_81he9k": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/e9436277-c3ef-4eb4-b652-83895e6a04e9.webp",
-            "name": "Ben C.",
+            "image": "shopify://shop_images/ali-review-4.webp",
+            "name": "E***l",
             "verified_text": "Verified Buyer",
-            "rating": 4,
-            "review_text": "Surprisingly effective on delicate fabrics when set to low speed. My sweaters feel soft again and I don’t worry about constant replacement."
+            "rating": 5,
+            "review_text": "I am using it while sitting on a chair and it's comfortable. Thank you."
           }
         },
         "review_51dpq7": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/900eb568-8d0c-45b2-93f6-19d9fc277fb1.webp",
-            "name": "Tyler F.",
+            "image": "shopify://shop_images/ali-review-5.webp",
+            "name": "AliExpress Shopper",
             "verified_text": "Verified Buyer",
-            "rating": 4,
-            "review_text": "Great for quick fixes before heading out. Charges fast and the dual head cuts through heavy fuzz; not perfect on extremely worn areas but overall reliable"
+            "rating": 5,
+            "review_text": "I thought it would be a bit longer vertically to use on a chair, but the one that's only horizontal keeps getting buried in the cushions, so I bought one that has some vertical length."
           }
         },
         "review_wpfv18": {
           "type": "review",
           "settings": {
-            "image": "shopify://shop_images/d70e273a-bb81-451a-ba72-0a2dc5c64daf.webp",
-            "name": "Tom B.",
+            "image": "shopify://shop_images/ali-review-6.webp",
+            "name": "AliExpress Shopper",
             "verified_text": "Verified Buyer",
-            "rating": 4,
-            "review_text": "Compact and powerful"
+            "rating": 5,
+            "review_text": "I rode without a waist cushion, but after buying one and trying it out, it seems to be quite okay."
           }
         },
         "review_kjsg5b": {
           "type": "review",
           "settings": {
-            "name": "Noah E.",
+            "image": "shopify://shop_images/ali-review-7.webp",
+            "name": "AliExpress Shopper",
             "verified_text": "Verified Buyer",
-            "rating": 4,
-            "review_text": "Fast, quiet, and actually gentle. I refreshed a dozen sweaters and my sofa without pulling threads. One charge lasted through all the jobs, which was a pleasant surprise 😊"
+            "rating": 5,
+            "review_text": "I am absolutely thrilled with this product! The quality is outstanding, and it looks exactly like the pictures. It is incredibly easy to use and has exceeded my expectations. Shipping was fast, and the packaging was very secure. I highly recommend this to anyone looking for a great value."
           }
         },
         "review_mlz9hl": {
@@ -1114,7 +1115,7 @@
             "name": "James P.",
             "verified_text": "Verified Buyer",
             "rating": 4,
-            "review_text": "Good build, dual blades move through pilling fast and quiet; a bit heavier than I thought but solid performance"
+            "review_text": "Solid build and the foam is dense without being hard. Sits right in the small of my back on the commute; slightly bigger than I pictured, which turned out to be a good thing."
           }
         },
         "review_pg7x03": {
@@ -1123,7 +1124,7 @@
             "name": "Paul N.",
             "verified_text": "Verified Buyer",
             "rating": 4,
-            "review_text": "I brought this on a trip to remove fuzz from dress shirts and sweaters—rechargeable battery and compact size made it ideal for travel"
+            "review_text": "Took it on a nine-hour road trip. First time I've arrived without that locked-up feeling in my lower back, and the strap kept it in place the whole way."
           }
         },
         "review_3x6xwo": {
@@ -1132,7 +1133,7 @@
             "name": "Ryan H.",
             "verified_text": "Verified Buyer",
             "rating": 4,
-            "review_text": "Tackles lint on sofas and bedding quickly, rechargeable battery cut my battery spending and the removable head is easy to clean"
+            "review_text": "I game five hours at a stretch and my chair has zero lumbar support. This fills the gap perfectly — the ache I used to get around hour three just isn't there anymore."
           }
         },
         "review_snkmbf": {
@@ -1141,7 +1142,7 @@
             "name": "Eric G.",
             "verified_text": "Verified Buyer",
             "rating": 5,
-            "review_text": "I used this on a stained pilled chair and it looked refreshed in minutes. Handheld design made it easy to reach corners and curves."
+            "review_text": "Bought it for my desk chair and ended up ordering a second one for the car. Easy to reposition and it doesn't squash flat by the afternoon."
           }
         },
         "review_whfn1s": {
@@ -1150,7 +1151,7 @@
             "name": "Adam J.",
             "verified_text": "Verified Buyer",
             "rating": 5,
-            "review_text": "Honestly impressed—worked through years of pilling on my winter jackets and even did my leggings without thinning the fabric; easy cleanup and no mess :)"
+            "review_text": "Honestly impressed — I've tried three cushions before and they all went pancake flat. This one still holds its shape after months of daily use :)"
           }
         },
         "review_1027yl": {
@@ -1159,7 +1160,7 @@
             "name": "Luke A.",
             "verified_text": "Verified Buyer",
             "rating": 4,
-            "review_text": "Lightweight and fits my hand nicely; high speed power removed stubborn fuzz on a heavy coat without snagging or pulling yarns"
+            "review_text": "Light enough to carry between the office and home. The curve sits exactly where my back needs it and my posture improved without me thinking about it."
           }
         },
         "review_q2t758": {
@@ -1168,7 +1169,7 @@
             "name": "Mark T.",
             "verified_text": "Verified Buyer",
             "rating": 4,
-            "review_text": "Did a great job on my chunky knit blanket and some old sweaters, different speeds made it simple to be gentle where needed"
+            "review_text": "Great on my recliner and on the dining chairs when we have people over. Supportive without being squishy, and the cover doesn't make me sweat."
           }
         },
         "review_n21s20": {
@@ -1177,7 +1178,7 @@
             "name": "Chris K.",
             "verified_text": "Verified Buyer",
             "rating": 5,
-            "review_text": "Easy to use, three speeds cover delicate knits and thick blankets without pulling threads"
+            "review_text": "Simple to fit, stays where you put it, and it has made a real difference to my lower back after long shifts on a hard chair."
           }
         },
         "review_vmbips": {
@@ -1186,7 +1187,7 @@
             "name": "Alex R.",
             "verified_text": "Verified Buyer",
             "rating": 4,
-            "review_text": "So handy, instant fresh look"
+            "review_text": "Instantly more comfortable. Wish I'd bought one years ago."
           }
         },
         "review_0rum3b": {
@@ -1195,7 +1196,7 @@
             "name": "Mike S.",
             "verified_text": "Verified Buyer",
             "rating": 5,
-            "review_text": "Works great, saved my sweater"
+            "review_text": "Works great, saved my back."
           }
         }
       },
@@ -1221,7 +1222,7 @@
       "settings": {
         "rating": 5,
         "heading": "Don't Just Take Our Word",
-        "subheading": "Real feedback from real users",
+        "subheading": "Real feedback from people who sit all day",
         "desktop_content_alignment": "center",
         "mobile_content_alignment": "center",
         "section_background": "",
@@ -1301,7 +1302,7 @@
         "flip_vertical": false,
         "shape_color": "scheme-d88a2d-text",
         "use_custom_shape_color": true,
-        "custom_shape_color": "#beafd5",
+        "custom_shape_color": "#E2E5E8",
         "background_color": "scheme-bf5d1406-fbfb-4433-8d38-32a160689d83",
         "use_custom_background_color": false,
         "custom_background_color": "#ffffff",
@@ -1343,7 +1344,7 @@
         "text_Ak4qBp": {
           "type": "text",
           "settings": {
-            "text": "<p>Try QuickFabric Lint Pro risk-free for 14 days. If the rechargeable fabric shaver doesn’t restore clothes or meet expectations, return it for a full refund. We want you confident that this tool will make your wardrobe look better and last longer.</p>"
+            "text": "<p>Sit on it for 14 days. If your back doesn't feel better at the end of a long day, send it back for a full refund. You only find out if lumbar support works for you by actually using it — so the risk is ours, not yours.</p>"
           }
         },
         "button_4bhjrJ": {
@@ -1368,7 +1369,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "scheme-bf5d1406-fbfb-4433-8d38-32a160689d83",
+        "color_scheme": "scheme-0c3a42a9-b282-4f08-b2d3-4ed9f88b2ac7",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
@@ -1384,7 +1385,7 @@
         "flip_vertical": true,
         "shape_color": "scheme-d88a2d-text",
         "use_custom_shape_color": true,
-        "custom_shape_color": "#beafd5",
+        "custom_shape_color": "#E2E5E8",
         "background_color": "scheme-bf5d1406-fbfb-4433-8d38-32a160689d83",
         "use_custom_background_color": false,
         "custom_background_color": "#ffffff",

@@ -1,1 +1,82 @@
-{"name":"t:sections.header.name","type":"header","sections":{"announcement_bar_scrolling_GA6XLc":{"type":"announcement-bar-scrolling","blocks":{"announcement_EBQ7FN":{"type":"announcement","settings":{"text":"We deliver to your home for free! 📦","link":"","font_family":"heading","text_size":14,"text_size_mobile":14,"text_color":"#ffffff","use_gradient":false,"gradient_color_1":"#ff7e8d","gradient_color_2":"#ff354c","gradient_angle":52,"margin":20,"letter_spacing":0,"letter_spacing_mobile":0,"icon":"none","custom_image_height":20}}},"block_order":["announcement_EBQ7FN"],"name":"t:sections.announcement-bar.presets.name-scrolling","settings":{"background_color":"#1a1a22","background_gradient":"","show_line_separator":false,"scroll_speed":136,"scroll_direction":"1","mobile_height":40,"desktop_height":40}},"header":{"type":"header","custom_css":[],"settings":{"enable_transparent-header":false,"enable_hover_animation":true,"color-transparent":"#000000","color-hover-background":"#fcf7f5","color-hover-text":"#212121","logo_position":"middle-center","menu":"main-menu","menu_type_desktop":"drawer","sticky_header_type":"on-scroll-up","show_line_separator":true,"color_scheme":"scheme-89a1eca2-c127-4444-bd1e-59754d4f1308","menu_color_scheme":"scheme-89a1eca2-c127-4444-bd1e-59754d4f1308","enable_country_selector":true,"enable_language_selector":true,"enable_customer_avatar":true,"mobile_logo_position":"center","margin_bottom":0,"padding_top":4,"padding_bottom":4}}},"order":["announcement_bar_scrolling_GA6XLc","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement_bar_scrolling_GA6XLc": {
+      "type": "announcement-bar-scrolling",
+      "blocks": {
+        "announcement_EBQ7FN": {
+          "type": "announcement",
+          "settings": {
+            "text": "We deliver to your home for free! 📦",
+            "link": "",
+            "font_family": "heading",
+            "text_size": 14,
+            "text_size_mobile": 14,
+            "text_color": "#ffffff",
+            "use_gradient": false,
+            "gradient_color_1": "#ff7e8d",
+            "gradient_color_2": "#ff354c",
+            "gradient_angle": 52,
+            "margin": 20,
+            "letter_spacing": 0,
+            "letter_spacing_mobile": 0,
+            "icon": "none",
+            "custom_image_height": 20
+          }
+        }
+      },
+      "block_order": [
+        "announcement_EBQ7FN"
+      ],
+      "name": "t:sections.announcement-bar.presets.name-scrolling",
+      "settings": {
+        "background_color": "#1a1a22",
+        "background_gradient": "",
+        "show_line_separator": false,
+        "scroll_speed": 136,
+        "scroll_direction": "1",
+        "mobile_height": 40,
+        "desktop_height": 40
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [],
+      "settings": {
+        "enable_transparent-header": false,
+        "enable_hover_animation": true,
+        "color-transparent": "#000000",
+        "color-hover-background": "#fcf7f5",
+        "color-hover-text": "#212121",
+        "logo_position": "middle-center",
+        "menu": "main-menu",
+        "menu_type_desktop": "drawer",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "background-1",
+        "menu_color_scheme": "scheme-89a1eca2-c127-4444-bd1e-59754d4f1308",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    }
+  },
+  "order": [
+    "announcement_bar_scrolling_GA6XLc",
+    "header"
+  ]
+}
