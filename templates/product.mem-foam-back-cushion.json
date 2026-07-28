@@ -684,7 +684,7 @@
         "row_iArm3U": {
           "type": "row",
           "settings": {
-            "benefit": "Power",
+            "benefit": "True lumbar curve support",
             "us": true,
             "others": false
           }
@@ -692,7 +692,7 @@
         "row_QBeNVT": {
           "type": "row",
           "settings": {
-            "benefit": "Speed",
+            "benefit": "Keeps its shape for years",
             "us": true,
             "others": false
           }
@@ -700,7 +700,7 @@
         "row_9k4i6W": {
           "type": "row",
           "settings": {
-            "benefit": "Battery",
+            "benefit": "Breathable, no sweaty back",
             "us": true,
             "others": false
           }
@@ -708,7 +708,7 @@
         "row_wQ76Bj": {
           "type": "row",
           "settings": {
-            "benefit": "Safety",
+            "benefit": "Car, office, gaming & sofa",
             "us": true,
             "others": false
           }
@@ -716,7 +716,7 @@
         "row_pQcpmY": {
           "type": "row",
           "settings": {
-            "benefit": "Cost-effective",
+            "benefit": "Costs less than one massage",
             "us": true,
             "others": false
           }
@@ -731,9 +731,9 @@
       ],
       "name": "Comparison table",
       "settings": {
-        "title": "Why Thousands Are Switching to Quick Swift Lint Pro",
+        "title": "Why Thousands Are Switching To This Lumbar Cushion",
         "heading_size": "h1",
-        "text": "<p>Powerful enough for thick fabrics<br/>Gentle enough for delicate materials</p><p>Unlike cheap alternatives, it delivers consistent, safe results without damaging your clothes.</p>",
+        "text": "<p>Firm enough to actually hold your spine up.</p><p>Soft enough to sit against for eight hours straight.</p><p></p><p>Most back cushions are either a brick or a marshmallow. This one is neither — which is exactly why people stop buying replacements.</p>",
         "button_label": "",
         "link": "",
         "button_style_secondary": false,
@@ -741,8 +741,8 @@
         "color_scheme": "background-2",
         "logo_width": 90,
         "mobile_logo_width": 60,
-        "us_label": "Quick Swift Lint Pro",
-        "others_label": "Others",
+        "us_label": "This Cushion",
+        "others_label": "Ordinary Cushions",
         "benefit_color_scheme": "accent-1",
         "icon_cells_color_scheme": "background-2",
         "checkmark_color": "#53af01",
@@ -769,7 +769,7 @@
         "heading_5k4fek": {
           "type": "heading",
           "settings": {
-            "heading": "Real results you can count on"
+            "heading": "What customers actually feel after 2 weeks"
           }
         },
         "percentage_items_64liaw": {
@@ -777,11 +777,11 @@
           "settings": {
             "color_end": "#d1d5db",
             "percentage_1": 98,
-            "text_1": "customers are restoring their clothes instead of replacing them",
+            "text_1": "said their lower back felt noticeably less sore at the end of the day",
             "percentage_2": 97,
-            "text_2": "noticed smoother fabrics with fewer visible pills",
+            "text_2": "found it easier to sit upright without constantly correcting their posture",
             "percentage_3": 96,
-            "text_3": "Saved money on new clothes or fixes"
+            "text_3": "would buy a second one for their car or home office"
           }
         }
       },
@@ -811,13 +811,13 @@
         "heading_n0esuh": {
           "type": "heading",
           "settings": {
-            "heading": "Stop Wasting Money on Batteries Forever"
+            "heading": "Stop Paying For Painkillers And Massages"
           }
         },
         "text_d6t965": {
           "type": "text",
           "settings": {
-            "text": "USB rechargeable battery delivers long use and powerful dual motors. That means consistent high-speed shaving for big jobs like blankets or quick touch-ups before meetings."
+            "text": "A single massage costs more than this cushion. A month of anti-inflammatories costs more too — and neither fixes the reason your back hurts.\n\nProper lumbar support works while you sit, every day, for years. Buy it once and the ache simply stops being part of your routine."
           }
         }
       },
@@ -827,7 +827,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/RechargeablelintremoverwithLEDdisplay.png",
-        "image_alt": "QuickFabric Lint Pro",
+        "image_alt": "Memory foam lumbar cushion on an office chair",
         "layout": "text_first",
         "desktop_content_position": "center",
         "desktop_content_alignment": "left",
@@ -865,12 +865,12 @@
       "type": "video",
       "name": "t:sections.video.presets.name",
       "settings": {
-        "heading": "Meet Quick Swift Lint Pro",
+        "heading": "See It On A Real Chair, In 30 Seconds",
         "heading_size": "h1",
         "enable_video_looping": false,
         "video": "shopify://files/videos/0417 (1)(2).mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
+        "description": "Demonstration of the memory foam lumbar cushion supporting the lower back on a chair",
         "full_width": false,
         "color_scheme": "scheme-bf5d1406-fbfb-4433-8d38-32a160689d83",
         "padding_top": 36,
@@ -901,36 +901,36 @@
         "faq_fs34a2": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it safe on wool and cashmere?",
-            "answer": "Yes. Use the lowest speed and a light touch for delicate fibres. The protective blades reduce snagging while removing pills effectively."
+            "question": "Will it actually fit my chair or car seat?",
+            "answer": "Almost certainly. The contoured shape is designed for car seats, office chairs, gaming chairs, recliners, dining chairs and sofas. The adjustable elastic strap loops around the backrest so it stays exactly where you put it instead of sliding down every time you stand up."
           }
         },
         "faq_pfugaw": {
           "type": "faq_item",
           "settings": {
-            "question": "How long does the battery last per charge?",
-            "answer": "A full USB charge gives multiple sessions—enough to refresh several sweaters or a sofa. Recharge quickly with any USB port between uses."
+            "question": "Is it too firm or too soft?",
+            "answer": "Neither. High-density slow-rebound memory foam gives under your weight and moulds to your curve, but it never bottoms out. You get real support without the feeling of leaning against a plank."
           }
         },
         "faq_ait9mr": {
           "type": "faq_item",
           "settings": {
-            "question": "Can it handle large jobs like blankets?",
-            "answer": "Yes. Switch to higher speed for thick blankets and upholstery for faster removal without overheating or repeated passes."
+            "question": "Will it help pain I already have?",
+            "answer": "Most people notice far less strain within the first few days, because the cushion stops your lower spine collapsing forward while you sit. It is a comfort and posture aid rather than a medical device — if you have a diagnosed back condition, check with your physio or doctor first."
           }
         },
         "faq_r2pass": {
           "type": "faq_item",
           "settings": {
-            "question": "Is maintenance difficult?",
-            "answer": "Not at all. Empty the lint chamber and rinse the blade cover. Periodic blade checks keep peak performance, no special tools required."
+            "question": "Does it get hot and sweaty?",
+            "answer": "No. The cover is breathable so air keeps moving behind your back. That is why customers happily leave it in the car through summer without their shirt sticking to them."
           }
         },
         "faq_0wqokg": {
           "type": "faq_item",
           "settings": {
-            "question": "Will it damage clothes over time?",
-            "answer": "When used as directed, it prolongs garment life by removing damaging pills and preventing further wear, saving money on replacements."
+            "question": "How do I keep it clean?",
+            "answer": "Unzip the cover, machine wash it cold and let it air dry. The foam core stays clean inside — no soaking, no shrinking, no special care."
           }
         }
       },
@@ -943,7 +943,7 @@
       ],
       "settings": {
         "heading": "Still Not Sure? We’ve Got You Covered",
-        "description": "Clear answers to help you use the fabric shaver with confidence and get the best results",
+        "description": "Straight answers about fit, firmness and whether it will actually help your back",
         "desktop_content_alignment": "center",
         "mobile_content_alignment": "center",
         "button_behaviour": "scroll_to_top",
@@ -985,13 +985,13 @@
         "heading_fC9DpE": {
           "type": "heading",
           "settings": {
-            "heading": "Join 5,000+ People Who Refuse to Throw Clothes Away Anymore"
+            "heading": "Join 5,000+ People Who Stopped Accepting Back Pain As Normal"
           }
         },
         "text_g4tQnw": {
           "type": "text",
           "settings": {
-            "text": "Join thousands who’ve brought their clothes back to life with Quick Swift Lint Pro. From worn-out sweaters to fuzzy couches, customers love how quickly and easily it restores a smooth, like-new finish-without damaging fabrics or wasting money on replacements."
+            "text": "Office workers, drivers, gamers, students and new mums all tell us the same thing: they stopped noticing their lower back. Not because the pain was masked, but because their spine finally had something holding it in the right shape all day."
           }
         }
       },
