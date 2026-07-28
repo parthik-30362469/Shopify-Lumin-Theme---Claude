@@ -1,1 +1,834 @@
-{"sections":{"main":{"type":"pp-main-product-v1-0-0","blocks":{"review_numbers_qkflht":{"type":"pp_review_numbers","settings":{"rating":5,"stars_color":"#facc15","review_count":272,"review_text":"reviews"}},"title_18drvr":{"type":"title","settings":{}},"areviews_reviews_importer_areviews_title_rating_7B74EA":{"disabled":true,"type":"shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsTitleRating\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f","settings":{}},"product_subtitle_v67kuk":{"type":"text","settings":{"text":"<strong>Easy, non-toxic fly control that keeps patios, barns and campsites comfortable and hygienic year-round outdoors<\/strong>","text_style":"subtitle"}},"price_CdypJQ":{"type":"price","settings":{"price_color":"#000000","compare_price_color":"#b12706"}},"divider_v35oud":{"type":"divider","settings":{}},"benefit_by24ot":{"type":"text","settings":{"text":"🪰 Reduce flies around BBQs, patios, and outdoor gatherings","text_style":"body"}},"benefit_9xz00y":{"type":"text","settings":{"text":"⚡ Starts attracting and trapping flies within hours","text_style":"body"}},"benefit_u9e2y4":{"type":"text","settings":{"text":"🌿 Non-toxic solution – safe for family-friendly outdoor spaces","text_style":"body"}},"benefit_k6an2k":{"type":"text","settings":{"text":"🏡 Perfect for backyards, farms, gardens, and camping areas","text_style":"body"}},"divider_7zzdml":{"type":"divider","settings":{}},"quantity_0snwu6":{"type":"quantity","settings":{"quantity_text":"Quantity"}},"buy_buttons_yg1gna":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true,"add_to_cart_text":"Add To Cart","sold_out_text":"Sold Out","unavailable_text":"Unavailable"}},"icons_with-text_eetz2a":{"type":"pp_icons_with_text","settings":{"icons_size":30,"guarantee_1_icon":"truck","guarantee_1_text":"<p>Fast Shipping<\/p>","guarantee_2_icon":"box","guarantee_2_text":"<p>Free Returns<\/p>","guarantee_3_icon":"heart","guarantee_3_text":"<p>30-Day Money Back Guarantee<\/p>"}},"divider_oqginn":{"type":"divider","settings":{}},"review_block_oy1fdu":{"type":"pp_review_block","settings":{"rating":5,"stars_color":"#facc15","image":"shopify:\/\/shop_images\/653a6c34-f708-4fb0-abed-d0a954f7d9ee.webp","review":"Tried it around the barn and finally got relief after weeks of buzzing. Easy to set up, zero mess, and actually cut the fly problem down so we could eat outside again. Felt like a simple, smart fix that saved time and sanity for summer evenings.","name":"William Q."}},"divider_9tfiw3":{"type":"divider","settings":{}},"expandable_6i14g9":{"type":"pp_expandable_text","settings":{"title":"Shipping Information","content":"<p>We offer tracked and insured shipping for all of our orders. Order processing takes 1-3 business days before shipment.<\/p>","icon":"globe"}},"expandable_y63br8":{"type":"pp_expandable_text","settings":{"title":"Return Policy","content":"<p>We love our products and are confident you will too! That's why we are offering a 30-Day, Risk-Free Trial. If you are not in love with your results, we will give you a refund.<\/p>","icon":"back"}},"cart_drawer_sp4pdb":{"type":"cart_drawer","settings":{"cart_drawer_title":"Your cart","cart_drawer_total_text":"Total","cart_drawer_empty_text":"Your cart is empty","checkout_button_text":"Checkout"}}},"block_order":["review_numbers_qkflht","title_18drvr","areviews_reviews_importer_areviews_title_rating_7B74EA","product_subtitle_v67kuk","price_CdypJQ","divider_v35oud","benefit_by24ot","benefit_9xz00y","benefit_u9e2y4","benefit_k6an2k","divider_7zzdml","quantity_0snwu6","buy_buttons_yg1gna","icons_with-text_eetz2a","divider_oqginn","review_block_oy1fdu","divider_9tfiw3","expandable_6i14g9","expandable_y63br8","cart_drawer_sp4pdb"],"settings":{"heading_font_size":24,"body_font_size":16,"mobile_heading_font_size":24,"mobile_body_font_size":14,"pp_heading_color":"#6bba80","pp_body_color":"#000000","pp_brand_color":"#606c75","pp_button_background_color":"#6bba80","pp_button_text_color":"#000000","pp_border_radius":16,"padding_top":28,"padding_bottom":0,"padding_top_mobile":12,"padding_bottom_mobile":0}},"image_with-text_ifq8em":{"type":"pp-image-with-text-v1-0-0","blocks":{"heading_f9dchd":{"type":"heading","settings":{"heading":"🪰 Sick of Flies Taking Over Your Space and ruining evenings and BBQs?"}},"text_o4s0rr":{"type":"text","settings":{"text":"Hang the fly trap bag near dining areas to stop flies before they land. Non-toxic bait attracts pests, keeping your patio and grill area clean so you can enjoy meals and friends without swatting or chemicals."}}},"block_order":["heading_f9dchd","text_o4s0rr"],"settings":{"image":"shopify:\/\/shop_images\/Flytrapandcommonflyvarieties.png","image_alt":"Outdoor Fly Shield Trap Bag","layout":"image_first","desktop_content_position":"center","desktop_content_alignment":"left","mobile_content_alignment":"center","section_background":"linear-gradient(54deg, rgba(255, 255, 255, 1) 14%, rgba(255, 255, 255, 1) 82%)","padding_top":30,"padding_bottom":30,"padding_top_mobile":30,"padding_bottom_mobile":30,"margin_top":30,"margin_bottom":30,"margin_top_mobile":30,"margin_bottom_mobile":0}},"pp_image_with_text_v1_0_0_hCQcH4":{"type":"pp-image-with-text-v1-0-0","blocks":{"heading_UWnykN":{"type":"heading","settings":{"heading":"Introducing the Hanging Fly Trap Bag with Fly Bait — the effortless, non-toxic way to eliminate flies for good."}},"text_8x3KiX":{"type":"text","settings":{"text":"Simply add water, hang it up, and let the powerful bait attract flies from a distance.\n\nOnce they enter the trap…\n👉 They’re stuck — permanently.\n\n🪤 Traps thousands of flies in one bag\n🌿 Non-toxic & safe for outdoor use\n⏱️ Starts working within hours\n🧴 Disposable — no mess, no hassle\n\nNo sprays. No chasing. No stress."}}},"block_order":["heading_UWnykN","text_8x3KiX"],"name":"PP Image with Text","settings":{"image":"shopify:\/\/shop_images\/EliminateflieseasilywithFlyCatcher.png","image_alt":"","layout":"text_first","desktop_content_position":"center","desktop_content_alignment":"left","mobile_content_alignment":"center","section_background":"","padding_top":30,"padding_bottom":30,"padding_top_mobile":30,"padding_bottom_mobile":30,"margin_top":30,"margin_bottom":30,"margin_top_mobile":30,"margin_bottom_mobile":0}},"image_with-benefits_q98ri4":{"type":"pp-image-with-benefits-v1-0-0","blocks":{"benefit_r0kw56":{"type":"benefit","settings":{"icon":"🛠️","title":"Easy Setup","description":"Add water, hang with rope, and activate quickly."}},"benefit_34ohzr":{"type":"benefit","settings":{"icon":"🌿","title":"Non-Toxic","description":"No chemicals, safe around people and animals."}},"benefit_ezlvpg":{"type":"benefit","settings":{"icon":"🧹","title":"No Mess","description":"Disposable design avoids sticky traps or dead insects."}},"benefit_cvhn4l":{"type":"benefit","settings":{"icon":"🏕️","title":"Versatile","description":"Works on patios, farms, campsites and sheds."}}},"block_order":["benefit_r0kw56","benefit_34ohzr","benefit_ezlvpg","benefit_cvhn4l"],"settings":{"heading":"Practical results that change outdoor comfort and hygiene","subtitle":"This disposable, non-toxic fly trap cuts nuisance flies, reduces mess, and creates fly-free outdoor zones for cooking, working, and relaxing with minimal effort.","image":"shopify:\/\/shop_images\/Flytrapsandrurallifescenes.png","image_rounded_type":"circle","desktop_content_alignment":"center","mobile_content_alignment":"center","section_background":"linear-gradient(180deg, rgba(234, 250, 241, 1), rgba(234, 250, 241, 1) 100%)","padding_top":30,"padding_bottom":30,"padding_top_mobile":30,"padding_bottom_mobile":30,"margin_top":30,"margin_bottom":30,"margin_top_mobile":30,"margin_bottom_mobile":30}},"differences_40q1ky":{"type":"pp-differences-v1-0-0","blocks":{"comparison_kvbmsn":{"type":"comparison_item","settings":{"feature":"Effective","product_has_feature":true,"competitor_has_feature":false}},"comparison_34h7c3":{"type":"comparison_item","settings":{"feature":"Safe","product_has_feature":true,"competitor_has_feature":false}},"comparison_g4xgck":{"type":"comparison_item","settings":{"feature":"Clean","product_has_feature":true,"competitor_has_feature":false}},"comparison_utreio":{"type":"comparison_item","settings":{"feature":"Simple","product_has_feature":true,"competitor_has_feature":false}},"comparison_lc2vkm":{"type":"comparison_item","settings":{"feature":"Affordable","product_has_feature":true,"competitor_has_feature":false}}},"block_order":["comparison_kvbmsn","comparison_34h7c3","comparison_g4xgck","comparison_utreio","comparison_lc2vkm"],"settings":{"heading":"Why Outdoor Fly Shield Trap Bag Stands Out","description":"Unlike others, this trap uses a molded escape-proof entrance, ready-to-use bait, and a disposable, non-toxic design for cleaner, safer outdoor fly control and better user convenience.","button_label":"","button_link":"","product_title":"Outdoor Fly Shield Trap Bag","competitor_title":"Others","button_behaviour":"scroll_to_top","layout":"text_first","content_position":"center","desktop_content_alignment":"left","mobile_content_alignment":"center","section_background":"","padding_top":30,"padding_bottom":30,"padding_top_mobile":30,"padding_bottom_mobile":30,"margin_top":30,"margin_bottom":30,"margin_top_mobile":30,"margin_bottom_mobile":0}},"image_with-percentage_7jbv3r":{"type":"pp-image-with-percentage-v1-0-0","blocks":{"heading_xb65a2":{"type":"heading","settings":{"heading":"Real impact you can notice fast"}},"percentage_items_t51yin":{"type":"percentage_items","settings":{"color_end":"#d1d5db","percentage_1":97,"text_1":"Reported that fly activity dropped dramatically near outdoor dining areas.","percentage_2":96,"text_2":"Noted that barn entrances stayed noticeably cleaner during chores and feed times.","percentage_3":95,"text_3":"Experienced simpler cleanup and zero sticky residues after disposal."}}},"block_order":["heading_xb65a2","percentage_items_t51yin"],"settings":{"image":"shopify:\/\/shop_images\/Flytrapandfamilybarbecuegathering.png","layout":"image_first","desktop_content_alignment":"left","mobile_content_alignment":"center","section_background":"linear-gradient(180deg, rgba(234, 250, 241, 1), rgba(234, 250, 241, 1) 49%, rgba(234, 250, 241, 1) 100%)","padding_top":30,"padding_bottom":30,"padding_top_mobile":30,"padding_bottom_mobile":30,"margin_top":30,"margin_bottom":30,"margin_top_mobile":30,"margin_bottom_mobile":30}},"image_with-text_qggv1l":{"type":"pp-image-with-text-v1-0-0","blocks":{"heading_usinpp":{"type":"heading","settings":{"heading":"Struggling with flies around barns, sheds or workspaces"}},"text_fkuvml":{"type":"text","settings":{"text":"Place traps at barn entrances and near animal areas to cut fly pressure. The escape-proof entrance captures pests so chores, repairs and outdoor projects stay more comfortable and hygienic."}}},"block_order":["heading_usinpp","text_fkuvml"],"settings":{"image":"shopify:\/\/shop_images\/Hangingaflytrapinthegarden.png","image_alt":"Outdoor Fly Shield Trap Bag","layout":"text_first","desktop_content_position":"center","desktop_content_alignment":"left","mobile_content_alignment":"center","section_background":"","padding_top":30,"padding_bottom":30,"padding_top_mobile":30,"padding_bottom_mobile":30,"margin_top":30,"margin_bottom":30,"margin_top_mobile":30,"margin_bottom_mobile":0}},"faqs_ofbkh9":{"type":"pp-faqs-v1-0-0","blocks":{"faq_orqpia":{"type":"faq_item","settings":{"question":"How do I set up the fly trap bag?","answer":"Fill the bait pouch with the recommended sugar water, hang the bag using the included rope in an open area away from doors, and let the attractant dissolve and work. Setup takes minutes."}},"faq_cnomxx":{"type":"faq_item","settings":{"question":"Is the bait safe around pets and livestock?","answer":"Yes. The trap is non-toxic and chemical-free. Hang it where animals won’t directly access it for extra safety and peace of mind."}},"faq_zin2n5":{"type":"faq_item","settings":{"question":"How long does one trap last?","answer":"Duration depends on fly pressure and weather, but typical use lasts several weeks. Replace when the bag is full or bait is spent for consistent results."}},"faq_tpmv7h":{"type":"faq_item","settings":{"question":"Will it make my yard smell?","answer":"The attractant is designed to lure flies without strong offensive odors. Proper placement outdoors prevents noticeable smells in living spaces."}},"faq_aoxoqz":{"type":"faq_item","settings":{"question":"Is cleanup difficult after use?","answer":"No. The disposable bag seals captured insects inside. Remove and discard the bag—no sticky paper or handling dead flies required."}}},"block_order":["faq_orqpia","faq_cnomxx","faq_zin2n5","faq_tpmv7h","faq_aoxoqz"],"settings":{"heading":"Common questions about fly control and this trap","description":"Clear answers to help you install, use, and trust the product with confidence","desktop_content_alignment":"center","mobile_content_alignment":"center","button_behaviour":"scroll_to_top","button_label":"","button_link":"","faqitem_background":"linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)","section_background":"linear-gradient(46deg, rgba(234, 250, 241, 1) 13%, rgba(234, 250, 241, 1) 86%)","padding_top":30,"padding_bottom":30,"padding_top_mobile":30,"padding_bottom_mobile":30,"margin_top":30,"margin_bottom":30,"margin_top_mobile":30,"margin_bottom_mobile":30}},"review_grid_41l5ok":{"type":"pp-review-grid-v1-0-0","blocks":{"review_jx5o9f":{"type":"review","settings":{"name":"Brian K.","verified_text":"Verified Buyer","rating":4,"review_text":"Set it up on my patio and it kept evenings tolerable. No sticky residue, no chemicals, just less buzzing."}},"review_ryzqf1":{"type":"review","settings":{"name":"Chris M.","verified_text":"Verified Buyer","rating":4,"review_text":"No nasties, easy use."}},"review_vsog17":{"type":"review","settings":{"name":"Ethan M.","verified_text":"Verified Buyer","rating":5,"review_text":"Handy, low cost fix for backyard problems. Hung several around property lines and saw fewer flies by morning. Not perfect but far better than nothing :) ❤️"}},"review_6iphhx":{"type":"review","settings":{"name":"Tom G.","verified_text":"Verified Buyer","rating":4,"review_text":"I was skeptical but this actually helped on camping trips. Lightweight, packs flat, and kept the chair area much more comfortable at dusk."}},"review_ghbdj4":{"type":"review","settings":{"name":"David L.","verified_text":"Verified Buyer","rating":5,"review_text":"Hung it near the coop and noticed fewer flies within a day, pretty handy and low fuss."}},"review_udfwc7":{"type":"review","settings":{"name":"Adam J.","verified_text":"Verified Buyer","rating":5,"review_text":"Bought a pack for summer gatherings; they worked well hanging a fair distance from seating areas so guests weren't bothered, very practical solution."}},"review_g80zao":{"type":"review","settings":{"name":"Oliver S.","verified_text":"Verified Buyer","rating":5,"review_text":"I tried it at a weekend cookout and it noticeably reduced buzzing near the food. Setup was quick, no mess, and people commented positively, so I'll buy again."}},"review_dw682a":{"type":"review","settings":{"name":"Nathan F.","verified_text":"Verified Buyer","rating":4,"review_text":"We struggled with flies around the compost bin; after hanging two of these a few feet away the area became usable again and less gross to manage."}},"review_t3qa7x":{"type":"review","settings":{"name":"Mark P.","verified_text":"Verified Buyer","rating":4,"review_text":"I used several around the yard; they cut down fly traffic near the grill and seating areas. Simple to refill and toss."}},"review_v3ik8e":{"type":"review","settings":{"name":"Kevin N.","verified_text":"Verified Buyer","rating":4,"review_text":"Used them around my backyard party and the fly count dropped noticeably. Easy to hang and felt safer than sprays."}},"review_suepbo":{"type":"review","settings":{"name":"John D.","verified_text":"Verified Buyer","rating":4,"review_text":"Love it, super simple."}},"review_mhu8ge":{"type":"review","settings":{"name":"Mike S.","verified_text":"Verified Buyer","rating":5,"review_text":"Works as promised."}},"review_banshb":{"type":"review","settings":{"name":"Eric C.","verified_text":"Verified Buyer","rating":5,"review_text":"Took a while to set up the spots but once placed correctly they drastically reduced fly numbers. Quiet, no sticky traps to deal with."}},"review_9zdhal":{"type":"review","settings":{"name":"Paul H.","verified_text":"Verified Buyer","rating":4,"review_text":"Placed them outside the garage where flies swarmed and saw a noticeable drop in two days. Practical and cost effective overall."}},"review_lxdhf0":{"type":"review","settings":{"name":"Alex R.","verified_text":"Verified Buyer","rating":4,"review_text":"Saved my picnic!"}},"review_ytrq3k":{"type":"review","settings":{"name":"Jeff W.","verified_text":"Verified Buyer","rating":5,"review_text":"Could smell the bait at first but that faded. It trapped a lot of pests around the trash area, nice and clean disposal."}},"review_1w529d":{"type":"review","settings":{"name":"Zachary T.","verified_text":"Verified Buyer","rating":4,"review_text":"Placed near trash and garden shed, helped cut down flies without chemicals. Wish the bait lasted longer but disposal was clean and simple."}}},"block_order":["review_jx5o9f","review_ryzqf1","review_vsog17","review_6iphhx","review_ghbdj4","review_udfwc7","review_g80zao","review_dw682a","review_t3qa7x","review_v3ik8e","review_suepbo","review_mhu8ge","review_banshb","review_9zdhal","review_lxdhf0","review_ytrq3k","review_1w529d"],"settings":{"rating":5,"heading":"What customers are saying now","subheading":"Real feedback from honest buyers","desktop_content_alignment":"center","mobile_content_alignment":"center","section_background":"linear-gradient(180deg, rgba(234, 250, 241, 1), rgba(234, 250, 241, 1) 49%, rgba(234, 250, 241, 1) 100%)","padding_top":30,"padding_bottom":30,"padding_top_mobile":30,"padding_bottom_mobile":30,"margin_top":30,"margin_bottom":30,"margin_top_mobile":30,"margin_bottom_mobile":30}},"call_to-action_js7dgr":{"type":"pp-call-to-action-v1-0-0","blocks":{"heading_x4ynmc":{"type":"heading","settings":{"heading":"30-Day Money-Back Guarantee for Outdoor Fly Shield Trap Bag"}},"text_1wd60j":{"type":"text","settings":{"text":"Try Outdoor Fly Shield Trap Bag risk-free for 30 days. If the traps don’t reduce flies around your patio, barn, or campsite and make outdoor time more comfortable, return for a full refund. We want you to feel confident and fly-free with no hassle."}}},"block_order":["heading_x4ynmc","text_1wd60j"],"settings":{"guarantee_icon":"certification","icon_size":72,"desktop_content_alignment":"center","mobile_content_alignment":"center","section_background":"","padding_top":30,"padding_bottom":30,"padding_top_mobile":30,"padding_bottom_mobile":30,"margin_top":30,"margin_bottom":30,"margin_top_mobile":30,"margin_bottom_mobile":30}},"recommended_products_piodkg":{"type":"pp-recommended-products-v1-0-0","disabled":true,"settings":{"heading":"Recommended Products","collection":"","desktop_content_alignment":"center","mobile_content_alignment":"center","section_background":"","padding_top":30,"padding_bottom":30,"padding_top_mobile":30,"padding_bottom_mobile":30,"margin_top":30,"margin_bottom":30,"margin_top_mobile":30,"margin_bottom_mobile":0}},"areviews_1776023224_3b9922":{"type":"apps","blocks":{"areviews_reviews_importer_areviews_display_reviews_77E30E":{"type":"shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsDisplayReviews\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f","disabled":true,"settings":{"hide_areviews_title_rating":false,"areviews_theme_font":"inherit","areviews_stars_colors":"#f3c621","areviews_write_reviews_botton_color":"#373737"}}},"block_order":["areviews_reviews_importer_areviews_display_reviews_77E30E"],"settings":{"include_margins":true}}},"order":["main","image_with-text_ifq8em","pp_image_with_text_v1_0_0_hCQcH4","image_with-benefits_q98ri4","differences_40q1ky","image_with-percentage_7jbv3r","image_with-text_qggv1l","faqs_ofbkh9","review_grid_41l5ok","call_to-action_js7dgr","recommended_products_piodkg","areviews_1776023224_3b9922"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "pp-main-product-v1-0-0",
+      "blocks": {
+        "review_numbers_qkflht": {
+          "type": "pp_review_numbers",
+          "settings": {
+            "rating": 5,
+            "stars_color": "#facc15",
+            "review_count": 272,
+            "review_text": "reviews"
+          }
+        },
+        "title_18drvr": {
+          "type": "title",
+          "settings": {}
+        },
+        "areviews_reviews_importer_areviews_title_rating_7B74EA": {
+          "disabled": true,
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsTitleRating/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "settings": {}
+        },
+        "product_subtitle_v67kuk": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Easy, non-toxic fly control that keeps patios, barns and campsites comfortable and hygienic year-round outdoors</strong>",
+            "text_style": "subtitle"
+          }
+        },
+        "price_CdypJQ": {
+          "type": "price",
+          "settings": {
+            "price_color": "#000000",
+            "compare_price_color": "#b12706"
+          }
+        },
+        "divider_v35oud": {
+          "type": "divider",
+          "settings": {}
+        },
+        "benefit_by24ot": {
+          "type": "text",
+          "settings": {
+            "text": "🪰 Reduce flies around BBQs, patios, and outdoor gatherings",
+            "text_style": "body"
+          }
+        },
+        "benefit_9xz00y": {
+          "type": "text",
+          "settings": {
+            "text": "⚡ Starts attracting and trapping flies within hours",
+            "text_style": "body"
+          }
+        },
+        "benefit_u9e2y4": {
+          "type": "text",
+          "settings": {
+            "text": "🌿 Non-toxic solution – safe for family-friendly outdoor spaces",
+            "text_style": "body"
+          }
+        },
+        "benefit_k6an2k": {
+          "type": "text",
+          "settings": {
+            "text": "🏡 Perfect for backyards, farms, gardens, and camping areas",
+            "text_style": "body"
+          }
+        },
+        "divider_7zzdml": {
+          "type": "divider",
+          "settings": {}
+        },
+        "quantity_0snwu6": {
+          "type": "quantity",
+          "settings": {
+            "quantity_text": "Quantity"
+          }
+        },
+        "buy_buttons_yg1gna": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "add_to_cart_text": "Add To Cart",
+            "sold_out_text": "Sold Out",
+            "unavailable_text": "Unavailable"
+          }
+        },
+        "icons_with-text_eetz2a": {
+          "type": "pp_icons_with_text",
+          "settings": {
+            "icons_size": 30,
+            "guarantee_1_icon": "truck",
+            "guarantee_1_text": "<p>Fast Shipping</p>",
+            "guarantee_2_icon": "box",
+            "guarantee_2_text": "<p>Free Returns</p>",
+            "guarantee_3_icon": "heart",
+            "guarantee_3_text": "<p>30-Day Money Back Guarantee</p>"
+          }
+        },
+        "divider_oqginn": {
+          "type": "divider",
+          "settings": {}
+        },
+        "review_block_oy1fdu": {
+          "type": "pp_review_block",
+          "settings": {
+            "rating": 5,
+            "stars_color": "#facc15",
+            "image": "shopify://shop_images/653a6c34-f708-4fb0-abed-d0a954f7d9ee.webp",
+            "review": "Tried it around the barn and finally got relief after weeks of buzzing. Easy to set up, zero mess, and actually cut the fly problem down so we could eat outside again. Felt like a simple, smart fix that saved time and sanity for summer evenings.",
+            "name": "William Q."
+          }
+        },
+        "divider_9tfiw3": {
+          "type": "divider",
+          "settings": {}
+        },
+        "expandable_6i14g9": {
+          "type": "pp_expandable_text",
+          "settings": {
+            "title": "Shipping Information",
+            "content": "<p>We offer tracked and insured shipping for all of our orders. Order processing takes 1-3 business days before shipment.</p>",
+            "icon": "globe"
+          }
+        },
+        "expandable_y63br8": {
+          "type": "pp_expandable_text",
+          "settings": {
+            "title": "Return Policy",
+            "content": "<p>We love our products and are confident you will too! That's why we are offering a 30-Day, Risk-Free Trial. If you are not in love with your results, we will give you a refund.</p>",
+            "icon": "back"
+          }
+        },
+        "cart_drawer_sp4pdb": {
+          "type": "cart_drawer",
+          "settings": {
+            "cart_drawer_title": "Your cart",
+            "cart_drawer_total_text": "Total",
+            "cart_drawer_empty_text": "Your cart is empty",
+            "checkout_button_text": "Checkout"
+          }
+        }
+      },
+      "block_order": [
+        "review_numbers_qkflht",
+        "title_18drvr",
+        "areviews_reviews_importer_areviews_title_rating_7B74EA",
+        "product_subtitle_v67kuk",
+        "price_CdypJQ",
+        "divider_v35oud",
+        "benefit_by24ot",
+        "benefit_9xz00y",
+        "benefit_u9e2y4",
+        "benefit_k6an2k",
+        "divider_7zzdml",
+        "quantity_0snwu6",
+        "buy_buttons_yg1gna",
+        "icons_with-text_eetz2a",
+        "divider_oqginn",
+        "review_block_oy1fdu",
+        "divider_9tfiw3",
+        "expandable_6i14g9",
+        "expandable_y63br8",
+        "cart_drawer_sp4pdb"
+      ],
+      "settings": {
+        "heading_font_size": 24,
+        "body_font_size": 16,
+        "mobile_heading_font_size": 24,
+        "mobile_body_font_size": 14,
+        "pp_heading_color": "#6bba80",
+        "pp_body_color": "#000000",
+        "pp_brand_color": "#606c75",
+        "pp_button_background_color": "#6bba80",
+        "pp_button_text_color": "#000000",
+        "pp_border_radius": 16,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "image_with-text_ifq8em": {
+      "type": "pp-image-with-text-v1-0-0",
+      "blocks": {
+        "heading_f9dchd": {
+          "type": "heading",
+          "settings": {
+            "heading": "🪰 Sick of Flies Taking Over Your Space and ruining evenings and BBQs?"
+          }
+        },
+        "text_o4s0rr": {
+          "type": "text",
+          "settings": {
+            "text": "Hang the fly trap bag near dining areas to stop flies before they land. Non-toxic bait attracts pests, keeping your patio and grill area clean so you can enjoy meals and friends without swatting or chemicals."
+          }
+        }
+      },
+      "block_order": [
+        "heading_f9dchd",
+        "text_o4s0rr"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Flytrapandcommonflyvarieties.png",
+        "image_alt": "Outdoor Fly Shield Trap Bag",
+        "layout": "image_first",
+        "desktop_content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(54deg, rgba(255, 255, 255, 1) 14%, rgba(255, 255, 255, 1) 82%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "pp_image_with_text_v1_0_0_hCQcH4": {
+      "type": "pp-image-with-text-v1-0-0",
+      "blocks": {
+        "heading_UWnykN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Introducing the Hanging Fly Trap Bag with Fly Bait — the effortless, non-toxic way to eliminate flies for good."
+          }
+        },
+        "text_8x3KiX": {
+          "type": "text",
+          "settings": {
+            "text": "Simply add water, hang it up, and let the powerful bait attract flies from a distance.\n\nOnce they enter the trap…\n👉 They’re stuck — permanently.\n\n🪤 Traps thousands of flies in one bag\n🌿 Non-toxic & safe for outdoor use\n⏱️ Starts working within hours\n🧴 Disposable — no mess, no hassle\n\nNo sprays. No chasing. No stress."
+          }
+        }
+      },
+      "block_order": [
+        "heading_UWnykN",
+        "text_8x3KiX"
+      ],
+      "name": "PP Image with Text",
+      "settings": {
+        "image": "shopify://shop_images/EliminateflieseasilywithFlyCatcher.png",
+        "image_alt": "",
+        "layout": "text_first",
+        "desktop_content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "image_with-benefits_q98ri4": {
+      "type": "pp-image-with-benefits-v1-0-0",
+      "blocks": {
+        "benefit_r0kw56": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🛠️",
+            "title": "Easy Setup",
+            "description": "Add water, hang with rope, and activate quickly."
+          }
+        },
+        "benefit_34ohzr": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🌿",
+            "title": "Non-Toxic",
+            "description": "No chemicals, safe around people and animals."
+          }
+        },
+        "benefit_ezlvpg": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🧹",
+            "title": "No Mess",
+            "description": "Disposable design avoids sticky traps or dead insects."
+          }
+        },
+        "benefit_cvhn4l": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🏕️",
+            "title": "Versatile",
+            "description": "Works on patios, farms, campsites and sheds."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_r0kw56",
+        "benefit_34ohzr",
+        "benefit_ezlvpg",
+        "benefit_cvhn4l"
+      ],
+      "settings": {
+        "heading": "Practical results that change outdoor comfort and hygiene",
+        "subtitle": "This disposable, non-toxic fly trap cuts nuisance flies, reduces mess, and creates fly-free outdoor zones for cooking, working, and relaxing with minimal effort.",
+        "image": "shopify://shop_images/Flytrapsandrurallifescenes.png",
+        "image_rounded_type": "circle",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(180deg, rgba(234, 250, 241, 1), rgba(234, 250, 241, 1) 100%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "differences_40q1ky": {
+      "type": "pp-differences-v1-0-0",
+      "blocks": {
+        "comparison_kvbmsn": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Effective",
+            "product_has_feature": true,
+            "competitor_has_feature": false
+          }
+        },
+        "comparison_34h7c3": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Safe",
+            "product_has_feature": true,
+            "competitor_has_feature": false
+          }
+        },
+        "comparison_g4xgck": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Clean",
+            "product_has_feature": true,
+            "competitor_has_feature": false
+          }
+        },
+        "comparison_utreio": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Simple",
+            "product_has_feature": true,
+            "competitor_has_feature": false
+          }
+        },
+        "comparison_lc2vkm": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Affordable",
+            "product_has_feature": true,
+            "competitor_has_feature": false
+          }
+        }
+      },
+      "block_order": [
+        "comparison_kvbmsn",
+        "comparison_34h7c3",
+        "comparison_g4xgck",
+        "comparison_utreio",
+        "comparison_lc2vkm"
+      ],
+      "settings": {
+        "heading": "Why Outdoor Fly Shield Trap Bag Stands Out",
+        "description": "Unlike others, this trap uses a molded escape-proof entrance, ready-to-use bait, and a disposable, non-toxic design for cleaner, safer outdoor fly control and better user convenience.",
+        "button_label": "",
+        "button_link": "",
+        "product_title": "Outdoor Fly Shield Trap Bag",
+        "competitor_title": "Others",
+        "button_behaviour": "scroll_to_top",
+        "layout": "text_first",
+        "content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "image_with-percentage_7jbv3r": {
+      "type": "pp-image-with-percentage-v1-0-0",
+      "blocks": {
+        "heading_xb65a2": {
+          "type": "heading",
+          "settings": {
+            "heading": "Real impact you can notice fast"
+          }
+        },
+        "percentage_items_t51yin": {
+          "type": "percentage_items",
+          "settings": {
+            "color_end": "#d1d5db",
+            "percentage_1": 97,
+            "text_1": "Reported that fly activity dropped dramatically near outdoor dining areas.",
+            "percentage_2": 96,
+            "text_2": "Noted that barn entrances stayed noticeably cleaner during chores and feed times.",
+            "percentage_3": 95,
+            "text_3": "Experienced simpler cleanup and zero sticky residues after disposal."
+          }
+        }
+      },
+      "block_order": [
+        "heading_xb65a2",
+        "percentage_items_t51yin"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Flytrapandfamilybarbecuegathering.png",
+        "layout": "image_first",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(180deg, rgba(234, 250, 241, 1), rgba(234, 250, 241, 1) 49%, rgba(234, 250, 241, 1) 100%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "image_with-text_qggv1l": {
+      "type": "pp-image-with-text-v1-0-0",
+      "blocks": {
+        "heading_usinpp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Struggling with flies around barns, sheds or workspaces"
+          }
+        },
+        "text_fkuvml": {
+          "type": "text",
+          "settings": {
+            "text": "Place traps at barn entrances and near animal areas to cut fly pressure. The escape-proof entrance captures pests so chores, repairs and outdoor projects stay more comfortable and hygienic."
+          }
+        }
+      },
+      "block_order": [
+        "heading_usinpp",
+        "text_fkuvml"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Hangingaflytrapinthegarden.png",
+        "image_alt": "Outdoor Fly Shield Trap Bag",
+        "layout": "text_first",
+        "desktop_content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "faqs_ofbkh9": {
+      "type": "pp-faqs-v1-0-0",
+      "blocks": {
+        "faq_orqpia": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I set up the fly trap bag?",
+            "answer": "Fill the bait pouch with the recommended sugar water, hang the bag using the included rope in an open area away from doors, and let the attractant dissolve and work. Setup takes minutes."
+          }
+        },
+        "faq_cnomxx": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is the bait safe around pets and livestock?",
+            "answer": "Yes. The trap is non-toxic and chemical-free. Hang it where animals won’t directly access it for extra safety and peace of mind."
+          }
+        },
+        "faq_zin2n5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does one trap last?",
+            "answer": "Duration depends on fly pressure and weather, but typical use lasts several weeks. Replace when the bag is full or bait is spent for consistent results."
+          }
+        },
+        "faq_tpmv7h": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it make my yard smell?",
+            "answer": "The attractant is designed to lure flies without strong offensive odors. Proper placement outdoors prevents noticeable smells in living spaces."
+          }
+        },
+        "faq_aoxoqz": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is cleanup difficult after use?",
+            "answer": "No. The disposable bag seals captured insects inside. Remove and discard the bag—no sticky paper or handling dead flies required."
+          }
+        }
+      },
+      "block_order": [
+        "faq_orqpia",
+        "faq_cnomxx",
+        "faq_zin2n5",
+        "faq_tpmv7h",
+        "faq_aoxoqz"
+      ],
+      "settings": {
+        "heading": "Common questions about fly control and this trap",
+        "description": "Clear answers to help you install, use, and trust the product with confidence",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "button_behaviour": "scroll_to_top",
+        "button_label": "",
+        "button_link": "",
+        "faqitem_background": "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "section_background": "linear-gradient(46deg, rgba(234, 250, 241, 1) 13%, rgba(234, 250, 241, 1) 86%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "review_grid_41l5ok": {
+      "type": "pp-review-grid-v1-0-0",
+      "blocks": {
+        "review_jx5o9f": {
+          "type": "review",
+          "settings": {
+            "name": "Brian K.",
+            "verified_text": "Verified Buyer",
+            "rating": 4,
+            "review_text": "Set it up on my patio and it kept evenings tolerable. No sticky residue, no chemicals, just less buzzing."
+          }
+        },
+        "review_ryzqf1": {
+          "type": "review",
+          "settings": {
+            "name": "Chris M.",
+            "verified_text": "Verified Buyer",
+            "rating": 4,
+            "review_text": "No nasties, easy use."
+          }
+        },
+        "review_vsog17": {
+          "type": "review",
+          "settings": {
+            "name": "Ethan M.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "Handy, low cost fix for backyard problems. Hung several around property lines and saw fewer flies by morning. Not perfect but far better than nothing :) ❤️"
+          }
+        },
+        "review_6iphhx": {
+          "type": "review",
+          "settings": {
+            "name": "Tom G.",
+            "verified_text": "Verified Buyer",
+            "rating": 4,
+            "review_text": "I was skeptical but this actually helped on camping trips. Lightweight, packs flat, and kept the chair area much more comfortable at dusk."
+          }
+        },
+        "review_ghbdj4": {
+          "type": "review",
+          "settings": {
+            "name": "David L.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "Hung it near the coop and noticed fewer flies within a day, pretty handy and low fuss."
+          }
+        },
+        "review_udfwc7": {
+          "type": "review",
+          "settings": {
+            "name": "Adam J.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "Bought a pack for summer gatherings; they worked well hanging a fair distance from seating areas so guests weren't bothered, very practical solution."
+          }
+        },
+        "review_g80zao": {
+          "type": "review",
+          "settings": {
+            "name": "Oliver S.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "I tried it at a weekend cookout and it noticeably reduced buzzing near the food. Setup was quick, no mess, and people commented positively, so I'll buy again."
+          }
+        },
+        "review_dw682a": {
+          "type": "review",
+          "settings": {
+            "name": "Nathan F.",
+            "verified_text": "Verified Buyer",
+            "rating": 4,
+            "review_text": "We struggled with flies around the compost bin; after hanging two of these a few feet away the area became usable again and less gross to manage."
+          }
+        },
+        "review_t3qa7x": {
+          "type": "review",
+          "settings": {
+            "name": "Mark P.",
+            "verified_text": "Verified Buyer",
+            "rating": 4,
+            "review_text": "I used several around the yard; they cut down fly traffic near the grill and seating areas. Simple to refill and toss."
+          }
+        },
+        "review_v3ik8e": {
+          "type": "review",
+          "settings": {
+            "name": "Kevin N.",
+            "verified_text": "Verified Buyer",
+            "rating": 4,
+            "review_text": "Used them around my backyard party and the fly count dropped noticeably. Easy to hang and felt safer than sprays."
+          }
+        },
+        "review_suepbo": {
+          "type": "review",
+          "settings": {
+            "name": "John D.",
+            "verified_text": "Verified Buyer",
+            "rating": 4,
+            "review_text": "Love it, super simple."
+          }
+        },
+        "review_mhu8ge": {
+          "type": "review",
+          "settings": {
+            "name": "Mike S.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "Works as promised."
+          }
+        },
+        "review_banshb": {
+          "type": "review",
+          "settings": {
+            "name": "Eric C.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "Took a while to set up the spots but once placed correctly they drastically reduced fly numbers. Quiet, no sticky traps to deal with."
+          }
+        },
+        "review_9zdhal": {
+          "type": "review",
+          "settings": {
+            "name": "Paul H.",
+            "verified_text": "Verified Buyer",
+            "rating": 4,
+            "review_text": "Placed them outside the garage where flies swarmed and saw a noticeable drop in two days. Practical and cost effective overall."
+          }
+        },
+        "review_lxdhf0": {
+          "type": "review",
+          "settings": {
+            "name": "Alex R.",
+            "verified_text": "Verified Buyer",
+            "rating": 4,
+            "review_text": "Saved my picnic!"
+          }
+        },
+        "review_ytrq3k": {
+          "type": "review",
+          "settings": {
+            "name": "Jeff W.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "Could smell the bait at first but that faded. It trapped a lot of pests around the trash area, nice and clean disposal."
+          }
+        },
+        "review_1w529d": {
+          "type": "review",
+          "settings": {
+            "name": "Zachary T.",
+            "verified_text": "Verified Buyer",
+            "rating": 4,
+            "review_text": "Placed near trash and garden shed, helped cut down flies without chemicals. Wish the bait lasted longer but disposal was clean and simple."
+          }
+        }
+      },
+      "block_order": [
+        "review_jx5o9f",
+        "review_ryzqf1",
+        "review_vsog17",
+        "review_6iphhx",
+        "review_ghbdj4",
+        "review_udfwc7",
+        "review_g80zao",
+        "review_dw682a",
+        "review_t3qa7x",
+        "review_v3ik8e",
+        "review_suepbo",
+        "review_mhu8ge",
+        "review_banshb",
+        "review_9zdhal",
+        "review_lxdhf0",
+        "review_ytrq3k",
+        "review_1w529d"
+      ],
+      "settings": {
+        "rating": 5,
+        "heading": "What customers are saying now",
+        "subheading": "Real feedback from honest buyers",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(180deg, rgba(234, 250, 241, 1), rgba(234, 250, 241, 1) 49%, rgba(234, 250, 241, 1) 100%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "call_to-action_js7dgr": {
+      "type": "pp-call-to-action-v1-0-0",
+      "blocks": {
+        "heading_x4ynmc": {
+          "type": "heading",
+          "settings": {
+            "heading": "30-Day Money-Back Guarantee for Outdoor Fly Shield Trap Bag"
+          }
+        },
+        "text_1wd60j": {
+          "type": "text",
+          "settings": {
+            "text": "Try Outdoor Fly Shield Trap Bag risk-free for 30 days. If the traps don’t reduce flies around your patio, barn, or campsite and make outdoor time more comfortable, return for a full refund. We want you to feel confident and fly-free with no hassle."
+          }
+        }
+      },
+      "block_order": [
+        "heading_x4ynmc",
+        "text_1wd60j"
+      ],
+      "settings": {
+        "guarantee_icon": "certification",
+        "icon_size": 72,
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_background": "",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "recommended_products_piodkg": {
+      "type": "pp-recommended-products-v1-0-0",
+      "disabled": true,
+      "settings": {
+        "heading": "Recommended Products",
+        "collection": "",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_background": "",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "areviews_1776023224_3b9922": {
+      "type": "apps",
+      "blocks": {
+        "areviews_reviews_importer_areviews_display_reviews_77E30E": {
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsDisplayReviews/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "disabled": true,
+          "settings": {
+            "hide_areviews_title_rating": false,
+            "areviews_theme_font": "inherit",
+            "areviews_stars_colors": "#f3c621",
+            "areviews_write_reviews_botton_color": "#373737"
+          }
+        }
+      },
+      "block_order": [
+        "areviews_reviews_importer_areviews_display_reviews_77E30E"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with-text_ifq8em",
+    "pp_image_with_text_v1_0_0_hCQcH4",
+    "image_with-benefits_q98ri4",
+    "differences_40q1ky",
+    "image_with-percentage_7jbv3r",
+    "image_with-text_qggv1l",
+    "faqs_ofbkh9",
+    "review_grid_41l5ok",
+    "call_to-action_js7dgr",
+    "recommended_products_piodkg",
+    "areviews_1776023224_3b9922"
+  ]
+}
