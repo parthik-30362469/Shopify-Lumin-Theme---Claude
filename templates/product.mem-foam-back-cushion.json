@@ -404,13 +404,13 @@
         "heading_1l1hox": {
           "type": "heading",
           "settings": {
-            "heading": "Your Clothes Aren’t Old! They’re Just Covered in Lint"
+            "heading": "Your Back Isn't Weak. Your Chair Is Just Wrong."
           }
         },
         "text_apac97": {
           "type": "text",
           "settings": {
-            "text": "That sweater you love?\nThat jacket you stopped wearing?\n\nThey don’t need replacing.\n\nThey just need restoring.\n\nQuick Swift Lint Pro removes years of fuzz, lint, and pilling in seconds — giving your clothes a clean, smooth, like-new finish again."
+            "text": "That dull ache after a long shift?\nThat stiffness after a two-hour drive?\n\nIt isn't age catching up with you. It's a flat seat back leaving an empty gap exactly where your lumbar curve needs support — so your muscles hold the load for hours instead.\n\nFill the gap and the strain stops. That's all this cushion does, and it does it every minute you're sitting."
           }
         }
       },
@@ -420,7 +420,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/Highpowersuctioncleanerinaction.png",
-        "image_alt": "QuickFabric Lint Pro",
+        "image_alt": "Memory Foam Lumbar Back Cushion ergonomic support",
         "layout": "image_first",
         "desktop_content_position": "center",
         "desktop_content_alignment": "left",
@@ -442,7 +442,7 @@
         "announcement_kppRbT": {
           "type": "announcement",
           "settings": {
-            "text": "<strong>Fast & Easy</strong>",
+            "text": "<strong>Instant Support</strong>",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -462,7 +462,7 @@
         "announcement_R4dqRc": {
           "type": "announcement",
           "settings": {
-            "text": "<strong>No More Pilling</strong>",
+            "text": "<strong>No More Slouching</strong>",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -482,7 +482,7 @@
         "announcement_aCUAJG": {
           "type": "announcement",
           "settings": {
-            "text": "<strong>Remove Lint Effortlessly</strong>",
+            "text": "<strong>Real Lower Back Relief</strong>",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -513,7 +513,7 @@
         "announcement_AUXCjd": {
           "type": "announcement",
           "settings": {
-            "text": "<strong>Safe On Fabrics</strong>",
+            "text": "<strong>Fits Almost Any Seat</strong>",
             "link": "",
             "font_family": "body",
             "text_size": 16,
