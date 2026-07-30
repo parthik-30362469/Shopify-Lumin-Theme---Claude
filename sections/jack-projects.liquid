@@ -1,8 +1,10 @@
 {%- comment -%}
   Jack — Best Solutions: sticky-stacking cards.
+  Each card shows 3 products picked at random from its collection; the trio
+  re-rolls every 10s (see JS at the bottom) so every product gets airtime.
   Fully editable from the theme customizer:
     • Section heading
-    • Each card = a "Slide" block with title, 3 images, button label + link
+    • Each card = a "Slide" block with title, collection, button label + link
     • Add / remove / reorder slides freely
 {%- endcomment -%}
 
@@ -151,9 +153,15 @@
 }
 .jack-media img {
   width:100%; height:100%; object-fit:cover; display:block;
-  transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+  transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94),
+              opacity 0.35s ease;
 }
 a.jack-media:hover img { transform: scale(1.05); }   /* subtle zoom on product tiles */
+/* Crossfade while the 10s rotation swaps in the next product */
+.jack-media.is-swapping img { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .jack-media img { transition: none; }
+}
 @media (min-width:640px){ .jack-media { border-radius:32px; } }
 @media (min-width:768px){ .jack-media { border-radius:40px; } }
 
@@ -177,11 +185,7 @@ a.jack-media:hover img { transform: scale(1.05); }   /* subtle zoom on product t
 }
 </style>
 
-{%- comment -%} Default placeholder images (used until a slide's images are set in the editor) {%- endcomment -%}
 {%- liquid
-  assign d_img1 = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85' | split: ','
-  assign d_img2 = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85' | split: ','
-  assign d_img3 = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85,https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85' | split: ','
   assign d_bg = '#111111,#141414,#171717,#1a1a1a,#1d1d1d,#202020' | split: ','
   comment
     Total downward peek of the last card = (slides - 1) × 28px.
@@ -206,46 +210,13 @@ a.jack-media:hover img { transform: scale(1.05); }   /* subtle zoom on product t
 
       assign bg = d_bg[mi] | default: '#202020'
 
-      assign prods = block.settings.collection.products
-      assign p1 = prods[0]
-      assign p2 = prods[1]
-      assign p3 = prods[2]
-
-      assign url1 = ''
-      assign alt1 = block.settings.heading
-      if p1 != blank and p1.featured_image != blank
-        assign src1 = p1.featured_image | image_url: width: 1280
-        assign url1 = p1.url
-        assign alt1 = p1.title
-      elsif block.settings.image_1 != blank
-        assign src1 = block.settings.image_1 | image_url: width: 1280
-      else
-        assign src1 = d_img1[mi]
-      endif
-
-      assign url2 = ''
-      assign alt2 = block.settings.heading
-      if p2 != blank and p2.featured_image != blank
-        assign src2 = p2.featured_image | image_url: width: 1280
-        assign url2 = p2.url
-        assign alt2 = p2.title
-      elsif block.settings.image_2 != blank
-        assign src2 = block.settings.image_2 | image_url: width: 1280
-      else
-        assign src2 = d_img2[mi]
-      endif
-
-      assign url3 = ''
-      assign alt3 = block.settings.heading
-      if p3 != blank and p3.featured_image != blank
-        assign src3 = p3.featured_image | image_url: width: 1280
-        assign url3 = p3.url
-        assign alt3 = p3.title
-      elsif block.settings.image_3 != blank
-        assign src3 = block.settings.image_3 | image_url: width: 1280
-      else
-        assign src3 = d_img3[mi]
-      endif
+      comment
+        Only products with a hero image can fill a tile. The first 3 are
+        rendered server-side (so the card is correct without JS); the script
+        at the bottom re-rolls them at random on load and every 10s.
+      endcomment
+      assign pool = block.settings.collection.products | where: 'featured_image'
+      assign pool_size = pool.size
     -%}
     <div class="jack-card"
          style="--i:{{ i }}; z-index:{{ forloop.index }};"
@@ -262,24 +233,115 @@ a.jack-media:hover img { transform: scale(1.05); }   /* subtle zoom on product t
         </div>
         <div class="jack-card-imgs">
           <div class="jack-card-col1">
-            <a class="jack-media jack-media--top"{% if url1 != blank %} href="{{ url1 }}"{% endif %}>
-              <img src="{{ src1 }}" alt="{{ alt1 | escape }}" loading="lazy">
-            </a>
-            <a class="jack-media jack-media--bot"{% if url2 != blank %} href="{{ url2 }}"{% endif %}>
-              <img src="{{ src2 }}" alt="{{ alt2 | escape }}" loading="lazy">
-            </a>
+            {%- render 'jack-project-tile', pool: pool, pool_size: pool_size, slot: 0, extra_class: 'jack-media--top' -%}
+            {%- render 'jack-project-tile', pool: pool, pool_size: pool_size, slot: 1, extra_class: 'jack-media--bot' -%}
           </div>
           <div class="jack-card-col2">
-            <a class="jack-media jack-media--right"{% if url3 != blank %} href="{{ url3 }}"{% endif %}>
-              <img src="{{ src3 }}" alt="{{ alt3 | escape }}" loading="lazy">
-            </a>
+            {%- render 'jack-project-tile', pool: pool, pool_size: pool_size, slot: 2, extra_class: 'jack-media--right' -%}
           </div>
         </div>
+
+        {%- comment -%}
+          Every product in the collection, for the rotation script. Rendered as
+          JSON rather than markup so swapping costs nothing but an image load.
+        {%- endcomment -%}
+        <script type="application/json" class="jack-card-data">
+          [
+            {%- for p in pool -%}
+              {"u":{{ p.url | json }},"t":{{ p.title | json }},"s":{{ p.featured_image | image_url: width: 1280 | json }}}{%- unless forloop.last -%},{%- endunless -%}
+            {%- endfor -%}
+          ]
+        </script>
       </div>
     </div>
   {%- endfor -%}
 
 </section>
+
+<script>
+/* Product rotation — each card shows 3 random products from its collection
+   and re-rolls them every 10s. Products are drawn from a shuffled queue, so
+   the whole collection cycles through before any product repeats. */
+(function () {
+  var SWAP_MS  = 10000;
+  var FADE_MS  = 350;   /* keep in sync with the .is-swapping transition */
+
+  Array.prototype.forEach.call(
+    document.querySelectorAll('.jack-projects .jack-card-inner'),
+    function (card) {
+      var dataEl = card.querySelector('.jack-card-data');
+      var slots  = Array.prototype.slice.call(card.querySelectorAll('.jack-media'));
+      if (!dataEl || !slots.length) return;
+
+      var items;
+      try { items = JSON.parse(dataEl.textContent); } catch (e) { return; }
+      if (!items || !items.length) return;
+
+      var queue = [];
+
+      function refill() {
+        var pool = items.slice();
+        for (var i = pool.length - 1; i > 0; i--) {   /* Fisher-Yates */
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+        }
+        queue = queue.concat(pool);
+      }
+
+      /* Next n products, never repeating within one trio unless the
+         collection genuinely has fewer than n products. */
+      function take(n) {
+        var out = [], guard = 0;
+        while (out.length < n && guard++ < 100) {
+          if (!queue.length) refill();
+          var next = queue.shift();
+          if (items.length >= n && out.indexOf(next) !== -1) { queue.push(next); continue; }
+          out.push(next);
+        }
+        return out;
+      }
+
+      function apply(slot, item) {
+        var img = slot.querySelector('img');
+        if (!img) return;
+        img.src = item.s;
+        img.alt = item.t;
+        if (slot.tagName === 'A') {
+          slot.setAttribute('href', item.u);
+          slot.setAttribute('aria-label', item.t);
+        }
+      }
+
+      function paint(picks, animate) {
+        slots.forEach(function (slot, i) {
+          var item = picks[i];
+          if (!item) return;
+          if (!animate) { apply(slot, item); return; }
+          /* Preload first so the tile never flashes empty mid-fade. */
+          var pre = new Image();
+          pre.onload = pre.onerror = function () {
+            slot.classList.add('is-swapping');
+            setTimeout(function () {
+              apply(slot, item);
+              slot.classList.remove('is-swapping');
+            }, FADE_MS);
+          };
+          pre.src = item.s;
+        });
+      }
+
+      paint(take(slots.length), false);   /* randomise on load */
+
+      if (items.length > 1) {
+        setInterval(function () {
+          if (document.hidden) return;    /* don't burn through the queue in a background tab */
+          paint(take(slots.length), true);
+        }, SWAP_MS);
+      }
+    }
+  );
+})();
+</script>
 
 <script>
 (function () {
@@ -339,13 +401,9 @@ a.jack-media:hover img { transform: scale(1.05); }   /* subtle zoom on product t
       "name": "Slide",
       "settings": [
         { "type": "text",         "id": "heading",      "label": "Title",            "default": "Smart Home" },
-        { "type": "collection",   "id": "collection",   "label": "Product collection", "info": "Shows the first 3 products from this collection." },
-        { "type": "header",       "content": "Fallback images (used only if the collection is empty or has fewer than 3 products)" },
-        { "type": "image_picker",  "id": "image_1",      "label": "Small image (top left)" },
-        { "type": "image_picker",  "id": "image_2",      "label": "Small image (bottom left)" },
-        { "type": "image_picker",  "id": "image_3",      "label": "Large image (right)" },
-        { "type": "text",          "id": "button_label", "label": "Button label",     "default": "Explore Now" },
-        { "type": "url",           "id": "button_link",  "label": "Button link" }
+        { "type": "collection",   "id": "collection",   "label": "Product collection", "info": "Shows 3 products picked at random from this collection, re-rolling every 10 seconds. Each tile links to its product page." },
+        { "type": "text",         "id": "button_label", "label": "Button label",     "default": "Explore Now" },
+        { "type": "url",          "id": "button_link",  "label": "Button link" }
       ]
     }
   ],

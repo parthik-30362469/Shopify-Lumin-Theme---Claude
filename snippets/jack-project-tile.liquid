@@ -1,0 +1,30 @@
+{%- comment -%}
+  One product tile inside a "Best Solutions" card.
+  Accepts:
+  - pool: products from the card's collection that have a hero image
+  - pool_size: pool.size (passed in so it isn't recomputed per tile)
+  - slot: 0, 1 or 2 — which of the three tiles this is
+  - extra_class: layout class that gives the tile its fixed height
+
+  Pools smaller than 3 wrap around, so a 1-product collection fills all
+  three tiles rather than collapsing the card's height.
+{%- endcomment -%}
+
+{%- liquid
+  if pool_size > 0
+    assign index = slot | modulo: pool_size
+    assign tile_product = pool[index]
+  endif
+-%}
+
+{%- if tile_product != blank -%}
+  <a class="jack-media {{ extra_class }}" href="{{ tile_product.url }}" aria-label="{{ tile_product.title | escape }}">
+    <img
+      src="{{ tile_product.featured_image | image_url: width: 1280 }}"
+      alt="{{ tile_product.title | escape }}"
+      loading="lazy">
+  </a>
+{%- else -%}
+  {%- comment -%} No collection set, or it has no products with images — keep the tile so card heights stay identical. {%- endcomment -%}
+  <div class="jack-media {{ extra_class }}"></div>
+{%- endif -%}
