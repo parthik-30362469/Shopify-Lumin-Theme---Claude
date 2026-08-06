@@ -119,8 +119,8 @@
           }
         },
         "areviews_reviews_importer_areviews_title_rating_7E52B6": {
-          "disabled": true,
           "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsTitleRating/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "disabled": true,
           "settings": {}
         },
         "product_subtitle_lwsi7s": {
@@ -1247,15 +1247,15 @@
       ],
       "name": "PP Review Carousel",
       "settings": {
+        "rating": 5,
+        "heading": "What people are saying",
+        "subheading": "Rated 4.5/5 by 1,000+ Happy Customers",
         "sync_areviews_summary": true,
         "areviews_count_5": 10,
         "areviews_count_4": 5,
         "areviews_count_3": 0,
         "areviews_count_2": 0,
         "areviews_count_1": 0,
-        "rating": 5,
-        "heading": "What people are saying",
-        "subheading": "Rated 4.8/5 by 1,000+ Happy Customers",
         "desktop_content_alignment": "center",
         "mobile_content_alignment": "center",
         "section_background": "",
