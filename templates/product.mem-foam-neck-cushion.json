@@ -320,13 +320,13 @@
             "video_5_caption": "",
             "video_6": "shopify://files/videos/snaptik_7605573445702831382_v3.mp4",
             "video_6_caption": "",
-            "video_bg_color": "#f8d7dc",
-            "play_button_color": "#f8d7dc",
+            "video_bg_color": "#B8A999",
+            "play_button_color": "#B8A999",
             "play_button_icon_color": "#000000",
-            "nav_button_color": "#f8d7dc",
-            "nav_button_hover_color": "#f8d7dc",
+            "nav_button_color": "#B8A999",
+            "nav_button_hover_color": "#B8A999",
             "nav_button_icon_color": "#000000",
-            "caption_bg_color": "#f8d7dc",
+            "caption_bg_color": "#B8A999",
             "caption_text_color": "#000000",
             "caption_font_size": 14
           },
@@ -348,7 +348,7 @@
         "flip_vertical": false,
         "shape_color": "scheme-d88a2d-text",
         "use_custom_shape_color": true,
-        "custom_shape_color": "#f8d7dc",
+        "custom_shape_color": "#B8A999",
         "background_color": "background-1",
         "use_custom_background_color": false,
         "custom_background_color": "#ffffff",
@@ -377,13 +377,13 @@
         "text_apac97"
       ],
       "settings": {
-        "image": "shopify://shop_images/ChatGPTImageMay6_2026_01_55_36AM.png",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_7_2026_12_41_10_AM_8.png",
         "image_alt": "QuickFabric Lint Pro",
         "layout": "image_first",
         "desktop_content_position": "center",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
-        "section_background": "linear-gradient(270deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 100%)",
+        "section_background": "linear-gradient(270deg, rgba(184, 169, 153, 1), rgba(184, 169, 153, 1) 100%)",
         "padding_top": 30,
         "padding_bottom": 30,
         "padding_top_mobile": 30,
@@ -404,7 +404,7 @@
         "flip_vertical": true,
         "shape_color": "scheme-d88a2d-text",
         "use_custom_shape_color": true,
-        "custom_shape_color": "#f8d7dc",
+        "custom_shape_color": "#B8A999",
         "background_color": "background-1",
         "use_custom_background_color": false,
         "custom_background_color": "#ffffff",
@@ -422,13 +422,13 @@
             "heading": "Slide To See The Glow Difference",
             "content": "<p>Move the slider to reveal how KOEC helps skin look smoother, brighter, fresher, and more radiant with a healthy-looking glow — without the heavy or greasy feel.</p>",
             "text_position": "center",
-            "color": "#cb517d"
+            "color": "#B8A999"
           }
         },
         "images_B4T3YU": {
           "type": "images",
           "settings": {
-            "before_image": "shopify://shop_images/ChatGPT_Image_May_6_2026_03_49_59_PM.png",
+            "before_image": "shopify://shop_images/ChatGPT_Image_Aug_6_2026_11_39_37_PM.png",
             "after_image": "shopify://shop_images/ChatGPT_Image_May_6_2026_04_07_39_PM.png",
             "desktop_height": 500,
             "mobile_height": 500,
@@ -449,6 +449,7 @@
         "text_4UXxUc",
         "images_B4T3YU"
       ],
+      "disabled": true,
       "name": "Image comparison",
       "settings": {
         "background_color": "rgba(0,0,0,0)",
@@ -478,13 +479,13 @@
         "text_mhT4Pd"
       ],
       "settings": {
-        "image": "shopify://shop_images/ChatGPT_Image_May_7_2026_01_35_33_AM.png",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_7_2026_12_41_06_AM_1.png",
         "image_alt": "QuickFabric Lint Pro",
         "layout": "text_first",
         "desktop_content_position": "center",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
-        "section_background": "linear-gradient(80deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 100%)",
+        "section_background": "linear-gradient(80deg, rgba(184, 169, 153, 1), rgba(184, 169, 153, 1) 100%)",
         "padding_top": 30,
         "padding_bottom": 30,
         "padding_top_mobile": 30,
@@ -516,9 +517,9 @@
         "text_fEWkxb"
       ],
       "settings": {
-        "image": "shopify://shop_images/ChatGPTImageMay6_2026_01_34_34AM.png",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_7_2026_02_06_47_AM_1_38b63046-a3fc-41fc-903e-0dff9b89c5d9.png",
         "image_alt": "QuickFabric Lint Pro",
-        "layout": "text_first",
+        "layout": "image_first",
         "desktop_content_position": "center",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
@@ -560,11 +561,11 @@
         "percentage_items_64liaw"
       ],
       "settings": {
-        "image": "shopify://shop_images/ChatGPT_Image_May_6_2026_01_40_34_AM.png",
-        "layout": "image_first",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_7_2026_12_41_07_AM_2_d9b36d94-b6e7-4541-83de-3ad2b3f9ee72.png",
+        "layout": "text_first",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
-        "section_background": "linear-gradient(135deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 97%)",
+        "section_background": "linear-gradient(135deg, rgba(184, 169, 153, 1), rgba(184, 169, 153, 1) 97%)",
         "padding_top": 30,
         "padding_bottom": 30,
         "padding_top_mobile": 30,
@@ -597,9 +598,9 @@
       ],
       "name": "PP Image with Text",
       "settings": {
-        "image": "shopify://shop_images/ChatGPT_Image_May_6_2026_02_24_11_AM.png",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_6_2026_11_26_41_PM_d8d9fbc6-bee1-4f55-bd1a-3c587cf19cda.png",
         "image_alt": "Product image",
-        "layout": "text_first",
+        "layout": "image_first",
         "desktop_content_position": "center",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
@@ -716,6 +717,7 @@
         "announcement_aCUAJG",
         "image_announcement_gyYj3Y"
       ],
+      "disabled": true,
       "name": "t:sections.announcement-bar.presets.name-scrolling",
       "settings": {
         "background_color": "#f8d7dc",
@@ -772,7 +774,7 @@
       "settings": {
         "heading": "Wake Up To Skin That Looks Smoother, Brighter & Less Tired",
         "subtitle": "Powered by KOEC’s Adaptive Capsule Glow System, this customisable capsule-in-gel cream helps deliver lightweight hydration, visible radiance, and a soft, dewy finish without heavy greasiness. Mix the perfect ratio for your skin and enjoy a glow that looks fresh — not oily.",
-        "image": "shopify://shop_images/ChatGPTImageMay6_2026_02_06_59AM.png",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_7_2026_12_41_10_AM_7.png",
         "image_rounded_type": "circle",
         "desktop_content_alignment": "center",
         "mobile_content_alignment": "center",
@@ -797,7 +799,7 @@
         "flip_vertical": false,
         "shape_color": "scheme-d88a2d-text",
         "use_custom_shape_color": true,
-        "custom_shape_color": "#f8d7dc",
+        "custom_shape_color": "#B8A999",
         "background_color": "background-1",
         "use_custom_background_color": false,
         "custom_background_color": "#ffffff",
@@ -826,13 +828,13 @@
         "text_d6t965"
       ],
       "settings": {
-        "image": "shopify://shop_images/ChatGPTImageMay6_2026_01_42_54AM.png",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_7_2026_12_41_07_AM_3_1824ded3-7cbf-4ae2-8c40-f3e6bac85aea.png",
         "image_alt": "QuickFabric Lint Pro",
         "layout": "text_first",
         "desktop_content_position": "center",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
-        "section_background": "linear-gradient(80deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 100%)",
+        "section_background": "linear-gradient(80deg, rgba(184, 169, 153, 1), rgba(184, 169, 153, 1) 97%)",
         "padding_top": 30,
         "padding_bottom": 30,
         "padding_top_mobile": 30,
@@ -853,7 +855,7 @@
         "flip_vertical": true,
         "shape_color": "scheme-d88a2d-text",
         "use_custom_shape_color": true,
-        "custom_shape_color": "#f8d7dc",
+        "custom_shape_color": "#B8A999",
         "background_color": "background-1",
         "use_custom_background_color": false,
         "custom_background_color": "#ffffff",
@@ -882,7 +884,7 @@
         "text_ARCaLE"
       ],
       "settings": {
-        "image": "shopify://shop_images/ChatGPTImageMay6_2026_02_19_55AM.png",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_7_2026_12_41_09_AM_6.png",
         "image_alt": "QuickFabric Lint Pro",
         "layout": "image_first",
         "desktop_content_position": "center",
@@ -971,7 +973,7 @@
         "content_position": "center",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
-        "section_background": "linear-gradient(135deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 100%)",
+        "section_background": "linear-gradient(135deg, rgba(184, 169, 153, 1), rgba(184, 169, 153, 1) 100%)",
         "padding_top": 26,
         "padding_bottom": 30,
         "padding_top_mobile": 30,
@@ -1044,7 +1046,7 @@
         "button_behaviour": "scroll_to_top",
         "button_label": "",
         "button_link": "",
-        "faqitem_background": "linear-gradient(180deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 38%, rgba(248, 215, 220, 1) 47%, rgba(248, 215, 220, 1) 57.915%, rgba(248, 215, 220, 1) 97%)",
+        "faqitem_background": "linear-gradient(180deg, rgba(184, 169, 153, 1), rgba(184, 169, 153, 1) 38%, rgba(184, 169, 153, 1) 47%, rgba(184, 169, 153, 1) 57.915%, rgba(184, 169, 153, 1) 97%)",
         "section_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
         "padding_top": 30,
         "padding_bottom": 30,
@@ -1084,7 +1086,7 @@
         "desktop_content_position": "center",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
-        "section_background": "linear-gradient(270deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 100%)",
+        "section_background": "linear-gradient(270deg, rgba(184, 169, 153, 1), rgba(184, 169, 153, 1) 100%)",
         "padding_top": 30,
         "padding_bottom": 30,
         "padding_top_mobile": 30,
@@ -1285,6 +1287,7 @@
     },
     "section_divider_3VEyjx": {
       "type": "section-divider",
+      "disabled": true,
       "name": "Section divider",
       "settings": {
         "visibility": "always-display",
@@ -1326,7 +1329,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "scheme-0b26c154-dc62-46a9-be67-e0c2f1c720c8",
+        "color_scheme": "background-1",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
