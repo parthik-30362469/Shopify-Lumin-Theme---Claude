@@ -15,7 +15,7 @@
         "announcement_BYE7Az": {
           "type": "announcement",
           "settings": {
-            "text": "<strong>Try Backora With Our 14 Day Fit & Comfort Promise</strong>",
+            "text": "<strong>Try NIRACP+ With Our 14 Day Fit & Comfort Promise.</strong>",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -35,7 +35,7 @@
         "announcement_Hxc6TR": {
           "type": "announcement",
           "settings": {
-            "text": "<strong>Customisable pink collagen capsules</strong>",
+            "text": "<strong>Two Cushions. Two Support Zones.</strong>",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -55,7 +55,7 @@
         "announcement_Lq7VJ7": {
           "type": "announcement",
           "settings": {
-            "text": "<strong>radiant skin without greasy heaviness.</strong>",
+            "text": "<strong>Designed for Car, Office & Gaming Chairs</strong>",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -109,13 +109,13 @@
             "rating": 5,
             "stars_color": "#facc15",
             "review_count": 4.8,
-            "review_text": "/ 5 from 1500+ verified Backora Customers"
+            "review_text": "/ 5 from 1500+ NIRACP+ Customers"
           }
         },
         "pp_custom_liquid_block_36aiM3": {
           "type": "pp_custom_liquid_block",
           "settings": {
-            "content": "<div style=\"display:inline-flex; align-items:center; gap:8px; font-size:15px; color:#333; padding:6px 0;\">\n  <span style=\"\n    display:inline-block;\n    width:10px;\n    height:10px;\n    background-color:#cc0000;\n    border-radius:50%;\n    flex-shrink:0;\n    animation:blinkDot 1.2s ease-in-out infinite;\n  \"></span>\n  <span><strong>Note:</strong> Selling <strong>Fast</strong> This Week</span>\n</div>\n\n<style>\n  @keyframes blinkDot {\n    0%, 100% { opacity:1; transform:scale(1); }\n    50%       { opacity:0.25; transform:scale(0.8); }\n  }\n</style>"
+            "content": "<div style=\"display:inline-flex; align-items:center; gap:8px; font-size:15px; color:#333; padding:6px 0;\">\n  <span style=\"\n    display:inline-block;\n    width:10px;\n    height:10px;\n    background-color:#cc0000;\n    border-radius:50%;\n    flex-shrink:0;\n    animation:blinkDot 1.2s ease-in-out infinite;\n  \"></span>\n  <span><strong>Note:</strong> Popular This Week - Selling <strong>Fast</strong> </span>\n</div>\n\n<style>\n  @keyframes blinkDot {\n    0%, 100% { opacity:1; transform:scale(1); }\n    50%       { opacity:0.25; transform:scale(0.8); }\n  }\n</style>"
           }
         },
         "areviews_reviews_importer_areviews_title_rating_7E52B6": {
@@ -126,7 +126,7 @@
         "product_subtitle_lwsi7s": {
           "type": "text",
           "settings": {
-            "text": "<strong>Give your neck and lower back their own adjustable support zones so you can spend less time rebuilding your sitting position and more time settling into the journey or working day.</strong>",
+            "text": "Give your neck and lower back support exactly where you need it. NIRACP+ two independently adjustable memory foam cushions help fill the gaps your seat leaves behind, so long drives and working days feel more comfortably supported.",
             "text_style": "subtitle"
           }
         },
