@@ -100,6 +100,47 @@
     );
   }
 
+  /* The summary star row has no dependable class of its own, so find it by
+     position: the nearest element to the score that groups 5+ icon children.
+     Scoped to the score's ancestors so the per-review star rows further down
+     the widget are never touched. */
+  function findStarHost(scoreEl, root) {
+    var scopes = [];
+    var node = scoreEl;
+    for (var i = 0; i < 4 && node.parentElement && node.parentElement !== root; i++) {
+      node = node.parentElement;
+      scopes.push(node);
+    }
+
+    var STAR_TEXT = /^[\s★☆⭐✩✭✮]+$/;
+
+    for (var s = 0; s < scopes.length; s++) {
+      var mine = scopes[s].querySelector('[data-theme-stars]');
+      if (mine) return mine;                                   /* already ours */
+
+      var best = null;
+      var bestDepth = -1;
+      var candidates = scopes[s].querySelectorAll('*');
+      for (var c = 0; c < candidates.length; c++) {
+        var el = candidates[c];
+        if (el.classList.contains('average_rating') || el.querySelector('.average_rating')) continue;
+
+        var text = (el.textContent || '').trim();
+        var icons = el.querySelectorAll('i, svg').length;
+        /* Either a row of icon elements with no text, or literal star glyphs. */
+        var isIconRow = icons >= 5 && text.length === 0;
+        var isTextRow = icons === 0 && text.length >= 5 && STAR_TEXT.test(text);
+        if (!isIconRow && !isTextRow) continue;
+
+        var depth = 0;
+        for (var p = el; p && p !== scopes[s]; p = p.parentElement) depth++;
+        if (depth > bestDepth) { best = el; bestDepth = depth; }  /* deepest = the row itself */
+      }
+      if (best) return best;
+    }
+    return null;
+  }
+
   function applyAverage(root, average) {
     var box = root.querySelector('.average_rating');
     if (!box) return;
@@ -111,7 +152,9 @@
     var scoreEl = spans.length ? spans[0] : box;
     if ((scoreEl.textContent || '').trim() !== shown) scoreEl.textContent = shown;
 
-    var stars = root.querySelector('.main_review_stars');
+    /* Proximity first: a .main_review_stars elsewhere in the widget is not
+       necessarily the summary row (that mismatch is why the stars stayed blank). */
+    var stars = findStarHost(box, root) || root.querySelector('.main_review_stars');
     if (stars && stars.dataset.themeStars !== shown) {
       stars.dataset.themeStars = shown;
       stars.innerHTML = starsMarkup(average);
