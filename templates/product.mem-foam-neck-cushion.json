@@ -547,12 +547,12 @@
           "type": "percentage_items",
           "settings": {
             "color_end": "#d1d5db",
-            "percentage_1": 96,
-            "text_1": "reported skin felt softer, smoother & more hydrated after consistent use",
+            "percentage_1": 95,
+            "text_1": "Said they felt more comfortably supported during long periods of sitting.",
             "percentage_2": 93,
-            "text_2": "said their skin looked brighter, fresher & more radiant throughout the day",
+            "text_2": "said they spent less time shifting and readjusting their sitting position.",
             "percentage_3": 91,
-            "text_3": "noticed a plumper-looking glow with smoother-looking texture and less tired-looking skin"
+            "text_3": "said they would use Backora across more than one compatible seat."
           }
         }
       },
@@ -582,13 +582,13 @@
         "heading_GU8JXd": {
           "type": "heading",
           "settings": {
-            "heading": "Powered By Ingredients Your Skin Will Love"
+            "heading": "Support That Surrounds—Not Just Sits Behind You"
           }
         },
         "text_m4qUMQ": {
           "type": "text",
           "settings": {
-            "text": "KOEC Pink Collagen Anti-Wrinkle Cream combines glow-focused skincare ingredients like PDRN, Niacinamide, Hyaluronic Acid, Hydrolyzed Collagen, Peptides, Ceramides, and Salmon Roe Extract to help skin look smoother, brighter, plumper, and more refreshed."
+            "text": "Flat headrest pillows often cushion only one small area. Backora’s contoured neck cushion combines a supportive centre with curved side wings that gently cradle the head and neck, helping fill the space between your body and the seat for a more settled, comfortably supported position."
           }
         }
       },
@@ -735,33 +735,33 @@
         "benefit_nldhk9": {
           "type": "benefit",
           "settings": {
-            "icon": "🩷",
-            "title": "CUSTOM TO YOUR SKIN",
-            "description": "Adjust the capsule-to-gel ratio based on dry areas, oily zones, or changing skin needs."
+            "icon": "🎯",
+            "title": "Adjustable to Your Body",
+            "description": "Position the neck and lumbar cushions separately where support feels most comfortable."
           }
         },
         "benefit_m8d8tg": {
           "type": "benefit",
           "settings": {
-            "icon": "💧",
-            "title": "GLOW WITHOUT GREASE",
-            "description": "Hydrates deeply while feeling fresh, breathable, and comfortable on the skin."
+            "icon": "☁️",
+            "title": "Soft, Supportive Memory Foam",
+            "description": "Slow-rebound cushioning gently contours around your neck and lower back."
           }
         },
         "benefit_blfxve": {
           "type": "benefit",
           "settings": {
-            "icon": "💄",
-            "title": "BETTER UNDER MAKEUP",
-            "description": "Layers beautifully under makeup without heavy buildup or greasy shine."
+            "icon": "🌬️",
+            "title": "Comfort for Longer Sitting",
+            "description": "The fabric cover helps create a more comfortable sitting experience during long drives and work sessions."
           }
         },
         "benefit_cjj4by": {
           "type": "benefit",
           "settings": {
-            "icon": "✨",
-            "title": "LOOK MORE AWAKE, FRESH & SMOOTHER",
-            "description": "Helps improve the appearance of dullness, rough texture, and tired-looking skin."
+            "icon": "🚗",
+            "title": "From Commute to Desk",
+            "description": "Move your support between compatible car, office and gaming seats whenever needed."
           }
         }
       },
@@ -772,8 +772,8 @@
         "benefit_cjj4by"
       ],
       "settings": {
-        "heading": "Wake Up To Skin That Looks Smoother, Brighter & Less Tired",
-        "subtitle": "Powered by KOEC’s Adaptive Capsule Glow System, this customisable capsule-in-gel cream helps deliver lightweight hydration, visible radiance, and a soft, dewy finish without heavy greasiness. Mix the perfect ratio for your skin and enjoy a glow that looks fresh — not oily.",
+        "heading": "Stop Rebuilding Your Sitting Position All Day",
+        "subtitle": "When your seat leaves unsupported space behind your neck and lower back, you may find yourself constantly shifting and readjusting. Backora uses two independently adjustable memory-foam cushions to support those areas, helping your car or desk seat feel more comfortably fitted to you.",
         "image": "shopify://shop_images/ChatGPT_Image_Aug_7_2026_12_41_10_AM_7.png",
         "image_rounded_type": "circle",
         "desktop_content_alignment": "center",
