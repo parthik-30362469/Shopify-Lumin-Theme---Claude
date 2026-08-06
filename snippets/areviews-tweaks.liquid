@@ -192,22 +192,56 @@
     }
   }
 
+  function toArray(list) { return Array.prototype.slice.call(list); }
+
+  /* The count pills carry different classes between the widget's two layouts. */
+  function findPills(container) {
+    var pills = toArray(container.querySelectorAll('.box_rating_number'));
+    if (pills.length !== 5) pills = toArray(container.querySelectorAll('.rating_number'));
+    return pills;
+  }
+
   function applyDistribution(root, counts) {
     var container = root.querySelector('.box_rating_container_style2');
-    if (!container) return;
+    if (!container) {
+      /* Fall back to whichever block holds five count pills. */
+      var anyPill = root.querySelector('.box_rating_number, .rating_number');
+      container = anyPill ? anyPill.closest('div') : null;
+      while (container && findPills(container).length < 5 && container.parentElement !== root) {
+        container = container.parentElement;
+      }
+      if (!container || findPills(container).length !== 5) return;
+    }
 
-    var bars = container.querySelectorAll('.w3-blue');
-    var pills = container.querySelectorAll('.box_rating_number');
-    /* Rows run 5 stars down to 1; bail out unless the widget looks as expected. */
-    if (bars.length !== 5) return;
+    /* Grey tracks are always rendered; the gold .w3-blue fill may be absent
+       while a row's count is zero, so create it rather than giving up. */
+    var tracks = toArray(container.querySelectorAll('.w3-light-grey'));
+    if (tracks.length !== 5) {
+      var existing = toArray(container.querySelectorAll('.w3-blue'));
+      if (existing.length !== 5) return;
+      tracks = existing.map(function (b) { return b.parentElement; });
+    }
 
+    var pills = findPills(container);
     var order = ['5', '4', '3', '2', '1'];
     var total = order.reduce(function (sum, k) { return sum + (counts[k] || 0); }, 0);
 
     order.forEach(function (star, i) {
       var count = counts[star] || 0;
       var pct = total > 0 ? (count / total) * 100 : 0;
-      if (bars[i]) bars[i].style.width = pct + '%';
+
+      var track = tracks[i];
+      if (track) {
+        var bar = track.querySelector('.w3-blue');
+        if (!bar) {
+          bar = track.ownerDocument.createElement('div');
+          bar.className = 'w3-blue';
+          bar.style.height = '100%';
+          track.appendChild(bar);
+        }
+        bar.style.width = pct + '%';
+      }
+
       if (pills[i] && (pills[i].textContent || '').trim() !== String(count)) {
         pills[i].textContent = count;
       }
