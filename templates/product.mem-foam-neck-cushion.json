@@ -15,7 +15,7 @@
         "announcement_BYE7Az": {
           "type": "announcement",
           "settings": {
-            "text": "<strong>Wake Up To Smoother, Glass-Like Skin</strong>",
+            "text": "<strong>Try Backora With Our 14 Day Fit & Comfort Promise</strong>",
             "link": "",
             "font_family": "body",
             "text_size": 16,
@@ -80,7 +80,7 @@
       ],
       "name": "t:sections.announcement-bar.presets.name-scrolling",
       "settings": {
-        "background_color": "#B8A999",
+        "background_color": "#b8a999",
         "background_gradient": "",
         "show_line_separator": true,
         "scroll_speed": 80,
@@ -99,7 +99,7 @@
         "text_z4eKep": {
           "type": "text",
           "settings": {
-            "text": "<strong>Support that stays exactly where you set it</strong>",
+            "text": "<strong>Two-Piece Neck & Lumbar Cushion Set for Compatible Car and Desk Seats</strong>",
             "text_style": "uppercase"
           }
         },
@@ -281,7 +281,7 @@
         "pp_heading_color": "#000000",
         "pp_body_color": "#000000",
         "pp_brand_color": "#606c75",
-        "pp_button_background_color": "#B8A999",
+        "pp_button_background_color": "#b8a999",
         "pp_button_text_color": "#000000",
         "pp_border_radius": 16,
         "padding_top": 28,
