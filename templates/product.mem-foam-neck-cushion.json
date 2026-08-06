@@ -109,7 +109,7 @@
             "rating": 5,
             "stars_color": "#facc15",
             "review_count": 4.8,
-            "review_text": "/ 5 Based on 1,000+ Reviews"
+            "review_text": "/ 5 from 1500+ verified Backora Customers"
           }
         },
         "pp_custom_liquid_block_36aiM3": {
@@ -126,7 +126,7 @@
         "product_subtitle_lwsi7s": {
           "type": "text",
           "settings": {
-            "text": "Set the cushion to your own lumbar height once — it holds that position through the whole day, in your office chair or your car.",
+            "text": "<strong>Give your neck and lower back their own adjustable support zones so you can spend less time rebuilding your sitting position and more time settling into the journey or working day.</strong>",
             "text_style": "subtitle"
           }
         },
@@ -144,28 +144,28 @@
         "benefit_8uyv4s": {
           "type": "text",
           "settings": {
-            "text": "<strong>Set it to your height</strong> — adjustable strap position, so the support sits where your back actually curves",
+            "text": "<strong>Two Support Zones, Adjusted Separately - </strong>Position the neck and lower-back cushions independently to suit your body and compatible seat.",
             "text_style": "body"
           }
         },
         "benefit_n50f25": {
           "type": "text",
           "settings": {
-            "text": "<strong>Stays put all day</strong> — no sliding down at 11am, no re-adjusting every time you stand",
+            "text": "<strong>Contoured Memory-Foam Cushioning - </strong>Each cushion is shaped to help fill the space between your body and the seat.",
             "text_style": "body"
           }
         },
         "benefit_wtizyn": {
           "type": "text",
           "settings": {
-            "text": "<strong>Sit longer, comfortably</strong> — contoured memory foam with a breathable mesh cover",
+            "text": "<strong>From Car to Desk - </strong>Move your support between compatible car, office and gaming seats when needed.",
             "text_style": "body"
           }
         },
         "benefit_eurc3n": {
           "type": "text",
           "settings": {
-            "text": "<strong>60 days to decide</strong> — sit on it properly. Send it back if it's not right.",
+            "text": "<strong>14 -Day Fit & Comfort Promise - </strong>Test Backora in your compatible seat. If the fit is not right for you, return it in accordance with our returns policy.",
             "text_style": "body"
           }
         },
