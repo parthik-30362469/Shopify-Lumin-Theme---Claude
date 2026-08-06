@@ -70,7 +70,7 @@
 
 				<div class='pp-w-full'>
 					<div class='pp-px-[50px] pp-relative'>
-						<div class='swiper pp-reviews-swiper pp-pb-6 pp-px-2 md:pp-px-3.5 pp-overflow-hidden pp-mx-auto pp-z-2 pp-block pp-touch-pan-y pp-list-none pp-relative'>
+						<div class='swiper pp-reviews-swiper pp-px-2 md:pp-px-3.5 pp-overflow-hidden pp-mx-auto pp-z-2 pp-block pp-touch-pan-y pp-list-none pp-relative'>
 							<div class='swiper-wrapper pp-relative pp-w-full pp-h-full pp-flex pp-box-content pp-transition-transform hover:pp-cursor-pointer'>
 								{% for block in section.blocks %}
 									{% if block.type == 'review' %}
@@ -125,8 +125,7 @@
 									{% endif %}
 								{% endfor %}
 							</div>
-							<div
-								class='swiper-pagination pp-bottom-0 pp-w-full pp-absolute pp-text-center pp-z-10 pp-transition-all pp-duration-300 pp-ease-in [&>*]:pp-w-2 [&>*]:pp-h-2 [&>*]:pp-bg-gray-400 [&>*]:pp-mx-1 [&>*]:pp-inline-block [&>*]:pp-rounded-full [&>.swiper-pagination-bullet-active]:pp-bg-black'></div>
+							{%- comment -%} Pagination dots removed. {%- endcomment -%}
 						</div>
 
 						<div class='swiper-button-prev pp-rounded-full pp-absolute pp-top-1/2 pp--translate-y-1/2 pp-left-0 pp-w-8 pp-h-8 md:pp-w-10 md:pp-h-10 lg:pp-w-10 lg:pp-h-10 pp-flex pp-justify-center pp-items-center hover:pp-cursor-pointer !pp-bg-white after:pp-content-none'>
@@ -153,9 +152,6 @@
 		new Swiper('.pp-reviews-swiper', {
 			direction: 'horizontal',
 			loop: true,
-			pagination: {
-				el: '.swiper-pagination',
-			},
 			navigation: {
 				nextEl: '.swiper-button-next',
 				prevEl: '.swiper-button-prev',
