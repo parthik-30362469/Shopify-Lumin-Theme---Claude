@@ -1,0 +1,1363 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "announcement_bar_scrolling_ErKeQM": {
+      "type": "announcement-bar-scrolling",
+      "blocks": {
+        "announcement_BYE7Az": {
+          "type": "announcement",
+          "settings": {
+            "text": "<strong>Wake Up To Smoother, Glass-Like Skin</strong>",
+            "link": "",
+            "font_family": "body",
+            "text_size": 16,
+            "text_size_mobile": 14,
+            "text_color": "#000000",
+            "use_gradient": false,
+            "gradient_color_1": "#000000",
+            "gradient_color_2": "#a3a1a1",
+            "gradient_angle": 90,
+            "margin": 20,
+            "letter_spacing": 0,
+            "letter_spacing_mobile": 0,
+            "icon": "none",
+            "custom_image_height": 20
+          }
+        },
+        "announcement_Hxc6TR": {
+          "type": "announcement",
+          "settings": {
+            "text": "<strong>Customisable pink collagen capsules</strong>",
+            "link": "",
+            "font_family": "body",
+            "text_size": 16,
+            "text_size_mobile": 14,
+            "text_color": "#000000",
+            "use_gradient": false,
+            "gradient_color_1": "#000000",
+            "gradient_color_2": "#a3a1a1",
+            "gradient_angle": 90,
+            "margin": 20,
+            "letter_spacing": 0,
+            "letter_spacing_mobile": 0,
+            "icon": "none",
+            "custom_image_height": 20
+          }
+        },
+        "announcement_Lq7VJ7": {
+          "type": "announcement",
+          "settings": {
+            "text": "<strong>radiant skin without greasy heaviness.</strong>",
+            "link": "",
+            "font_family": "body",
+            "text_size": 16,
+            "text_size_mobile": 14,
+            "text_color": "#000000",
+            "use_gradient": false,
+            "gradient_color_1": "#000000",
+            "gradient_color_2": "#a3a1a1",
+            "gradient_angle": 90,
+            "margin": 20,
+            "letter_spacing": 0,
+            "letter_spacing_mobile": 0,
+            "icon": "none",
+            "custom_image_height": 20
+          }
+        }
+      },
+      "block_order": [
+        "announcement_BYE7Az",
+        "announcement_Hxc6TR",
+        "announcement_Lq7VJ7"
+      ],
+      "name": "t:sections.announcement-bar.presets.name-scrolling",
+      "settings": {
+        "background_color": "#B8A999",
+        "background_gradient": "",
+        "show_line_separator": true,
+        "scroll_speed": 80,
+        "scroll_direction": "1",
+        "mobile_height": 40,
+        "desktop_height": 40
+      }
+    },
+    "main": {
+      "type": "pp-main-product-v1-0-0",
+      "blocks": {
+        "title_jk8ddk": {
+          "type": "title",
+          "settings": {}
+        },
+        "text_z4eKep": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Support that stays exactly where you set it</strong>",
+            "text_style": "uppercase"
+          }
+        },
+        "review_numbers_epemv8": {
+          "type": "pp_review_numbers",
+          "settings": {
+            "rating": 5,
+            "stars_color": "#facc15",
+            "review_count": 4.8,
+            "review_text": "/ 5 Based on 1,000+ Reviews"
+          }
+        },
+        "pp_custom_liquid_block_36aiM3": {
+          "type": "pp_custom_liquid_block",
+          "settings": {
+            "content": "<div style=\"display:inline-flex; align-items:center; gap:8px; font-size:15px; color:#333; padding:6px 0;\">\n  <span style=\"\n    display:inline-block;\n    width:10px;\n    height:10px;\n    background-color:#cc0000;\n    border-radius:50%;\n    flex-shrink:0;\n    animation:blinkDot 1.2s ease-in-out infinite;\n  \"></span>\n  <span><strong>Note:</strong> Selling <strong>Fast</strong> This Week</span>\n</div>\n\n<style>\n  @keyframes blinkDot {\n    0%, 100% { opacity:1; transform:scale(1); }\n    50%       { opacity:0.25; transform:scale(0.8); }\n  }\n</style>"
+          }
+        },
+        "areviews_reviews_importer_areviews_title_rating_7E52B6": {
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsTitleRating/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "disabled": true,
+          "settings": {}
+        },
+        "product_subtitle_lwsi7s": {
+          "type": "text",
+          "settings": {
+            "text": "Set the cushion to your own lumbar height once — it holds that position through the whole day, in your office chair or your car.",
+            "text_style": "subtitle"
+          }
+        },
+        "price_osl0n2": {
+          "type": "price",
+          "settings": {
+            "price_color": "#51990f",
+            "compare_price_color": "#ff0000"
+          }
+        },
+        "divider_sh6c3r": {
+          "type": "divider",
+          "settings": {}
+        },
+        "benefit_8uyv4s": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Set it to your height</strong> — adjustable strap position, so the support sits where your back actually curves",
+            "text_style": "body"
+          }
+        },
+        "benefit_n50f25": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Stays put all day</strong> — no sliding down at 11am, no re-adjusting every time you stand",
+            "text_style": "body"
+          }
+        },
+        "benefit_wtizyn": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Sit longer, comfortably</strong> — contoured memory foam with a breathable mesh cover",
+            "text_style": "body"
+          }
+        },
+        "benefit_eurc3n": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>60 days to decide</strong> — sit on it properly. Send it back if it's not right.",
+            "text_style": "body"
+          }
+        },
+        "divider_ekxhaa": {
+          "type": "divider",
+          "settings": {}
+        },
+        "quantity_q8jxme": {
+          "type": "quantity",
+          "settings": {
+            "quantity_text": "Quantity"
+          }
+        },
+        "variant_picker_bn0t7j": {
+          "type": "variant_picker",
+          "settings": {}
+        },
+        "buy_buttons_lisvfs": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "add_to_cart_text": "Add To Cart",
+            "sold_out_text": "Sold Out",
+            "unavailable_text": "Unavailable"
+          }
+        },
+        "icons_with-text_8omndc": {
+          "type": "pp_icons_with_text",
+          "settings": {
+            "icons_size": 30,
+            "guarantee_1_icon": "truck",
+            "guarantee_1_text": "Free AU delivery",
+            "guarantee_2_icon": "box",
+            "guarantee_2_text": "Free Returns",
+            "guarantee_3_icon": "heart",
+            "guarantee_3_text": "30-Day Money Back Guarantee"
+          }
+        },
+        "divider_n2lmww": {
+          "type": "divider",
+          "settings": {}
+        },
+        "review_block_ubf5tl": {
+          "type": "pp_review_block",
+          "settings": {
+            "rating": 5,
+            "stars_color": "#facc15",
+            "image": "shopify://shop_images/Screenshot_2026-04-21_at_9.13.26_pm.png",
+            "review": "I honestly didn’t expect to love this as much as I do. My skin had been looking dull and tired lately, but after using this cream for a few days, it looked so much smoother, fresher, and more glowy without feeling greasy. I also love how lightweight it feels under makeup. The capsule texture makes it feel super luxurious and fun to use.",
+            "name": "Sophia M."
+          }
+        },
+        "divider_t4qxj5": {
+          "type": "divider",
+          "settings": {}
+        },
+        "expandable_n8pacg": {
+          "type": "pp_expandable_text",
+          "settings": {
+            "title": "Shipping Information",
+            "content": "<p>We offer tracked and insured shipping for all of our orders. Order processing takes 1-3 business days before shipment.</p>",
+            "icon": "globe"
+          }
+        },
+        "expandable_z6zzqn": {
+          "type": "pp_expandable_text",
+          "settings": {
+            "title": "Return Policy",
+            "content": "<p>We love our products and are confident you will too! That's why we are offering a 14-Day, Risk-Free Trial. If you are not in love with your results, we will give you a refund.</p>",
+            "icon": "back"
+          }
+        },
+        "cart_drawer_v544o0": {
+          "type": "cart_drawer",
+          "settings": {
+            "cart_drawer_title": "Your cart",
+            "cart_drawer_total_text": "Total",
+            "cart_drawer_empty_text": "Your cart is empty",
+            "checkout_button_text": "Checkout"
+          }
+        }
+      },
+      "block_order": [
+        "title_jk8ddk",
+        "text_z4eKep",
+        "review_numbers_epemv8",
+        "pp_custom_liquid_block_36aiM3",
+        "areviews_reviews_importer_areviews_title_rating_7E52B6",
+        "product_subtitle_lwsi7s",
+        "price_osl0n2",
+        "divider_sh6c3r",
+        "benefit_8uyv4s",
+        "benefit_n50f25",
+        "benefit_wtizyn",
+        "benefit_eurc3n",
+        "divider_ekxhaa",
+        "quantity_q8jxme",
+        "variant_picker_bn0t7j",
+        "buy_buttons_lisvfs",
+        "icons_with-text_8omndc",
+        "divider_n2lmww",
+        "review_block_ubf5tl",
+        "divider_t4qxj5",
+        "expandable_n8pacg",
+        "expandable_z6zzqn",
+        "cart_drawer_v544o0"
+      ],
+      "settings": {
+        "heading_font_size": 24,
+        "body_font_size": 16,
+        "mobile_heading_font_size": 24,
+        "mobile_body_font_size": 14,
+        "pp_heading_color": "#000000",
+        "pp_body_color": "#000000",
+        "pp_brand_color": "#606c75",
+        "pp_button_background_color": "#B8A999",
+        "pp_button_text_color": "#000000",
+        "pp_border_radius": 16,
+        "padding_top": 28,
+        "padding_bottom": 16,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "177805743820718d33": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c531dca_Lt3DQk": {
+          "type": "ai_gen_block_c531dca",
+          "settings": {
+            "desktop_width_percent": 100,
+            "margin_top": 40,
+            "margin_bottom": 40,
+            "margin_top_mobile": 24,
+            "margin_bottom_mobile": 24,
+            "video_width": 300,
+            "video_height": 400,
+            "video_width_mobile": 180,
+            "video_height_mobile": 250,
+            "video_gap": 16,
+            "video_border_radius": 8,
+            "enable_loop": true,
+            "enable_mute": true,
+            "video_1": "shopify://files/videos/Testimonial 8.mp4",
+            "video_1_caption": "",
+            "video_2": "shopify://files/videos/Testimonial 3.mp4",
+            "video_2_caption": "",
+            "video_3": "shopify://files/videos/Testimonial 1.mp4",
+            "video_3_caption": "",
+            "video_4": "shopify://files/videos/Testimonial 9.mp4",
+            "video_4_caption": "",
+            "video_5": "shopify://files/videos/Testimonial 5.mp4",
+            "video_5_caption": "",
+            "video_6": "shopify://files/videos/Testimonial 6.mp4",
+            "video_6_caption": "",
+            "video_bg_color": "#f8d7dc",
+            "play_button_color": "#f8d7dc",
+            "play_button_icon_color": "#000000",
+            "nav_button_color": "#f8d7dc",
+            "nav_button_hover_color": "#f8d7dc",
+            "nav_button_icon_color": "#000000",
+            "caption_bg_color": "#f8d7dc",
+            "caption_text_color": "#000000",
+            "caption_font_size": 14
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c531dca_Lt3DQk"
+      ],
+      "settings": {}
+    },
+    "section_divider_dHqrpt": {
+      "type": "section-divider",
+      "name": "Section divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": false,
+        "shape_color": "scheme-d88a2d-text",
+        "use_custom_shape_color": true,
+        "custom_shape_color": "#f8d7dc",
+        "background_color": "background-1",
+        "use_custom_background_color": false,
+        "custom_background_color": "#ffffff",
+        "padding_top": 24,
+        "padding_bottom": 0
+      }
+    },
+    "image_with-text_459nsd": {
+      "type": "pp-image-with-text-v1-0-0",
+      "blocks": {
+        "heading_1l1hox": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your Face Isn’t One Skin Type. So Why Use One Texture Everywhere?"
+          }
+        },
+        "text_apac97": {
+          "type": "text",
+          "settings": {
+            "text": "Most moisturisers force you to choose:\n rich OR lightweight. However, real skin changes daily.\nWhether it is dry cheeks, oily nose, dull skin, or makeup pilling. KOEC’s capsule-to-gel system lets you customise your glow based on what your skin actually needs: Lightweight hydration, Glow without grease,  Makeup-friendly finish, Smooth & radiant-looking skin"
+          }
+        }
+      },
+      "block_order": [
+        "heading_1l1hox",
+        "text_apac97"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/ChatGPTImageMay6_2026_01_55_36AM.png",
+        "image_alt": "QuickFabric Lint Pro",
+        "layout": "image_first",
+        "desktop_content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(270deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 100%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "section_divider_pERzxP": {
+      "type": "section-divider",
+      "name": "Section divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": true,
+        "shape_color": "scheme-d88a2d-text",
+        "use_custom_shape_color": true,
+        "custom_shape_color": "#f8d7dc",
+        "background_color": "background-1",
+        "use_custom_background_color": false,
+        "custom_background_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_comparison_9cxAnU": {
+      "type": "image-comparison",
+      "blocks": {
+        "text_4UXxUc": {
+          "type": "text",
+          "settings": {
+            "subheading": "",
+            "heading": "Slide To See The Glow Difference",
+            "content": "<p>Move the slider to reveal how KOEC helps skin look smoother, brighter, fresher, and more radiant with a healthy-looking glow — without the heavy or greasy feel.</p>",
+            "text_position": "center",
+            "color": "#cb517d"
+          }
+        },
+        "images_B4T3YU": {
+          "type": "images",
+          "settings": {
+            "before_image": "shopify://shop_images/ChatGPT_Image_May_6_2026_03_49_59_PM.png",
+            "after_image": "shopify://shop_images/ChatGPT_Image_May_6_2026_04_07_39_PM.png",
+            "desktop_height": 500,
+            "mobile_height": 500,
+            "border_radius": 12,
+            "drag_initial_position": 50,
+            "cover": true,
+            "before_text": "Before",
+            "after_text": "After",
+            "before_after_text_position": "bottom",
+            "before_text_color": "#ffffff",
+            "after_text_color": "#ffffff",
+            "drag_cursor_bg": "#ffffff",
+            "drag_cursor_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "text_4UXxUc",
+        "images_B4T3YU"
+      ],
+      "name": "Image comparison",
+      "settings": {
+        "background_color": "rgba(0,0,0,0)",
+        "background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "pp_image_with_text_v1_0_0_aFNNBF": {
+      "type": "pp-image-with-text-v1-0-0",
+      "blocks": {
+        "heading_TVPQGj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your Skin Changes Daily. So Should Your Moisturiser!"
+          }
+        },
+        "text_mhT4Pd": {
+          "type": "text",
+          "settings": {
+            "text": "Real skin isn’t the same everywhere.\nDry cheeks, oily T-zones, makeup days, weather changes — your skin needs different levels of hydration daily.\nKOEC lets you customise your glow by adjusting the capsule-to-gel ratio based on what your skin needs most."
+          }
+        }
+      },
+      "block_order": [
+        "heading_TVPQGj",
+        "text_mhT4Pd"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/ChatGPT_Image_May_7_2026_01_35_33_AM.png",
+        "image_alt": "QuickFabric Lint Pro",
+        "layout": "text_first",
+        "desktop_content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(80deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 100%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 24,
+        "margin_bottom": 22,
+        "margin_top_mobile": 26,
+        "margin_bottom_mobile": 28
+      }
+    },
+    "pp_image_with_text_v1_0_0_rLkriH": {
+      "type": "pp-image-with-text-v1-0-0",
+      "blocks": {
+        "heading_R6hBxa": {
+          "type": "heading",
+          "settings": {
+            "heading": "Meet The Adaptive Capsule Glow System"
+          }
+        },
+        "text_fEWkxb": {
+          "type": "text",
+          "settings": {
+            "text": "Unlike traditional creams, KOEC adapts to different skin needs instead of using one fixed texture everywhere. This Cream helps skin look smoother, brighter, firmer, and more refreshed. The lightweight capsule-in-gel formula delivers deep hydration while helping improve the appearance of dullness, uneven tone, rough texture, and fine lines."
+          }
+        }
+      },
+      "block_order": [
+        "heading_R6hBxa",
+        "text_fEWkxb"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/ChatGPTImageMay6_2026_01_34_34AM.png",
+        "image_alt": "QuickFabric Lint Pro",
+        "layout": "text_first",
+        "desktop_content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(80deg, rgba(NaN, NaN, NaN, 0), rgba(248, 215, 220, 1) 100%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "image_with-percentage_et150y": {
+      "type": "pp-image-with-percentage-v1-0-0",
+      "blocks": {
+        "heading_5k4fek": {
+          "type": "heading",
+          "settings": {
+            "heading": "Real results you can count on"
+          }
+        },
+        "percentage_items_64liaw": {
+          "type": "percentage_items",
+          "settings": {
+            "color_end": "#d1d5db",
+            "percentage_1": 96,
+            "text_1": "reported skin felt softer, smoother & more hydrated after consistent use",
+            "percentage_2": 93,
+            "text_2": "said their skin looked brighter, fresher & more radiant throughout the day",
+            "percentage_3": 91,
+            "text_3": "noticed a plumper-looking glow with smoother-looking texture and less tired-looking skin"
+          }
+        }
+      },
+      "block_order": [
+        "heading_5k4fek",
+        "percentage_items_64liaw"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/ChatGPT_Image_May_6_2026_01_40_34_AM.png",
+        "layout": "image_first",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(135deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 97%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "pp_image_with_text_v1_0_0_4zqD8L": {
+      "type": "pp-image-with-text-v1-0-0",
+      "blocks": {
+        "heading_GU8JXd": {
+          "type": "heading",
+          "settings": {
+            "heading": "Powered By Ingredients Your Skin Will Love"
+          }
+        },
+        "text_m4qUMQ": {
+          "type": "text",
+          "settings": {
+            "text": "KOEC Pink Collagen Anti-Wrinkle Cream combines glow-focused skincare ingredients like PDRN, Niacinamide, Hyaluronic Acid, Hydrolyzed Collagen, Peptides, Ceramides, and Salmon Roe Extract to help skin look smoother, brighter, plumper, and more refreshed."
+          }
+        }
+      },
+      "block_order": [
+        "heading_GU8JXd",
+        "text_m4qUMQ"
+      ],
+      "name": "PP Image with Text",
+      "settings": {
+        "image": "shopify://shop_images/ChatGPT_Image_May_6_2026_02_24_11_AM.png",
+        "image_alt": "Product image",
+        "layout": "text_first",
+        "desktop_content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "announcement_bar_scrolling_Xw7maV": {
+      "type": "announcement-bar-scrolling",
+      "blocks": {
+        "announcement_kppRbT": {
+          "type": "announcement",
+          "settings": {
+            "text": "<strong>Deep Dewy Hydration</strong>",
+            "link": "",
+            "font_family": "body",
+            "text_size": 16,
+            "text_size_mobile": 14,
+            "text_color": "#cb517d",
+            "use_gradient": false,
+            "gradient_color_1": "#000000",
+            "gradient_color_2": "#a3a1a1",
+            "gradient_angle": 90,
+            "margin": 20,
+            "letter_spacing": 0,
+            "letter_spacing_mobile": 0,
+            "icon": "none",
+            "custom_image_height": 20
+          }
+        },
+        "announcement_AUXCjd": {
+          "type": "announcement",
+          "settings": {
+            "text": "<strong>Less Tired Skin</strong>",
+            "link": "",
+            "font_family": "body",
+            "text_size": 16,
+            "text_size_mobile": 14,
+            "text_color": "#cb517d",
+            "use_gradient": false,
+            "gradient_color_1": "#000000",
+            "gradient_color_2": "#a3a1a1",
+            "gradient_angle": 90,
+            "margin": 20,
+            "letter_spacing": 0,
+            "letter_spacing_mobile": 0,
+            "icon": "none",
+            "custom_image_height": 20
+          }
+        },
+        "announcement_R4dqRc": {
+          "type": "announcement",
+          "settings": {
+            "text": "<strong>Makeup-Friendly Glow</strong>",
+            "link": "",
+            "font_family": "body",
+            "text_size": 16,
+            "text_size_mobile": 14,
+            "text_color": "#cb517d",
+            "use_gradient": false,
+            "gradient_color_1": "#000000",
+            "gradient_color_2": "#a3a1a1",
+            "gradient_angle": 90,
+            "margin": 20,
+            "letter_spacing": 0,
+            "letter_spacing_mobile": 0,
+            "icon": "none",
+            "custom_image_height": 20
+          }
+        },
+        "announcement_aCUAJG": {
+          "type": "announcement",
+          "settings": {
+            "text": "<strong>Glow Without Grease</strong>",
+            "link": "",
+            "font_family": "body",
+            "text_size": 16,
+            "text_size_mobile": 14,
+            "text_color": "#cb517d",
+            "use_gradient": false,
+            "gradient_color_1": "#000000",
+            "gradient_color_2": "#a3a1a1",
+            "gradient_angle": 90,
+            "margin": 20,
+            "letter_spacing": 0,
+            "letter_spacing_mobile": 0,
+            "icon": "none",
+            "custom_image_height": 20
+          }
+        },
+        "image_announcement_gyYj3Y": {
+          "type": "image_announcement",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Kaching-Bundles-Modern_fabric_shaver_with_digital_display-removebg-preview.png",
+            "link": "",
+            "image_height": 20,
+            "margin": 20,
+            "image_border_radius": 0
+          }
+        }
+      },
+      "block_order": [
+        "announcement_kppRbT",
+        "announcement_AUXCjd",
+        "announcement_R4dqRc",
+        "announcement_aCUAJG",
+        "image_announcement_gyYj3Y"
+      ],
+      "name": "t:sections.announcement-bar.presets.name-scrolling",
+      "settings": {
+        "background_color": "#f8d7dc",
+        "background_gradient": "",
+        "show_line_separator": true,
+        "scroll_speed": 80,
+        "scroll_direction": "1",
+        "mobile_height": 40,
+        "desktop_height": 40
+      }
+    },
+    "image_with-benefits_9rjofw": {
+      "type": "pp-image-with-benefits-v1-0-0",
+      "blocks": {
+        "benefit_nldhk9": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🩷",
+            "title": "CUSTOM TO YOUR SKIN",
+            "description": "Adjust the capsule-to-gel ratio based on dry areas, oily zones, or changing skin needs."
+          }
+        },
+        "benefit_m8d8tg": {
+          "type": "benefit",
+          "settings": {
+            "icon": "💧",
+            "title": "GLOW WITHOUT GREASE",
+            "description": "Hydrates deeply while feeling fresh, breathable, and comfortable on the skin."
+          }
+        },
+        "benefit_blfxve": {
+          "type": "benefit",
+          "settings": {
+            "icon": "💄",
+            "title": "BETTER UNDER MAKEUP",
+            "description": "Layers beautifully under makeup without heavy buildup or greasy shine."
+          }
+        },
+        "benefit_cjj4by": {
+          "type": "benefit",
+          "settings": {
+            "icon": "✨",
+            "title": "LOOK MORE AWAKE, FRESH & SMOOTHER",
+            "description": "Helps improve the appearance of dullness, rough texture, and tired-looking skin."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_nldhk9",
+        "benefit_m8d8tg",
+        "benefit_blfxve",
+        "benefit_cjj4by"
+      ],
+      "settings": {
+        "heading": "Wake Up To Skin That Looks Smoother, Brighter & Less Tired",
+        "subtitle": "Powered by KOEC’s Adaptive Capsule Glow System, this customisable capsule-in-gel cream helps deliver lightweight hydration, visible radiance, and a soft, dewy finish without heavy greasiness. Mix the perfect ratio for your skin and enjoy a glow that looks fresh — not oily.",
+        "image": "shopify://shop_images/ChatGPTImageMay6_2026_02_06_59AM.png",
+        "image_rounded_type": "circle",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(136deg, rgba(255, 255, 255, 1) 11%, rgba(255, 255, 255, 1) 84%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "section_divider_q7CFjr": {
+      "type": "section-divider",
+      "name": "Section divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": false,
+        "shape_color": "scheme-d88a2d-text",
+        "use_custom_shape_color": true,
+        "custom_shape_color": "#f8d7dc",
+        "background_color": "background-1",
+        "use_custom_background_color": false,
+        "custom_background_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with-text_dn0hyk": {
+      "type": "pp-image-with-text-v1-0-0",
+      "blocks": {
+        "heading_n0esuh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stop Looking More Tired Than You Feel"
+          }
+        },
+        "text_d6t965": {
+          "type": "text",
+          "settings": {
+            "text": "Some days your skin looks dull, flat, dry, or exhausted, even when you’ve done everything right.\n\nKOEC’s adaptive capsule-to-gel formula helps restore a fresher, smoother, more radiant-looking glow without the heavy finish of traditional creams.\n\nDesigned for real-life skin that changes daily."
+          }
+        }
+      },
+      "block_order": [
+        "heading_n0esuh",
+        "text_d6t965"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/ChatGPTImageMay6_2026_01_42_54AM.png",
+        "image_alt": "QuickFabric Lint Pro",
+        "layout": "text_first",
+        "desktop_content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(80deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 100%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "section_divider_UMtfqt": {
+      "type": "section-divider",
+      "name": "Section divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": true,
+        "shape_color": "scheme-d88a2d-text",
+        "use_custom_shape_color": true,
+        "custom_shape_color": "#f8d7dc",
+        "background_color": "background-1",
+        "use_custom_background_color": false,
+        "custom_background_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "pp_image_with_text_v1_0_0_4UYDcM": {
+      "type": "pp-image-with-text-v1-0-0",
+      "blocks": {
+        "heading_93Y7zK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Skincare Professionals Love Lightweight Hydration"
+          }
+        },
+        "text_ARCaLE": {
+          "type": "text",
+          "settings": {
+            "text": "“What I love about KOEC is that it delivers hydration and glow without feeling heavy on the skin. The capsule-to-gel formula feels lightweight, comfortable, and works beautifully under makeup. Ingredients like PDRN, Niacinamide, Hyaluronic Acid, and Hydrolyzed Collagen help support smoother-, fresher-, and more radiant-looking skin.”\n\n— Dr. Jessica K., Dermatology Consultant"
+          }
+        }
+      },
+      "block_order": [
+        "heading_93Y7zK",
+        "text_ARCaLE"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/ChatGPTImageMay6_2026_02_19_55AM.png",
+        "image_alt": "QuickFabric Lint Pro",
+        "layout": "image_first",
+        "desktop_content_position": "center",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(80deg, rgba(NaN, NaN, NaN, 0), rgba(248, 215, 220, 1) 100%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 34,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "differences_dghsv5": {
+      "type": "pp-differences-v1-0-0",
+      "blocks": {
+        "comparison_r2kvxc": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Customisable Capsule",
+            "product_has_feature": true,
+            "competitor_has_feature": false
+          }
+        },
+        "comparison_item_eKHKVU": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Customisable Gel",
+            "product_has_feature": true,
+            "competitor_has_feature": false
+          }
+        },
+        "comparison_8a63rt": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "For Multiple Skins",
+            "product_has_feature": true,
+            "competitor_has_feature": false
+          }
+        },
+        "comparison_vvpogq": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Non-Greasy Finish",
+            "product_has_feature": true,
+            "competitor_has_feature": false
+          }
+        },
+        "comparison_fzn3d4": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "Makeup-Friendly",
+            "product_has_feature": true,
+            "competitor_has_feature": false
+          }
+        },
+        "comparison_hfx0tx": {
+          "type": "comparison_item",
+          "settings": {
+            "feature": "No Heavy Shine",
+            "product_has_feature": true,
+            "competitor_has_feature": false
+          }
+        }
+      },
+      "block_order": [
+        "comparison_r2kvxc",
+        "comparison_item_eKHKVU",
+        "comparison_8a63rt",
+        "comparison_vvpogq",
+        "comparison_fzn3d4",
+        "comparison_hfx0tx"
+      ],
+      "settings": {
+        "heading": "Why KOEC Pink Collagen Cream Stands Out?",
+        "description": "Unlike heavy, greasy creams that sit on the skin or leave temporary shine, KOEC combines a customisable capsule-in-gel formula with glow-focused ingredients.",
+        "button_label": "",
+        "button_link": "",
+        "product_title": "KOEC Pink Collagen Cream",
+        "competitor_title": "Others",
+        "button_behaviour": "scroll_to_top",
+        "layout": "text_first",
+        "content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(135deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 100%)",
+        "padding_top": 26,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "faqs_5p00iw": {
+      "type": "pp-faqs-v1-0-0",
+      "blocks": {
+        "faq_item_Fk6p7D": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it suitable on sensitive skin?",
+            "answer": "KOEC is formulated with lightweight, skin-loving ingredients designed to feel gentle and comfortable on the skin. Many customers with dry, combination, and sensitive-feeling skin enjoy the nourishing yet non-heavy texture. However, because every skin type is unique, we always recommend patch testing before full use and reviewing the ingredient list if you have known sensitivities or allergies."
+          }
+        },
+        "faq_fs34a2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will this feel greasy or heavy on my skin?",
+            "answer": "No — KOEC is designed with a lightweight capsule-in-gel texture that absorbs comfortably into the skin while still delivering deep hydration and glow without a sticky or oily finish."
+          }
+        },
+        "faq_pfugaw": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I wear this under makeup?",
+            "answer": "Yes. The smooth, lightweight formula layers beautifully under makeup and helps create a more hydrated, fresh-looking base without heavy buildup or pilling."
+          }
+        },
+        "faq_ait9mr": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it suitable for all skin types?",
+            "answer": "KOEC is designed for dry, combination, normal, and oily skin types. The customisable capsule-to-gel ratio allows you to adjust the texture based on your skin’s needs."
+          }
+        },
+        "faq_r2pass": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use it both morning and night?",
+            "answer": "Absolutely. KOEC can be used as part of both your morning and evening skincare routine to help maintain hydration, glow, and smoother-looking skin throughout the day."
+          }
+        },
+        "faq_0wqokg": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What skin concerns does it help with?",
+            "answer": "KOEC helps improve the appearance of dullness, dryness, uneven texture, tired-looking skin, and fine lines while supporting a softer-, brighter-, and more radiant-looking complexion."
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_Fk6p7D",
+        "faq_fs34a2",
+        "faq_pfugaw",
+        "faq_ait9mr",
+        "faq_r2pass",
+        "faq_0wqokg"
+      ],
+      "settings": {
+        "heading": "Common Questions About KOEC Pink Collagen Cream",
+        "description": "Clear answers to help you feel confident before adding KOEC to your skincare routine.",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "button_behaviour": "scroll_to_top",
+        "button_label": "",
+        "button_link": "",
+        "faqitem_background": "linear-gradient(180deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 38%, rgba(248, 215, 220, 1) 47%, rgba(248, 215, 220, 1) 57.915%, rgba(248, 215, 220, 1) 97%)",
+        "section_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "pp_image_with_text_v1_0_0_XEjRHz": {
+      "type": "pp-image-with-text-v1-0-0",
+      "blocks": {
+        "heading_fC9DpE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Loved By Women Wanting Fresher, Glowier-Looking Skin"
+          }
+        },
+        "text_g4tQnw": {
+          "type": "text",
+          "settings": {
+            "text": "Join thousands of skincare lovers who’ve added KOEC Pink Collagen Cream to their daily routine for smoother-, brighter-, and more hydrated-looking skin. From dull, tired complexions to dry or uneven texture, customers love how lightweight yet nourishing the capsule-in-gel formula feels — delivering a healthy-looking glow without the heavy or greasy finish many creams leave behind."
+          }
+        }
+      },
+      "block_order": [
+        "heading_fC9DpE",
+        "text_g4tQnw"
+      ],
+      "name": "PP Image with Text",
+      "settings": {
+        "image": "shopify://shop_images/rtaImage.avif",
+        "image_alt": "Product image",
+        "layout": "image_first",
+        "desktop_content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_background": "linear-gradient(270deg, rgba(248, 215, 220, 1), rgba(248, 215, 220, 1) 100%)",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "pp_review_slider_v1_0_0_bKUqqU": {
+      "type": "pp-review-slider-v1-0-0",
+      "blocks": {
+        "review_cUTGfc": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.10.00_pm.png",
+            "name": "Danieka D.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "After applying, the skin feels soft and sticky! it feels like baby skin, with a strong collagen sensation. my friends have asked me if i have changed my skincare products, and the effect is so amazing"
+          }
+        },
+        "review_QyRMQ9": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.09.04_pm.png",
+            "name": "Jayne L.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "This jelly cream is my favourite, especially moisturising and creamy, easy to absorb, i've shared it with my sisters!"
+          }
+        },
+        "review_xjM8nR": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.11.34_pm.png",
+            "name": "Erica G.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "This is the first time i've bought face cream from this brand. it looks very nice, and it even comes with a spatula."
+          }
+        },
+        "review_MxtiqF": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.10.50_pm.png",
+            "name": "Tina S.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "I am very satisfied with this jelly cream. it is very moisturizing, deeply hydrating, and easy to use"
+          }
+        },
+        "review_ixiVML": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.08.22_pm.png",
+            "name": "Michelle B.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "In love with it! gives you glowy, hydrated supple skin. definitely recommended! super lightweight and doesnt leave your skin sticky nor greasy since its more like a gel"
+          }
+        },
+        "review_mhT3YM": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.07.49_pm.png",
+            "name": "Pristine A.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "Sensitive skin lifesaver! fragrance-free, no irritation. soothes redness and inflammation, delivers deep hydration. dry patches are gone, and skin has a healthy glow. finally a moisturizer that works without breakouts—love it!"
+          }
+        },
+        "review_pTLpCw": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.07.18_pm.png",
+            "name": "Alex R.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "Night-time hero! thick layer before bed, wake up to plump, dewy skin. slow-release hydration nourishes all night, repairing daily damage. redness and sensitivity are reduced, and skin tone is even. oily skin friendly"
+          }
+        },
+        "review_Ey6mhQ": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.06.49_pm.png",
+            "name": "Angelina K.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "This moisturizer is really good. i recommend using only one drops since there’s a few drops inside of this cream also i use this as the last step of my skin care and i really feel like i would buy this again so i definitely recommend and the drops are not that hard. i recommend using your hands to really rub it in your face."
+          }
+        },
+        "review_KRfTtg": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.06.08_pm.png",
+            "name": "Kendra W.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "I’m loving this pdrn pink capsule cream! it’s the perfect solution for dry, tired-looking skin. the pink capsules are so satisfying to use each one bursts to reveal a silky serum. it hydrates deeply, locking in moisture to keep my skin soft and supple. It’s free from harsh chemicals, so i feel safe using it daily. the dewy finish is perfect for both day and night use."
+          }
+        },
+        "review_AUpAhE": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.05.36_pm.png",
+            "name": "Sam L.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "Very good, it's the second time i buy it and i'm satisfied, especially useful when used in combo with an ems device or facial massage"
+          }
+        },
+        "review_jqDbnJ": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.02.35_pm.png",
+            "name": "Zoe L.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "This pink collagen cream is a game-changer for my mature skin! i struggle with fine lines and dryness, but this cream has turned things around. The pink capsules release a nourishing gel that instantly smooths my nasolabial folds and eye lines. Highly Recommend!"
+          }
+        },
+        "review_3Pnw4p": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.03.46_pm.png",
+            "name": "Rebecca D.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "I absolutely love it. very hydrating. i bought this. i have been using it for a week before going to bed and what a difference. my skin is glowing and much smoother. i use this one before bed and the toner in the am as a base and sun screen over it. i have been getting so many compliments about how my skin looks glossy."
+          }
+        },
+        "review_XKUxhR": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-05-06_at_3.04.40_pm.png",
+            "name": "Sophia A.",
+            "verified_text": "Verified Buyer",
+            "rating": 5,
+            "review_text": "I’ve tried countless moisturizers, but none compare to this PDRN pink capsule cream! The unique pink capsule design delivers nutrients directly to the skin, ensuring maximum absorption. I’ve recommended it to all my friends, and they love it too!"
+          }
+        }
+      },
+      "block_order": [
+        "review_cUTGfc",
+        "review_QyRMQ9",
+        "review_xjM8nR",
+        "review_MxtiqF",
+        "review_ixiVML",
+        "review_mhT3YM",
+        "review_pTLpCw",
+        "review_Ey6mhQ",
+        "review_KRfTtg",
+        "review_AUpAhE",
+        "review_jqDbnJ",
+        "review_3Pnw4p",
+        "review_XKUxhR"
+      ],
+      "name": "PP Review Carousel",
+      "settings": {
+        "rating": 5,
+        "heading": "What people are saying",
+        "subheading": "Rated 4.8/5 by 1,000+ Happy Customers",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_background": "",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "margin_top": 30,
+        "margin_bottom": 30,
+        "margin_top_mobile": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "areviews_1776023224_3b9922": {
+      "type": "apps",
+      "blocks": {
+        "areviews_reviews_importer_areviews_display_reviews_9B1348": {
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsDisplayReviews/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "disabled": true,
+          "settings": {
+            "hide_areviews_title_rating": false,
+            "areviews_theme_font": "inherit",
+            "areviews_stars_colors": "#f3c621",
+            "areviews_write_reviews_botton_color": "#373737"
+          }
+        }
+      },
+      "block_order": [
+        "areviews_reviews_importer_areviews_display_reviews_9B1348"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "section_divider_3VEyjx": {
+      "type": "section-divider",
+      "name": "Section divider",
+      "settings": {
+        "visibility": "always-display",
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": false,
+        "shape_color": "scheme-d88a2d-text",
+        "use_custom_shape_color": true,
+        "custom_shape_color": "#f8d7dc",
+        "background_color": "background-1",
+        "use_custom_background_color": false,
+        "custom_background_color": "#ffffff",
+        "padding_top": 24,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_4V6G9D": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PH44UF": {
+          "type": "heading",
+          "settings": {
+            "heading": "14-Day money back Guarantee",
+            "heading_size": "h1"
+          }
+        },
+        "text_Ak4qBp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Try KOEC Pink Collagen Cream risk-free for 14 days. If the rechargeable fabric shaver doesn’t restore clothes or meet expectations, return it for a full refund. We want you confident that this tool will make your wardrobe look better and last longer.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PH44UF",
+        "text_Ak4qBp"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-0b26c154-dc62-46a9-be67-e0c2f1c720c8",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "announcement_bar_scrolling_ErKeQM",
+    "main",
+    "177805743820718d33",
+    "section_divider_dHqrpt",
+    "image_with-text_459nsd",
+    "section_divider_pERzxP",
+    "image_comparison_9cxAnU",
+    "pp_image_with_text_v1_0_0_aFNNBF",
+    "pp_image_with_text_v1_0_0_rLkriH",
+    "image_with-percentage_et150y",
+    "pp_image_with_text_v1_0_0_4zqD8L",
+    "announcement_bar_scrolling_Xw7maV",
+    "image_with-benefits_9rjofw",
+    "section_divider_q7CFjr",
+    "image_with-text_dn0hyk",
+    "section_divider_UMtfqt",
+    "pp_image_with_text_v1_0_0_4UYDcM",
+    "differences_dghsv5",
+    "faqs_5p00iw",
+    "pp_image_with_text_v1_0_0_XEjRHz",
+    "pp_review_slider_v1_0_0_bKUqqU",
+    "areviews_1776023224_3b9922",
+    "section_divider_3VEyjx",
+    "rich_text_4V6G9D"
+  ]
+}
