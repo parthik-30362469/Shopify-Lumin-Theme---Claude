@@ -84,9 +84,13 @@
   );
 }
 
+/* Product thumbnails stay rounded on all four corners. Dawn squares off the
+   bottom so the image sits flush against the card's info area; we want every
+   thumbnail to read as the same rounded tile instead. */
 .card--card .card__inner .card__media {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  border-radius: calc(
+    var(--border-radius) - var(--border-width) - var(--image-padding)
+  );
 }
 
 .card--standard.card--text {
