@@ -19,7 +19,7 @@
 
 <style>
   /* Stars we render ourselves for the summary average, so we don't depend on
-     the app's icon font. Grey track with a gold overlay clipped to the score. */
+     the app's icon font. */
   #az_reviews .theme-avg-stars {
     display: inline-block;
     position: relative;
@@ -27,6 +27,13 @@
     white-space: nowrap;
     font-size: 1.4em;
     letter-spacing: 0.12em;
+    /* The widget's own star styles can carry a shadow — never inherit it. */
+    text-shadow: none;
+    filter: none;
+  }
+  #az_reviews .theme-avg-stars * {
+    text-shadow: none;
+    filter: none;
   }
   #az_reviews .theme-avg-stars__base { color: #d8d8d8; }
   #az_reviews .theme-avg-stars__fill {
@@ -35,6 +42,28 @@
     left: 0;
     overflow: hidden;
     color: #f3c621;
+  }
+
+  /* Preferred rendering: one text layer with a hard gold/grey gradient clipped
+     to the glyphs. Two stacked copies of the same text never align perfectly at
+     sub-pixel level, and the grey one peeking out behind the gold reads as a
+     drop shadow. A single layer cannot do that. Falls back to the two-layer
+     version above where background-clip:text is unsupported. */
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    #az_reviews .theme-avg-stars--clip .theme-avg-stars__base {
+      background-image: linear-gradient(
+        90deg,
+        #f3c621 var(--fill, 0%),
+        #d8d8d8 var(--fill, 0%)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+    #az_reviews .theme-avg-stars--clip .theme-avg-stars__fill {
+      display: none;
+    }
   }
 </style>
 
@@ -92,8 +121,10 @@
 
   function starsMarkup(average) {
     var pct = Math.max(0, Math.min(100, (average / 5) * 100));
+    /* --fill drives the single-layer gradient; the second span is only used by
+       the two-layer fallback (hidden when background-clip:text is supported). */
     return (
-      '<span class="theme-avg-stars">' +
+      '<span class="theme-avg-stars theme-avg-stars--clip" style="--fill:' + pct + '%">' +
         '<span class="theme-avg-stars__base">★★★★★</span>' +
         '<span class="theme-avg-stars__fill" style="width:' + pct + '%">★★★★★</span>' +
       '</span>'
