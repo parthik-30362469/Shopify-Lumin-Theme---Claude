@@ -1247,6 +1247,12 @@
       ],
       "name": "PP Review Carousel",
       "settings": {
+        "sync_areviews_summary": true,
+        "areviews_count_5": 10,
+        "areviews_count_4": 5,
+        "areviews_count_3": 0,
+        "areviews_count_2": 0,
+        "areviews_count_1": 0,
         "rating": 5,
         "heading": "What people are saying",
         "subheading": "Rated 4.8/5 by 1,000+ Happy Customers",

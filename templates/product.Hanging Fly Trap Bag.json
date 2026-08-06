@@ -1153,6 +1153,12 @@
         "review_lxdhf0"
       ],
       "settings": {
+        "sync_areviews_summary": true,
+        "areviews_count_5": 10,
+        "areviews_count_4": 5,
+        "areviews_count_3": 0,
+        "areviews_count_2": 0,
+        "areviews_count_1": 0,
         "rating": 5,
         "heading": "What customers are saying now",
         "subheading": "Real feedback from honest buyers",

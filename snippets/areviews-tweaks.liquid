@@ -248,9 +248,25 @@
     });
   }
 
+  /* Weighted mean of the five counts — used when the subheading carries no
+     number (several products use copy like "Real feedback from real users"),
+     so the score still agrees with the bars instead of sitting at 0.0. */
+  function averageFromCounts(counts) {
+    if (!counts) return null;
+    var total = 0;
+    var weighted = 0;
+    for (var star = 1; star <= 5; star++) {
+      var n = counts[String(star)] || 0;
+      total += n;
+      weighted += n * star;
+    }
+    return total > 0 ? weighted / total : null;
+  }
+
   function applySummary(root, cfg) {
     if (!cfg) return;
     var average = parseAverage(cfg.subheading);
+    if (average === null) average = averageFromCounts(cfg.counts);
     if (average !== null) applyAverage(root, average);
     if (cfg.counts) applyDistribution(root, cfg.counts);
   }
