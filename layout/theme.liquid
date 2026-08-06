@@ -504,5 +504,9 @@
     {% render 'lumin-wishlist-drawer' %}
     {% render 'lumin-recently-viewed-drawer' %}
 
+    {%- if template.name == 'product' -%}
+      {% render 'areviews-tweaks' %}
+    {%- endif -%}
+
   </body>
 </html>

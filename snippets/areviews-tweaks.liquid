@@ -1,0 +1,63 @@
+{%- comment -%}
+  Product-page tweaks for the Areviews widget.
+
+  The widget's markup is injected at runtime by areviewsapp.com, so its inner
+  elements have no class names we can rely on from the theme — the empty-state
+  line is matched on its text instead. If the app is ever translated, add the
+  new wording to EMPTY_STATE_TEXT below.
+{%- endcomment -%}
+
+<script>
+(function () {
+  var EMPTY_STATE_TEXT = ['be the first to review'];
+  var ROOT_SELECTOR = '#az_reviews';
+
+  function hideEmptyState(root) {
+    var nodes = root.querySelectorAll('a, p, span, div, h1, h2, h3, h4, h5, h6');
+    Array.prototype.forEach.call(nodes, function (el) {
+      if (el.dataset.areviewsHidden) return;
+      var text = (el.textContent || '').trim().toLowerCase();
+      if (!text || text.length > 80) return;              /* skip containers */
+      var match = EMPTY_STATE_TEXT.some(function (t) { return text.indexOf(t) !== -1; });
+      if (!match) return;
+      /* Hide the outermost element whose text is *only* this line, so the
+         icon sitting next to it goes too, but never a parent that holds
+         other widget content. */
+      var target = el;
+      while (
+        target.parentElement &&
+        target.parentElement !== root &&
+        (target.parentElement.textContent || '').trim().toLowerCase() === text
+      ) {
+        target = target.parentElement;
+      }
+      target.dataset.areviewsHidden = '1';
+      target.style.display = 'none';
+    });
+  }
+
+  function watch() {
+    var root = document.querySelector(ROOT_SELECTOR);
+    if (!root) return false;
+    hideEmptyState(root);
+    new MutationObserver(function () { hideEmptyState(root); })
+      .observe(root, { childList: true, subtree: true });
+    return true;
+  }
+
+  function start() {
+    if (watch()) return;
+    /* Widget container is added by the app block after our script runs. */
+    var tries = 0;
+    var poll = setInterval(function () {
+      if (watch() || ++tries > 40) clearInterval(poll);   /* give up after ~20s */
+    }, 500);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
+</script>

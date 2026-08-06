@@ -731,13 +731,13 @@
         "mobile_content_alignment": "center",
         "section_background": "linear-gradient(180deg, rgba(234, 250, 241, 1), rgba(234, 250, 241, 1) 49%, rgba(234, 250, 241, 1) 100%)",
         "padding_top": 30,
-        "padding_bottom": 30,
+        "padding_bottom": 0,
         "padding_top_mobile": 30,
-        "padding_bottom_mobile": 30,
+        "padding_bottom_mobile": 0,
         "margin_top": 30,
-        "margin_bottom": 30,
+        "margin_bottom": 0,
         "margin_top_mobile": 30,
-        "margin_bottom_mobile": 30
+        "margin_bottom_mobile": 0
       }
     },
     "call_to-action_js7dgr": {
@@ -812,7 +812,7 @@
         "areviews_reviews_importer_areviews_display_reviews_77E30E"
       ],
       "settings": {
-        "include_margins": true
+        "include_margins": false
       }
     }
   },

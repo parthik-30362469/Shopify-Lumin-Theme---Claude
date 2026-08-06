@@ -35,13 +35,7 @@
 		<div class='pp-container pp-mx-auto pp-w-full pp-justify-center'>
 			<div class='pp-flex pp-flex-col pp-gap-10 pp-items-center pp-justify-center pp-m-auto'>
 				<div class='pp-w-full pp-flex pp-flex-col pp-gap-8 pp-items-{{ section.settings.mobile_content_alignment | replace: 'left', 'start' | replace: 'right', 'end' }} md:pp-items-{{ section.settings.desktop_content_alignment | replace: 'left', 'start' | replace: 'right', 'end' }}'>
-					<div class='pp-flex pp-gap-1 pp-items-center'>
-						{% for i in (1..section.settings.rating) %}
-							<svg xmlns='http://www.w3.org/2000/svg' class='pp-w-6 pp-h-6 pp-fill-yellow-400' viewBox='0 0 256 256'>
-								<path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path>
-							</svg>
-						{% endfor %}
-					</div>
+					{%- comment -%} Header star row removed; per-review card stars are unaffected. {%- endcomment -%}
 					<h2 class='pp-text-heading-lg sm:pp-text-heading-2xl pp-font-semibold pp-text-{{ section.settings.mobile_content_alignment }} md:pp-text-{{ section.settings.desktop_content_alignment }}'>
 						{{ section.settings.heading }}
 					</h2>
