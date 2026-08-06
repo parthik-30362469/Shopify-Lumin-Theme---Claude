@@ -26,6 +26,27 @@
 	{% assign section_background = 'background: ' | append: section.settings.section_background | append: ';' %}
 {% endif %}
 
+{%- comment -%}
+	Feeds the Areviews "Customer Reviews" summary block. The widget's own markup
+	is injected at runtime by areviewsapp.com, so snippets/areviews-tweaks.liquid
+	reads this payload and rewrites the average, stars and rating bars in place.
+	The average is parsed from the subheading text (e.g. "Rated 4.8/5 by ...").
+{%- endcomment -%}
+{%- if section.settings.sync_areviews_summary -%}
+	<script type="application/json" class="areviews-summary-override">
+		{
+			"subheading": {{ section.settings.subheading | default: '' | json }},
+			"counts": {
+				"5": {{ section.settings.areviews_count_5 | default: 0 | json }},
+				"4": {{ section.settings.areviews_count_4 | default: 0 | json }},
+				"3": {{ section.settings.areviews_count_3 | default: 0 | json }},
+				"2": {{ section.settings.areviews_count_2 | default: 0 | json }},
+				"1": {{ section.settings.areviews_count_1 | default: 0 | json }}
+			}
+		}
+	</script>
+{%- endif -%}
+
 <div
 	class='pagepilot-section pp-review-grid section-{{ section.id }}-padding section-{{ section.id }}-margin'
 	style='{{ section_background }}'>
@@ -169,6 +190,47 @@
 			"id": "subheading",
 			"label": "Subheading",
 			"default": "Rated 4.8/5 by 5,000+ Happy Customers"
+		},
+		{
+			"type": "header",
+			"content": "Customer Reviews summary (Areviews widget)",
+			"info": "Overrides the summary block at the top of the Areviews widget. The average score is read from the Subheading above \u2014 e.g. \"Rated 4.8/5 by 1240+ Customers\" shows 4.8. The bars scale against the total of the five counts."
+		},
+		{
+			"type": "checkbox",
+			"id": "sync_areviews_summary",
+			"label": "Sync summary with the values below",
+			"default": true
+		},
+		{
+			"type": "number",
+			"id": "areviews_count_5",
+			"label": "5 star reviews",
+			"default": 0
+		},
+		{
+			"type": "number",
+			"id": "areviews_count_4",
+			"label": "4 star reviews",
+			"default": 0
+		},
+		{
+			"type": "number",
+			"id": "areviews_count_3",
+			"label": "3 star reviews",
+			"default": 0
+		},
+		{
+			"type": "number",
+			"id": "areviews_count_2",
+			"label": "2 star reviews",
+			"default": 0
+		},
+		{
+			"type": "number",
+			"id": "areviews_count_1",
+			"label": "1 star reviews",
+			"default": 0
 		},
 		{
 			"type": "select",
