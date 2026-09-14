@@ -74,15 +74,7 @@
                   assign disabled = true
                 endunless
               -%}
-              {% render 'variant-image-swatch',
-                variant: variant,
-                size: block.settings.variant_image_size | default: 40,
-                selected: selected,
-                disabled: disabled,
-                input_id: section.id | append: '-' | append: option.position | append: '-' | append: forloop.index0,
-                input_name: option.name | escape,
-                product_form_id: product_form_id
-              %}
+              {% render 'variant-image-swatch', variant: variant, size: block.settings.variant_image_size, default: 40, selected: selected, disabled: disabled, input_id: section.id, append: forloop.index0, input_name: option.name, product_form_id: product_form_id %}
             {%- endfor -%}
           </div>
         </fieldset>
@@ -253,4 +245,24 @@
     }
   ]
 }
-{% endschema %} 
+{% endschema %} {%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'variant-image-swatch',
+                    variant: variant,
+                    size: block.settings.variant_image_size | default: 40,
+                    selected: selected,
+                    disabled: disabled,
+                    input_id: section.id | append: '-' | append: option.position | append: '-' | append: forloop.index0,
+                    input_name: option.name | escape,
+                    product_form_id: product_form_id
+                  %}
+  to: "{% render 'variant-image-swatch', variant: variant, size: block.settings.variant_image_size,
+    default: 40, selected: selected, disabled: disabled, input_id: section.id, append:
+    forloop.index0, input_name: option.name, product_form_id: product_form_id %}"
+  position: 2774..3026
+{%- endcomment -%}

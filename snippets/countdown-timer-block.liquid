@@ -124,7 +124,7 @@
     </div>
   </div>
 </div>
-{% assign section.id = section.id %}
+{% assign renamed_variable_section_2e_id = section.id %}
 <script type="application/json" data-lumin-section="{{ section.id }}">
   {
     "id": {{ section.id | json }},
@@ -195,4 +195,13 @@ data-lumin-section-js="{{ section.id }}"
   }
 })();
 
-</script>
+</script>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% assign section.id = section.id %}"
+  to: "{% assign renamed_variable_section_2e_id = section.id %}"
+  position: 4641..4697
+{%- endcomment -%}

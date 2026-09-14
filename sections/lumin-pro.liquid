@@ -1,7 +1,7 @@
 {{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
 {{ 'lumin-mega.css' | asset_url | stylesheet_tag }}
 
-{%- assign section.id = section.id | replace: '+', '' -%}
+{%- assign renamed_variable_section_2e_id = section.id | replace: '+', '' -%}
 {%- style -%}
   .lumin-mega-list {
     display: grid;
@@ -208,7 +208,7 @@
                   >
                     {% render 'collapsible-row-block', block: block, section: section %}
                   </div>
-                {%- when 'countdown_timer', block:block -%}
+                {%- when 'countdown_timer', block.block -%}
                   <div
                     id="LM--{{ block.id }}"
                     class="lumin-section-block lumin-section__block-id-{{ block.id }} lumin-section__block--{{ block.type }}"
@@ -4165,3 +4165,16 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- assign section.id = section.id | replace: '+', '' -%}"
+  to: "{%- assign renamed_variable_section_2e_id = section.id | replace: '+', '' -%}"
+  position: 120..197
+- from: "{%- when 'countdown_timer', block:block -%}"
+  to: "{%- when 'countdown_timer', block.block -%}"
+  position: 11518..11561
+{% endcomment %}

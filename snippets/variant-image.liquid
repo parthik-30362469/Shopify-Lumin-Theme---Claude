@@ -44,7 +44,7 @@
 
         {% for variant in product.variants %}   
 
-                {% if variant.title== value %}
+                {% if true %}{{ 'Liquid error (snippets/variant-image line 47): Unknown operator value' }}{% elsif false %}
 
                       <img name={{ value }} src='  {{ variant.image | image_url: width: 40  }}  '/>
 
@@ -53,4 +53,14 @@
         {%- endfor -%}
 
 </label>
-  {% endfor %}
+  {% endfor %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% if variant.title== value %}"
+  to: "{% if true %}{{ 'Liquid error (snippets/variant-image line 47): Unknown operator
+    value' }}{% elsif false %}"
+  position: 1631..1738
+{%- endcomment -%}

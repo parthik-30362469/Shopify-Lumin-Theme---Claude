@@ -213,14 +213,7 @@
                  
                     </style>
                 <div id="price-{{ section.id }}" role="status" class="product-savings-{{ block.id }}" {{ block.shopify_attributes }} >
-                  {%- render 'price',
-                    product: product,
-                    use_variant: true,
-                    block: block,
-                    show_saving: false,
-                    show_badges: {{block.settings.show_save_price}},
-                    price_class: 'price--large'
-                  -%}
+                  {%- render 'price', product: product, use_variant: true, block: block, show_saving: false, show_badges: block.settings.show_save_price, price_class: 'price--large' -%}
                 </div>
                   {%- if product.quantity_price_breaks_configured? -%}
                     <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
@@ -3737,3 +3730,23 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%- render 'price',
+                        product: product,
+                        use_variant: true,
+                        block: block,
+                        show_saving: false,
+                        show_badges: {{block.settings.show_save_price}},
+                        price_class: 'price--large'
+                      -%}
+  to: "{%- render 'price', product: product, use_variant: true, block: block, show_saving:
+    false, show_badges: block.settings.show_save_price, price_class: 'price--large'
+    -%}"
+  position: 10557..10724
+{% endcomment %}

@@ -150,10 +150,7 @@
                               (max-width: 480px) calc(100vw / {{ block.settings.icon_width }}), calc({{ section.settings.text_width | default: 50 }}vw / {{ block.settings.icon_width }})
                             {%- endcapture -%}
           {%- if block.settings[icon] == blank -%}
-            {%-
-              render 'icon-accordion', icon: block.settings.[icon_old], | image_url: width: block.settings[icon].width
-              | image_tag: widths: widths, sizes: sizes
-            -%}
+            {%- render 'icon-accordion', icon: block.settings[icon_old], image_url: width, image_tag: widths, sizes: sizes -%}
           {% else %}
             {{
               block.settings[icon]
@@ -188,3 +185,18 @@
 </div>
 
 
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+                  render 'icon-accordion', icon: block.settings.[icon_old], | image_url: width: block.settings[icon].width
+                  | image_tag: widths: widths, sizes: sizes
+                -%}
+  to: "{%- render 'icon-accordion', icon: block.settings[icon_old], image_url: width,
+    image_tag: widths, sizes: sizes -%}"
+  position: 5560..5674
+{% endcomment %}

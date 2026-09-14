@@ -120,7 +120,7 @@
       assign has_app_block = true
     endif
     if block.type == 'menu_image'
-    assign block.id = block.id
+    assign renamed_variable_block_2e_id = block.id
   endif
   endfor
 -%}
@@ -1507,4 +1507,13 @@ document.querySelectorAll('header-menu').forEach(headerMenu => {
     }
   ]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "    assign block.id = block.id"
+  to: "    assign renamed_variable_block_2e_id = block.id"
+  position: 3376..3426
+{%- endcomment -%}

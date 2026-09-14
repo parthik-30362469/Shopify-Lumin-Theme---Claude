@@ -9,7 +9,7 @@
         style="position: relative;"
         aria-haspopup="dialog">
         <span class="svg-wrapper">
-          {% render 'lumin-svg-icons', icon: 'heart', size: 24, stroke_width: var(--icon-stroke-width), class: 'icon' %}
+          {% render 'lumin-svg-icons', icon: 'heart', size: 24, stroke_width: var['--icon-stroke-width'], class: 'icon' %}
         </span>
         <span class="visually-hidden">
           {{ 'lumintheme.wishlist.title' | t }}
@@ -30,11 +30,27 @@
         aria-haspopup="dialog"
         style="position: relative;">
         <span class="svg-wrapper">
-          {% render 'lumin-svg-icons', icon: 'recently-viewed', size: 24, stroke_width: var(--icon-stroke-width), class: 'icon' %}
+          {% render 'lumin-svg-icons', icon: 'recently-viewed', size: 24, stroke_width: var['--icon-stroke-width'], class: 'icon' %}
         </span>
         <span class="visually-hidden">
           {{ 'lumintheme.recently_viewed.title' | t }}
         </span>
       </a>
     {% endif %}
-{% endcase %}
+{% endcase %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'lumin-svg-icons', icon: 'heart', size: 24, stroke_width: var(--icon-stroke-width),
+    class: 'icon' %}"
+  to: "{% render 'lumin-svg-icons', icon: 'heart', size: 24, stroke_width: var['--icon-stroke-width'],
+    class: 'icon' %}"
+  position: 368..480
+- from: "{% render 'lumin-svg-icons', icon: 'recently-viewed', size: 24, stroke_width:
+    var(--icon-stroke-width), class: 'icon' %}"
+  to: "{% render 'lumin-svg-icons', icon: 'recently-viewed', size: 24, stroke_width:
+    var['--icon-stroke-width'], class: 'icon' %}"
+  position: 1189..1311
+{%- endcomment -%}

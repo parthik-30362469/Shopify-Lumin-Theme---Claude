@@ -265,9 +265,9 @@
     >
       <div class="grid__item product__media-wrapper">
         {% if section.settings.gallery_layout == 'vertical_right' or section.settings.gallery_layout == 'vertical_left' %}
-        {% render 'product-media-gallery-vertical', variant_images: variant_images, data-section-settings: section.settings | json %}
+        {% render 'product-media-gallery-vertical', variant_images: variant_images, data-section-settings: section.settings %}
         {% else %}
-        {% render 'product-media-gallery', variant_images: variant_images, data-section-settings: section.settings | json %}
+        {% render 'product-media-gallery', variant_images: variant_images, data-section-settings: section.settings %}
         {% endif %}
       </div>
       <div class="background-blur product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -548,14 +548,7 @@
                  
                     </style>
                 <div id="price-{{ section.id }}" role="status" class="product-savings-{{ block.id }}" {{ block.shopify_attributes }} >
-                  {%- render 'price',
-                    product: product,
-                    use_variant: true,
-                    block: block,
-                    show_saving: false,
-                    show_badges: {{block.settings.show_save_price}},
-                    price_class: 'price--large'
-                  -%}
+                  {%- render 'price', product: product, use_variant: true, block: block, show_saving: false, show_badges: block.settings.show_save_price, price_class: 'price--large' -%}
                 </div>
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
@@ -10202,3 +10195,33 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-media-gallery-vertical', variant_images: variant_images,
+    data-section-settings: section.settings | json %}"
+  to: "{% render 'product-media-gallery-vertical', variant_images: variant_images,
+    data-section-settings: section.settings %}"
+  position: 10062..10180
+- from: "{% render 'product-media-gallery', variant_images: variant_images, data-section-settings:
+    section.settings | json %}"
+  to: "{% render 'product-media-gallery', variant_images: variant_images, data-section-settings:
+    section.settings %}"
+  position: 10208..10317
+- from: |-
+    {%- render 'price',
+                        product: product,
+                        use_variant: true,
+                        block: block,
+                        show_saving: false,
+                        show_badges: {{block.settings.show_save_price}},
+                        price_class: 'price--large'
+                      -%}
+  to: "{%- render 'price', product: product, use_variant: true, block: block, show_saving:
+    false, show_badges: block.settings.show_save_price, price_class: 'price--large'
+    -%}"
+  position: 24609..24776
+{% endcomment %}
